@@ -53,6 +53,16 @@ roll initiative
     rolls for monsters and players based on mods
     creates list of initiative rolls, writes to db
 
+track turns
+    highlights the current player on initiative list
+    prompts DM for movement (click done when done)
+    prompts DM if attacking yes or no
+    if yes, prompts for attack rolls if PC and who attacking - calculates damage received
+    if monster attacking, rolls the damage
+    requests target then calculates damage received based on target
+    check if any other moves? if no, continue to next character
+    highlights the next character and loops
+
 roll monster damage
     randomize on number of dice and type
     return the damage value
@@ -82,3 +92,11 @@ calculate player stats
 
 change view
     changes which layer is currently visible -- game board, player stats
+
+move character
+    advanced! not MVP!
+    double click on character to activate
+    click on square to move to
+    mouse over other characters to get option to attack
+    if attack, point to roll damage (for PC, can be manually entered)
+    etc
