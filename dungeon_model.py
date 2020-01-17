@@ -9,7 +9,7 @@ class DMs(db.Model):
     """dungeon masters"""
     __tablename__ = "dms"
 
-    dm_id = db.Column(db.Integer, autoincrement=True, primary_key=True, db.ForeignKey('games.dm_id'))
+    dm_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     username = db.Column(db.String(30), nullable=False)
     password = db.Column(db.String(100), nullable=False)
 
@@ -24,9 +24,9 @@ class Games(db.Model):
     """game information"""
     __tablename__ = "games"
 
-    game_id = db.Column(db.Integer, autoincrement=True, primary_key=True,
-                        db.ForeignKey('players.game_id'), db.ForeignKey('rooms.game_id'))
-    dm_id = db.Column(db.Integer, nullable=False, db.ForeignKey('dms.dm_id'))
+    game_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    dm_id = db.Column(db.Integer, db.ForeignKey('dms.dm_id'), nullable=False)
+    name = db.Column(db.String(50))
 
     dm = db.relationship("DMs")
     players = db.relationship("Players")
@@ -42,10 +42,9 @@ class Players(db.Model):
     """much of this is currently nullable because it is for richer features, not MVP"""
     __tablename__ = "players"
 
-    player_id = db.Column(db.Integer, autoincrement=True, primary_key=True,
-                        db.ForeignKey('mstr_actions.player_id'), db.ForeignKey('pl_actions.player_id'))
+    player_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(40))
-    game_id = db.Column(db.Integer, nullabe=False, db.ForeignKey('games.game_id'))
+    game_id = db.Column(db.Integer, db.ForeignKey('games.game_id'), nullable=False)
     species = db.Column(db.String(40))
     total_hp = db.Column(db.Integer)
     ac = db.Column(db.Integer)
@@ -69,13 +68,12 @@ class Rooms(db.Model):
     """store information about the generated room"""
     __tablename__ = "rooms"
 
-    room_id = db.Column(db.Integer, autoincrement=True, primary_key=True,
-                    db.ForeignKey('mstr_actions.room_id'), db.ForeignKey('pl_actions.room_id'),
-                    db.ForeignKey('monsters.room_id'))
+    room_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     width = db.Column(db.Integer, nullable=False)
     length = db.Column(db.Integer, nullable=False)
-    game_id = db.Column(db.Integer, nullable=False, db.ForeignKey('games.game_id'))
+    game_id = db.Column(db.Integer, db.ForeignKey('games.game_id'), nullable=False)
     level = db.Column(db.Integer)
+    complete = db.Column(db.Boolean, nullable=False)
 
     games = db.relationship("Games")
     monster_actions = db.relationship("Monster_Actions")
@@ -91,11 +89,11 @@ class Player_Actions(db.Model):
     __tablename__ = "pl_actions"
 
     action_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    player_id = db.Column(db.Integer, nullable=False, db.ForeignKey('players.player_id'))
+    player_id = db.Column(db.Integer, db.ForeignKey('players.player_id'), nullable=False)
     distance = db.Column(db.Integer)
-    monster_id = db.Column(db.Integer, nullable=True, db.ForeignKey('monsters.monster_id'))
+    monster_id = db.Column(db.Integer, db.ForeignKey('monsters.monster_id'), nullable=True)
     damage = db.Column(db.Integer)
-    room_id = db.Column(db.Integer, nullable=False, db.ForeignKey('rooms.room_id'))
+    room_id = db.Column(db.Integer, db.ForeignKey('rooms.room_id'), nullable=False)
 
     monsters = db.relationship("Monsters")
     players = db.relationship("Players")
@@ -110,11 +108,11 @@ class Monster_Actions(db.Model):
     __tablename__ = "mstr_actions"
 
     action_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    monster_id = db.Column(db.Integer, nullable=False, db.ForeignKey('monsters.monster_id'))
+    monster_id = db.Column(db.Integer, db.ForeignKey('monsters.monster_id'), nullable=False)
     distance = db.Column(db.Integer)
-    player_id = db.Column(db.Integer, nullable=True, db.ForeignKey('players.player_id'))
+    player_id = db.Column(db.Integer, db.ForeignKey('players.player_id'), nullable=False)
     damage = db.Column(db.Integer)
-    room_id = db.Column(db.Integer, nullable=False, db.ForeignKey('rooms.room_id'))
+    room_id = db.Column(db.Integer, db.ForeignKey('rooms.room_id'), nullable=False)
 
     players = db.relationship("Players")
     monsters = db.relationship("Monsters")
@@ -128,10 +126,8 @@ class Monsters(db.Model):
     """information about the monsters generated"""
     __tablename__ = "monsters"
 
-    monster_id = db.Column(db.Integer, autoincrement=True, primary_key=True,
-                        db.ForeignKey('mstr_actions.monster_id'),
-                        db.ForeignKey('pl_actions.monster_id'))
-    room_id = db.Column(db.Integer, nullable=False, db.ForeignKey('rooms.room_id'))
+    monster_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    room_id = db.Column(db.Integer, db.ForeignKey('rooms.room_id'), nullable=False)
     species = db.Column(db.String(50))
     total_hp = db.Column(db.Integer)
     ac = db.Column(db.Integer)
@@ -161,12 +157,13 @@ def connect_to_db(app):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
+    db.create_all()
 
 
-if __name__ == "__main__":
-    # As a convenience, if we run this module interactively, it will leave
-    # you in a state of being able to work with the database directly.
-
-    from server import app
-    connect_to_db(app)
-    print("Connected to DB.")
+# if __name__ == "__main__":
+#     # As a convenience, if we run this module interactively, it will leave
+#     # you in a state of being able to work with the database directly.
+#
+#     from server import app
+#     connect_to_db(app)
+#     print("Connected to DB.")
