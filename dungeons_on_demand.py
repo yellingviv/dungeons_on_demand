@@ -25,6 +25,7 @@ log in to dm account
     pwd.verify('thepassword', hash) #returns true or false
     #figure out how to hash on the front end and just pass the hash, so I only store hashes
     #maybe use a front end JS library instead and just save the hash on creation?
+    #I think I'm actually not going to use this library, I'm changing my mind on it
     add to session cookie that verified
     directs to DM screen with list of games and their Rooms
     button for new game on side, button for new room in each game room list
