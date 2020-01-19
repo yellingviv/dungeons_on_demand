@@ -82,7 +82,9 @@ def load_monsters():
     Monsters.query.delete()
     for row in open("test_data/mock_monsters.csv"):
         row = row.rstrip()
-        monster_id, room_id, species, total_hp, ac, hit_dice_num, hit_dice_type, initiative_mod, initiative_roll, speed, current_square = row.split(",")
+        monster_info = row.split(",")
+        monster_id, room_id, species, total_hp, ac, hit_dice_num, hit_dice_type,\
+        initiative_mod, initiative_roll, speed, current_square = monster_info[:11]
         monster = Monsters(monster_id=monster_id,
                            room_id=room_id,
                            species=species,
@@ -122,7 +124,7 @@ def load_monster_actions():
     for row in open("test_data/mock_monster_actions.csv"):
         row = row.rstrip()
         action_id, monster_id, distance, player_id, damage, room_id = row.split(",")
-        action = Player_Actions(action_id=action_id,
+        action = Monster_Actions(action_id=action_id,
                                 monster_id=monster_id,
                                 distance=distance,
                                 player_id=player_id,
@@ -169,13 +171,13 @@ def set_val_id_increments():
 
     result = db.session.query(func.max(Player_Actions.action_id)).one()
     max_id = int(result[0])
-    query = "SELECT setval('player_actions_action_id_seq', :new_id)"
+    query = "SELECT setval('pl_actions_action_id_seq', :new_id)"
     db.session.execute(query, {'new_id': max_id + 1})
     db.session.commit()
 
     result = db.session.query(func.max(Monster_Actions.action_id)).one()
     max_id = int(result[0])
-    query = "SELECT setval('monster_actions_action_id_seq', :new_id)"
+    query = "SELECT setval('mstr_actions_action_id_seq', :new_id)"
     db.session.execute(query, {'new_id': max_id + 1})
     db.session.commit()
 
