@@ -1,8 +1,7 @@
 """utility script to load database with test data"""
 
 from sqlalchemy import func
-from dungeon_model import DMs, Games, Rooms, Players, Monsters,
-                          Monster_Actions, Player_Actions
+from dungeon_model import DMs, Games, Rooms, Players, Monsters, Monster_Actions, Player_Actions
 from dungeon_model import connect_to_db, db
 from dungeons_on_demand import app
 
@@ -11,7 +10,7 @@ def load_dms():
 
     print("DMs seeding...")
     DMs.query.delete()
-    for row in open("/test_data/mock_dms.csv"):
+    for row in open("test_data/mock_DMs.csv"):
         row = row.rstrip()
         dm_id, username, password = row.split(",")
         dm = DMs(dm_id=dm_id,
@@ -25,7 +24,7 @@ def load_games():
 
     print("Games seeding...")
     Games.query.delete()
-    for row in open("/test_data/mock_games.csv"):
+    for row in open("test_data/mock_games.csv"):
         row = row.rstrip()
         game_id, dm_id, name = row.split(",")
         game = Games(game_id=game_id,
@@ -39,7 +38,7 @@ def load_rooms():
 
     print("Rooms seeding...")
     Rooms.query.delete()
-    for row in open("/test_data/mock_rooms.csv"):
+    for row in open("test_data/mock_rooms.csv"):
         row = row.rstrip()
         room_id, width, length, game_id, level, complete = row.split(",")
         room = Rooms(room_id=room_id,
@@ -47,7 +46,7 @@ def load_rooms():
                      length=length,
                      game_id=game_id,
                      level=level,
-                     complete=complete)
+                     complete=bool(complete.capitalize()))
         db.session.add(room)
     db.session.commit()
 
@@ -56,10 +55,11 @@ def load_players():
 
     print("Players seeding...")
     Players.query.delete()
-    for row in open("/test_data/mock_players.csv"):
+    for row in open("test_data/mock_players.csv"):
         row = row.rstrip()
-        player_id, name, game_id, species, total_hp, ac, hit_dice_num, hit_dice_type,
-            initiative_mod, initiative_roll, speed, current_square = row.split(",")
+        player_info = row.split(",")
+        player_id, name, game_id, species, total_hp, ac, hit_dice_num, hit_dice_type,\
+        initiative_mod, initiative_roll, speed, current_square = player_info[:12]
         player = Players(player_id=player_id,
                          name=name,
                          game_id=game_id,
@@ -80,10 +80,9 @@ def load_monsters():
 
     print("Monsters seeding...")
     Monsters.query.delete()
-    for row in open("/test_data/mock_monsters.csv"):
+    for row in open("test_data/mock_monsters.csv"):
         row = row.rstrip()
-        monster_id, room_id, species, total_hp, ac, hit_dice_num, hit_dice_type,
-            initiative_mod, initiative_roll, speed, current_square = row.split(",")
+        monster_id, room_id, species, total_hp, ac, hit_dice_num, hit_dice_type, initiative_mod, initiative_roll, speed, current_square = row.split(",")
         monster = Monsters(monster_id=monster_id,
                            room_id=room_id,
                            species=species,
@@ -103,7 +102,7 @@ def load_player_actions():
 
     print("Player actions seeding...")
     Player_Actions.query.delete()
-    for row in open("/test_data/mock_player_actions.csv"):
+    for row in open("test_data/mock_player_actions.csv"):
         row = row.rstrip()
         action_id, player_id, distance, monster_id, damage, room_id = row.split(",")
         action = Player_Actions(action_id=action_id,
@@ -120,7 +119,7 @@ def load_monster_actions():
 
     print("Monster actions seeding...")
     Monster_Actions.query.delete()
-    for row in open("/test_data/mock_monster_actions.csv"):
+    for row in open("test_data/mock_monster_actions.csv"):
         row = row.rstrip()
         action_id, monster_id, distance, player_id, damage, room_id = row.split(",")
         action = Player_Actions(action_id=action_id,

@@ -1,1001 +1,1000 @@
-player_id,name,game_id,species,total_hp,ac,hit_dice_num,hit_dice_type,initiative_mod,speed,current_square
-1,Fernanda,,Gray rhea,57,12,2,9,5,1,19
-2,Elinor,,African ground squirrel (unidentified),96,11,3,6,2,1,8
-3,Leticia,,Mountain duck,32,8,2,6,0,4,4
-4,Celine,,"Zebra, plains",97,3,6,6,1,5,21
-5,Consuela,,"Butterfly, canadian tiger swallowtail",35,10,3,10,3,1,18
-6,Teador,,"Phascogale, brush-tailed",67,15,2,12,1,5,22
-7,Erda,,Hudsonian godwit,48,10,3,7,5,1,27
-8,Shay,,"Fox, savanna",18,7,2,9,3,4,16
-9,Raul,,"Wolf, timber",51,18,2,10,3,5,6
-10,Agatha,,"Seal, southern elephant",45,8,4,9,5,5,15
-11,Briny,,"Snake, western patch-nosed",71,6,2,10,5,2,21
-12,Adrian,,"Jacana, african",88,18,5,8,0,2,3
-13,Lishe,,Tokay gecko,21,4,1,5,2,2,7
-14,Marvin,,Alpaca,11,6,1,8,0,4,11
-15,Berkeley,,Eastern indigo snake,26,15,6,11,3,2,12
-16,Starlene,,"Bear, american black",87,4,5,7,5,3,3
-17,Kerwin,,Bee-eater (unidentified),88,9,4,10,4,3,4
-18,Niko,,"Vulture, king",99,16,5,9,4,4,5
-19,Annetta,,"Roadrunner, greater",79,9,1,9,0,3,27
-20,Renae,,"Hornbill, southern ground",40,12,2,7,2,3,27
-21,Ludwig,,"Hornbill, leadbeateri's ground",58,8,4,5,4,3,10
-22,Giustina,,"Gecko, ring-tailed",88,4,1,6,1,2,10
-23,Yoshi,,"Beaver, european",33,15,2,11,1,1,29
-24,Nil,,Stone sheep,88,12,6,9,2,1,20
-25,Emmie,,"Macaque, japanese",30,12,6,10,0,5,3
-26,Claude,,"Ibis, glossy",70,7,4,12,3,4,25
-27,Codee,,Striped hyena,25,13,4,8,2,3,1
-28,Wright,,"Sifaka, verreaux's",66,8,5,6,4,3,9
-29,Herve,,Snowy egret,66,19,4,11,2,4,17
-30,Isa,,"Porcupine, north american",11,20,1,12,3,5,15
-31,Trevar,,Squirrel glider,24,11,3,5,5,5,10
-32,Morganne,,"Dolphin, bottle-nose",22,11,3,8,5,2,8
-33,Annecorinne,,"Fox, asian red",31,11,3,9,2,2,7
-34,Osmond,,"Viper, egyptian",20,2,3,11,1,4,17
-35,Burnaby,,Sportive lemur,10,12,2,7,0,5,1
-36,Veradis,,"Waxbill, violet-eared",49,14,5,8,3,5,24
-37,Kamilah,,"Francolin, swainson's",33,10,5,4,0,2,15
-38,Helge,,Cape raven,36,1,2,6,1,5,18
-39,Filippo,,Red-breasted nuthatch,35,14,3,7,5,5,15
-40,Ivory,,Giant heron,81,1,5,8,0,2,22
-41,Atlanta,,Dromedary camel,19,14,5,10,4,5,25
-42,Dulcia,,Indian giant squirrel,35,18,4,10,5,1,20
-43,Franchot,,Striated heron,29,12,3,7,3,5,13
-44,Elton,,"Bird, black-throated butcher",10,8,2,8,4,3,24
-45,Kakalina,,"Boa, emerald green tree",22,2,2,4,1,5,11
-46,Shawn,,"Tern, white-winged black",56,5,4,12,1,2,20
-47,Kristopher,,"Plover, blacksmith",15,6,4,6,4,3,29
-48,Estell,,"Peacock, indian",79,7,1,9,5,3,19
-49,Hadley,,Grison,47,10,1,12,2,3,21
-50,Yoshi,,"Colobus, magistrate black",34,19,1,11,0,3,12
-51,Skylar,,"Bat, madagascar fruit",31,6,2,5,0,1,17
-52,Isa,,Superb starling,76,13,5,11,2,1,27
-53,Cacilia,,Bat-eared fox,67,18,6,6,4,5,29
-54,Gawen,,Russian dragonfly,54,5,3,5,0,4,25
-55,Cynthy,,Onager,23,9,1,11,2,1,7
-56,Jodie,,"Robin, kalahari scrub",11,14,5,4,4,5,27
-57,Waverley,,Comb duck,19,13,1,12,2,5,24
-58,Kassia,,Nile crocodile,17,18,3,10,3,2,6
-59,Oona,,Red-winged hawk (unidentified),68,17,2,12,1,1,16
-60,Yorgos,,"Moccasin, water",74,10,2,9,1,5,4
-61,Phaedra,,Long-billed corella,11,3,5,5,4,1,4
-62,Annabell,,Pale-throated three-toed sloth,90,8,3,7,5,5,9
-63,Perice,,Ring-tailed lemur,48,1,6,11,5,1,17
-64,Dunstan,,African buffalo,60,15,3,9,5,3,23
-65,Kariotta,,Columbian rainbow boa,40,12,2,9,2,4,15
-66,Sinclair,,Jungle kangaroo,54,18,2,6,5,1,17
-67,Boone,,"Hyena, striped",41,7,5,8,0,2,23
-68,Ross,,"Squirrel, arctic ground",20,6,2,10,3,5,30
-69,Mahmud,,"Hawk, galapagos",98,2,1,4,2,2,27
-70,Hort,,American Virginia opossum,37,7,1,9,0,3,16
-71,Talya,,"Kookaburra, laughing",79,18,4,12,4,4,17
-72,Davina,,"Lion, australian sea",44,5,1,6,4,2,26
-73,Conroy,,"Dragon, komodo",22,18,6,8,1,1,2
-74,Brana,,Cattle egret,83,18,3,6,1,3,24
-75,Gerrilee,,Puku,32,4,2,6,4,4,24
-76,Denys,,Galapagos sea lion,75,9,2,12,4,1,17
-77,Piotr,,"Openbill, asian",58,9,4,8,0,2,8
-78,Francesca,,Turtle (unidentified),14,12,3,4,0,3,13
-79,Eveline,,Pronghorn,66,16,2,9,1,4,11
-80,Madeleine,,"Boa, cook's tree",33,11,3,8,5,4,18
-81,Arvie,,Crab-eating fox,12,11,6,11,1,1,30
-82,Shena,,Wolf spider,77,8,1,8,0,3,30
-83,Bruis,,"Wolf, common",82,16,5,9,4,4,20
-84,Wyndham,,Lizard (unidentified),84,10,3,8,1,4,11
-85,Ervin,,Adouri (unidentified),15,13,6,12,0,5,5
-86,Lorna,,"Capuchin, black-capped",96,11,2,12,5,5,12
-87,Nicholas,,"Goose, canada",73,3,4,8,1,4,25
-88,Lyndy,,Bent-toed gecko,84,8,6,6,3,1,20
-89,Ingrim,,Long-crested hawk eagle,75,15,5,4,5,4,11
-90,Lindsey,,Black-crowned night heron,20,16,3,7,0,2,20
-91,Tildie,,Woylie,16,3,2,11,2,4,23
-92,Douglass,,Brown lemur,24,8,4,11,3,4,7
-93,Augy,,"Grebe, little",17,2,3,5,1,2,21
-94,Dyanne,,African pied wagtail,88,6,3,5,3,1,2
-95,Sabrina,,Red hartebeest,43,16,6,10,5,1,21
-96,Christabella,,"Elephant, asian",33,19,3,6,3,1,7
-97,Hatti,,"Bunting, crested",36,7,4,5,1,2,27
-98,Ikey,,"Seal, southern elephant",52,3,6,11,4,1,14
-99,Margalit,,"Grenadier, purple",79,16,4,9,2,3,9
-100,Willis,,"Goose, egyptian",73,1,3,8,5,4,9
-101,Clarke,,Striated heron,83,13,1,10,1,3,26
-102,Philly,,"Colobus, magistrate black",98,16,6,12,1,3,26
-103,Christie,,"Flicker, campo",58,13,5,11,5,2,10
-104,Evelyn,,"Egret, snowy",11,11,3,10,1,3,30
-105,Terrye,,"Turaco, violet-crested",79,3,4,10,1,3,15
-106,Anthiathia,,White-tailed deer,58,11,1,4,2,2,14
-107,Zebadiah,,"Duck, blue",12,3,6,4,2,5,22
-108,Paulo,,Goanna lizard,72,5,6,6,5,2,22
-109,Aloysia,,"Dolphin, common",58,18,6,6,5,2,2
-110,Priscella,,"Heron, yellow-crowned night",51,11,2,6,5,4,28
-111,Karalynn,,Woylie,56,2,1,4,5,2,10
-112,Lyndy,,Lilac-breasted roller,81,3,3,9,0,5,28
-113,Sarge,,Snow goose,29,12,1,4,5,4,10
-114,Benedikt,,"Rhinoceros, square-lipped",85,2,1,10,1,2,9
-115,Kalli,,"Hartebeest, coke's",95,6,1,11,1,3,30
-116,Nara,,"Bear, polar",47,4,2,10,3,3,20
-117,Waldemar,,"Sparrow, rufous-collared",22,9,1,7,0,2,12
-118,Ikey,,"Deer, barasingha",13,4,4,12,0,4,7
-119,Mic,,"Wildebeest, blue",48,9,6,10,4,4,26
-120,Orson,,"Phalarope, red",72,5,4,8,0,5,17
-121,Marleah,,Sable antelope,99,12,6,11,5,3,10
-122,Teddie,,African black crake,74,12,5,8,0,3,28
-123,Claudian,,"Starfish, crown of thorns",23,5,5,10,1,2,4
-124,Timmy,,Goanna lizard,57,15,1,10,3,5,27
-125,Ashlin,,"Heron, green",47,3,3,6,4,2,5
-126,Dur,,Eastern cottontail rabbit,25,3,3,5,5,2,13
-127,Ulrich,,"Pheasant, ring-necked",96,16,6,7,2,5,21
-128,Kaitlin,,Sociable weaver,52,12,4,10,4,4,5
-129,Elisha,,Russian dragonfly,67,12,2,12,1,2,25
-130,Valentine,,"Monkey, bleeding heart",84,4,1,5,0,5,5
-131,Kahaleel,,"Macaque, bonnet",44,19,4,11,3,1,24
-132,Amy,,Great cormorant,35,5,2,11,1,1,1
-133,Hodge,,Australian brush turkey,62,11,3,9,2,4,24
-134,Ingra,,"Seal, northern fur",65,9,6,5,4,4,28
-135,Englebert,,"Brocket, red",12,15,2,10,3,3,6
-136,Sosanna,,Bleeding heart monkey,17,16,6,5,4,2,18
-137,Emylee,,White rhinoceros,44,20,6,5,2,3,17
-138,Hercules,,Black curlew,74,10,4,10,1,5,30
-139,Cecilius,,White-fronted bee-eater,48,17,6,12,2,5,15
-140,Rochester,,"Cat, ringtail",10,20,2,6,3,2,15
-141,Marjorie,,Ring-tailed gecko,10,6,4,11,2,1,9
-142,Magdalene,,"Shrew, mandras tree",42,15,6,5,5,1,24
-143,Rozelle,,"Fox, crab-eating",50,8,4,5,4,2,18
-144,Timothee,,White-throated toucan,72,9,2,4,0,4,1
-145,Cassandra,,Native cat,32,13,4,6,4,1,30
-146,Jolyn,,Bleeding heart monkey,34,8,4,9,0,4,18
-147,Willy,,"Legaan, Monitor (unidentified)",26,5,1,4,1,4,29
-148,Anton,,Short-nosed bandicoot,96,6,2,7,2,2,23
-149,Smith,,Common langur,51,18,5,11,4,1,2
-150,Nick,,Sarus crane,55,13,1,10,5,3,5
-151,Paule,,Three-banded plover,27,15,3,8,0,5,14
-152,Whitney,,"Porcupine, prehensile-tailed",63,19,1,7,2,1,3
-153,Doralin,,"Jaeger, long-tailed",44,16,4,11,3,4,5
-154,Izak,,Reindeer,12,3,6,6,0,2,6
-155,Powell,,"Wallaby, tammar",74,6,5,5,1,2,6
-156,Gerrie,,Crested porcupine,61,13,2,8,3,3,19
-157,Hayes,,"Vulture, griffon",55,10,5,7,2,1,20
-158,Auberta,,"Otter, cape clawless",26,7,3,5,3,5,19
-159,Filmer,,Indian porcupine,42,16,6,11,4,5,1
-160,Connor,,"Squirrel, thirteen-lined",33,7,2,12,2,4,22
-161,Maye,,Eastern white pelican,31,19,3,5,5,2,5
-162,Therese,,"Turtle, long-necked",91,17,3,10,1,1,4
-163,Llywellyn,,"Bustard, denham's",100,4,2,6,2,2,19
-164,Sven,,White-throated monitor,96,6,6,6,3,1,28
-165,Carlie,,Red phalarope,14,5,1,5,2,5,8
-166,Miran,,Lesser flamingo,24,5,1,4,2,1,16
-167,Jandy,,Mandras tree shrew,48,10,4,7,5,2,29
-168,Rollie,,Australian sea lion,67,18,5,10,1,4,19
-169,Waneta,,"Bird, red-billed tropic",21,2,1,9,4,1,24
-170,Huntley,,Tawny eagle,53,20,4,4,3,2,21
-171,Sigismondo,,Indian peacock,73,2,3,8,3,5,6
-172,Brietta,,"Goose, cereopsis",68,19,6,6,3,3,29
-173,Reamonn,,Cheetah,68,1,4,12,4,5,20
-174,Marve,,Roseat flamingo,70,7,2,11,1,5,19
-175,Bobina,,Mexican beaded lizard,19,1,2,6,1,3,13
-176,Meggie,,"Rattlesnake, eastern diamondback",77,12,2,10,4,1,10
-177,Karia,,"Barbet, levaillant's",32,17,5,8,5,2,30
-178,Gwenora,,Australian brush turkey,53,10,4,6,5,3,12
-179,Bartholomeus,,"Gull, dusky",77,1,3,8,0,3,22
-180,Sergent,,Red-tailed phascogale,99,19,4,12,4,3,7
-181,Meris,,Campo flicker,15,13,1,7,2,2,22
-182,Violette,,"Echidna, short-beaked",32,2,2,8,0,1,20
-183,Janeta,,"Whale, southern right",84,15,5,6,1,2,16
-184,Reinhard,,Common turkey,40,17,6,12,4,5,8
-185,Jerald,,Northern fur seal,24,9,4,11,0,3,10
-186,Stillman,,"Otter, oriental short-clawed",76,11,6,7,1,1,24
-187,Tessy,,"Openbill, asian",81,16,3,5,2,5,23
-188,Ashby,,"Devil, tasmanian",47,19,1,7,2,2,2
-189,Etheline,,Savannah deer (unidentified),58,10,2,7,0,1,2
-190,Pepillo,,Eurasian red squirrel,40,18,5,8,5,5,13
-191,Merissa,,American racer,16,13,5,11,1,2,27
-192,Clementina,,"Kangaroo, jungle",79,18,3,9,5,2,27
-193,Deana,,"Buffalo, asian water",44,6,4,5,5,3,29
-194,Drusy,,"Bat, asian false vampire",51,5,2,10,5,2,15
-195,Sophie,,"Tern, arctic",52,7,1,8,1,1,30
-196,Evanne,,"Possum, golden brush-tailed",96,9,6,10,5,2,9
-197,Trina,,Paradoxure,91,7,5,12,5,5,11
-198,Quincy,,Little grebe,88,19,2,6,5,4,28
-199,Chloette,,"Otter, small-clawed",18,13,1,9,2,4,28
-200,Eugen,,Little brown dove,97,4,5,11,4,4,26
-201,Kinsley,,"Bird, bare-faced go away",19,20,1,5,1,4,27
-202,Simeon,,Egyptian vulture,96,10,6,12,4,3,21
-203,Rafaela,,"Loris, slender",24,8,6,4,3,2,22
-204,Gregg,,Yellow-billed hornbill,77,14,5,12,1,3,8
-205,Karin,,"Chickadee, black-capped",59,18,5,10,4,2,12
-206,Gabriellia,,Egyptian goose,54,14,2,4,3,5,7
-207,Lorrie,,"Robin, kalahari scrub",71,12,2,6,3,4,6
-208,Cate,,"Baboon, yellow",50,5,4,8,0,5,7
-209,Casie,,Greater sage grouse,16,9,1,7,3,3,10
-210,Chrystel,,"Quoll, spotted-tailed",59,9,2,5,1,5,25
-211,Hanny,,Anaconda (unidentified),73,17,6,9,3,2,4
-212,Kellen,,Woodrat (unidentified),76,13,2,11,5,2,23
-213,Vinnie,,Red howler monkey,43,9,3,6,5,4,1
-214,Euell,,Snake-necked turtle,74,17,1,7,0,5,27
-215,Diann,,"Raven, cape",37,19,1,7,0,4,15
-216,Tiebold,,Brush-tailed rat kangaroo,72,12,2,12,5,1,13
-217,Teodorico,,Mountain goat,56,17,2,4,5,1,6
-218,Beauregard,,"Turkey, common",82,1,2,7,0,5,25
-219,Iolande,,White-headed vulture,50,12,4,12,5,3,16
-220,Blake,,Waved albatross,62,4,5,9,0,3,13
-221,Randene,,Blue fox,67,10,3,6,1,1,13
-222,Micky,,"Heron, yellow-crowned night",87,11,3,10,0,1,13
-223,Rod,,"Squirrel, nelson ground",12,4,3,11,5,5,25
-224,Missy,,Coke's hartebeest,30,16,5,12,0,2,8
-225,Kenny,,Brown lemur,97,13,1,7,4,3,7
-226,Bradney,,"Macaw, green-winged",10,14,5,8,2,2,28
-227,Lanny,,Goliath heron,84,12,3,7,4,3,20
-228,Gabriele,,Grey lourie,99,12,2,5,5,5,8
-229,Rubia,,Hanuman langur,89,6,6,4,5,5,4
-230,Maia,,Cape raven,39,7,2,11,2,4,18
-231,Diahann,,African porcupine,66,18,1,9,4,3,22
-232,Hulda,,Ferruginous hawk,62,18,1,12,3,3,26
-233,Sofie,,"Lourie, grey",40,19,5,8,0,3,12
-234,Hunfredo,,"Goose, cereopsis",96,7,3,7,1,3,19
-235,Tannie,,"Dragonfly, russian",90,8,4,4,0,2,4
-236,Carolann,,Ferruginous hawk,93,20,6,7,0,1,15
-237,Rafael,,"Toucan, red-billed",10,1,3,8,2,2,17
-238,Edgard,,"Squirrel, richardson's ground",54,18,1,4,0,2,8
-239,Jorrie,,Galapagos dove,48,20,1,10,3,3,10
-240,Alie,,Common mynah,69,12,2,10,5,4,14
-241,Holli,,Fringe-eared oryx,26,13,6,12,4,1,15
-242,Pippa,,"Plover, three-banded",72,18,5,4,1,5,21
-243,Amara,,"Grouse, sage",52,1,4,7,0,5,22
-244,Karola,,Eurasian badger,19,7,2,11,5,3,11
-245,Andriette,,Emerald green tree boa,71,14,1,12,3,1,4
-246,Parry,,"Siskin, pine",49,17,1,11,0,1,12
-247,Alica,,Striped skunk,20,2,3,10,0,1,1
-248,Odessa,,Tiger,18,8,3,8,5,3,26
-249,Jeremy,,Greater roadrunner,13,1,1,5,3,4,22
-250,Fabe,,"Dragon, netted rock",10,2,1,12,3,4,23
-251,Kristine,,European spoonbill,90,12,6,9,0,2,25
-252,Rhodie,,"Gazelle, grant's",40,7,1,12,0,5,10
-253,Agace,,Tokay gecko,40,5,3,11,1,2,15
-254,Kippie,,White-headed vulture,32,11,4,10,1,4,12
-255,Ella,,"Pelican, eastern white",97,15,2,6,1,3,10
-256,Kort,,"Deer, white-tailed",18,5,6,11,5,3,25
-257,Leese,,"Barbet, black-collared",30,11,5,8,1,4,14
-258,Kilian,,"Zebra, plains",89,19,5,6,5,1,18
-259,Ives,,"Flycatcher, tyrant",31,11,4,12,5,2,6
-260,Martguerita,,Red-tailed phascogale,78,2,2,7,0,5,3
-261,Duff,,Cape raven,42,18,4,6,0,1,22
-262,Ashlen,,Collared lizard,88,1,2,7,3,4,26
-263,Jeana,,Red-tailed cockatoo,48,14,2,7,4,1,21
-264,Cedric,,"Lion, african",29,1,1,7,0,4,2
-265,Melloney,,Chuckwalla,99,9,4,9,3,2,8
-266,Torr,,Hyrax,23,15,6,4,4,4,18
-267,Valle,,"Bee-eater, white-fronted",98,18,1,7,2,1,18
-268,Justen,,Laughing dove,38,6,4,6,5,4,12
-269,Korella,,"Magpie, australian",79,11,4,7,1,3,11
-270,Maggi,,"Goose, cape barren",64,19,2,8,2,4,27
-271,Kissiah,,Russian dragonfly,47,16,5,6,0,4,9
-272,Piggy,,Prairie falcon,67,2,1,8,5,4,3
-273,Gran,,Sable antelope,32,10,4,12,2,4,4
-274,Poppy,,"Seal, southern elephant",24,14,6,12,4,5,17
-275,Cacilia,,"Nighthawk, common",93,1,2,11,0,2,17
-276,Sunny,,"Dragon, ornate rock",63,10,3,9,4,1,10
-277,Faina,,Red-billed hornbill,39,3,6,7,2,2,2
-278,Stanwood,,"Porcupine, african",78,11,6,6,5,2,8
-279,Caz,,Red deer,76,12,3,7,1,3,24
-280,Obidiah,,Glossy ibis,38,2,6,5,5,5,25
-281,Prent,,Greater roadrunner,26,20,4,4,5,4,4
-282,Odelle,,Common palm civet,82,13,2,6,3,1,4
-283,Gwenni,,"Deer, roe",32,15,6,8,5,3,8
-284,Sayres,,"Lemur, lesser mouse",43,16,2,11,5,4,6
-285,Daren,,"Lizard, desert spiny",85,20,5,9,1,3,1
-286,Rosemonde,,Roan antelope,90,14,1,5,5,4,18
-287,Gwendolen,,"Cardinal, black-throated",90,6,1,4,0,5,23
-288,Helenelizabeth,,"Parakeet, rose-ringed",31,1,5,8,5,3,27
-289,Erinna,,African buffalo,76,19,4,9,1,2,24
-290,Keenan,,"Cormorant, king",34,19,6,11,0,4,14
-291,Calla,,Blue-tongued lizard,38,2,2,8,5,4,9
-292,Lyndsie,,"Alligator, mississippi",74,9,5,11,1,1,3
-293,Lizette,,Little brown dove,61,16,2,11,4,5,24
-294,Madelon,,Polar bear,91,19,5,4,4,4,8
-295,Abbey,,Chacma baboon,63,17,3,5,5,3,22
-296,Merilyn,,Ground monitor (unidentified),60,10,5,7,4,5,8
-297,Pearl,,Savanna baboon,46,20,4,4,4,2,20
-298,Berte,,Small Indian mongoose,54,8,4,10,5,1,13
-299,Cecil,,Giant anteater,58,17,5,9,2,5,26
-300,Dorella,,"Waxbill, blue",86,13,6,5,2,2,6
-301,Jeanine,,"Mynah, indian",33,4,6,10,2,3,16
-302,Carlin,,Thirteen-lined squirrel,39,2,2,8,2,1,30
-303,Alfons,,"Raccoon, common",90,7,2,7,2,1,12
-304,Emlynne,,"Porcupine, tree",52,6,2,10,2,3,20
-305,Fergus,,"Spider, wolf",19,8,3,5,1,1,8
-306,Yule,,Gerenuk,69,14,4,11,5,5,2
-307,Natale,,Common shelduck,26,12,6,9,0,4,17
-308,Cos,,"Heron, little",85,2,2,12,0,1,15
-309,Brier,,Nubian bee-eater,97,20,1,4,3,1,10
-310,Arly,,Nelson ground squirrel,21,20,5,7,2,5,20
-311,Hurley,,"Waterbuck, defassa",41,5,4,12,0,2,16
-312,Hamnet,,Clark's nutcracker,25,20,2,7,4,2,18
-313,Ivy,,Desert kangaroo rat,32,7,2,9,1,1,14
-314,Ansel,,Eastern cottontail rabbit,27,7,6,4,0,5,21
-315,Lockwood,,"Turtle, snake-necked",44,1,6,7,2,2,19
-316,Hervey,,Long-tailed jaeger,60,8,4,5,4,4,19
-317,Veradis,,"Puffin, horned",11,1,3,11,4,3,23
-318,Tybi,,Crown of thorns starfish,19,11,2,6,2,1,6
-319,Katlin,,Superb starling,60,7,6,10,5,2,4
-320,Joelle,,"Coatimundi, ring-tailed",58,8,3,11,4,5,11
-321,Taddeo,,Crimson-breasted shrike,87,11,4,6,2,3,8
-322,Dinnie,,Swallow (unidentified),20,3,4,7,3,2,28
-323,Redd,,"Owl, madagascar hawk",100,20,2,12,2,3,20
-324,Cassy,,Grey heron,76,16,5,9,0,3,24
-325,Wallis,,Brown pelican,18,8,2,6,0,3,15
-326,Aguie,,"Fox, arctic",76,13,4,12,2,2,2
-327,Joe,,"Rhea, common",48,15,3,6,3,4,3
-328,Shellie,,"Ibis, glossy",45,18,5,6,2,4,12
-329,Jeanine,,"Peccary, collared",43,16,1,8,1,1,23
-330,Ilyssa,,"Antechinus, brown",16,9,5,7,1,5,6
-331,Heddie,,Onager,41,6,2,8,2,3,6
-332,Trevar,,"Rhinoceros, black",39,9,6,6,4,5,11
-333,Fanni,,Feral rock pigeon,58,11,2,10,3,1,22
-334,Lexie,,"Hawk, red-tailed",11,12,2,9,3,4,30
-335,Malory,,"Cat, african wild",53,4,2,6,2,4,6
-336,Regan,,Three-banded plover,31,4,6,5,0,3,5
-337,Karrah,,"Dog, raccoon",70,7,1,6,5,5,8
-338,Jenine,,Jabiru stork,25,15,2,10,2,3,1
-339,Paulo,,"Woodcock, american",85,19,1,10,0,4,22
-340,Trisha,,Gambel's quail,23,3,3,5,4,4,1
-341,Leroi,,"Macaque, japanese",27,20,5,9,2,5,11
-342,Karlotta,,"Vulture, king",36,8,2,11,1,4,2
-343,Lulita,,"Snake, western patch-nosed",41,13,1,4,3,3,17
-344,Cristabel,,Tasmanian devil,28,8,5,4,5,2,27
-345,Harrie,,Crimson-breasted shrike,68,20,6,5,4,3,8
-346,Fons,,Bahama pintail,31,3,1,6,4,2,12
-347,Berty,,"Anteater, australian spiny",24,14,4,8,0,5,30
-348,Estell,,"Sunbird, lesser double-collared",74,18,6,7,4,3,6
-349,Carroll,,Asiatic wild ass,78,4,5,12,0,2,19
-350,Martyn,,"Heron, striated",18,14,6,4,1,5,7
-351,Hurleigh,,"Bear, black",35,5,4,8,2,1,23
-352,Nate,,"Bulbul, black-fronted",49,13,4,6,2,1,20
-353,Kingsly,,Black-throated cardinal,92,2,5,7,2,4,22
-354,Margareta,,"Squirrel, grey-footed",25,13,1,10,1,4,9
-355,Imogen,,Arctic hare,77,6,4,8,4,5,15
-356,Ajay,,"Lourie, grey",88,11,3,8,1,4,30
-357,Roley,,Herring gull,51,15,2,7,2,5,6
-358,Benedetto,,"Mongoose, eastern dwarf",99,1,1,12,3,3,15
-359,Woodrow,,Hoary marmot,36,5,1,4,2,4,17
-360,Tallie,,Magellanic penguin,27,20,6,5,3,2,22
-361,Nicholle,,Bennett's wallaby,43,11,4,4,3,2,1
-362,Will,,Gray langur,25,7,3,11,1,2,9
-363,Sheila,,Caracal,69,12,5,8,0,2,10
-364,Jordain,,"Coatimundi, ring-tailed",98,12,3,10,4,1,8
-365,Fianna,,African elephant,52,2,1,6,0,3,3
-366,Martainn,,"Fox, cape",23,15,2,10,1,3,19
-367,Lia,,Carpet snake,55,11,1,8,2,2,15
-368,Auberon,,"Squirrel, golden-mantled ground",34,14,1,6,5,4,23
-369,Cyrus,,Platypus,60,13,6,11,4,4,10
-370,Thorn,,Margay,98,13,4,4,0,5,7
-371,Nixie,,"Sloth, hoffman's",64,8,3,12,1,5,14
-372,Seth,,"Wallaby, bennett's",29,10,2,8,2,3,14
-373,Cesaro,,Southern black-backed gull,29,10,2,7,1,3,16
-374,Nolie,,"Alligator, american",75,6,6,5,0,1,5
-375,Anatol,,Caracara (unidentified),77,18,2,6,4,5,18
-376,Rurik,,"Stork, greater adjutant",84,15,4,11,4,5,4
-377,Pren,,Sandhill crane,33,6,5,6,1,1,26
-378,Jarib,,"Squirrel, european red",10,11,1,6,0,4,13
-379,Madella,,Mallard,76,8,5,8,0,1,8
-380,Brewer,,Lily trotter,97,18,2,9,1,3,5
-381,Kimberly,,Cheetah,17,19,4,12,1,5,11
-382,Bil,,African skink,92,20,4,9,2,3,5
-383,Meagan,,"Crab, sally lightfoot",92,13,1,11,3,1,21
-384,Bette-ann,,Caracara (unidentified),70,15,4,8,4,1,28
-385,Baxter,,Eurasian beaver,75,3,2,12,5,5,21
-386,Norton,,Banded mongoose,12,20,4,5,5,4,22
-387,Carlina,,Dusky rattlesnake,43,3,3,9,4,5,25
-388,Ilario,,"Antelope, four-horned",99,17,4,7,3,4,30
-389,Lainey,,Adouri (unidentified),33,19,3,6,5,1,21
-390,Chloris,,Seven-banded armadillo,58,2,1,8,5,5,28
-391,Gilberto,,Red-billed tropic bird,66,7,5,10,5,2,16
-392,Devlen,,Kori bustard,88,12,6,6,5,4,23
-393,Etty,,Oribi,35,8,6,4,4,1,11
-394,Wanids,,"Rhinoceros, white",81,3,3,5,3,1,2
-395,Stanislas,,"Jackal, black-backed",56,5,1,6,3,3,25
-396,Johna,,Horned puffin,33,4,6,4,3,3,23
-397,Margaretha,,Tailless tenrec,10,10,1,6,5,3,2
-398,Reg,,"Heron, black-crowned night",92,7,4,9,5,4,17
-399,Munmro,,"Skink, blue-tongued",45,5,5,10,5,1,23
-400,Vale,,Superb starling,29,20,5,12,5,4,13
-401,Gavin,,"Fox, north american red",73,8,1,12,4,2,7
-402,Alysa,,"Dog, african wild",20,2,1,5,2,1,27
-403,Nessy,,Australian spiny anteater,74,11,5,6,2,2,4
-404,Odelle,,Defassa waterbuck,36,20,3,11,0,2,15
-405,Tremain,,Wild water buffalo,84,16,4,5,2,1,7
-406,Sofia,,"Wallaroo, common",21,10,3,4,2,3,26
-407,Corabelle,,Black-crowned night heron,85,9,6,7,5,5,25
-408,Travers,,Adouri (unidentified),37,7,4,9,3,3,8
-409,Nicki,,White-throated kingfisher,26,11,6,5,2,5,19
-410,Giovanni,,"Sungazer, yellow-brown",16,12,3,10,5,1,14
-411,Goober,,Gaur,99,9,1,5,0,4,5
-412,Frederick,,"Mynah, common",46,1,1,9,4,3,25
-413,Myra,,Peregrine falcon,75,20,6,5,4,2,6
-414,Jackson,,Common goldeneye,50,5,1,12,0,1,10
-415,Camile,,"Curlew, black",18,20,5,10,0,2,9
-416,Elsie,,Topi,12,20,2,11,4,5,11
-417,Rhody,,Australian spiny anteater,30,20,6,5,3,3,17
-418,Connor,,Common nighthawk,16,13,1,8,3,1,19
-419,Raymond,,Common duiker,67,20,2,4,2,5,18
-420,Oralla,,Agouti,48,14,6,5,5,4,13
-421,Dewey,,Yellow-brown sungazer,65,1,5,8,3,5,24
-422,Gwyn,,"Elephant, asian",52,17,6,10,3,1,27
-423,Bennie,,Horned rattlesnake,58,19,3,4,5,1,24
-424,Reinhold,,"Cormorant, javanese",96,16,6,7,3,1,23
-425,Harp,,Komodo dragon,67,18,2,4,3,5,4
-426,Babs,,Ringtail,68,7,3,9,0,3,20
-427,Luce,,Savannah deer,27,5,1,12,1,2,2
-428,Darla,,"Eagle, bald",19,17,5,11,3,3,18
-429,Rochette,,"Crow, house",15,17,2,5,5,4,2
-430,Gun,,"Stork, jabiru",83,9,6,7,3,4,6
-431,Morten,,"Swan, black",83,20,6,8,0,2,5
-432,Eydie,,"Butterfly, tropical buckeye",79,14,3,4,3,4,6
-433,Colman,,Common langur,51,11,1,8,2,4,18
-434,Ruby,,"Hyena, spotted",82,12,3,11,5,4,7
-435,Maryrose,,"Lizard, blue-tongued",44,7,3,10,4,4,9
-436,Gloriana,,"Waterbuck, defassa",89,9,1,7,1,3,6
-437,Christina,,Great egret,19,19,4,11,0,2,30
-438,Cirillo,,"Parrot, hawk-headed",64,6,5,7,5,1,10
-439,Georgy,,"Pigeon, feral rock",75,7,4,6,0,4,15
-440,Sammie,,"Beaver, eurasian",53,18,3,8,1,5,7
-441,Jeffrey,,"Rat, arboral spiny",55,10,3,9,1,1,23
-442,Dalt,,"Hartebeest, red",20,6,4,4,4,2,4
-443,Katusha,,Western bearded dragon,69,9,3,8,5,2,17
-444,Reinold,,Ringtail,28,11,3,8,3,1,23
-445,Alvina,,Bonnet macaque,88,1,6,7,2,2,26
-446,Chrisse,,Kongoni,43,20,5,11,0,2,6
-447,Angelo,,Black-backed magpie,63,7,4,11,5,3,1
-448,Louisette,,Racer snake,91,10,3,10,5,2,1
-449,Cleveland,,"Dove, mourning collared",27,8,6,7,1,2,3
-450,Ingaberg,,Old world fruit bat (unidentified),83,18,5,6,0,5,20
-451,Boycey,,Common eland,91,10,2,8,0,1,7
-452,Kareem,,Great horned owl,83,13,5,10,4,4,29
-453,Ortensia,,"Coatimundi, white-nosed",100,9,6,12,0,4,16
-454,Artair,,Indian mynah,33,19,6,4,3,5,6
-455,Ester,,"Macaw, blue and gold",20,10,6,4,0,3,21
-456,Eli,,"Marmot, yellow-bellied",33,8,4,11,1,5,15
-457,Godwin,,"Lemur, lesser mouse",81,16,6,9,5,1,15
-458,Gertrud,,Giraffe,56,16,1,5,5,3,26
-459,Lowell,,Southern elephant seal,39,15,1,9,1,4,1
-460,Mort,,"Cat, european wild",39,9,6,6,5,5,9
-461,Gallagher,,"Sheep, stone",77,6,4,10,4,2,10
-462,Johna,,Brown antechinus,19,12,5,9,5,3,29
-463,Merola,,European shelduck,92,12,2,8,4,5,8
-464,Francklyn,,"Starling, cape",54,14,1,6,5,3,11
-465,Sharlene,,"Dove, white-winged",72,15,1,4,2,3,5
-466,Glad,,"Chickadee, black-capped",48,17,4,4,4,3,25
-467,Seline,,"Corella, long-billed",77,15,2,6,1,5,8
-468,Phylys,,Wild water buffalo,34,14,6,7,2,2,3
-469,Dusty,,Dassie,95,17,2,7,2,4,3
-470,Diann,,Eastern grey kangaroo,50,9,6,7,1,4,13
-471,Emilia,,"Bison, american",66,19,2,6,0,2,15
-472,Jocelyn,,"Mongoose, javan gold-spotted",45,17,4,9,0,3,15
-473,Jacquette,,Great egret,58,1,5,8,3,5,24
-474,Colas,,Gila monster,99,3,5,10,0,4,1
-475,Luther,,"Wallaroo, common",73,1,1,11,0,5,15
-476,Buck,,African porcupine,21,10,3,10,3,1,6
-477,Marcos,,Eastern cottontail rabbit,17,2,5,7,5,5,14
-478,Harv,,"Quail, gambel's",81,3,4,4,5,4,13
-479,Morgun,,Burrowing owl,28,4,1,4,2,5,10
-480,Andreana,,Butterfly (unidentified),41,18,4,9,4,1,22
-481,Erasmus,,Southern sea lion,59,11,4,11,4,1,17
-482,Torrie,,Gerenuk,81,4,3,7,2,4,7
-483,Corrinne,,Tawny frogmouth,30,13,6,10,3,3,15
-484,L;urette,,"Seal, common",15,3,1,11,2,5,25
-485,Matty,,Indian red admiral,19,9,6,8,4,5,17
-486,Dev,,Egyptian cobra,14,6,4,6,3,4,30
-487,Jeniffer,,Royal tern,52,12,6,12,5,2,5
-488,Darlene,,Southern elephant seal,76,18,2,5,2,1,15
-489,Zorana,,"Booby, blue-footed",86,13,3,7,4,1,13
-490,Sula,,Australian pelican,86,9,5,11,4,5,27
-491,Bale,,"Pie, rufous tree",56,7,1,4,2,5,18
-492,Maureene,,Koala,10,10,4,11,1,1,17
-493,Wake,,"Constrictor, eastern boa",96,19,1,11,5,4,25
-494,Joelly,,"Python, carpet",44,20,4,10,5,2,5
-495,Lincoln,,"Beaver, north american",31,10,3,4,5,3,10
-496,Heather,,Least chipmunk,62,9,3,7,2,5,17
-497,Kevyn,,"Heron, gray",100,10,2,9,0,1,29
-498,James,,"Wallaby, river",75,9,2,12,3,4,8
-499,Gertie,,"Boar, wild",57,1,4,7,4,4,17
-500,Gram,,"Cat, miner's",65,5,4,10,3,5,12
-501,Constantia,,"Heron, gray",53,15,3,7,2,2,17
-502,Simeon,,"Turaco, violet-crested",52,18,5,5,1,3,28
-503,Trenna,,"Bandicoot, southern brown",55,10,3,11,4,3,12
-504,Rebekkah,,"Possum, ring-tailed",72,11,4,11,3,1,5
-505,Dag,,Blue peacock,12,10,3,9,3,1,17
-506,Jillane,,"Parrot, hawk-headed",99,11,2,4,4,3,7
-507,Olga,,African fish eagle,84,19,1,8,2,1,30
-508,Marlo,,"Viper, egyptian",45,14,2,10,1,3,16
-509,Holly,,Giant heron,46,20,1,4,1,1,18
-510,Jacintha,,Common brushtail possum,55,8,5,12,1,5,15
-511,Marillin,,Striped dolphin,22,17,3,9,4,1,17
-512,Filmer,,White rhinoceros,69,14,1,10,5,1,5
-513,Christin,,Cape cobra,13,15,5,5,0,4,18
-514,Rosella,,"Pigeon, wood",53,19,4,11,1,5,12
-515,Rudyard,,Eurasian hoopoe,40,5,2,11,1,5,7
-516,Vince,,"Cat, toddy",53,17,5,9,2,2,20
-517,Winne,,Tree porcupine,43,11,4,6,4,3,10
-518,Sunny,,Grey lourie,14,18,3,6,5,2,19
-519,Hamel,,Red-tailed phascogale,11,15,2,6,3,5,28
-520,Riki,,"Egret, snowy",62,19,2,11,2,2,13
-521,Ingunna,,"Raccoon, common",32,2,6,10,1,4,14
-522,Jefferey,,Stanley crane,94,5,4,12,3,5,18
-523,Laureen,,"Sheep, red",15,15,4,11,1,2,23
-524,Theobald,,"Dog, raccoon",74,10,4,9,4,2,4
-525,Burg,,"Kingfisher, pied",55,12,4,10,4,2,18
-526,Kerrill,,Black-cheeked waxbill,55,13,4,7,0,4,27
-527,Carleen,,"Rhea, greater",86,18,4,11,3,5,7
-528,Arda,,Tropical buckeye butterfly,67,7,5,12,5,4,4
-529,Allie,,"Falcon, prairie",13,18,2,9,3,5,9
-530,Shalna,,"Screamer, southern",10,2,4,10,1,5,12
-531,Sorcha,,Squirrel glider,27,14,3,11,3,3,3
-532,Lorraine,,"Dove, galapagos",13,11,4,12,2,3,7
-533,Evy,,Black-backed magpie,95,10,5,9,5,3,30
-534,Tammy,,"Shark, blue",85,17,2,5,3,5,30
-535,Hermy,,Python (unidentified),29,12,6,10,2,5,28
-536,Cullan,,Red-tailed hawk,26,19,5,8,4,5,21
-537,Morry,,"Teal, hottentot",99,1,6,9,4,2,14
-538,Ileane,,"Wallaby, dama",84,13,4,9,3,2,26
-539,Emile,,Black curlew,89,2,6,4,3,2,12
-540,Cinderella,,Scarlet macaw,13,7,1,6,1,1,9
-541,Bertrand,,"Albatross, galapagos",34,18,5,9,4,5,1
-542,Chantalle,,Brazilian tapir,86,10,5,6,0,1,24
-543,Gaven,,Asiatic wild ass,95,13,5,10,3,3,16
-544,Veda,,Black-winged stilt,59,6,5,7,0,4,15
-545,Benedicta,,Asian false vampire bat,52,18,2,4,5,1,6
-546,Justinn,,Knob-nosed goose,86,4,5,11,4,3,7
-547,Tedi,,Striped hyena,97,14,2,6,0,4,30
-548,Paulie,,Eastern box turtle,87,9,3,8,2,1,9
-549,Simonette,,Tayra,42,20,3,11,5,1,3
-550,Devonna,,Sociable weaver,35,15,3,5,3,1,26
-551,Veronique,,Rhesus macaque,86,13,4,8,4,2,14
-552,Mufinella,,"Whale, baleen",92,5,3,8,0,3,28
-553,Sissie,,Purple grenadier,25,12,6,6,4,4,28
-554,Annabella,,"Owl, australian masked",87,5,5,5,0,4,28
-555,Katlin,,"Jackal, indian",50,15,6,8,2,3,7
-556,Lila,,"Sparrow, house",20,12,3,12,0,4,21
-557,Anders,,Indian jackal,87,12,6,9,3,3,23
-558,Cordi,,"Hyena, brown",61,15,1,6,1,1,19
-559,Rochell,,"Cockatoo, red-breasted",72,6,5,5,1,3,29
-560,Evangelia,,Water monitor,54,20,1,6,2,2,19
-561,Randie,,"Lemur, brown",15,19,5,11,3,4,21
-562,Orly,,Goanna lizard,26,7,6,5,4,5,14
-563,Lila,,Little cormorant,17,4,1,8,1,3,1
-564,Merwin,,"Turtle, snake-necked",75,19,3,12,3,2,5
-565,Candida,,"Gonolek, burchell's",15,7,5,10,2,1,21
-566,Alley,,"Sloth, pale-throated three-toed",77,16,5,6,2,4,13
-567,Niles,,"Fox, pampa gray",59,19,3,10,4,4,2
-568,Ronald,,"Corella, long-billed",19,18,1,6,4,3,5
-569,Blinnie,,Desert kangaroo rat,23,16,3,6,4,4,6
-570,Kirby,,Malabar squirrel,92,13,2,10,0,3,1
-571,Elnora,,"Otter, african clawless",86,5,5,8,5,1,23
-572,Davina,,"Civet, small-toothed palm",83,19,3,6,2,4,22
-573,Annalise,,"Peccary, collared",52,18,3,5,0,4,22
-574,Creight,,Blacksmith plover,31,8,5,10,1,5,15
-575,Rois,,"Squirrel, eurasian red",17,3,5,10,1,3,8
-576,Desmond,,"Grenadier, purple",26,4,4,8,1,1,30
-577,Louisa,,Bateleur eagle,10,1,2,12,0,1,7
-578,Ricca,,"Squirrel, richardson's ground",19,19,1,8,3,4,17
-579,Cordey,,"Oryx, fringe-eared",98,10,2,9,4,4,22
-580,Odette,,North American porcupine,64,17,2,4,3,3,9
-581,Charmane,,"Boa, cook's tree",39,15,3,6,1,4,4
-582,Balduin,,Brolga crane,22,12,5,8,5,4,24
-583,Hymie,,"Badger, american",83,11,1,6,0,3,17
-584,Annmaria,,"Shrike, southern white-crowned",63,12,1,6,4,2,4
-585,Alexandro,,"Skunk, striped",92,4,6,10,4,4,12
-586,Avis,,"Heron, green-backed",17,9,4,5,3,1,12
-587,Aguie,,European shelduck,36,2,4,12,4,5,2
-588,Benyamin,,"Bettong, brush-tailed",37,9,1,9,3,1,20
-589,Ephrem,,Large-eared bushbaby,14,1,3,7,5,2,4
-590,Erika,,Prairie falcon,47,6,6,6,1,1,9
-591,Coralyn,,Common seal,11,4,3,5,1,4,18
-592,Denny,,Downy woodpecker,42,14,1,11,0,5,9
-593,Morgen,,Red-breasted cockatoo,34,3,2,4,2,1,3
-594,Alexis,,Gray heron,85,14,2,6,4,2,20
-595,Doe,,Horned rattlesnake,36,12,3,9,4,1,25
-596,Luis,,"Glider, feathertail",92,15,2,5,3,3,15
-597,Marcelle,,Kafue flats lechwe,93,20,6,6,2,1,10
-598,Gill,,White rhinoceros,68,9,5,5,4,1,28
-599,Laetitia,,"Dragon, komodo",18,13,1,10,0,4,18
-600,Emlyn,,"Bandicoot, long-nosed",50,9,6,11,2,4,7
-601,Abey,,Tarantula,66,8,5,9,1,4,9
-602,Guillaume,,Meerkat,28,3,1,7,0,1,22
-603,Charis,,Monitor lizard (unidentified),46,11,1,9,2,1,7
-604,Sibby,,Yellow-headed caracara,29,12,3,11,4,1,18
-605,Addy,,Hawk-headed parrot,25,16,1,6,0,3,9
-606,Nomi,,American bison,77,3,6,11,5,1,6
-607,Janot,,Western grey kangaroo,77,18,4,11,3,1,10
-608,Kennie,,Arctic hare,79,6,6,5,2,4,25
-609,Tobit,,Black-footed ferret,76,18,3,11,0,1,16
-610,Barde,,Columbian rainbow boa,31,3,1,10,0,1,1
-611,Cheslie,,Manatee,28,12,1,6,0,2,12
-612,Merrill,,Kaffir cat,58,4,1,12,5,5,17
-613,Lesley,,"Eagle, crowned",19,19,6,4,4,3,14
-614,Vin,,"Goose, knob-nosed",14,15,5,12,0,4,8
-615,Sibyl,,"Sloth, hoffman's",25,15,5,8,3,2,7
-616,Bonnee,,"Owl, white-browed",18,8,3,9,4,3,5
-617,Barbee,,North American porcupine,70,10,4,7,3,4,16
-618,Moishe,,"Sheep, red",48,9,6,9,0,1,12
-619,Eleni,,California sea lion,54,14,6,6,0,5,22
-620,Clevey,,"Waterbuck, defassa",34,10,2,9,0,2,16
-621,Daryle,,Barasingha deer,72,7,1,4,1,2,10
-622,Francisca,,"Elephant, asian",84,6,5,12,0,2,3
-623,Althea,,Lesser mouse lemur,28,2,4,7,3,3,20
-624,Nikaniki,,"Iguana, land",12,8,2,6,3,1,2
-625,Silvano,,Black vulture,12,1,6,5,5,5,1
-626,Bastien,,Feathertail glider,26,10,1,10,0,3,19
-627,Bryce,,"Ibis, glossy",83,7,6,10,1,3,25
-628,Desiri,,Silver-backed fox,11,20,5,6,3,1,29
-629,Fancie,,Common rhea,58,3,1,9,1,2,1
-630,Arlen,,Springbok,89,4,1,6,5,2,1
-631,Irita,,"Kangaroo, brush-tailed rat",70,20,5,9,0,1,12
-632,Alexei,,White rhinoceros,76,12,4,7,5,5,9
-633,Sherwood,,Blue catfish,63,6,4,8,4,3,12
-634,Dehlia,,"Weaver, chestnut",20,4,2,5,5,4,13
-635,Ansell,,"Fox, grey",21,13,3,4,5,5,4
-636,Rayna,,"Baboon, gelada",10,20,1,8,1,2,25
-637,Jarib,,"Hawk-eagle, crowned",58,2,1,7,5,1,12
-638,Jeromy,,"Lemming, collared",68,1,1,8,1,3,7
-639,Jo-anne,,Tsessebe,47,16,5,4,2,4,10
-640,Aurelie,,"Brocket, red",43,1,6,11,1,1,27
-641,Dominique,,African fish eagle,82,2,5,5,0,3,5
-642,Broderick,,Common genet,88,1,5,8,0,5,7
-643,Bobbie,,"Hawk, red-tailed",12,14,5,8,0,1,24
-644,Fredia,,"Porcupine, tree",84,3,3,8,1,1,21
-645,Justino,,Mule deer,77,19,6,6,1,4,17
-646,Stearn,,Barasingha deer,27,10,1,8,2,4,10
-647,Aurelea,,"Squirrel, arctic ground",49,8,2,5,4,1,21
-648,Dierdre,,Western lowland gorilla,52,14,4,4,4,4,17
-649,Lilias,,"Anteater, giant",24,16,1,11,0,1,15
-650,Salomone,,Blue-breasted cordon bleu,76,12,3,10,1,4,23
-651,Jaquith,,Python (unidentified),19,1,5,9,4,1,30
-652,Rainer,,"Weaver, chestnut",33,11,2,12,2,4,13
-653,Doe,,"Kangaroo, eastern grey",87,12,6,12,0,1,28
-654,Fannie,,Purple moorhen,53,5,6,9,3,3,9
-655,Bartie,,Sociable weaver,29,3,1,6,1,2,15
-656,Ninette,,Black bear,10,16,4,9,4,3,3
-657,Lorain,,Eastern cottontail rabbit,19,17,2,12,1,5,14
-658,Philipa,,Laughing kookaburra,58,2,2,6,4,1,20
-659,Milissent,,"Waterbuck, defassa",93,7,3,7,5,1,9
-660,Cleveland,,"Iguana, common green",86,2,2,10,5,5,14
-661,Holli,,Agouti,10,19,5,7,4,1,13
-662,Simone,,Bohor reedbuck,54,16,4,5,3,5,24
-663,Modestia,,"Lizard, giant girdled",81,1,4,9,5,4,7
-664,Ludovika,,"Capuchin, black-capped",83,9,2,5,1,2,19
-665,Galven,,"Shrew, mandras tree",36,18,1,4,2,4,28
-666,Adolpho,,"Flamingo, chilean",70,8,1,6,0,1,27
-667,Derry,,Black and white colobus,87,18,3,8,0,5,2
-668,Cathi,,"Racer, american",52,5,2,12,5,4,11
-669,Licha,,American buffalo,100,5,2,4,3,5,8
-670,Chris,,"Lemur, sportive",97,6,5,4,0,1,19
-671,Janenna,,Kalahari scrub robin,28,20,5,4,2,5,17
-672,Everard,,Herring gull,44,2,3,7,2,1,24
-673,Odele,,"Skua, great",74,9,4,9,3,2,4
-674,Berrie,,"Sheep, stone",60,6,2,11,0,4,29
-675,Tiffi,,Egyptian viper,97,1,1,11,4,4,25
-676,Leland,,"Wallaby, tammar",95,20,6,11,2,2,29
-677,Alli,,Red-breasted cockatoo,57,2,3,9,3,2,9
-678,Issy,,White spoonbill,76,2,5,7,0,4,12
-679,Garland,,South American puma,38,20,6,9,3,2,1
-680,Lanna,,Tawny eagle,44,2,4,5,3,5,16
-681,Christi,,"Bird, bare-faced go away",47,11,5,11,1,2,7
-682,Davy,,"Screamer, southern",19,19,1,7,0,3,11
-683,Bank,,"Lourie, grey",84,9,1,6,0,3,14
-684,Mozes,,Musk ox,53,1,1,11,1,5,5
-685,Erhart,,Black-backed magpie,42,1,5,8,2,1,5
-686,Carmen,,"Gull, pacific",51,2,3,8,3,1,30
-687,Jacquette,,Serval,53,7,5,7,3,1,22
-688,Gardener,,Cape raven,71,7,5,7,5,2,25
-689,Emily,,"Starling, red-shouldered glossy",73,16,6,9,1,4,3
-690,Gavin,,"Skimmer, four-spotted",61,8,4,6,2,2,2
-691,Amanda,,"Heron, black-crowned night",17,6,4,12,4,2,12
-692,Dareen,,"Otter, canadian river",37,2,3,9,3,2,17
-693,Julian,,Horned rattlesnake,62,6,5,4,1,4,7
-694,Elisha,,Snow goose,77,9,1,5,1,2,26
-695,Elinore,,Common green iguana,64,10,2,7,3,2,27
-696,Margette,,"Snake, racer",80,8,3,6,4,2,16
-697,Chanda,,Malabar squirrel,17,8,6,4,0,2,15
-698,Korry,,Roseat flamingo,48,8,6,12,4,3,10
-699,Paulette,,Snowy egret,76,3,2,5,3,5,25
-700,Lowell,,Mule deer,33,12,5,7,2,3,8
-701,Katlin,,Water monitor,93,12,6,12,1,4,19
-702,Nicolai,,Rainbow lory,62,5,4,12,0,4,21
-703,Emelyne,,"Starfish, crown of thorns",52,2,5,8,3,1,29
-704,Randa,,Kinkajou,68,19,2,8,3,1,20
-705,Cassandra,,African ground squirrel (unidentified),59,16,6,8,2,1,29
-706,Georgiana,,"Fox, cape",22,14,5,6,1,4,11
-707,Bibbye,,"Turkey, australian brush",89,15,2,7,4,4,8
-708,Tiertza,,"Crow, pied",60,20,3,10,1,3,29
-709,Jarid,,"Peacock, indian",29,12,2,6,2,5,24
-710,Zita,,Suricate,65,15,5,10,5,5,24
-711,Bren,,Cape wild cat,42,10,1,10,3,5,23
-712,Joane,,Indian giant squirrel,15,15,3,11,0,1,7
-713,Francoise,,Ring dove,67,6,1,12,2,3,14
-714,Arnaldo,,Western bearded dragon,78,5,4,9,0,4,11
-715,Burnaby,,Black-capped chickadee,76,14,3,8,0,4,21
-716,Judas,,Gelada baboon,63,10,4,6,0,3,13
-717,Hettie,,"Capuchin, brown",79,14,2,4,3,5,7
-718,Rees,,Eastern boa constrictor,78,3,1,6,0,3,26
-719,Clemente,,Blackish oystercatcher,45,2,1,10,4,3,29
-720,Ole,,Roan antelope,27,1,6,12,4,2,15
-721,Steffi,,Crab-eating raccoon,70,6,1,8,0,3,7
-722,Iris,,"Crow, american",77,19,1,12,5,3,27
-723,Berta,,Swallow-tail gull,82,16,4,5,0,4,18
-724,Hale,,Common boubou shrike,71,11,2,7,2,1,12
-725,Timothee,,Hanuman langur,96,10,1,7,5,2,11
-726,Henriette,,Ground legaan,75,12,1,8,4,4,4
-727,Kaila,,Potoroo,65,17,5,11,3,4,17
-728,Sybille,,Laughing dove,96,17,1,6,3,1,10
-729,Huntley,,Common waterbuck,20,9,3,6,3,5,19
-730,Rosemary,,Canada goose,50,14,2,9,0,3,11
-731,Judith,,"Gull, dusky",100,8,3,10,2,5,30
-732,Darbie,,"Whale, long-finned pilot",34,8,2,7,4,2,18
-733,Almeria,,Galapagos dove,73,18,6,4,1,4,24
-734,Nesta,,"Stork, greater adjutant",30,6,4,5,5,2,19
-735,Cynthy,,Nubian bee-eater,88,5,4,6,2,2,1
-736,Billye,,European badger,57,15,4,12,1,3,8
-737,Verney,,Genoveva,62,13,3,8,2,2,6
-738,Erik,,White-fronted capuchin,52,7,6,8,2,3,20
-739,Tallulah,,"Cat, miner's",37,1,2,11,0,1,21
-740,Forest,,Bent-toed gecko,57,19,1,11,3,4,16
-741,Gerrard,,Pied crow,61,10,1,6,1,5,18
-742,Saxe,,African elephant,18,3,4,9,0,2,1
-743,Massimiliano,,"Jackrabbit, white-tailed",29,4,1,9,4,1,6
-744,Darcy,,Southern black-backed gull,96,15,4,6,3,3,18
-745,Fredelia,,Kirk's dik dik,84,19,3,5,4,4,13
-746,Flo,,Bohor reedbuck,98,16,1,7,1,1,6
-747,Stacy,,Sable antelope,99,19,3,11,4,3,14
-748,Lynea,,Common mynah,90,19,4,11,3,5,19
-749,Filmore,,"Sheathbill, snowy",88,19,2,6,4,5,19
-750,Emlyn,,"Cormorant, little",10,15,4,11,0,5,25
-751,Albert,,"Buffalo, asian water",21,12,5,6,1,2,13
-752,Corrina,,"Duck, mountain",70,16,3,12,2,4,14
-753,Myer,,Black-collared barbet,79,3,4,9,5,4,7
-754,Penni,,White-tailed jackrabbit,52,12,2,5,1,3,22
-755,Haskel,,Brush-tailed bettong,27,6,3,11,2,2,16
-756,Padriac,,Yellow mongoose,66,3,5,10,5,3,19
-757,Hanson,,Comb duck,89,11,2,4,5,5,13
-758,Delainey,,Field flicker,83,18,1,10,0,2,17
-759,Allin,,Chacma baboon,61,19,2,5,4,4,18
-760,Elianora,,"Deer, roe",23,5,3,11,3,1,15
-761,Goldy,,Large-eared bushbaby,44,7,4,5,5,3,9
-762,Bil,,"Hawk, galapagos",57,2,5,4,1,5,17
-763,Cletus,,Giant armadillo,90,8,5,12,2,5,3
-764,Ilaire,,"Moorhen, purple",29,15,6,5,1,4,23
-765,Tobin,,Red squirrel,67,20,4,7,0,1,22
-766,Gabie,,Red-capped cardinal,94,2,3,7,3,4,24
-767,Maddie,,Beisa oryx,30,2,6,9,2,3,28
-768,Yanaton,,"Woodcock, american",85,15,4,9,5,1,16
-769,Ranee,,Coqui francolin,47,13,2,4,5,4,14
-770,Sheba,,"Fox, cape",90,7,2,12,1,2,6
-771,Tine,,Woodrat (unidentified),27,17,1,4,3,3,7
-772,Bibi,,"Baboon, olive",22,7,6,4,1,5,21
-773,Catriona,,Capybara,82,11,1,12,2,3,23
-774,Mel,,"Deer, spotted",99,10,6,8,4,4,3
-775,Deirdre,,Grant's gazelle,80,9,4,7,5,3,25
-776,Tally,,"Snake, buttermilk",39,7,2,6,3,1,25
-777,Courtnay,,"Toucan, red-billed",65,11,2,6,1,2,2
-778,Lyndell,,"Kangaroo, jungle",66,2,3,4,4,2,21
-779,Wren,,Common seal,74,10,3,8,0,4,19
-780,Dannie,,Trumpeter swan,68,6,5,10,5,4,26
-781,Wilmette,,Bleeding heart monkey,32,2,5,8,0,3,12
-782,Gardie,,Snowy owl,83,14,2,8,4,3,3
-783,Norrie,,Jaguarundi,61,16,3,11,4,4,13
-784,Frasier,,Civet (unidentified),76,3,2,8,1,4,6
-785,Annie,,Fringe-eared oryx,67,3,1,8,5,4,28
-786,Shelagh,,Bonnet macaque,22,18,2,6,1,2,9
-787,Karisa,,Kafue flats lechwe,12,19,4,6,2,1,24
-788,Chiquia,,Indian mynah,100,10,4,5,3,4,5
-789,Adelaide,,"Squirrel, indian giant",29,1,1,6,0,3,11
-790,Bearnard,,Stone sheep,24,3,2,9,1,5,26
-791,Horton,,Bonnet macaque,92,1,6,8,4,1,13
-792,Evangelin,,"Deer, roe",38,11,3,9,2,3,6
-793,Jillane,,Southern white-crowned shrike,50,5,3,8,5,5,1
-794,Randall,,"Lemur, ring-tailed",87,17,4,12,3,4,3
-795,Kendell,,Pied kingfisher,89,5,2,10,3,4,29
-796,Jonathan,,Crimson-breasted shrike,14,3,1,10,3,4,16
-797,Marylinda,,Southern screamer,57,1,5,6,1,5,13
-798,Buck,,White-faced whistling duck,44,19,1,4,0,2,28
-799,Vanni,,Agouti,31,14,4,5,2,4,26
-800,Nikolaos,,"Flycatcher, tyrant",48,11,3,12,0,5,24
-801,Ashly,,"Camel, dromedary",65,19,6,5,5,3,6
-802,Moyra,,Brown and yellow marshbird,52,1,3,8,5,5,9
-803,Andrey,,"Hornbill, yellow-billed",39,18,4,12,5,1,7
-804,Fulton,,"Peacock, blue",95,6,2,7,0,2,16
-805,Darren,,Blue peacock,78,11,6,8,3,2,17
-806,Jodi,,Springbuck,34,7,4,8,4,3,17
-807,Upton,,Indian red admiral,15,11,4,11,3,3,22
-808,Creigh,,Western bearded dragon,81,12,1,9,2,2,8
-809,Dix,,"Francolin, swainson's",11,14,1,6,0,4,18
-810,Karry,,"Robin, white-throated",60,6,3,4,4,1,22
-811,Berke,,"Heron, giant",74,17,6,6,2,5,29
-812,Felicle,,"Ibis, glossy",83,17,3,7,3,4,2
-813,Rainer,,"Dove, laughing",24,13,3,7,3,3,20
-814,Bernete,,"Lourie, grey",47,5,3,10,5,2,5
-815,Mel,,Black curlew,82,13,4,7,4,4,10
-816,Titus,,Red hartebeest,29,18,3,7,5,1,22
-817,Abe,,"Butterfly, canadian tiger swallowtail",33,7,1,6,5,5,6
-818,June,,"Duck, blue",32,15,5,4,3,2,2
-819,Laurena,,"Falcon, prairie",45,20,4,9,3,1,26
-820,Phaedra,,Pocket gopher (unidentified),87,14,6,6,0,4,8
-821,Petra,,Pronghorn,53,14,4,10,2,5,4
-822,Elisa,,"Trotter, lily",64,19,2,5,5,2,7
-823,Milena,,Spotted deer,23,2,5,12,1,2,21
-824,Kass,,"Beaver, north american",17,15,6,5,1,3,4
-825,Lin,,Hudsonian godwit,68,15,6,5,2,5,17
-826,Judye,,Burrowing owl,100,17,5,11,0,2,29
-827,Timmy,,American crow,64,16,1,11,2,1,3
-828,Hadria,,Llama,83,8,1,6,5,3,17
-829,Ariana,,"Bustard, kori",61,14,2,4,4,3,15
-830,Felix,,Australian masked owl,41,16,6,12,4,2,10
-831,Raquel,,"Skink, blue-tongued",33,2,6,11,0,1,18
-832,Olly,,Common nighthawk,74,10,1,12,1,3,21
-833,Axel,,"Francolin, coqui",37,3,3,11,1,5,4
-834,Grete,,"Bat, little brown",95,16,3,6,4,1,16
-835,Brannon,,Smith's bush squirrel,19,11,5,4,4,2,19
-836,Amabel,,Crested barbet,45,4,6,6,3,2,30
-837,Kathe,,Gerbil (unidentified),12,7,6,6,2,5,5
-838,Kalinda,,Chuckwalla,27,9,6,7,0,3,6
-839,Livy,,African clawless otter,39,5,5,12,3,2,3
-840,Marilyn,,"Wallaby, river",39,13,1,4,4,2,12
-841,Elle,,"Raven, cape",78,8,1,6,0,5,5
-842,Lazare,,"Zorro, common",50,15,4,6,1,3,1
-843,Honor,,"Otter, north american river",31,14,6,11,2,2,10
-844,Ive,,Wood pigeon,89,12,6,11,3,5,23
-845,Malia,,Eastern grey kangaroo,21,1,6,4,1,2,10
-846,Aldridge,,American badger,72,2,1,9,4,4,5
-847,Ikey,,Turkey vulture,40,6,1,4,2,5,5
-848,Amelita,,"Cat, european wild",86,1,3,9,5,4,9
-849,Kelby,,Red-billed buffalo weaver,82,10,3,6,2,4,11
-850,Edik,,Pied butcher bird,47,8,4,4,2,4,16
-851,Ignazio,,Squirrel glider,60,9,6,8,4,4,24
-852,Ruth,,Blue catfish,59,10,3,5,1,1,21
-853,Devland,,"Wagtail, african pied",27,10,1,8,4,1,23
-854,Anastasia,,"Ibis, puna",41,1,4,7,1,2,29
-855,Woody,,"Cardinal, red-capped",52,17,6,5,1,4,21
-856,Austen,,Mouflon,100,18,5,8,3,2,7
-857,Mike,,Western grey kangaroo,91,13,1,7,5,3,27
-858,Bernita,,Red sheep,69,11,6,7,1,5,14
-859,Regan,,"Deer, spotted",39,19,6,4,5,5,9
-860,Hedy,,"Snake, buttermilk",57,12,5,4,1,4,13
-861,Yelena,,"Cockatoo, red-breasted",64,20,2,12,4,1,25
-862,Etienne,,"Deer, savannah",34,1,6,6,3,3,15
-863,Dalenna,,White-throated kingfisher,85,8,5,6,4,5,5
-864,Golda,,"Monitor, white-throated",49,6,2,6,5,3,19
-865,Gwenni,,Steenbuck,75,15,2,4,0,2,12
-866,Cleo,,Capybara,31,18,4,4,4,4,9
-867,Rog,,"Crocodile, nile",57,15,2,10,3,2,30
-868,Heidie,,"Rhea, greater",47,6,2,8,1,3,27
-869,Correna,,Woylie,88,20,1,8,1,4,4
-870,Letty,,"Possum, ring-tailed",97,14,2,5,1,5,27
-871,Bradley,,"Squirrel, antelope ground",30,5,1,8,2,2,18
-872,Tilda,,Collared lizard,17,14,3,10,2,5,4
-873,Birgit,,Common zorro,74,1,4,9,0,3,25
-874,Prue,,Ant (unidentified),10,6,3,7,2,2,19
-875,Egor,,"Flamingo, roseat",49,14,2,6,0,1,17
-876,Vonni,,"Dragon, netted rock",53,20,3,12,3,4,3
-877,Mel,,"Magpie, australian",20,13,3,12,2,3,17
-878,Bernette,,"Sifaka, verreaux's",94,17,6,7,4,2,17
-879,Maggie,,Grizzly bear,32,20,4,5,0,4,17
-880,Kimbra,,"Wallaby, tammar",58,2,2,5,2,5,27
-881,Aubry,,Nine-banded armadillo,99,14,2,7,0,3,9
-882,Bernardine,,"Ringtail, common",92,14,5,7,3,5,18
-883,Sapphira,,Crab-eating raccoon,65,10,4,9,3,2,23
-884,Tamqrah,,Roseate cockatoo,19,11,3,10,0,4,19
-885,Anastasie,,Green-winged trumpeter,86,15,2,8,3,5,2
-886,Keelia,,Northern elephant seal,92,15,4,4,3,1,2
-887,Cordula,,"Shrike, crimson-breasted",44,19,3,4,2,1,26
-888,Major,,Leadbeateri's ground hornbill,21,9,6,9,1,5,13
-889,Bekki,,"Spoonbill, white",100,16,4,5,3,2,27
-890,Astra,,Antelope ground squirrel,62,17,1,6,2,5,12
-891,Peirce,,"Beaver, north american",78,17,1,4,5,3,10
-892,Honoria,,"Screamer, crested",50,18,2,8,3,3,11
-893,Georgi,,"Vulture, bengal",62,8,3,11,0,2,3
-894,Chery,,"Seal, common",58,4,1,10,1,5,22
-895,Stirling,,Woodrat (unidentified),76,11,2,12,1,1,7
-896,Zenia,,"Colobus, black and white",44,1,2,12,1,5,5
-897,Wallas,,"Bleu, red-cheeked cordon",32,8,1,10,4,4,2
-898,Cale,,"Sungazer, yellow-brown",62,16,6,11,3,5,3
-899,Marj,,"Tinamou, elegant crested",36,16,4,10,3,3,8
-900,Giorgio,,"Pigeon, wood",71,8,6,10,3,5,21
-901,Chrissy,,"Echidna, short-beaked",61,11,4,7,3,4,7
-902,Diane-marie,,Sea birds (unidentified),86,8,6,10,2,1,15
-903,Lindsey,,"Skink, blue-tongued",53,5,5,10,2,5,29
-904,Daryle,,Mississippi alligator,57,10,1,9,0,2,7
-905,Alvinia,,"Racer, american",98,18,6,4,1,1,11
-906,Dulci,,Long-finned pilot whale,15,13,6,10,5,4,8
-907,Zilvia,,Dromedary camel,82,1,4,11,4,5,21
-908,Hermina,,Giant anteater,17,8,5,6,4,4,7
-909,Hamish,,Monitor lizard (unidentified),20,14,3,10,5,1,26
-910,Riki,,Russian dragonfly,29,7,2,5,0,2,18
-911,Doretta,,Olive baboon,55,11,4,4,4,2,15
-912,Sherwood,,"Macaque, rhesus",44,2,5,5,2,2,20
-913,Raphael,,"Flamingo, lesser",25,16,2,12,4,4,24
-914,Hewet,,Striated heron,11,4,6,7,3,2,15
-915,Winny,,"Bandicoot, short-nosed",30,12,6,6,2,5,3
-916,Port,,Glossy ibis,68,4,6,4,1,3,30
-917,Fancie,,"Caracara, yellow-headed",88,7,5,11,1,3,1
-918,Chaunce,,"Waterbuck, defassa",54,17,1,4,5,4,21
-919,Drusy,,Banded mongoose,34,17,5,9,0,1,25
-920,Rose,,"Bulbul, black-eyed",68,17,5,9,4,5,14
-921,Mano,,"Shelduck, european",59,14,3,6,5,3,8
-922,Clive,,"Whale, baleen",97,9,1,12,2,2,4
-923,Ignace,,Ground monitor (unidentified),64,7,2,6,1,1,23
-924,Gabriellia,,Adouri (unidentified),70,12,3,5,0,1,28
-925,Tasia,,"Raven, white-necked",28,17,6,5,3,4,1
-926,Shirlee,,American crow,51,7,5,11,1,2,15
-927,Dana,,Red-tailed wambenger,48,17,2,6,4,4,20
-928,Xylina,,Tiger snake,25,11,3,10,2,4,26
-929,Westley,,Burmese black mountain tortoise,82,4,5,5,1,2,20
-930,Eydie,,"Tortoise, radiated",45,8,5,7,5,5,11
-931,Collette,,"Snake, racer",96,4,4,10,2,3,8
-932,Arliene,,California sea lion,96,19,3,11,0,5,12
-933,Lorine,,"Elephant, african",63,9,2,8,5,4,24
-934,Berk,,Black bear,32,18,4,5,0,2,21
-935,Berkley,,Two-toed tree sloth,45,11,1,7,0,1,1
-936,Eward,,"Gull, southern black-backed",11,19,2,12,5,4,4
-937,Elston,,"Coatimundi, ring-tailed",64,4,5,10,3,1,14
-938,Gerianne,,"Crane, blue",26,17,6,7,5,4,19
-939,Gianni,,Galapagos dove,34,15,6,8,5,2,1
-940,Jewell,,Toddy cat,45,9,6,8,5,1,20
-941,Sayres,,"Bear, black",55,3,6,10,1,2,8
-942,Arvie,,"Goose, snow",72,6,3,7,0,5,8
-943,Ingelbert,,White stork,76,11,3,8,2,2,13
-944,Essa,,"Fox, arctic",14,9,2,7,3,4,2
-945,Si,,"Baboon, savanna",49,18,1,10,0,4,14
-946,Sabrina,,Brown pelican,67,19,1,7,4,1,26
-947,Herc,,"Spoonbill, european",80,6,1,11,3,2,15
-948,Fulton,,"Moorhen, purple",41,7,3,11,2,1,1
-949,Winni,,Large-eared bushbaby,78,13,5,12,4,5,11
-950,Perry,,"Otter, north american river",96,16,4,5,1,3,8
-951,Fanny,,"Teal, hottentot",17,5,3,6,4,1,26
-952,Ericha,,Nile crocodile,96,9,3,6,5,1,2
-953,Rubetta,,European beaver,51,8,2,9,1,4,15
-954,Brig,,"Snake, buttermilk",93,18,3,4,2,3,27
-955,Trefor,,"Lemur, lesser mouse",93,1,2,4,3,4,30
-956,Ximenez,,Boat-billed heron,49,4,5,5,0,5,18
-957,Zachery,,"Bettong, brush-tailed",45,12,3,9,4,5,17
-958,Adore,,"Bear, sloth",14,13,5,11,5,2,7
-959,Ned,,Mandras tree shrew,17,11,2,7,5,5,4
-960,Susanne,,"Tortoise, indian star",30,13,6,11,2,1,21
-961,Astra,,Black-collared barbet,49,8,6,4,1,2,14
-962,Tyrus,,"Otter, cape clawless",59,14,6,7,5,4,15
-963,Cathlene,,Tarantula,47,4,2,6,4,2,30
-964,Valerye,,"Sheep, american bighorn",75,3,5,10,3,2,20
-965,Jane,,"Alligator, american",51,7,6,12,3,2,13
-966,Daisi,,Indian jackal,14,8,3,5,3,1,13
-967,Mame,,"Fox, bat-eared",49,12,5,7,3,1,27
-968,Kendall,,Southern right whale,98,8,4,4,3,3,28
-969,Sandie,,Netted rock dragon,12,9,5,4,4,4,10
-970,Ruth,,"Gull, dusky",93,7,2,4,0,3,11
-971,Hakeem,,Greater adjutant stork,61,12,5,8,3,5,17
-972,Christoper,,"Curlew, black",85,13,1,9,2,5,23
-973,Ellynn,,Cape fox,31,8,6,9,3,4,4
-974,Zachery,,"Pie, indian tree",48,11,6,6,4,4,25
-975,Hilary,,Banded mongoose,17,4,1,8,1,5,18
-976,Roth,,Common wallaroo,24,11,1,12,5,3,4
-977,Olav,,Ring dove,56,17,2,6,5,4,5
-978,Lalo,,Puma,73,11,4,9,0,2,19
-979,Jenine,,"Bird, secretary",78,5,2,12,3,3,12
-980,Shaine,,Red-breasted nuthatch,84,7,3,9,2,1,9
-981,Hally,,Sarus crane,78,5,2,4,4,1,13
-982,Monika,,"Toucan, white-throated",40,1,6,9,0,3,2
-983,Derry,,"Gazer, sun",58,1,4,4,1,1,8
-984,Bernelle,,"Lemur, lesser mouse",10,13,4,8,1,5,22
-985,Jocelyne,,"Flamingo, greater",78,6,2,4,4,3,27
-986,Jules,,"Flamingo, lesser",84,5,1,4,3,2,9
-987,Jorey,,Crested screamer,50,5,6,11,4,1,10
-988,Sheelagh,,White-faced tree rat,43,14,1,12,3,1,25
-989,Crin,,Southern right whale,29,10,4,7,4,1,23
-990,Law,,"Kookaburra, laughing",14,8,3,4,0,4,4
-991,Maxie,,"Lion, southern sea",84,7,3,8,2,3,1
-992,Marget,,White-faced tree rat,33,5,3,9,3,5,8
-993,Francesca,,"Vulture, griffon",11,14,4,8,5,2,23
-994,Salim,,Red-headed woodpecker,72,16,4,6,5,1,12
-995,Celestina,,Bat-eared fox,49,13,5,5,2,2,6
-996,Garwin,,"Possum, ring-tailed",78,19,4,11,1,4,1
-997,Nahum,,"Quoll, spotted-tailed",68,4,1,8,2,1,4
-998,Leontine,,"Corella, long-billed",24,17,1,10,5,1,6
-999,Andie,,"Stork, white-necked",10,17,1,11,5,3,7
-1000,Michaeline,,Brown capuchin,58,3,3,9,3,4,7
+1,Gisèle,464,Platypus,6,3,1,8,3,3,4,16,Platypus
+2,Yú,592,Stork white-necked,26,1,4,6,2,2,3,13,"Stork, white-necked"
+3,Lèi,628,Brown and yellow marshbird,41,16,3,5,2,7,1,3,Brown and yellow marshbird
+4,Médiamass,616,Squirrel african bush,23,10,4,12,4,18,1,65,"Squirrel, african bush"
+5,Audréanne,27,Swallow (unidentified),49,12,3,5,3,20,5,47,Swallow (unidentified)
+6,Cléa,977,American alligator,50,16,1,6,1,2,3,34,American alligator
+7,Mélanie,12,Carpet python,16,6,2,6,4,11,1,40,Carpet python
+8,Marylène,936,Madagascar hawk owl,7,9,4,6,0,2,1,82,Madagascar hawk owl
+9,Yénora,469,Starling greater blue-eared,46,2,5,10,4,8,2,52,"Starling, greater blue-eared"
+10,Séverine,472,Mountain lion,11,8,5,11,4,1,5,2,Mountain lion
+11,Hélène,337,Kangaroo jungle,26,10,3,9,3,7,2,91,"Kangaroo, jungle"
+12,Ophélie,904,White-faced tree rat,15,6,1,9,4,3,3,22,White-faced tree rat
+13,Uò,990,Musk ox,29,6,4,8,3,11,5,37,Musk ox
+14,Gaïa,845,Black-backed jackal,45,11,3,8,1,5,2,24,Black-backed jackal
+15,Rachèle,288,Scarlet macaw,24,6,4,7,0,17,3,82,Scarlet macaw
+16,Rachèle,322,Common zebra,7,15,3,10,0,19,3,16,Common zebra
+17,Gaétane,109,Eagle bateleur,5,16,1,9,3,3,2,75,"Eagle, bateleur"
+18,Naëlle,45,Sage grouse,44,4,3,5,3,16,4,26,Sage grouse
+19,Dù,724,Kangaroo eastern grey,42,3,3,9,3,3,3,11,"Kangaroo, eastern grey"
+20,Gaëlle,60,Wombat common,40,14,5,10,0,14,2,51,"Wombat, common"
+21,Médiamass,855,Painted stork,34,5,2,12,4,3,2,5,Painted stork
+22,Léone,336,Trotter lily,8,20,4,11,0,15,5,70,"Trotter, lily"
+23,Thérèse,1000,Scaly-breasted lorikeet,3,17,1,10,4,12,1,37,Scaly-breasted lorikeet
+24,Laurène,452,Langur hanuman,9,17,4,10,2,14,4,80,"Langur, hanuman"
+25,Andréanne,887,Harbor seal,27,16,4,7,1,3,5,64,Harbor seal
+26,Maïly,199,Grey-footed squirrel,35,3,2,11,2,2,1,36,Grey-footed squirrel
+27,Clémentine,974,Greater flamingo,10,1,3,9,4,1,1,26,Greater flamingo
+28,Estée,596,Tarantula,27,8,5,5,4,20,2,54,Tarantula
+29,Marie-thérèse,40,Pelican great white,46,13,4,10,0,13,3,16,"Pelican, great white"
+30,Erwéi,258,Coatimundi ring-tailed,21,13,5,11,3,8,3,98,"Coatimundi, ring-tailed"
+31,Séverine,955,Wallaby river,23,2,3,11,3,5,5,37,"Wallaby, river"
+32,Anaé,519,Killer whale,3,10,2,5,3,1,2,79,Killer whale
+33,Nuó,399,Greater adjutant stork,10,10,2,11,2,13,2,49,Greater adjutant stork
+34,Anaël,721,Egyptian goose,18,16,1,9,4,11,4,33,Egyptian goose
+35,Eloïse,419,Shark blue,36,6,3,4,4,10,1,75,"Shark, blue"
+36,Loïc,496,Pied avocet,50,1,2,12,4,1,4,45,Pied avocet
+37,Océanne,525,Duiker common,32,10,4,8,2,5,5,52,"Duiker, common"
+38,Loïc,516,Thomson's gazelle,7,17,5,12,3,6,1,88,Thomson's gazelle
+39,Gaëlle,883,Openbill stork,16,19,1,12,4,10,4,9,Openbill stork
+40,Pò,290,Western bearded dragon,25,2,2,8,4,18,4,80,Western bearded dragon
+41,Françoise,741,Seal southern elephant,39,18,1,9,3,4,3,92,"Seal, southern elephant"
+42,Kù,596,Gull swallow-tail,10,15,4,6,0,9,3,8,"Gull, swallow-tail"
+43,Célestine,335,Lemur sportive,38,16,3,6,2,2,2,91,"Lemur, sportive"
+44,Laïla,985,Seal southern elephant,45,6,2,4,0,10,2,79,"Seal, southern elephant"
+45,Alizée,358,Legaan ground,44,6,3,5,4,14,3,16,"Legaan, ground"
+46,Dù,334,Giant armadillo,9,12,3,12,0,12,2,100,Giant armadillo
+47,Céline,56,Wapiti elk,24,12,3,7,3,5,5,73,"Wapiti, elk,"
+48,Gérald,691,Savanna baboon,40,11,1,12,3,11,2,34,Savanna baboon
+49,Athéna,803,Margay,19,8,5,12,4,14,3,82,Margay
+50,Stévina,679,Falcon peregrine,14,13,3,6,3,12,4,54,"Falcon, peregrine"
+51,Maïlis,673,Southern white-crowned shrike,19,3,5,4,2,2,3,88,Southern white-crowned shrike
+52,Léonore,433,Gray langur,18,19,3,6,1,19,3,30,Gray langur
+53,Simplifiés,883,Toddy cat,37,10,3,10,0,13,1,22,Toddy cat
+54,Mårten,324,Raven cape,26,18,5,12,2,9,5,31,"Raven, cape"
+55,Léane,509,Greater kudu,29,5,5,4,2,12,4,9,Greater kudu
+56,Styrbjörn,160,Blue and yellow macaw,9,1,4,4,0,10,3,15,Blue and yellow macaw
+57,Naëlle,662,Purple moorhen,24,19,1,10,3,4,5,26,Purple moorhen
+58,Cunégonde,738,Dragonfly russian,19,10,5,11,4,14,4,92,"Dragonfly, russian"
+59,Dorothée,740,Cape clawless otter,12,16,4,6,3,13,2,11,Cape clawless otter
+60,Mégane,235,Ground legaan,42,3,5,9,3,12,5,45,Ground legaan
+61,Eléa,43,Buffalo african,11,7,2,9,2,5,2,29,"Buffalo, african"
+62,Táng,905,White-bellied sea eagle,30,4,1,10,2,2,4,34,White-bellied sea eagle
+63,Mélina,877,Gull swallow-tail,22,18,2,12,0,17,2,22,"Gull, swallow-tail"
+64,Annotée,16,Australian pelican,16,17,5,12,4,1,4,18,Australian pelican
+65,Bérangère,712,Lemur brown,9,19,5,10,4,3,1,34,"Lemur, brown"
+66,Léonore,129,Arctic lemming,18,17,1,4,0,5,1,7,Arctic lemming
+67,Annotée,597,Savanna fox,35,20,2,7,0,1,4,63,Savanna fox
+68,Médiamass,748,African buffalo,45,20,3,7,1,9,3,97,African buffalo
+69,Joséphine,585,Crested porcupine,28,9,3,6,1,13,1,73,Crested porcupine
+70,Esbjörn,316,Brocket red,32,8,1,6,4,2,3,29,"Brocket, red"
+71,Rébecca,656,Pine squirrel,20,17,4,12,0,12,1,89,Pine squirrel
+72,Réjane,404,Swan black,38,4,5,5,3,16,3,72,"Swan, black"
+73,Marie-ève,270,Bunting crested,27,3,4,11,1,3,1,90,"Bunting, crested"
+74,Åke,231,Bent-toed gecko,7,20,1,10,2,2,2,76,Bent-toed gecko
+75,Thérèsa,351,Hornbill leadbeateri's ground,28,8,2,4,4,18,2,51,"Hornbill, leadbeateri's ground"
+76,Séverine,30,Common palm civet,13,15,2,9,1,9,5,41,Common palm civet
+77,Marie-thérèse,533,Sun gazer,12,4,2,8,2,4,3,19,Sun gazer
+78,Josée,584,Glider squirrel,12,12,5,8,1,15,5,15,"Glider, squirrel"
+79,Angélique,706,Indian porcupine,19,2,5,11,0,5,4,79,Indian porcupine
+80,Nélie,492,Kangaroo black-faced,38,10,1,9,0,19,2,71,"Kangaroo, black-faced"
+81,Maëlys,44,Dove laughing,42,11,4,6,1,2,5,77,"Dove, laughing"
+82,Mélys,238,Ornate rock dragon,14,2,4,8,2,1,5,36,Ornate rock dragon
+83,Kuí,944,African skink,34,8,4,4,2,17,2,10,African skink
+84,Tú,363,Arctic tern,18,20,5,7,0,12,1,85,Arctic tern
+85,Desirée,168,South American meadowlark (unidentified),28,3,5,5,4,13,5,32,South American meadowlark (unidentified)
+86,Naëlle,361,Cat native,27,19,3,4,0,13,5,21,"Cat, native"
+87,Mén,856,Collared lizard,21,3,3,5,1,11,4,28,Collared lizard
+88,Yè,695,Badger american,29,17,5,12,2,1,4,54,"Badger, american"
+89,Léonore,43,Masked booby,28,3,5,7,1,4,5,100,Masked booby
+90,Göran,678,Azara's zorro,27,7,5,10,4,9,5,86,Azara's zorro
+91,Lauréna,689,Ornate rock dragon,26,19,4,9,0,7,5,33,Ornate rock dragon
+92,Adélie,496,Phalarope grey,21,14,2,5,4,17,4,94,"Phalarope, grey"
+93,Eugénie,857,Woodpecker downy,2,3,5,4,4,6,2,15,"Woodpecker, downy"
+94,Maïlys,696,Coke's hartebeest,49,8,4,11,4,13,3,20,Coke's hartebeest
+95,Lucrèce,383,Common waterbuck,41,18,2,12,3,17,3,3,Common waterbuck
+96,Béatrice,706,Lesser double-collared sunbird,50,19,2,8,2,13,2,28,Lesser double-collared sunbird
+97,Anaëlle,472,Defassa waterbuck,48,2,4,5,0,18,1,44,Defassa waterbuck
+98,Léonore,464,Pine snake (unidentified),47,13,3,6,4,8,1,48,Pine snake (unidentified)
+99,Bérangère,889,Turtle snake-necked,5,9,3,11,1,13,3,17,"Turtle, snake-necked"
+100,Personnalisée,842,Puku,27,6,4,9,0,9,3,82,Puku
+101,Garçon,373,White-winged dove,15,12,2,7,4,3,1,13,White-winged dove
+102,Dorothée,159,Falcon prairie,1,15,1,7,1,20,2,11,"Falcon, prairie"
+103,Méthode,313,Macaw scarlet,25,3,1,5,3,13,5,68,"Macaw, scarlet"
+104,Personnalisée,968,Elephant asian,37,16,3,9,0,5,1,91,"Elephant, asian"
+105,Rébecca,399,Squirrel glider,18,7,2,11,0,11,3,24,Squirrel glider
+106,Maï,122,Porcupine crested,2,11,4,10,1,2,1,34,"Porcupine, crested"
+107,Marie-josée,944,Dusky gull,1,5,1,6,3,15,2,49,Dusky gull
+108,Bénédicte,481,Rhea greater,41,9,4,8,3,9,4,79,"Rhea, greater"
+109,Maëlyss,362,Cormorant great,30,1,2,5,2,2,4,11,"Cormorant, great"
+110,Angélique,684,Fox bat-eared,44,13,1,5,3,17,5,91,"Fox, bat-eared"
+111,Laurélie,132,Golden brush-tailed possum,21,2,3,11,1,10,5,97,Golden brush-tailed possum
+112,Clélia,96,Rattlesnake dusky,7,19,4,10,4,1,2,80,"Rattlesnake, dusky"
+113,Angèle,148,Canadian tiger swallowtail butterfly,28,20,2,4,1,16,1,81,Canadian tiger swallowtail butterfly
+114,Bécassine,456,Peregrine falcon,27,12,2,10,1,4,4,84,Peregrine falcon
+115,Lorène,204,Skua great,26,18,3,7,0,3,1,49,"Skua, great"
+116,Crééz,533,Paradoxure,37,5,3,5,1,1,3,58,Paradoxure
+117,Táng,361,Koala,2,12,2,11,4,9,3,94,Koala
+118,Noémie,157,Stork greater adjutant,27,17,1,9,4,20,5,35,"Stork, greater adjutant"
+119,Aurélie,777,Red sheep,5,7,4,9,1,4,4,19,Red sheep
+120,Amélie,325,Striped dolphin,11,6,5,8,4,4,1,100,Striped dolphin
+121,Yú,678,Egyptian vulture,24,10,2,12,4,15,2,40,Egyptian vulture
+122,Gaëlle,658,Brown pelican,44,12,4,9,4,10,3,22,Brown pelican
+123,Magdalène,357,Cockatoo sulfur-crested,5,5,2,5,0,9,5,88,"Cockatoo, sulfur-crested"
+124,Maïwenn,293,Catfish blue,15,3,4,4,4,6,3,97,"Catfish, blue"
+125,Örjan,65,Dove ring,50,9,5,9,0,8,4,1,"Dove, ring"
+126,Félicie,467,Wallaby whip-tailed,18,12,2,10,3,3,3,56,"Wallaby, whip-tailed"
+127,Görel,517,Common turkey,10,8,1,10,4,8,2,46,Common turkey
+128,Rachèle,503,Curlew black,2,7,4,9,4,5,3,8,"Curlew, black"
+129,Maëlys,115,Camel dromedary,17,13,2,11,1,13,4,39,"Camel, dromedary"
+130,Judicaël,90,Stanley bustard,20,15,4,10,2,17,2,99,Stanley bustard
+131,Håkan,469,Cockatoo red-breasted,34,3,5,5,4,10,3,94,"Cockatoo, red-breasted"
+132,Sélène,270,Jackal golden,41,13,2,4,4,14,1,33,"Jackal, golden"
+133,Laurène,439,Insect stick,2,10,4,10,4,2,1,80,"Insect, stick"
+134,Gaëlle,374,Black-capped chickadee,24,2,2,8,4,20,1,2,Black-capped chickadee
+135,Rachèle,922,Buttermilk snake,23,14,2,8,2,2,4,43,Buttermilk snake
+136,Marie-françoise,36,Paddy heron (unidentified),32,13,4,7,0,19,5,69,Paddy heron (unidentified)
+137,Kallisté,968,Black-throated butcher bird,34,6,5,6,2,18,3,34,Black-throated butcher bird
+138,Lén,152,Lorikeet scaly-breasted,21,5,1,9,1,15,2,97,"Lorikeet, scaly-breasted"
+139,Anaé,782,Common mynah,19,1,2,9,3,14,5,19,Common mynah
+140,Maï,586,Short-beaked echidna,30,5,2,4,4,1,4,8,Short-beaked echidna
+141,Eléa,575,Cobra egyptian,30,6,4,11,3,5,5,32,"Cobra, egyptian"
+142,Mégane,179,Cliffchat mocking,18,6,3,9,3,20,4,100,"Cliffchat, mocking"
+143,Mélinda,454,Red-cheeked cordon bleu,38,7,3,5,1,9,5,100,Red-cheeked cordon bleu
+144,Naëlle,938,Badger american,6,4,2,9,0,3,1,90,"Badger, american"
+145,Personnalisée,556,Badger american,50,20,2,12,1,4,2,98,"Badger, american"
+146,Cléopatre,27,Sable antelope,1,8,4,11,1,10,5,80,Sable antelope
+147,Marylène,582,Sugar glider,2,17,3,8,2,15,4,55,Sugar glider
+148,Garçon,988,Stork marabou,45,16,2,4,1,17,1,69,"Stork, marabou"
+149,Lén,242,Eurasian beaver,42,1,5,8,4,16,1,24,Eurasian beaver
+150,Maéna,2,Blue and gold macaw,33,11,5,8,3,8,2,62,Blue and gold macaw
+151,Björn,93,Creeper black-tailed tree,45,20,1,4,1,15,3,85,"Creeper, black-tailed tree"
+152,Yóu,255,Egret great,35,17,4,10,1,15,2,42,"Egret, great"
+153,Pénélope,75,Robin white-throated,47,5,5,10,3,16,5,28,"Robin, white-throated"
+154,Lóng,669,Cockatoo sulfur-crested,4,16,4,4,2,16,3,94,"Cockatoo, sulfur-crested"
+155,Pélagie,780,Legaan water,18,2,3,10,2,2,2,100,"Legaan, water"
+156,Mélia,939,Brown antechinus,6,13,1,8,1,14,4,34,Brown antechinus
+157,Torbjörn,977,Tiger cat,1,18,2,6,1,10,4,89,Tiger cat
+158,Marlène,467,Uinta ground squirrel,32,3,4,7,0,2,1,79,Uinta ground squirrel
+159,Mélia,60,Bear american black,10,3,1,6,0,12,4,49,"Bear, american black"
+160,Léone,444,Snake eastern indigo,33,5,5,6,3,14,2,71,"Snake, eastern indigo"
+161,Clémence,220,Eleven-banded armadillo (unidentified),37,7,2,12,3,20,4,57,Eleven-banded armadillo (unidentified)
+162,Anaïs,182,Waxbill violet-eared,32,20,3,11,0,15,1,81,"Waxbill, violet-eared"
+163,Séverine,997,American woodcock,15,7,3,8,2,20,5,65,American woodcock
+164,Pénélope,967,Roan antelope,42,17,5,12,1,13,4,23,Roan antelope
+165,Lóng,64,Mongoose yellow,32,19,3,8,0,13,3,59,"Mongoose, yellow"
+166,Estée,285,Praying mantis (unidentified),8,15,1,4,2,4,2,44,Praying mantis (unidentified)
+167,Annotée,158,Kingfisher malachite,26,18,1,12,0,12,2,35,"Kingfisher, malachite"
+168,Cléopatre,377,Dragon ornate rock,24,9,3,9,3,4,1,60,"Dragon, ornate rock"
+169,Börje,621,Brown capuchin,24,12,1,7,3,16,4,61,Brown capuchin
+170,Maïlys,511,Bushbaby large-eared,6,1,5,10,0,15,3,33,"Bushbaby, large-eared"
+171,Rébecca,569,Quail gambel's,40,20,4,12,0,5,5,98,"Quail, gambel's"
+172,Laurélie,437,Hawk ferruginous,5,17,3,7,1,12,4,15,"Hawk, ferruginous"
+173,Mélina,590,Carpet snake,15,18,1,11,4,13,1,67,Carpet snake
+174,Kévina,584,Armadillo giant,37,4,2,8,1,20,4,36,"Armadillo, giant"
+175,Tú,386,Tsessebe,45,16,1,5,4,2,3,14,Tsessebe
+176,Östen,213,Caribou,31,9,5,11,3,3,4,63,Caribou
+177,Kù,766,Asiatic wild ass,23,2,3,8,4,1,1,49,Asiatic wild ass
+178,Méthode,610,Camel dromedary,32,16,2,4,3,17,5,62,"Camel, dromedary"
+179,Aimée,663,Turkey australian brush,1,3,1,6,2,15,1,48,"Turkey, australian brush"
+180,Célestine,570,Dog black-tailed prairie,49,20,1,12,2,15,5,17,"Dog, black-tailed prairie"
+181,Jú,745,Dog african wild,2,12,4,12,0,10,3,76,"Dog, african wild"
+182,Wá,288,Red deer,8,10,1,5,2,9,5,65,Red deer
+183,Wá,643,Otter african clawless,42,14,2,12,0,11,1,21,"Otter, african clawless"
+184,Eugénie,301,Helmeted guinea fowl,50,6,4,11,0,15,2,31,Helmeted guinea fowl
+185,Stévina,829,Trumpeter swan,25,9,4,12,1,8,2,85,Trumpeter swan
+186,Léana,233,Chimpanzee,26,5,1,4,4,13,4,42,Chimpanzee
+187,Océanne,312,Eastern quoll,18,2,2,7,1,2,1,13,Eastern quoll
+188,Noémie,790,Jabiru stork,30,1,5,7,0,8,1,61,Jabiru stork
+189,Geneviève,756,White-bellied sea eagle,11,16,3,6,0,13,1,36,White-bellied sea eagle
+190,Thérèse,109,Orca,13,5,1,7,3,13,3,58,Orca
+191,Faîtes,844,Egyptian goose,6,14,1,4,3,8,3,55,Egyptian goose
+192,Méryl,180,Tropical buckeye butterfly,47,10,4,7,4,14,1,22,Tropical buckeye butterfly
+193,Åsa,548,Wallaby red-necked,49,5,4,11,4,20,4,27,"Wallaby, red-necked"
+194,Chloé,884,Dusky rattlesnake,7,7,1,5,3,12,4,95,Dusky rattlesnake
+195,Mélia,588,Dark-winged trumpeter,16,17,4,6,3,20,1,29,Dark-winged trumpeter
+196,Célia,866,Moose,40,8,2,10,3,20,3,80,Moose
+197,Aimée,5,Bald eagle,40,20,5,10,1,2,3,53,Bald eagle
+198,Kévina,6,Python (unidentified),32,16,1,8,1,3,2,20,Python (unidentified)
+199,Ráo,393,Red-shouldered glossy starling,23,17,2,6,3,17,1,11,Red-shouldered glossy starling
+200,Yénora,399,Moorhen purple,31,10,2,4,2,12,5,42,"Moorhen, purple"
+201,Josée,961,Anteater australian spiny,29,7,3,11,1,19,1,90,"Anteater, australian spiny"
+202,Josée,17,Cow scottish highland,9,5,3,8,1,17,5,92,"Cow, scottish highland"
+203,Almérinda,886,Native cat,26,20,5,8,3,5,5,4,Native cat
+204,Bénédicte,246,Mourning collared dove,26,13,3,5,1,8,3,97,Mourning collared dove
+205,Jú,401,Pelican brown,26,3,5,4,0,13,3,8,"Pelican, brown"
+206,Åsa,740,Heron black-crowned night,2,15,1,4,3,15,2,93,"Heron, black-crowned night"
+207,Eléa,38,Musk ox,27,14,1,12,0,17,5,94,Musk ox
+208,Marylène,276,Heron gray,49,9,1,11,1,19,2,29,"Heron, gray"
+209,Yáo,516,Turtle long-necked,40,7,1,12,4,19,5,20,"Turtle, long-necked"
+210,Yè,304,Savannah deer,24,20,2,11,4,3,5,85,Savannah deer
+211,Méghane,498,Blue and yellow macaw,21,10,1,9,4,10,3,61,Blue and yellow macaw
+212,Táng,816,Manatee,13,19,4,5,3,3,3,28,Manatee
+213,Léonie,428,Thrasher curve-billed,20,8,4,10,1,14,5,50,"Thrasher, curve-billed"
+214,Garçon,551,Sloth pale-throated three-toed,14,6,3,8,4,10,2,14,"Sloth, pale-throated three-toed"
+215,Gwenaëlle,446,Sun gazer,8,13,5,6,3,9,1,58,Sun gazer
+216,Illustrée,101,Legaan water,26,17,4,4,4,14,4,38,"Legaan, water"
+217,Méghane,112,Ibis sacred,26,5,2,4,1,2,4,32,"Ibis, sacred"
+218,Mylène,860,Turkey vulture,3,14,2,6,1,16,5,16,Turkey vulture
+219,Salomé,668,Crested barbet,4,18,1,7,1,17,2,94,Crested barbet
+220,Béatrice,491,Chacma baboon,9,4,1,10,4,18,2,46,Chacma baboon
+221,Åke,221,Asian openbill,44,18,1,4,2,19,2,100,Asian openbill
+222,Pål,702,Crested bunting,12,4,5,12,4,11,1,55,Crested bunting
+223,Pò,131,Blue and yellow macaw,18,18,1,11,0,8,5,87,Blue and yellow macaw
+224,Audréanne,177,Golden-mantled ground squirrel,12,20,2,12,2,14,1,14,Golden-mantled ground squirrel
+225,Athéna,294,Hoffman's sloth,42,8,5,8,3,5,5,66,Hoffman's sloth
+226,Marie-ève,691,Clark's nutcracker,39,5,1,8,4,16,3,16,Clark's nutcracker
+227,Célia,982,Black-tailed prairie dog,31,9,3,12,0,19,4,67,Black-tailed prairie dog
+228,Lyséa,1,Blue-footed booby,12,13,5,10,2,9,1,61,Blue-footed booby
+229,Yáo,665,Beaver european,34,18,4,11,1,11,2,90,"Beaver, european"
+230,Desirée,211,Kite black,33,3,5,11,4,19,4,63,"Kite, black"
+231,Mahélie,600,Masked booby,27,1,4,11,3,20,1,5,Masked booby
+232,Gaëlle,747,Mongoose small indian,7,20,5,10,4,7,3,93,"Mongoose, small indian"
+233,Yénora,929,Black bear,45,6,5,10,2,4,4,87,Black bear
+234,Desirée,197,Goose spur-winged,4,1,4,9,0,17,1,39,"Goose, spur-winged"
+235,Zoé,18,Black bear,9,18,5,6,2,7,3,97,Black bear
+236,Mélanie,373,Snake tiger,28,16,1,11,3,17,5,85,"Snake, tiger"
+237,Daphnée,192,Common green iguana,4,6,3,7,4,16,2,57,Common green iguana
+238,Crééz,425,Sheathbill snowy,36,1,4,12,4,6,4,46,"Sheathbill, snowy"
+239,Céline,192,Four-horned antelope,15,14,1,4,1,9,5,67,Four-horned antelope
+240,Pål,749,Vervet monkey,19,17,3,8,0,1,2,88,Vervet monkey
+241,Ruì,380,Puku,48,11,5,7,1,16,4,13,Puku
+242,Maïté,864,Squirrel arctic ground,39,15,4,8,3,3,4,50,"Squirrel, arctic ground"
+243,Fèi,953,Phascogale red-tailed,19,16,5,8,2,19,5,30,"Phascogale, red-tailed"
+244,Eliès,942,Bandicoot short-nosed,32,2,3,12,3,14,2,30,"Bandicoot, short-nosed"
+245,Véronique,162,Currasow (unidentified),2,20,1,11,4,12,2,41,Currasow (unidentified)
+246,Clémentine,919,Stork openbill,38,11,1,4,0,12,4,52,"Stork, openbill"
+247,Magdalène,582,Asian openbill,5,9,4,12,1,10,3,60,Asian openbill
+248,Maëly,617,Otter brazilian,28,5,5,4,4,3,2,6,"Otter, brazilian"
+249,Léonie,415,Vulture turkey,6,5,3,8,1,7,2,85,"Vulture, turkey"
+250,Marie-josée,377,Heron green-backed,8,17,1,9,1,14,4,41,"Heron, green-backed"
+251,Méng,313,Common mynah,13,20,5,12,3,9,4,31,Common mynah
+252,Lyséa,960,African wild cat,16,1,1,4,3,14,1,79,African wild cat
+253,Rachèle,420,Dusky gull,3,17,3,7,4,13,2,99,Dusky gull
+254,Véronique,141,Porcupine indian,18,20,5,6,3,13,3,24,"Porcupine, indian"
+255,Bérangère,99,Canadian tiger swallowtail butterfly,11,20,4,5,4,16,1,86,Canadian tiger swallowtail butterfly
+256,Dafnée,666,Lion steller sea,19,17,1,7,4,10,4,10,"Lion, steller sea"
+257,Lén,664,Egyptian cobra,4,6,1,12,2,8,1,80,Egyptian cobra
+258,Ruò,411,Baboon chacma,19,16,5,10,2,15,2,29,"Baboon, chacma"
+259,Audréanne,267,Cape raven,23,8,4,6,0,20,2,40,Cape raven
+260,Léandre,950,Agama lizard (unidentified),15,15,1,12,0,10,1,17,Agama lizard (unidentified)
+261,Séverine,399,Iguana land,39,20,4,7,2,19,1,72,"Iguana, land"
+262,Agnès,798,Capybara,16,11,5,12,0,8,3,32,Capybara
+263,Aí,776,Goat mountain,38,1,2,5,3,4,3,2,"Goat, mountain"
+264,Réservés,366,Galapagos albatross,22,1,5,9,4,1,4,11,Galapagos albatross
+265,Cécile,785,Cockatoo long-billed,34,15,3,9,3,14,1,16,"Cockatoo, long-billed"
+266,Bérénice,91,Mongoose eastern dwarf,13,11,4,10,1,6,5,72,"Mongoose, eastern dwarf"
+267,Yóu,591,Black-crowned night heron,46,8,3,8,1,8,4,57,Black-crowned night heron
+268,Thérèse,866,Northern fur seal,12,20,5,7,2,1,3,86,Northern fur seal
+269,Anaël,538,Silver gull,6,16,2,5,4,5,3,22,Silver gull
+270,Dorothée,609,Tarantula,34,11,5,10,4,15,4,12,Tarantula
+271,Léane,787,Sarus crane,22,15,4,6,1,1,4,94,Sarus crane
+272,Lyséa,652,Coot red-knobbed,8,16,2,9,1,12,2,13,"Coot, red-knobbed"
+273,Bécassine,846,Yellow-throated sandgrouse,1,2,4,4,0,10,4,15,Yellow-throated sandgrouse
+274,Camélia,607,Nuthatch red-breasted,18,7,3,4,0,8,2,90,"Nuthatch, red-breasted"
+275,Maëlyss,284,Violet-crested turaco,38,18,3,9,4,2,4,33,Violet-crested turaco
+276,Séverine,934,Rattlesnake horned,26,6,4,4,1,18,2,56,"Rattlesnake, horned"
+277,Eléa,413,Indian tree pie,10,19,2,5,3,3,4,39,Indian tree pie
+278,Torbjörn,748,Tortoise galapagos,4,20,5,11,3,5,3,58,"Tortoise, galapagos"
+279,Marie-josée,75,Snow goose,46,7,3,7,0,3,1,42,Snow goose
+280,Örjan,640,Columbian rainbow boa,35,2,2,9,1,7,4,68,Columbian rainbow boa
+281,Dorothée,187,Red-headed woodpecker,47,16,2,9,2,11,2,54,Red-headed woodpecker
+282,Sélène,50,Vervet monkey,5,12,4,7,4,1,4,100,Vervet monkey
+283,Yú,965,Goose snow,11,2,2,6,1,6,3,25,"Goose, snow"
+284,Styrbjörn,338,Common wallaroo,43,10,5,10,0,20,5,33,Common wallaroo
+285,Måns,442,Baboon gelada,12,16,2,12,3,6,1,42,"Baboon, gelada"
+286,Gaïa,372,Dove mourning collared,32,17,4,9,3,9,5,11,"Dove, mourning collared"
+287,Cléopatre,469,Common boubou shrike,32,19,1,6,4,9,1,73,Common boubou shrike
+288,Fèi,292,Australian masked owl,15,9,3,11,3,4,1,47,Australian masked owl
+289,Kù,871,Flying fox (unidentified),38,17,1,5,3,20,1,3,Flying fox (unidentified)
+290,Adélaïde,265,Eastern white pelican,22,16,2,6,3,14,3,41,Eastern white pelican
+291,Aimée,445,Deer spotted,22,14,4,6,2,17,4,77,"Deer, spotted"
+292,Naëlle,594,Dusky rattlesnake,9,11,5,11,2,4,1,75,Dusky rattlesnake
+293,Andrée,786,Golden jackal,4,12,1,9,3,5,5,13,Golden jackal
+294,Fèi,61,Colobus magistrate black,19,10,3,8,1,15,4,34,"Colobus, magistrate black"
+295,Léandre,948,Greater blue-eared starling,42,19,2,12,3,6,4,59,Greater blue-eared starling
+296,Mén,811,Seal southern elephant,44,11,5,6,2,16,2,42,"Seal, southern elephant"
+297,Lucrèce,269,Sambar,40,20,4,5,3,4,5,77,Sambar
+298,Aurélie,130,Amazon parrot (unidentified),47,5,2,6,4,9,2,34,Amazon parrot (unidentified)
+299,Táng,235,Southern sea lion,12,5,5,5,1,5,3,70,Southern sea lion
+300,Styrbjörn,102,Eastern dwarf mongoose,19,7,4,5,4,13,1,38,Eastern dwarf mongoose
+301,Dà,940,Snowy sheathbill,38,20,2,11,3,4,1,14,Snowy sheathbill
+302,Desirée,61,Kiskadee great,17,20,5,9,0,4,2,81,"Kiskadee, great"
+303,Marie-noël,571,Egret snowy,5,3,5,8,1,8,3,44,"Egret, snowy"
+304,Béatrice,210,Bahama pintail,30,3,1,10,0,12,2,21,Bahama pintail
+305,Mélinda,388,Kangaroo eastern grey,38,12,1,11,1,15,5,27,"Kangaroo, eastern grey"
+306,Maëlle,232,Eastern cottontail rabbit,49,17,4,9,1,3,3,45,Eastern cottontail rabbit
+307,Régine,653,Magnificent frigate bird,4,12,3,4,3,18,5,60,Magnificent frigate bird
+308,Eléa,422,Dove mourning collared,5,18,1,7,3,12,5,95,"Dove, mourning collared"
+309,Annotés,669,Giant otter,4,14,4,8,0,7,2,31,Giant otter
+310,Judicaël,836,Dragon komodo,22,7,1,5,0,5,4,37,"Dragon, komodo"
+311,Faîtes,617,American badger,12,3,3,7,0,6,2,95,American badger
+312,Françoise,207,Vulture turkey,8,11,2,5,2,1,4,62,"Vulture, turkey"
+313,Mégane,619,Crow pied,12,10,3,11,1,17,2,59,"Crow, pied"
+314,Marie-josée,243,Rhinoceros white,22,8,3,7,1,12,1,58,"Rhinoceros, white"
+315,Aimée,751,Cockatoo red-breasted,4,17,3,5,3,9,1,2,"Cockatoo, red-breasted"
+316,Béatrice,230,Spotted wood sandpiper,43,13,2,10,2,15,2,34,Spotted wood sandpiper
+317,Åke,38,Drongo fork-tailed,10,5,3,4,1,7,3,79,"Drongo, fork-tailed"
+318,Estève,650,Green vine snake,26,14,3,4,1,2,4,32,Green vine snake
+319,Ráo,406,Vicuna,2,3,4,9,3,4,1,32,Vicuna
+320,Maïly,712,Grouse greater sage,41,7,4,5,3,20,1,24,"Grouse, greater sage"
+321,Anaé,768,Lappet-faced vulture,7,4,3,6,3,12,1,68,Lappet-faced vulture
+322,Océanne,117,Cobra cape,2,7,3,5,1,13,2,90,"Cobra, cape"
+323,Tú,737,Old world fruit bat (unidentified),8,2,2,12,4,1,1,87,Old world fruit bat (unidentified)
+324,Noëlla,85,Rhesus monkey,3,7,2,11,0,17,1,66,Rhesus monkey
+325,Gaëlle,391,Quail gambel's,29,20,3,10,1,6,5,96,"Quail, gambel's"
+326,Örjan,932,Black-fronted bulbul,29,15,2,7,4,15,5,61,Black-fronted bulbul
+327,Ráo,126,Macaque japanese,17,11,3,12,4,9,5,72,"Macaque, japanese"
+328,Åslög,350,Cat toddy,27,19,2,7,2,3,4,65,"Cat, toddy"
+329,Géraldine,438,Eleven-banded armadillo (unidentified),7,13,4,6,0,2,1,84,Eleven-banded armadillo (unidentified)
+330,Andréanne,598,Great white pelican,22,1,2,9,3,4,2,83,Great white pelican
+331,Yénora,809,Caracara yellow-headed,36,19,5,12,2,5,4,3,"Caracara, yellow-headed"
+332,Simplifiés,286,Vulture oriental white-backed,30,16,3,6,4,6,3,48,"Vulture, oriental white-backed"
+333,Miléna,69,Mouflon,42,18,5,11,3,13,3,41,Mouflon
+334,Loïca,278,Starling greater blue-eared,13,2,3,5,2,19,5,65,"Starling, greater blue-eared"
+335,Aloïs,295,Buttermilk snake,46,20,5,11,3,13,5,23,Buttermilk snake
+336,Yè,174,Lemming collared,15,11,5,6,3,12,5,46,"Lemming, collared"
+337,Åsa,490,Raccoon common,32,17,2,9,4,11,4,86,"Raccoon, common"
+338,Jú,725,Sambar,19,6,5,8,0,16,4,41,Sambar
+339,Judicaël,996,Eagle owl (unidentified),18,14,5,4,0,1,5,75,Eagle owl (unidentified)
+340,Médiamass,964,House sparrow,38,4,4,8,1,12,5,83,House sparrow
+341,Hélèna,309,Griffon vulture,48,5,1,8,4,6,3,100,Griffon vulture
+342,Rachèle,255,Grey heron,19,15,4,12,2,19,5,26,Grey heron
+343,Maéna,216,Cook's tree boa,5,16,2,12,0,6,5,64,Cook's tree boa
+344,Océanne,883,Chimpanzee,37,4,5,11,4,16,1,12,Chimpanzee
+345,Pélagie,264,Feral rock pigeon,10,14,2,11,2,16,1,33,Feral rock pigeon
+346,Sòng,221,Constrictor eastern boa,46,2,5,10,0,13,5,68,"Constrictor, eastern boa"
+347,Göran,103,Alligator american,25,11,5,10,1,19,2,11,"Alligator, american"
+348,Tú,821,Leadbeateri's ground hornbill,33,4,2,5,1,13,1,47,Leadbeateri's ground hornbill
+349,Åsa,321,Black swan,32,10,3,10,3,3,1,16,Black swan
+350,Léana,740,Dusky rattlesnake,13,7,3,9,3,12,4,66,Dusky rattlesnake
+351,Céline,765,Lynx african,20,15,1,7,2,7,5,35,"Lynx, african"
+352,Maéna,932,Grouse sage,3,19,4,4,1,11,3,62,"Grouse, sage"
+353,Yè,155,Crocodile nile,13,9,4,7,3,1,4,71,"Crocodile, nile"
+354,Célia,341,Jaguar,19,11,3,8,2,1,5,79,Jaguar
+355,Mén,982,Goose spur-winged,12,8,1,11,3,10,2,61,"Goose, spur-winged"
+356,Eléonore,944,Robin white-throated,17,8,5,7,2,13,2,39,"Robin, white-throated"
+357,Simplifiés,895,Bear sloth,19,20,4,5,3,15,2,62,"Bear, sloth"
+358,Maéna,75,Mongoose eastern dwarf,43,9,5,6,2,13,5,70,"Mongoose, eastern dwarf"
+359,Célia,568,Cormorant little,35,11,3,8,4,7,3,18,"Cormorant, little"
+360,Réjane,428,Grenadier purple,35,20,3,4,0,17,5,32,"Grenadier, purple"
+361,Marie-françoise,919,Ocelot,34,5,2,7,1,13,5,27,Ocelot
+362,Mahélie,831,White-necked stork,22,17,2,9,3,4,1,54,White-necked stork
+363,Adélaïde,871,Common wombat,23,6,3,5,3,15,5,91,Common wombat
+364,Agnès,157,Bateleur eagle,17,17,4,6,4,18,1,94,Bateleur eagle
+365,Gérald,370,Skunk western spotted,13,8,3,10,3,2,2,100,"Skunk, western spotted"
+366,Maïlys,378,Cormorant great,28,16,4,11,2,3,5,80,"Cormorant, great"
+367,Gösta,861,Lion south american sea,20,4,2,11,0,11,3,15,"Lion, south american sea"
+368,Chloé,95,Pig-tailed macaque,50,5,1,11,0,1,1,99,Pig-tailed macaque
+369,Noëlla,930,Macaw red and blue,36,18,4,10,1,17,5,28,"Macaw, red and blue"
+370,Torbjörn,29,Green heron,37,9,1,6,2,14,4,32,Green heron
+371,Séverine,38,Heron gray,43,13,5,11,1,3,3,23,"Heron, gray"
+372,Gösta,443,Banded mongoose,44,14,2,5,4,7,2,7,Banded mongoose
+373,Méryl,163,Trotter lily,1,19,1,12,3,9,1,50,"Trotter, lily"
+374,Séréna,208,Tenrec tailless,44,2,5,10,4,4,1,46,"Tenrec, tailless"
+375,Laïla,287,Southern black-backed gull,49,19,4,11,0,14,4,5,Southern black-backed gull
+376,Sélène,916,Cormorant neotropic,39,17,4,11,1,10,3,9,"Cormorant, neotropic"
+377,Annotés,64,Common goldeneye,3,1,5,4,3,20,4,41,Common goldeneye
+378,Cléopatre,308,African wild dog,17,10,3,7,4,15,3,38,African wild dog
+379,Réservés,832,Red deer,5,10,5,9,4,13,1,87,Red deer
+380,Åsa,878,Fisher,40,6,4,11,1,16,3,15,Fisher
+381,Maëlann,594,Orca,37,3,5,11,1,19,3,99,Orca
+382,Thérèsa,283,Magistrate black colobus,33,6,5,8,2,17,5,23,Magistrate black colobus
+383,Séverine,183,Bushpig,34,13,4,4,3,4,1,84,Bushpig
+384,Åke,480,Eastern white pelican,40,3,1,7,2,12,3,11,Eastern white pelican
+385,Marie-noël,133,Hedgehog south african,1,17,1,11,4,1,2,14,"Hedgehog, south african"
+386,Lorène,531,Bontebok,25,19,5,4,0,10,2,71,Bontebok
+387,Thérèsa,182,Chameleon (unidentified),9,6,3,9,3,10,3,36,Chameleon (unidentified)
+388,Frédérique,489,Goose spur-winged,30,2,1,9,3,10,5,66,"Goose, spur-winged"
+389,Sélène,210,Marmot hoary,33,17,1,9,0,10,3,29,"Marmot, hoary"
+390,Marie-thérèse,503,Boa cook's tree,24,13,2,11,1,2,2,99,"Boa, cook's tree"
+391,Lén,533,Lizard giant girdled,16,14,1,7,1,8,3,21,"Lizard, giant girdled"
+392,Mylène,92,Marabou stork,47,17,2,8,4,15,3,59,Marabou stork
+393,Ruì,653,Wild boar,30,8,2,4,3,10,5,95,Wild boar
+394,Salomé,103,Black-cheeked waxbill,38,19,3,5,1,12,5,25,Black-cheeked waxbill
+395,Judicaël,393,Trumpeter dark-winged,34,11,1,9,1,2,5,83,"Trumpeter, dark-winged"
+396,Lauréna,988,Flamingo chilean,41,2,4,6,1,19,2,37,"Flamingo, chilean"
+397,Mélinda,663,Booby blue-faced,9,2,4,7,4,13,4,51,"Booby, blue-faced"
+398,Clémence,439,Lesser masked weaver,16,13,5,6,1,7,5,20,Lesser masked weaver
+399,Erwéi,169,Langur gray,47,12,1,6,4,2,1,74,"Langur, gray"
+400,Loïca,575,Collared lemming,4,9,3,5,2,12,5,53,Collared lemming
+401,Aurélie,292,Bleu red-cheeked cordon,48,8,3,12,4,17,4,24,"Bleu, red-cheeked cordon"
+402,Aloïs,359,Green-backed heron,36,1,1,7,3,11,1,81,Green-backed heron
+403,Almérinda,698,Bleu blue-breasted cordon,40,2,3,6,0,16,2,14,"Bleu, blue-breasted cordon"
+404,Sélène,240,House sparrow,44,4,4,8,4,8,1,38,House sparrow
+405,Marie-françoise,919,Rat arboral spiny,26,12,5,5,0,5,2,67,"Rat, arboral spiny"
+406,Yè,947,Nilgai,38,19,4,6,3,1,5,77,Nilgai
+407,Eugénie,281,Pied butcher bird,12,10,5,5,0,13,2,48,Pied butcher bird
+408,Andrée,337,Tortoise burmese black mountain,35,18,1,7,0,9,1,68,"Tortoise, burmese black mountain"
+409,Méline,459,Toucan white-throated,32,7,3,7,4,10,2,36,"Toucan, white-throated"
+410,Desirée,76,Seal common,32,20,1,11,4,3,4,27,"Seal, common"
+411,Séverine,174,Galapagos mockingbird,27,9,2,12,3,2,1,84,Galapagos mockingbird
+412,Marie-hélène,292,Bontebok,1,15,5,11,1,13,3,46,Bontebok
+413,Kallisté,566,Hoopoe eurasian,22,14,5,4,4,20,2,29,"Hoopoe, eurasian"
+414,Marie-josée,739,Ring dove,49,10,2,4,0,9,1,79,Ring dove
+415,Noëlla,419,Viper egyptian,44,4,1,4,1,11,2,97,"Viper, egyptian"
+416,Mylène,263,Clark's nutcracker,27,5,2,12,0,9,3,6,Clark's nutcracker
+417,Cinéma,407,Oriental short-clawed otter,47,18,5,5,1,5,1,36,Oriental short-clawed otter
+418,Léa,497,Water monitor,50,2,1,4,4,12,3,26,Water monitor
+419,Aurélie,227,Smith's bush squirrel,48,12,4,9,3,1,4,38,Smith's bush squirrel
+420,Anaé,474,Fox pampa gray,7,2,3,6,1,9,3,79,"Fox, pampa gray"
+421,Mélanie,342,Owl madagascar hawk,34,9,3,11,2,4,5,69,"Owl, madagascar hawk"
+422,Marie-josée,392,Boa emerald green tree,8,2,1,5,0,20,4,45,"Boa, emerald green tree"
+423,Andréa,309,Golden brush-tailed possum,49,12,3,11,3,7,4,93,Golden brush-tailed possum
+424,Frédérique,906,Steller's sea lion,38,13,3,9,4,13,5,40,Steller's sea lion
+425,Céline,939,Four-striped grass mouse,26,20,4,7,0,7,3,76,Four-striped grass mouse
+426,Publicité,482,Scottish highland cow,9,11,5,9,2,19,4,26,Scottish highland cow
+427,Maëlyss,350,Two-toed sloth,43,10,5,6,3,15,1,47,Two-toed sloth
+428,Frédérique,233,Indian jackal,20,2,5,9,3,16,5,20,Indian jackal
+429,Bérangère,183,Pallas's fish eagle,11,12,1,4,0,7,3,50,Pallas's fish eagle
+430,Méghane,323,Squirrel thirteen-lined,29,10,4,12,4,16,3,82,"Squirrel, thirteen-lined"
+431,Örjan,59,Tamandua southern,48,14,3,4,2,17,1,71,"Tamandua, southern"
+432,Cloé,201,Chickadee black-capped,15,1,2,8,1,1,3,78,"Chickadee, black-capped"
+433,Eugénie,283,Squirrel nelson ground,43,15,4,10,2,10,1,51,"Squirrel, nelson ground"
+434,Lóng,323,Burchell's gonolek,32,3,2,6,0,16,4,56,Burchell's gonolek
+435,Örjan,474,Cow scottish highland,37,12,2,7,2,16,1,19,"Cow, scottish highland"
+436,Angélique,33,Waxbill violet-eared,13,7,5,8,0,19,3,4,"Waxbill, violet-eared"
+437,Ráo,501,Booby blue-faced,45,18,2,9,3,20,2,3,"Booby, blue-faced"
+438,Almérinda,776,Albatross waved,11,1,2,4,3,13,1,47,"Albatross, waved"
+439,Françoise,945,African lion,38,11,4,7,2,8,4,50,African lion
+440,Mélina,297,African snake (unidentified),30,5,4,12,2,18,3,72,African snake (unidentified)
+441,Hélèna,239,Greater blue-eared starling,9,3,4,8,2,1,5,2,Greater blue-eared starling
+442,Fèi,225,Common dolphin,10,11,3,5,1,20,2,69,Common dolphin
+443,Clémence,935,Frilled lizard,7,15,2,12,0,20,4,73,Frilled lizard
+444,Ophélie,67,Levaillant's barbet,29,17,5,8,1,18,1,48,Levaillant's barbet
+445,Léa,294,Macaw red and blue,8,18,5,11,3,3,2,71,"Macaw, red and blue"
+446,Laurélie,301,Duck blue,9,17,4,12,2,13,3,57,"Duck, blue"
+447,Eliès,41,South American puma,50,14,4,12,3,6,2,31,South American puma
+448,Aimée,940,Bunting crested,21,15,2,5,1,4,1,3,"Bunting, crested"
+449,Stévina,745,Ring-necked pheasant,16,14,1,8,3,16,3,16,Ring-necked pheasant
+450,Léana,689,Toddy cat,45,8,2,10,4,11,4,71,Toddy cat
+451,Nadège,504,White-fronted capuchin,12,5,4,8,4,5,2,82,White-fronted capuchin
+452,Céline,750,Little cormorant,32,6,4,12,0,8,5,25,Little cormorant
+453,Måns,422,Crested screamer,37,7,5,5,4,17,3,27,Crested screamer
+454,Valérie,707,Fox crab-eating,27,2,1,11,3,12,3,27,"Fox, crab-eating"
+455,Maëlle,471,Robin white-throated,45,2,3,9,4,13,1,69,"Robin, white-throated"
+456,Nadège,285,Cormorant king,26,11,5,9,3,14,5,92,"Cormorant, king"
+457,Anaël,495,Blackbird red-winged,43,11,1,6,3,13,5,2,"Blackbird, red-winged"
+458,Cécile,991,Dolphin striped,35,20,5,6,2,2,3,89,"Dolphin, striped"
+459,Mårten,309,Koala,28,19,5,8,0,4,5,31,Koala
+460,Maëly,224,Euro wallaby,5,4,5,11,0,2,3,87,Euro wallaby
+461,Méryl,132,Roseat flamingo,29,11,4,11,3,6,4,57,Roseat flamingo
+462,Magdalène,658,Dove rock,8,19,1,7,3,12,2,22,"Dove, rock"
+463,Marie-françoise,974,Gray rhea,3,15,2,8,2,18,1,49,Gray rhea
+464,Bérénice,153,Chital,28,12,1,8,4,2,2,23,Chital
+465,Daphnée,517,Galapagos sea lion,46,14,1,5,4,4,3,28,Galapagos sea lion
+466,Océane,624,Common wallaroo,45,19,1,4,2,8,4,79,Common wallaroo
+467,Gérald,920,Common ringtail,6,12,5,9,3,16,5,44,Common ringtail
+468,Nadège,818,Elephant asian,39,10,2,12,1,20,5,59,"Elephant, asian"
+469,Sòng,901,Red-capped cardinal,23,11,1,4,0,18,3,59,Red-capped cardinal
+470,André,481,Bustard stanley,33,16,5,12,2,15,2,73,"Bustard, stanley"
+471,Naéva,468,Jackal silver-backed,17,18,1,5,4,10,4,63,"Jackal, silver-backed"
+472,Léone,81,Bonnet macaque,8,1,5,8,3,1,3,70,Bonnet macaque
+473,Nélie,255,Eagle bald,37,20,2,12,2,7,4,80,"Eagle, bald"
+474,Bérénice,740,Sage hen,21,10,3,12,2,2,4,50,Sage hen
+475,Cléa,42,Spur-winged goose,34,15,1,9,2,4,2,42,Spur-winged goose
+476,Torbjörn,655,Squirrel eurasian red,35,6,1,12,2,9,2,78,"Squirrel, eurasian red"
+477,Anaël,416,Caracal,28,14,5,5,1,12,5,53,Caracal
+478,Maïly,800,Wallaby agile,44,2,1,6,3,12,1,87,"Wallaby, agile"
+479,Cloé,381,Water legaan,45,9,5,10,3,6,5,80,Water legaan
+480,Stévina,788,Galapagos dove,12,8,2,7,4,14,2,30,Galapagos dove
+481,Andrée,999,Buffalo wild water,17,14,4,12,0,2,5,90,"Buffalo, wild water"
+482,Eugénie,294,Corella long-billed,39,19,1,10,1,9,3,12,"Corella, long-billed"
+483,Fèi,767,Parrot hawk-headed,16,19,2,5,0,11,3,68,"Parrot, hawk-headed"
+484,Almérinda,591,Kinkajou,1,10,2,4,2,17,4,1,Kinkajou
+485,Cunégonde,185,Crab-eating raccoon,25,20,1,8,0,16,2,52,Crab-eating raccoon
+486,Eléonore,274,Eastern cottontail rabbit,15,4,3,10,2,19,4,30,Eastern cottontail rabbit
+487,Marie-josée,930,Striped hyena,48,16,3,11,1,3,3,64,Striped hyena
+488,Nuó,497,Falcon peregrine,33,11,4,4,0,19,3,81,"Falcon, peregrine"
+489,Gwenaëlle,337,Yak,2,5,2,11,4,12,5,23,Yak
+490,Loïca,998,Gecko bent-toed,20,4,5,5,3,7,4,60,"Gecko, bent-toed"
+491,Salomé,686,Goanna lizard,39,20,1,11,0,20,2,51,Goanna lizard
+492,Néhémie,356,Whip-tailed wallaby,27,14,4,10,3,17,3,56,Whip-tailed wallaby
+493,Liè,914,California sea lion,27,18,4,6,4,2,1,30,California sea lion
+494,Pélagie,401,Stork marabou,25,4,3,5,4,4,5,38,"Stork, marabou"
+495,Zoé,144,White-browed sparrow weaver,6,19,3,11,3,11,3,55,White-browed sparrow weaver
+496,Eloïse,571,White-throated toucan,31,4,4,7,3,1,5,52,White-throated toucan
+497,Françoise,262,Ferruginous hawk,24,16,3,5,1,20,3,65,Ferruginous hawk
+498,Marie-josée,520,Purple moorhen,30,9,2,5,1,17,1,10,Purple moorhen
+499,Åsa,34,Vulture white-headed,35,16,5,5,0,7,1,5,"Vulture, white-headed"
+500,Nuó,329,Crowned hawk-eagle,27,14,4,11,1,15,2,22,Crowned hawk-eagle
+501,Fèi,384,Lesser mouse lemur,1,8,2,5,4,5,5,87,Lesser mouse lemur
+502,Alizée,593,Cat toddy,49,16,2,6,2,13,5,43,"Cat, toddy"
+503,Börje,154,Alpaca,23,3,1,9,4,17,4,79,Alpaca
+504,Nadège,696,Dolphin bottle-nose,31,10,1,5,4,8,5,36,"Dolphin, bottle-nose"
+505,Eléonore,458,Savanna baboon,22,11,1,4,0,9,5,43,Savanna baboon
+506,Örjan,490,Duck comb,49,20,2,11,0,7,4,76,"Duck, comb"
+507,Alizée,99,Roan antelope,35,15,5,11,0,17,1,72,Roan antelope
+508,Kuí,267,Turkey vulture,29,19,5,4,3,4,4,91,Turkey vulture
+509,Sélène,979,Horned lark,19,12,3,8,2,2,1,33,Horned lark
+510,Thérèsa,522,African skink,41,14,1,11,0,14,1,88,African skink
+511,Mà,531,Dove laughing,6,13,4,12,1,14,3,2,"Dove, laughing"
+512,Séréna,170,Miner's cat,7,15,4,10,4,9,5,62,Miner's cat
+513,Zoé,789,Pig-tailed macaque,16,12,4,9,1,12,3,9,Pig-tailed macaque
+514,Aurélie,112,Bat-eared fox,25,12,1,8,4,7,2,23,Bat-eared fox
+515,Sòng,945,African lynx,35,13,5,10,3,2,4,42,African lynx
+516,Léandre,585,Stilt black-winged,5,16,1,10,2,19,4,2,"Stilt, black-winged"
+517,Mélina,893,Sally lightfoot crab,24,11,2,9,4,18,5,59,Sally lightfoot crab
+518,Audréanne,660,Collared lemming,36,2,1,11,2,7,2,56,Collared lemming
+519,Estée,575,American bighorn sheep,7,5,4,12,4,14,5,3,American bighorn sheep
+520,Intéressant,917,Bushbuck,10,17,5,11,2,2,3,9,Bushbuck
+521,Marie-thérèse,692,Arctic lemming,47,9,4,5,4,2,5,65,Arctic lemming
+522,Léana,596,Goose cape barren,20,14,5,10,0,19,2,34,"Goose, cape barren"
+523,Andréa,287,Common green iguana,31,7,1,4,4,8,1,97,Common green iguana
+524,Réservés,401,Dragon komodo,15,12,1,5,4,15,2,37,"Dragon, komodo"
+525,Camélia,195,Long-necked turtle,50,18,5,9,2,5,3,56,Long-necked turtle
+526,Maëlys,602,Bobcat,8,16,4,8,1,17,1,15,Bobcat
+527,Cécilia,440,Lesser flamingo,40,17,3,6,4,19,2,50,Lesser flamingo
+528,Håkan,148,Western grey kangaroo,27,12,1,10,0,11,2,38,Western grey kangaroo
+529,Maëlys,798,Cat native,28,8,2,4,3,12,1,80,"Cat, native"
+530,Léandre,948,Cormorant javanese,47,10,5,9,1,7,2,49,"Cormorant, javanese"
+531,Garçon,337,Black-tailed prairie dog,45,5,3,8,1,17,2,72,Black-tailed prairie dog
+532,Laurélie,189,Pampa gray fox,34,9,4,8,0,17,3,43,Pampa gray fox
+533,Joséphine,200,Baboon chacma,19,9,3,6,3,1,2,89,"Baboon, chacma"
+534,Marie-ève,918,Zorro common,1,10,3,7,2,13,3,50,"Zorro, common"
+535,Görel,924,Green-backed heron,42,14,5,11,4,17,5,20,Green-backed heron
+536,Naéva,754,Armadillo common long-nosed,41,6,2,5,3,11,4,66,"Armadillo, common long-nosed"
+537,Josée,845,Crake african black,11,16,5,9,2,17,1,29,"Crake, african black"
+538,Véronique,607,American woodcock,40,20,4,4,2,18,2,92,American woodcock
+539,Maëly,229,Lion mountain,34,18,3,7,2,20,2,97,"Lion, mountain"
+540,Yè,502,Egret snowy,46,11,4,6,4,15,2,67,"Egret, snowy"
+541,Maïwenn,586,Deer spotted,47,1,2,12,1,20,5,73,"Deer, spotted"
+542,Lóng,506,Burmese brown mountain tortoise,35,4,1,11,4,13,4,97,Burmese brown mountain tortoise
+543,Aurélie,614,Lion south american sea,48,6,2,5,0,17,1,39,"Lion, south american sea"
+544,Andrée,91,Malachite kingfisher,34,9,5,9,4,10,2,31,Malachite kingfisher
+545,Aimée,909,Heron yellow-crowned night,21,1,4,5,2,12,4,50,"Heron, yellow-crowned night"
+546,Cléa,26,Southern black-backed gull,4,10,1,11,0,18,2,18,Southern black-backed gull
+547,Mén,461,Wallaby river,3,12,3,11,1,13,3,69,"Wallaby, river"
+548,Yú,370,Red-necked phalarope,46,19,5,10,0,18,5,36,Red-necked phalarope
+549,Cécilia,572,Gecko barking,6,1,3,9,2,6,1,14,"Gecko, barking"
+550,Régine,258,Screamer crested,19,18,5,6,2,20,3,24,"Screamer, crested"
+551,Aimée,276,Yellow baboon,40,8,5,4,3,11,5,58,Yellow baboon
+552,Marie-ève,225,Mongoose banded,37,19,1,9,0,20,3,93,"Mongoose, banded"
+553,Edmée,805,Cat miner's,36,9,4,6,2,11,1,8,"Cat, miner's"
+554,Faîtes,288,Mountain lion,27,20,2,9,4,18,1,63,Mountain lion
+555,Maï,827,Woolly-necked stork,33,3,4,6,4,9,5,68,Woolly-necked stork
+556,Mahélie,334,Onager,42,12,2,5,1,3,1,84,Onager
+557,Kù,341,Turkey wild,43,4,5,9,3,12,4,50,"Turkey, wild"
+558,Marie-josée,965,Lion south american sea,6,3,1,6,0,14,3,29,"Lion, south american sea"
+559,Bécassine,809,African buffalo,34,11,4,8,1,2,2,32,African buffalo
+560,Maëly,928,Kingfisher pied,42,18,2,11,1,1,5,67,"Kingfisher, pied"
+561,Mårten,192,Otter north american river,16,15,1,9,1,14,2,3,"Otter, north american river"
+562,Céline,584,Squirrel eastern fox,29,18,5,6,0,3,5,61,"Squirrel, eastern fox"
+563,Pélagie,829,Quoll eastern,26,11,2,4,1,19,3,36,"Quoll, eastern"
+564,Geneviève,73,Dusky gull,3,6,3,9,1,13,1,22,Dusky gull
+565,Eléonore,423,Rufous-collared sparrow,36,8,4,11,3,9,2,92,Rufous-collared sparrow
+566,Géraldine,689,Bottle-nose dolphin,28,16,4,8,1,18,2,52,Bottle-nose dolphin
+567,Jú,635,Cat miner's,26,15,4,4,4,17,3,1,"Cat, miner's"
+568,Néhémie,715,Snake (unidentified),28,7,4,6,4,17,2,22,Snake (unidentified)
+569,Méline,371,Arctic hare,16,17,1,9,1,8,5,90,Arctic hare
+570,Dorothée,257,Goose cape barren,29,5,3,12,3,18,5,55,"Goose, cape barren"
+571,Aurélie,976,Sifaka verreaux's,38,17,2,8,1,15,5,54,"Sifaka, verreaux's"
+572,Börje,742,Eastern grey kangaroo,14,8,1,12,4,20,1,48,Eastern grey kangaroo
+573,Marie-françoise,168,Greylag goose,26,4,4,10,3,10,2,79,Greylag goose
+574,Félicie,257,Grant's gazelle,39,10,2,9,3,13,3,78,Grant's gazelle
+575,Méthode,698,Frog (unidentified),18,13,3,11,3,14,5,62,Frog (unidentified)
+576,Geneviève,218,Jabiru stork,2,2,2,12,4,9,2,96,Jabiru stork
+577,Loïca,704,Heron green-backed,19,13,1,12,2,18,1,51,"Heron, green-backed"
+578,Méng,431,Quoll eastern,16,11,4,9,4,3,4,76,"Quoll, eastern"
+579,Naéva,446,Wombat common,25,7,1,8,2,2,2,69,"Wombat, common"
+580,Torbjörn,657,Bushbaby large-eared,7,2,1,7,4,2,2,54,"Bushbaby, large-eared"
+581,Eléa,578,Comb duck,9,14,3,12,0,7,3,52,Comb duck
+582,Naëlle,451,Marmot yellow-bellied,20,11,1,6,3,2,3,89,"Marmot, yellow-bellied"
+583,Médiamass,31,Beaver north american,37,12,1,10,2,9,4,90,"Beaver, north american"
+584,Maéna,398,Lizard collared,27,6,2,6,1,11,3,61,"Lizard, collared"
+585,Stéphanie,81,Scottish highland cow,13,1,4,4,1,4,4,87,Scottish highland cow
+586,Angélique,930,Snake buttermilk,16,2,5,5,0,2,2,24,"Snake, buttermilk"
+587,Sòng,49,Magpie australian,6,14,4,6,1,14,2,96,"Magpie, australian"
+588,Athéna,714,Topi,16,19,5,5,2,8,2,60,Topi
+589,Clélia,547,Black-faced kangaroo,50,2,2,10,2,18,5,10,Black-faced kangaroo
+590,Mà,361,Spotted hyena,3,2,2,5,1,6,3,97,Spotted hyena
+591,Béatrice,5,Cockatoo slender-billed,26,17,4,4,4,19,1,26,"Cockatoo, slender-billed"
+592,Yóu,60,Leopard indian,31,7,4,8,1,20,1,84,"Leopard, indian"
+593,Gaétane,212,Egyptian goose,29,18,2,5,1,4,4,42,Egyptian goose
+594,Geneviève,11,Tree porcupine,13,2,1,6,0,15,4,43,Tree porcupine
+595,Naëlle,776,Ring-tailed possum,37,10,4,4,0,9,1,71,Ring-tailed possum
+596,Fèi,725,Green-winged macaw,9,15,4,5,3,14,4,28,Green-winged macaw
+597,Lucrèce,445,Otter giant,10,9,2,7,1,13,5,56,"Otter, giant"
+598,Ophélie,5,Mule deer,3,11,4,11,0,13,2,21,Mule deer
+599,Magdalène,817,Red-legged pademelon,21,9,5,11,4,12,5,29,Red-legged pademelon
+600,Pélagie,15,Dog raccoon,5,6,3,4,2,4,2,100,"Dog, raccoon"
+601,Irène,698,Aardwolf,28,13,3,6,2,13,5,55,Aardwolf
+602,Eugénie,271,Vulture white-rumped,2,4,2,10,3,19,3,9,"Vulture, white-rumped"
+603,Erwéi,90,Porcupine prehensile-tailed,43,6,1,4,2,6,2,54,"Porcupine, prehensile-tailed"
+604,Audréanne,499,Southern right whale,9,16,3,8,2,7,5,2,Southern right whale
+605,Mélanie,785,Kinkajou,40,12,1,5,3,12,4,40,Kinkajou
+606,Lucrèce,317,Dove little brown,3,10,1,12,2,3,2,72,"Dove, little brown"
+607,Andréanne,365,African darter,31,17,1,9,2,4,2,24,African darter
+608,Mélinda,117,Quoll spotted-tailed,36,15,4,9,1,5,3,23,"Quoll, spotted-tailed"
+609,Clélia,822,Savannah deer (unidentified),4,16,3,6,2,15,3,42,Savannah deer (unidentified)
+610,Adélie,362,Porcupine crested,8,8,4,7,3,12,3,89,"Porcupine, crested"
+611,Gisèle,393,Pigeon feral rock,25,1,2,12,3,1,5,56,"Pigeon, feral rock"
+612,Noémie,410,Cat toddy,22,9,5,7,4,18,4,28,"Cat, toddy"
+613,Görel,124,White-tailed deer,39,6,5,10,4,10,4,77,White-tailed deer
+614,Estée,804,Hawk-eagle crowned,2,19,2,7,0,12,4,41,"Hawk-eagle, crowned"
+615,Sòng,627,Crab-eating raccoon,15,9,4,4,3,6,3,69,Crab-eating raccoon
+616,Marie-thérèse,596,Gull kelp,41,20,1,10,0,16,2,67,"Gull, kelp"
+617,Maëlle,482,Gorilla western lowland,18,15,3,11,3,7,2,23,"Gorilla, western lowland"
+618,Régine,352,Greater kudu,31,13,5,9,3,11,2,48,Greater kudu
+619,Anaé,186,Pelican brown,21,19,3,8,0,9,4,8,"Pelican, brown"
+620,Publicité,468,Galapagos dove,29,14,1,5,0,15,2,6,Galapagos dove
+621,Rébecca,177,Frilled dragon,41,14,5,11,3,11,5,64,Frilled dragon
+622,Cunégonde,897,Cockatoo red-breasted,7,17,3,4,3,11,3,53,"Cockatoo, red-breasted"
+623,Thérèse,506,Bird secretary,23,3,4,9,3,5,4,56,"Bird, secretary"
+624,Méng,141,Bennett's wallaby,48,2,5,6,4,12,3,37,Bennett's wallaby
+625,Ophélie,329,White-fronted capuchin,12,7,1,5,1,5,1,27,White-fronted capuchin
+626,Cloé,723,Australian brush turkey,11,15,3,4,0,1,3,80,Australian brush turkey
+627,Vénus,954,Tern arctic,38,18,2,7,4,2,3,72,"Tern, arctic"
+628,Miléna,819,Deer roe,23,17,4,8,2,13,3,92,"Deer, roe"
+629,Béatrice,453,Baboon yellow,31,20,1,10,0,16,3,17,"Baboon, yellow"
+630,Loïca,920,Dusky gull,10,10,3,5,4,17,4,91,Dusky gull
+631,Lorène,266,Squirrel richardson's ground,36,20,1,10,2,2,3,21,"Squirrel, richardson's ground"
+632,Valérie,973,North American red fox,25,15,5,11,1,17,3,32,North American red fox
+633,Cloé,133,Sloth two-toed,18,4,1,9,4,9,5,56,"Sloth, two-toed"
+634,Geneviève,239,Pheasant common,18,17,3,6,3,3,5,40,"Pheasant, common"
+635,Ruì,243,Black and white colobus,33,2,4,8,2,4,2,100,Black and white colobus
+636,Maëly,662,Sea birds (unidentified),47,12,1,5,3,12,2,95,Sea birds (unidentified)
+637,Gösta,209,Hummingbird (unidentified),46,11,1,11,2,19,3,77,Hummingbird (unidentified)
+638,Ophélie,720,Cat native,41,19,1,12,0,4,3,34,"Cat, native"
+639,Rébecca,367,Blackbird red-winged,33,11,2,7,2,16,2,100,"Blackbird, red-winged"
+640,Miléna,891,Dog bush,47,5,4,11,3,9,5,69,"Dog, bush"
+641,Björn,701,Sloth pale-throated three-toed,14,16,3,12,2,5,5,58,"Sloth, pale-throated three-toed"
+642,Maïwenn,497,Legaan ground,42,9,5,10,3,19,3,74,"Legaan, ground"
+643,Mahélie,943,Kangaroo brush-tailed rat,44,18,2,8,4,14,4,20,"Kangaroo, brush-tailed rat"
+644,Aloïs,293,Asian false vampire bat,44,4,3,4,4,19,5,12,Asian false vampire bat
+645,Åslög,521,Rhinoceros black,30,15,3,5,0,1,1,34,"Rhinoceros, black"
+646,Noémie,508,Cape Barren goose,34,12,4,11,2,11,2,25,Cape Barren goose
+647,Göran,461,Indian tree pie,7,3,4,8,4,6,3,8,Indian tree pie
+648,Börje,603,Pygmy possum,32,19,4,5,0,16,3,30,Pygmy possum
+649,Solène,507,Raccoon crab-eating,13,19,1,10,0,8,4,5,"Raccoon, crab-eating"
+650,André,245,Common waterbuck,41,11,4,9,1,8,1,58,Common waterbuck
+651,Maïly,978,Red phalarope,49,19,2,4,4,16,2,92,Red phalarope
+652,Anaïs,315,Scottish highland cow,28,7,2,6,4,15,3,37,Scottish highland cow
+653,Ruò,108,Green-winged macaw,20,7,5,6,0,4,1,31,Green-winged macaw
+654,Méghane,379,Caracara (unidentified),37,7,5,4,0,16,4,93,Caracara (unidentified)
+655,Léonie,199,Euro wallaby,24,4,5,4,4,6,5,66,Euro wallaby
+656,Nuó,167,Red-tailed phascogale,3,4,5,12,0,17,3,15,Red-tailed phascogale
+657,Maïté,88,Raccoon crab-eating,16,17,5,12,3,2,2,81,"Raccoon, crab-eating"
+658,Maëlann,198,Squirrel smith's bush,35,9,5,4,4,7,1,42,"Squirrel, smith's bush"
+659,Méthode,794,Tailless tenrec,46,5,5,4,2,16,5,67,Tailless tenrec
+660,Solène,445,Red and blue macaw,29,20,2,9,2,17,5,43,Red and blue macaw
+661,Aimée,856,Woodrat (unidentified),23,11,1,7,2,5,1,30,Woodrat (unidentified)
+662,Yóu,939,Bulbul black-fronted,14,20,3,11,1,18,2,24,"Bulbul, black-fronted"
+663,Stévina,282,Galapagos dove,8,15,1,9,0,14,1,16,Galapagos dove
+664,Adélaïde,877,Sambar,16,17,1,7,3,17,1,99,Sambar
+665,Sélène,365,Racer american,41,16,2,11,0,17,2,53,"Racer, american"
+666,Rachèle,15,Fox grey,46,1,4,12,1,3,5,41,"Fox, grey"
+667,Léonie,465,Trumpeter dark-winged,11,8,3,9,3,16,4,61,"Trumpeter, dark-winged"
+668,Tú,537,Eurasian beaver,5,1,2,9,1,1,1,55,Eurasian beaver
+669,Marie-noël,438,Mississippi alligator,49,17,4,10,4,16,5,81,Mississippi alligator
+670,Anaé,700,White-winged dove,38,2,3,7,1,2,3,98,White-winged dove
+671,Yénora,476,European badger,2,14,4,7,0,20,3,92,European badger
+672,Geneviève,803,Cow scottish highland,1,8,3,11,0,1,5,76,"Cow, scottish highland"
+673,Vénus,258,Common langur,7,14,3,12,4,7,1,17,Common langur
+674,Cinéma,38,Indian tree pie,35,20,3,12,4,3,5,63,Indian tree pie
+675,Adélie,978,Kafue flats lechwe,25,6,1,5,2,5,1,51,Kafue flats lechwe
+676,Mélia,262,American badger,15,5,5,4,1,15,4,82,American badger
+677,Réjane,753,Penguin magellanic,21,10,5,11,1,11,4,40,"Penguin, magellanic"
+678,Maëlla,323,Banded mongoose,34,19,3,10,4,18,2,48,Banded mongoose
+679,Dà,854,Scaly-breasted lorikeet,29,16,1,10,3,7,3,95,Scaly-breasted lorikeet
+680,Stéphanie,168,Lizard collared,16,1,2,6,2,13,5,77,"Lizard, collared"
+681,Maïlis,138,Whale southern right,10,15,5,9,4,11,2,53,"Whale, southern right"
+682,Judicaël,201,Beaver eurasian,14,20,2,8,1,11,2,73,"Beaver, eurasian"
+683,Jú,277,Black-backed magpie,37,14,4,12,4,2,1,33,Black-backed magpie
+684,Médiamass,330,Colobus black and white,44,2,4,10,1,13,3,39,"Colobus, black and white"
+685,Gaétane,291,Devil tasmanian,6,8,4,6,3,13,5,28,"Devil, tasmanian"
+686,Néhémie,293,Egret cattle,15,15,3,9,3,17,2,47,"Egret, cattle"
+687,Mégane,679,Nuthatch red-breasted,39,9,3,7,4,12,5,24,"Nuthatch, red-breasted"
+688,Pò,475,Numbat,18,18,5,11,0,10,5,33,Numbat
+689,Estée,229,Buffalo asian water,20,8,2,5,4,15,5,56,"Buffalo, asian water"
+690,Clémentine,724,Sloth two-toed tree,23,4,2,9,1,8,2,52,"Sloth, two-toed tree"
+691,Chloé,711,Jabiru stork,31,2,4,9,0,15,3,59,Jabiru stork
+692,Magdalène,157,Grenadier common,38,5,4,6,3,13,5,8,"Grenadier, common"
+693,Frédérique,580,Spurfowl yellow-necked,1,13,3,8,3,2,2,53,"Spurfowl, yellow-necked"
+694,Åke,353,Crocodile nile,7,20,5,9,2,20,3,81,"Crocodile, nile"
+695,Maïly,350,Cormorant king,44,7,1,9,4,1,4,70,"Cormorant, king"
+696,Marie-françoise,27,Pallas's fish eagle,23,14,1,5,2,4,5,43,Pallas's fish eagle
+697,Pélagie,172,Mocking cliffchat,12,8,5,7,3,8,1,33,Mocking cliffchat
+698,Wá,574,Squirrel european red,35,8,4,9,2,17,5,46,"Squirrel, european red"
+699,Yénora,367,Common rhea,42,16,1,12,2,20,3,37,Common rhea
+700,Gwenaëlle,992,Devil tasmanian,6,20,4,8,3,4,4,64,"Devil, tasmanian"
+701,Zoé,634,Black-crowned night heron,35,1,1,10,2,4,2,75,Black-crowned night heron
+702,Josée,289,African fish eagle,43,9,1,9,0,15,1,8,African fish eagle
+703,Kù,888,Coqui francolin,3,16,4,9,1,10,5,28,Coqui francolin
+704,Athéna,770,Sunbird lesser double-collared,20,16,3,12,2,1,4,90,"Sunbird, lesser double-collared"
+705,Amélie,116,King cormorant,38,6,2,4,2,6,2,63,King cormorant
+706,Zoé,671,Red-knobbed coot,14,18,5,10,2,1,5,54,Red-knobbed coot
+707,Dafnée,615,South American meadowlark (unidentified),24,12,4,11,1,15,5,74,South American meadowlark (unidentified)
+708,Bérangère,966,Ibis glossy,8,5,2,4,2,17,5,20,"Ibis, glossy"
+709,Vérane,155,Eurasian beaver,33,8,1,10,0,12,5,81,Eurasian beaver
+710,Jú,244,Oryx beisa,7,3,1,12,0,15,1,20,"Oryx, beisa"
+711,Maëline,815,Rhea common,21,3,3,8,1,2,3,32,"Rhea, common"
+712,Hélèna,393,Ferruginous hawk,12,1,3,4,1,12,5,84,Ferruginous hawk
+713,Ruì,90,Black swan,21,15,4,10,1,12,1,97,Black swan
+714,Irène,436,Malachite kingfisher,47,17,5,6,3,15,5,84,Malachite kingfisher
+715,Noémie,491,Galapagos penguin,35,10,5,12,1,7,1,61,Galapagos penguin
+716,Méryl,597,Sandpiper spotted wood,50,16,3,6,2,19,1,42,"Sandpiper, spotted wood"
+717,Kuí,363,Ring-tailed coatimundi,6,19,3,12,2,6,3,38,Ring-tailed coatimundi
+718,Erwéi,716,Wolf mexican,30,1,4,6,3,2,2,60,"Wolf, mexican"
+719,Cunégonde,911,Parrot hawk-headed,30,5,5,10,1,3,5,78,"Parrot, hawk-headed"
+720,Sòng,573,Monkey black spider,37,4,4,10,2,18,4,26,"Monkey, black spider"
+721,Estève,348,Impala,16,3,3,9,4,13,3,12,Impala
+722,Bérénice,821,Herring gull,7,20,1,10,1,11,3,34,Herring gull
+723,Estée,796,Wallaby dama,31,18,5,7,3,6,4,71,"Wallaby, dama"
+724,Maëlann,666,Horned puffin,35,18,5,6,2,10,3,47,Horned puffin
+725,Styrbjörn,371,Sandgrouse yellow-throated,28,19,1,12,4,5,5,49,"Sandgrouse, yellow-throated"
+726,Gwenaëlle,10,Brown pelican,22,1,5,11,4,10,5,37,Brown pelican
+727,Agnès,779,Tortoise indian star,23,15,2,12,3,10,3,79,"Tortoise, indian star"
+728,Hélèna,807,Cockatoo slender-billed,38,14,5,8,3,8,1,1,"Cockatoo, slender-billed"
+729,Maëlle,377,Turkey wild,15,4,3,9,2,5,3,6,"Turkey, wild"
+730,Marie-thérèse,91,Prehensile-tailed porcupine,12,10,1,6,4,3,2,4,Prehensile-tailed porcupine
+731,Erwéi,814,Black-capped capuchin,9,4,2,9,2,3,3,56,Black-capped capuchin
+732,Faîtes,445,Whale killer,14,18,1,6,3,13,2,59,"Whale, killer"
+733,Cloé,537,Brazilian otter,29,16,1,12,4,16,5,4,Brazilian otter
+734,Björn,593,Starfish crown of thorns,46,6,2,5,4,18,5,52,"Starfish, crown of thorns"
+735,Vénus,818,Antechinus brown,16,5,2,9,0,20,3,69,"Antechinus, brown"
+736,Océanne,294,Red lava crab,32,8,1,4,2,7,2,81,Red lava crab
+737,Aloïs,136,Dama wallaby,41,8,5,11,4,12,2,63,Dama wallaby
+738,Maëlyss,583,Deer swamp,11,15,5,7,2,10,2,100,"Deer, swamp"
+739,Méthode,817,Porcupine tree,2,2,3,6,2,15,5,46,"Porcupine, tree"
+740,Athéna,83,Fowl helmeted guinea,22,8,4,8,0,9,4,17,"Fowl, helmeted guinea"
+741,Maïté,489,Australian pelican,18,20,2,6,4,17,4,10,Australian pelican
+742,Ophélie,670,Red-tailed phascogale,18,2,4,10,2,16,1,13,Red-tailed phascogale
+743,Aimée,101,Tortoise burmese brown mountain,21,10,1,11,1,1,4,54,"Tortoise, burmese brown mountain"
+744,Bérengère,502,King cormorant,22,4,4,9,1,17,2,21,King cormorant
+745,Néhémie,274,Drongo fork-tailed,43,18,4,7,1,11,1,77,"Drongo, fork-tailed"
+746,Frédérique,158,Kongoni,18,5,5,6,4,16,5,98,Kongoni
+747,Clélia,928,Horned lark,19,19,4,9,0,4,3,31,Horned lark
+748,Maëly,920,Cape Barren goose,4,18,1,5,2,17,1,2,Cape Barren goose
+749,Simplifiés,389,Blackish oystercatcher,41,16,3,10,4,4,1,36,Blackish oystercatcher
+750,Noëlla,664,Hanuman langur,12,10,5,5,0,15,2,38,Hanuman langur
+751,Cléa,913,Macaw green-winged,11,12,5,6,0,12,2,2,"Macaw, green-winged"
+752,Marie-thérèse,752,Starling red-shouldered glossy,38,7,1,6,2,4,1,46,"Starling, red-shouldered glossy"
+753,Frédérique,615,Platypus,15,17,3,7,2,6,3,85,Platypus
+754,Åslög,89,Jackal asiatic,38,13,2,12,2,16,1,3,"Jackal, asiatic"
+755,Naéva,412,Jackal black-backed,6,9,1,6,3,3,3,51,"Jackal, black-backed"
+756,Dorothée,653,African porcupine,7,11,3,8,4,14,4,3,African porcupine
+757,Zhì,842,Falcon prairie,41,19,4,5,2,17,1,62,"Falcon, prairie"
+758,Mahélie,859,Blue-tongued lizard,50,19,3,12,0,2,1,75,Blue-tongued lizard
+759,Mélanie,937,Bandicoot long-nosed,2,20,4,11,2,9,2,5,"Bandicoot, long-nosed"
+760,Mahélie,883,Gull kelp,45,2,2,10,2,8,5,89,"Gull, kelp"
+761,Clélia,925,Kangaroo black-faced,44,10,4,8,4,20,1,19,"Kangaroo, black-faced"
+762,Marie-noël,396,Wallaby whip-tailed,29,20,4,4,2,7,4,40,"Wallaby, whip-tailed"
+763,Bécassine,964,African wild cat,45,14,1,8,1,14,2,20,African wild cat
+764,Liè,550,Collared peccary,25,5,3,11,0,2,5,61,Collared peccary
+765,Eugénie,127,Eastern indigo snake,14,6,5,12,1,15,2,3,Eastern indigo snake
+766,Angèle,473,Laughing kookaburra,23,10,2,6,2,17,1,91,Laughing kookaburra
+767,Mylène,94,Bennett's wallaby,48,4,2,10,4,19,2,99,Bennett's wallaby
+768,Méthode,306,Devil tasmanian,19,17,4,11,4,9,1,35,"Devil, tasmanian"
+769,Publicité,400,Weaver lesser masked,9,10,5,10,1,13,3,70,"Weaver, lesser masked"
+770,Lauréna,618,Racer blue,20,3,2,7,2,10,1,46,"Racer, blue"
+771,Réservés,265,Spoonbill european,41,16,5,11,2,9,2,18,"Spoonbill, european"
+772,Laïla,630,White-throated monitor,15,3,1,8,3,19,5,80,White-throated monitor
+773,Sòng,167,Dolphin bottle-nose,39,20,1,11,3,1,3,64,"Dolphin, bottle-nose"
+774,Gaïa,176,Little blue penguin,48,2,5,6,4,14,4,100,Little blue penguin
+775,Esbjörn,42,White-winged tern,23,10,2,4,4,13,2,36,White-winged tern
+776,Dorothée,114,Australian spiny anteater,9,20,5,4,3,7,5,57,Australian spiny anteater
+777,Béatrice,518,Macaw green-winged,28,1,2,5,2,7,5,17,"Macaw, green-winged"
+778,Wá,874,Tammar wallaby,41,1,4,7,3,13,1,60,Tammar wallaby
+779,Cléa,139,Porcupine crested,50,14,3,12,0,8,2,57,"Porcupine, crested"
+780,Börje,317,Woylie,48,15,2,5,2,11,3,56,Woylie
+781,Méng,323,Dabchick,43,19,5,6,2,2,4,48,Dabchick
+782,Mén,554,Crab red lava,39,2,1,6,1,5,4,62,"Crab, red lava"
+783,Léane,169,Monkey vervet,27,2,2,10,4,1,5,26,"Monkey, vervet"
+784,Ruì,301,Helmeted guinea fowl,21,8,1,10,1,3,2,26,Helmeted guinea fowl
+785,Edmée,93,Sloth hoffman's,11,11,2,9,3,6,2,63,"Sloth, hoffman's"
+786,Marie-thérèse,244,Gull dusky,49,20,4,5,4,8,2,61,"Gull, dusky"
+787,Irène,440,Lemur grey mouse,35,14,3,8,1,7,2,81,"Lemur, grey mouse"
+788,Torbjörn,345,Wallaby tammar,3,1,3,11,2,10,5,75,"Wallaby, tammar"
+789,Åsa,405,Francolin swainson's,17,10,1,8,3,15,3,48,"Francolin, swainson's"
+790,Judicaël,472,Macaque rhesus,11,7,1,9,1,6,4,2,"Macaque, rhesus"
+791,Réservés,352,Genet small-spotted,20,18,2,8,3,11,2,94,"Genet, small-spotted"
+792,Zoé,568,Turtle snake-necked,48,9,4,4,3,14,5,12,"Turtle, snake-necked"
+793,Bérengère,385,Feral rock pigeon,20,18,1,4,4,5,1,13,Feral rock pigeon
+794,Gaïa,367,Beisa oryx,20,6,1,10,3,20,5,68,Beisa oryx
+795,Lén,64,Squirrel eurasian red,48,14,3,4,3,18,1,80,"Squirrel, eurasian red"
+796,Maëlle,900,Gull dusky,34,13,2,4,4,20,2,19,"Gull, dusky"
+797,Táng,533,Asian water buffalo,14,12,4,5,4,7,2,75,Asian water buffalo
+798,Håkan,586,Bald eagle,7,10,3,6,2,15,4,11,Bald eagle
+799,Estée,218,Armadillo seven-banded,36,4,2,10,0,9,3,39,"Armadillo, seven-banded"
+800,Océanne,75,Swallow (unidentified),35,18,1,6,3,5,3,46,Swallow (unidentified)
+801,Solène,47,Cat toddy,49,10,4,7,0,14,5,55,"Cat, toddy"
+802,Fèi,470,Alligator mississippi,36,12,4,8,4,17,2,5,"Alligator, mississippi"
+803,Méline,614,Stick insect,12,5,1,6,4,20,4,12,Stick insect
+804,Bécassine,929,Pheasant ring-necked,18,20,3,4,1,15,3,97,"Pheasant, ring-necked"
+805,Bérénice,293,Scottish highland cow,23,3,3,6,3,14,3,3,Scottish highland cow
+806,Ruò,872,Giant heron,9,1,5,8,1,16,2,49,Giant heron
+807,Noëlla,467,Francolin swainson's,41,15,3,11,1,12,2,5,"Francolin, swainson's"
+808,Joséphine,673,Weaver chestnut,2,8,5,9,2,5,1,16,"Weaver, chestnut"
+809,Maï,242,Rhinoceros white,35,17,1,6,2,8,5,65,"Rhinoceros, white"
+810,Méng,712,Water monitor,3,18,4,9,3,11,4,60,Water monitor
+811,Mélinda,972,Echidna short-beaked,37,2,1,4,4,10,1,5,"Echidna, short-beaked"
+812,Géraldine,178,Lapwing southern,41,15,4,11,3,16,3,70,"Lapwing, southern"
+813,Nadège,120,Nile crocodile,29,6,3,4,4,4,3,15,Nile crocodile
+814,Adèle,98,Stork european,2,14,2,8,2,18,3,69,"Stork, european"
+815,Östen,950,Greater flamingo,23,20,3,10,3,17,2,25,Greater flamingo
+816,Dù,676,Small-clawed otter,13,16,5,9,1,13,4,38,Small-clawed otter
+817,Simplifiés,827,Admiral indian red,41,11,4,8,0,19,2,16,"Admiral, indian red"
+818,Marie-ève,492,Boa cook's tree,7,6,2,7,3,7,1,91,"Boa, cook's tree"
+819,Léone,702,Grison,32,11,4,11,1,13,3,50,Grison
+820,Anaïs,65,Mouse four-striped grass,39,6,2,5,0,17,5,91,"Mouse, four-striped grass"
+821,Desirée,828,Flycatcher tyrant,22,17,5,10,2,16,1,93,"Flycatcher, tyrant"
+822,Edmée,352,Cat miner's,6,8,1,8,4,19,5,96,"Cat, miner's"
+823,Magdalène,154,Bandicoot short-nosed,33,14,4,5,3,8,4,77,"Bandicoot, short-nosed"
+824,Publicité,301,Wallaby agile,23,14,2,7,0,14,1,25,"Wallaby, agile"
+825,Anaël,737,Large-eared bushbaby,8,4,4,12,3,17,1,78,Large-eared bushbaby
+826,Maéna,412,Kelp gull,22,16,2,10,4,6,3,92,Kelp gull
+827,Marie-josée,506,Snowy owl,14,7,2,10,3,18,5,75,Snowy owl
+828,Adèle,988,Kiskadee great,23,10,4,7,1,17,5,77,"Kiskadee, great"
+829,Adélie,778,Red howler monkey,29,5,4,5,1,17,5,47,Red howler monkey
+830,Andréanne,470,Red-breasted cockatoo,6,9,3,9,3,7,3,90,Red-breasted cockatoo
+831,Vénus,548,Peacock blue,1,1,5,6,4,14,4,11,"Peacock, blue"
+832,Réjane,161,Raven white-necked,18,19,3,10,3,12,3,86,"Raven, white-necked"
+833,Renée,741,Coqui francolin,17,6,1,12,1,14,4,71,Coqui francolin
+834,Nuó,25,Yellow-billed hornbill,41,17,2,7,2,15,1,49,Yellow-billed hornbill
+835,Hélène,165,Bald eagle,4,16,5,12,4,9,1,83,Bald eagle
+836,Kallisté,729,Crested barbet,2,16,5,8,0,4,4,82,Crested barbet
+837,Laïla,372,African bush squirrel,14,16,5,10,3,6,4,18,African bush squirrel
+838,Åke,456,Killer whale,22,20,5,6,3,15,5,61,Killer whale
+839,Loïca,577,Sloth two-toed,16,7,2,6,4,3,3,63,"Sloth, two-toed"
+840,Erwéi,982,Tapir brazilian,37,6,2,9,2,10,1,7,"Tapir, brazilian"
+841,Séréna,156,Goose cape barren,5,2,4,8,0,12,1,80,"Goose, cape barren"
+842,Maéna,148,Gull lava,41,13,4,9,1,5,3,89,"Gull, lava"
+843,Märta,601,Kangaroo red,12,19,5,4,3,10,1,65,"Kangaroo, red"
+844,Clémence,237,Red-legged pademelon,29,6,2,5,1,11,5,3,Red-legged pademelon
+845,Maïwenn,396,Civet cat,19,4,2,6,3,6,1,43,Civet cat
+846,Léana,703,Squirrel european red,34,4,5,10,3,5,5,14,"Squirrel, european red"
+847,Åslög,619,Hartebeest coke's,46,7,5,7,0,5,1,41,"Hartebeest, coke's"
+848,Marie-ève,157,Racer blue,28,1,4,8,4,15,3,39,"Racer, blue"
+849,Adélaïde,610,Helmeted guinea fowl,35,17,2,7,1,17,4,72,Helmeted guinea fowl
+850,Mégane,940,Turkey common,20,3,4,4,3,2,2,41,"Turkey, common"
+851,Tú,627,Buffalo american,5,5,2,11,3,14,2,5,"Buffalo, american"
+852,Régine,122,Gambel's quail,3,16,2,9,4,2,2,66,Gambel's quail
+853,Daphnée,467,Red-breasted cockatoo,18,15,1,12,2,17,5,29,Red-breasted cockatoo
+854,Angélique,473,Feathertail glider,20,5,1,6,1,18,3,6,Feathertail glider
+855,Maëlla,176,Tinamou elegant crested,42,3,3,10,4,3,4,2,"Tinamou, elegant crested"
+856,Naëlle,868,Brocket red,27,3,2,7,2,19,4,86,"Brocket, red"
+857,Lorène,328,Snake-necked turtle,23,16,2,9,4,12,2,24,Snake-necked turtle
+858,Maïlis,107,Heron grey,39,3,1,8,0,17,2,1,"Heron, grey"
+859,Pénélope,349,Southern screamer,41,20,4,8,2,12,2,88,Southern screamer
+860,Françoise,571,White-browed owl,29,11,4,11,4,3,4,14,White-browed owl
+861,Béatrice,263,Asian red fox,7,4,3,10,4,16,3,73,Asian red fox
+862,Rachèle,508,Radiated tortoise,43,17,4,11,4,15,2,98,Radiated tortoise
+863,Marylène,182,European spoonbill,13,18,5,4,4,8,1,85,European spoonbill
+864,Hélène,158,Pintail white-cheeked,45,7,5,5,0,19,4,90,"Pintail, white-cheeked"
+865,Marie-josée,224,Monkey black spider,37,16,5,8,2,20,2,37,"Monkey, black spider"
+866,Séréna,289,Savanna fox,35,8,5,4,0,2,2,9,Savanna fox
+867,Naëlle,670,Racer blue,50,10,1,7,1,17,4,77,"Racer, blue"
+868,Cléopatre,805,African skink,22,20,3,9,4,19,5,2,African skink
+869,Félicie,124,Mexican beaded lizard,20,6,2,7,3,2,3,24,Mexican beaded lizard
+870,Mén,394,Brown hyena,10,17,2,7,1,3,3,100,Brown hyena
+871,Léa,288,Kongoni,11,18,5,6,3,12,5,5,Kongoni
+872,Jú,980,Boa malagasy ground,26,8,3,8,4,7,4,89,"Boa, malagasy ground"
+873,Bécassine,21,Sifaka verreaux's,49,4,3,8,3,11,2,6,"Sifaka, verreaux's"
+874,Camélia,160,Wallaby dama,24,3,5,6,2,15,1,44,"Wallaby, dama"
+875,Clémentine,752,Turkey australian brush,31,5,4,9,4,4,1,87,"Turkey, australian brush"
+876,Görel,430,Antelope four-horned,14,2,3,8,4,1,1,68,"Antelope, four-horned"
+877,Publicité,240,Oystercatcher blackish,7,20,1,7,0,5,5,15,"Oystercatcher, blackish"
+878,Lorène,604,Cat miner's,11,5,5,12,1,5,4,44,"Cat, miner's"
+879,Océane,952,Black-tailed tree creeper,4,14,5,5,4,19,1,63,Black-tailed tree creeper
+880,Maëlys,877,Shelduck common,12,13,1,11,4,7,2,79,"Shelduck, common"
+881,Lèi,369,Feathertail glider,4,7,1,8,1,9,4,85,Feathertail glider
+882,Illustrée,333,Western lowland gorilla,42,18,4,9,2,14,3,85,Western lowland gorilla
+883,Cunégonde,138,Javanese cormorant,21,10,2,9,2,8,3,68,Javanese cormorant
+884,Mårten,2,Canada goose,19,11,1,7,4,9,3,65,Canada goose
+885,Andrée,551,Bird magnificent frigate,2,9,2,4,0,17,4,28,"Bird, magnificent frigate"
+886,Marie-thérèse,155,Albatross galapagos,36,8,2,4,2,6,1,33,"Albatross, galapagos"
+887,Faîtes,434,Little heron,13,13,1,9,3,8,3,19,Little heron
+888,Gaïa,72,Flying fox (unidentified),36,10,5,9,4,1,1,15,Flying fox (unidentified)
+889,Vérane,942,Desert kangaroo rat,40,9,5,4,1,5,5,57,Desert kangaroo rat
+890,Erwéi,1,Malabar squirrel,30,9,4,4,4,5,1,99,Malabar squirrel
+891,Vénus,18,Lemming arctic,14,5,3,5,4,11,3,28,"Lemming, arctic"
+892,Marylène,649,Cape cobra,3,8,5,10,4,11,3,25,Cape cobra
+893,Marie-thérèse,647,Kiskadee great,7,7,2,10,3,15,1,34,"Kiskadee, great"
+894,Audréanne,904,Stone sheep,34,11,1,7,0,2,4,28,Stone sheep
+895,Simplifiés,885,Scottish highland cow,3,9,5,12,3,16,4,65,Scottish highland cow
+896,Eloïse,630,Wombat common,28,7,1,4,1,4,3,99,"Wombat, common"
+897,Clélia,776,Alligator mississippi,12,8,1,6,1,3,3,44,"Alligator, mississippi"
+898,Aí,979,Gecko (unidentified),28,7,1,9,1,4,4,45,Gecko (unidentified)
+899,Mårten,845,Toucan red-billed,14,10,3,5,2,8,3,66,"Toucan, red-billed"
+900,Bénédicte,814,Dusky rattlesnake,23,12,4,10,2,14,5,75,Dusky rattlesnake
+901,Åsa,351,Richardson's ground squirrel,45,4,2,5,2,7,2,15,Richardson's ground squirrel
+902,Marie-hélène,553,Stork openbill,34,19,5,6,0,8,2,10,"Stork, openbill"
+903,Maïlys,874,Yellow-billed hornbill,20,17,5,8,2,7,2,85,Yellow-billed hornbill
+904,Naëlle,835,Lark horned,4,20,2,10,4,9,5,33,"Lark, horned"
+905,Maïté,501,Galapagos albatross,39,9,3,4,2,2,4,88,Galapagos albatross
+906,Andréa,299,Red howler monkey,47,8,4,8,4,14,3,72,Red howler monkey
+907,Mélissandre,342,Rhea common,16,6,3,7,3,1,5,84,"Rhea, common"
+908,Cécilia,621,Mouse four-striped grass,4,15,3,5,2,17,5,18,"Mouse, four-striped grass"
+909,Geneviève,746,Squirrel indian giant,14,9,4,4,1,8,4,22,"Squirrel, indian giant"
+910,Séréna,638,Lesser masked weaver,4,15,3,11,3,3,2,24,Lesser masked weaver
+911,Maïly,460,Asian false vampire bat,9,16,2,5,2,7,4,11,Asian false vampire bat
+912,Judicaël,458,Cockatoo sulfur-crested,43,12,1,5,2,9,2,6,"Cockatoo, sulfur-crested"
+913,Méng,511,Booby blue-faced,9,7,5,5,2,19,2,31,"Booby, blue-faced"
+914,Mélissandre,699,Rock dove,46,9,2,8,4,6,3,2,Rock dove
+915,Mén,540,Common ringtail,30,15,1,6,4,4,4,94,Common ringtail
+916,Régine,618,Great kiskadee,21,11,1,5,2,9,5,73,Great kiskadee
+917,Kù,381,Netted rock dragon,17,10,3,4,1,12,1,87,Netted rock dragon
+918,Léone,95,Rhinoceros white,23,5,1,12,2,2,2,42,"Rhinoceros, white"
+919,Lài,288,Brown capuchin,22,1,3,12,1,11,2,45,Brown capuchin
+920,Réservés,697,Common nighthawk,6,9,3,10,1,5,1,8,Common nighthawk
+921,Maéna,828,Moose,12,10,4,6,3,10,4,68,Moose
+922,Adélie,229,Red-billed buffalo weaver,30,12,2,10,1,2,1,66,Red-billed buffalo weaver
+923,Cécile,622,Antelope ground squirrel,2,15,3,12,3,3,5,67,Antelope ground squirrel
+924,Mélodie,309,Coatimundi white-nosed,48,10,1,11,1,1,3,7,"Coatimundi, white-nosed"
+925,Loïca,297,Egret snowy,9,10,5,8,0,12,5,81,"Egret, snowy"
+926,Magdalène,374,Devil tasmanian,4,15,4,10,1,17,1,84,"Devil, tasmanian"
+927,Mélia,448,American crow,8,18,3,11,0,11,4,99,American crow
+928,Kallisté,339,Brazilian tapir,14,10,4,9,0,4,3,48,Brazilian tapir
+929,Cléopatre,95,Smith's bush squirrel,23,10,3,5,0,1,2,2,Smith's bush squirrel
+930,Mårten,708,Vervet monkey,40,20,4,10,2,4,2,70,Vervet monkey
+931,Mélanie,635,Four-striped grass mouse,14,1,2,9,4,11,1,27,Four-striped grass mouse
+932,Lén,29,Four-horned antelope,42,10,3,7,2,11,1,96,Four-horned antelope
+933,Sòng,602,Red-billed tropic bird,28,10,3,5,3,1,3,41,Red-billed tropic bird
+934,Judicaël,737,Python (unidentified),31,10,2,9,0,7,1,15,Python (unidentified)
+935,Françoise,921,Brazilian tapir,31,15,2,6,1,5,4,67,Brazilian tapir
+936,Thérèsa,479,Kangaroo western grey,17,3,5,7,1,16,1,1,"Kangaroo, western grey"
+937,Illustrée,184,White-bellied sea eagle,48,10,3,8,0,20,5,44,White-bellied sea eagle
+938,Célestine,416,Lion steller's sea,28,14,4,4,4,16,4,14,"Lion, steller's sea"
+939,Méline,667,Nine-banded armadillo,24,7,4,10,4,2,1,88,Nine-banded armadillo
+940,Marie-ève,915,Macaque bonnet,46,5,5,8,0,19,2,40,"Macaque, bonnet"
+941,Naéva,327,Galapagos sea lion,9,10,2,10,4,4,1,14,Galapagos sea lion
+942,Léa,910,Possum pygmy,35,17,5,9,4,2,1,13,"Possum, pygmy"
+943,Léa,777,African porcupine,47,6,1,6,1,8,4,86,African porcupine
+944,Adèle,428,Rat white-faced tree,37,17,3,4,1,1,4,62,"Rat, white-faced tree"
+945,Marie-françoise,573,Fox pampa gray,9,6,3,10,4,18,2,40,"Fox, pampa gray"
+946,Anaël,663,European wild cat,8,19,5,11,1,8,1,64,European wild cat
+947,Réservés,744,Southern brown bandicoot,21,20,1,8,3,4,2,71,Southern brown bandicoot
+948,Véronique,684,Yellow-headed caracara,45,18,4,12,2,12,2,19,Yellow-headed caracara
+949,Bénédicte,306,Ibis puna,46,20,5,12,0,10,4,46,"Ibis, puna"
+950,Bérangère,721,Eurasian beaver,50,14,3,12,0,17,1,40,Eurasian beaver
+951,Léane,489,Swainson's francolin,47,13,5,7,3,16,2,63,Swainson's francolin
+952,Noëlla,101,Oriental white-backed vulture,49,9,4,9,3,9,5,66,Oriental white-backed vulture
+953,Néhémie,861,Crake african black,36,16,4,7,3,19,3,47,"Crake, african black"
+954,Cécile,270,Mississippi alligator,10,14,3,4,3,4,4,81,Mississippi alligator
+955,Lorène,986,European red squirrel,47,19,1,10,2,7,2,57,European red squirrel
+956,Garçon,160,Duck mountain,7,11,2,8,0,4,1,22,"Duck, mountain"
+957,Sòng,944,Pied avocet,31,7,4,6,4,2,5,39,Pied avocet
+958,Lèi,396,Skua great,43,6,2,12,3,18,2,53,"Skua, great"
+959,Tán,377,Trumpeter swan,19,1,2,7,0,19,4,54,Trumpeter swan
+960,Rébecca,366,South American meadowlark (unidentified),39,20,3,9,3,20,2,12,South American meadowlark (unidentified)
+961,Táng,341,Heron goliath,20,5,5,12,1,10,4,47,"Heron, goliath"
+962,Börje,822,Antelope roan,32,11,2,8,0,3,2,7,"Antelope, roan"
+963,Nélie,977,Brown and yellow marshbird,31,2,5,5,4,10,3,85,Brown and yellow marshbird
+964,Marie-noël,858,Long-billed corella,14,6,3,9,3,10,1,22,Long-billed corella
+965,Yóu,926,Iguana common green,18,13,3,11,3,18,1,60,"Iguana, common green"
+966,Réservés,542,White spoonbill,37,7,1,5,2,18,1,83,White spoonbill
+967,Camélia,17,Black swan,12,2,2,7,2,18,3,87,Black swan
+968,Séréna,117,Phascogale brush-tailed,23,14,4,7,0,13,4,45,"Phascogale, brush-tailed"
+969,Réservés,766,Arctic tern,14,16,4,9,3,19,3,1,Arctic tern
+970,Kuí,61,Neotropic cormorant,13,1,3,9,4,12,2,44,Neotropic cormorant
+971,Mén,534,Cobra egyptian,29,16,2,12,0,14,5,86,"Cobra, egyptian"
+972,Médiamass,276,European spoonbill,23,12,3,5,1,11,4,50,European spoonbill
+973,Dafnée,887,Crested porcupine,41,3,3,6,0,20,4,33,Crested porcupine
+974,Åke,919,Nyala,11,9,3,12,2,8,2,27,Nyala
+975,Judicaël,39,Southern right whale,39,2,5,12,0,14,3,15,Southern right whale
+976,Loïs,771,Red-winged hawk (unidentified),33,2,5,12,1,19,4,11,Red-winged hawk (unidentified)
+977,Léa,592,Phascogale red-tailed,46,13,5,10,0,2,1,55,"Phascogale, red-tailed"
+978,Dorothée,734,Spoonbill european,50,17,5,8,1,15,1,83,"Spoonbill, european"
+979,Salomé,896,Turtle long-necked,47,6,2,8,0,10,1,23,"Turtle, long-necked"
+980,Pò,758,Porcupine prehensile-tailed,2,2,3,9,1,18,1,99,"Porcupine, prehensile-tailed"
+981,Gaétane,100,Red kangaroo,27,7,4,11,4,9,4,29,Red kangaroo
+982,Andréanne,790,Red kangaroo,45,10,1,8,4,8,3,100,Red kangaroo
+983,Hélène,16,Secretary bird,39,13,1,10,0,20,5,54,Secretary bird
+984,Mélinda,291,Puku,21,17,1,4,1,10,5,38,Puku
+985,Zoé,261,Baboon savanna,14,4,3,7,2,16,2,54,"Baboon, savanna"
+986,Inès,777,Thomson's gazelle,3,10,4,6,0,3,5,79,Thomson's gazelle
+987,Séverine,329,Goose cape barren,4,5,4,7,3,20,3,45,"Goose, cape barren"
+988,Maëline,642,Coqui francolin,49,19,4,10,0,5,1,50,Coqui francolin
+989,Intéressant,409,Trumpeter swan,40,7,4,8,2,17,3,88,Trumpeter swan
+990,Gwenaëlle,575,Pine siskin,48,6,4,12,3,17,4,53,Pine siskin
+991,Simplifiés,390,White-throated monitor,14,7,1,7,0,15,5,20,White-throated monitor
+992,Bécassine,648,Red-winged hawk (unidentified),11,13,5,8,3,13,1,21,Red-winged hawk (unidentified)
+993,Garçon,971,Heron black-crowned night,21,12,5,5,0,17,2,23,"Heron, black-crowned night"
+994,Vénus,281,Dassie,25,1,2,12,4,10,5,93,Dassie
+995,Lyséa,772,Hawk galapagos,14,9,3,10,0,7,3,68,"Hawk, galapagos"
+996,Josée,796,Dragon netted rock,3,20,1,6,4,17,4,25,"Dragon, netted rock"
+997,Pål,82,Laughing kookaburra,10,15,3,8,3,1,5,99,Laughing kookaburra
+998,Maëline,987,Tern white-winged black,47,18,2,10,3,10,4,35,"Tern, white-winged black"
+999,Anaël,521,Squirrel pine,41,5,2,6,2,9,4,31,"Squirrel, pine"
+1000,Pål,197,Sparrow house,35,8,4,4,3,11,2,28,"Sparrow, house"
