@@ -14,7 +14,29 @@ pwd = CryptContext(schemes=['bcrypt'], deprecated='auto')
 #####
 # some pseudo code just to get shit down
 #####
-#
+
+@app.route('/')
+def serve_homepage():
+    """render the homepage with option to sign in or register"""
+
+@app.route('/register', methods=['GET'])
+def registration():
+    """render the registration page for new users"""
+
+@app.route('/register', methods=['POST'])
+def create_new_user():
+    """creates new user account with info from the form"""
+    """redirects to homepage and flashes success message"""
+
+@app.route('/login', methods=['POST'])
+def user_login():
+    """takes username and password hash to validate user"""
+    """adds auth to session, renders DM homepage with games and rooms"""
+
+@app.route('/logout')
+def user_logout():
+    """removes auth from session and redirects user to homepage"""
+
 # create dm account
 #     username, autoincrement id
 #     hash password and store the hash!!
@@ -32,19 +54,41 @@ pwd = CryptContext(schemes=['bcrypt'], deprecated='auto')
 # log out of dm account
 #     dump that session cookie
 #     redirect to log in screen
-#
+
+@app.route('/new_game', methods=['GET'])
+def new_game_info():
+    """serves form about new game to get info from DM"""
+
+@app.route('/new_game', methods=['POST'])
+def create_new_game():
+    """creates a new game instance based on the information provided"""
+    """redirects back to DM dashboard with game now shown"""
+
 # create new game
 #     input player information
 #     give it a name
 #     return to game list showing the new game available
-#
+
+@app.route('/new_room', methods=['GET'])
+def new_room_info():
+    """serves form about new room to get info from DM"""
+
+@app.route('/new_room', methods=['POST'])
+def create_new_room():
+    """creates new room based on the information provided"""
+    """renders page with new room spread and data sidebar"""
+
 # create new room
 #     associated with a game
 #     pass level and number of monsters
 #     return monster info from api
 #     give positioning of monsters
 #     put the room id, game id into the session cookie
-#
+
+@app.route('/load_room')
+def load_room():
+    """loads up a saved room from the list of available rooms"""
+
 # retrieve room
 #     loads up monster stats, initiative list, player info
 #     puts room id, game id into session cookie
