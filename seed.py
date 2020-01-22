@@ -59,7 +59,7 @@ def load_players():
         row = row.rstrip()
         player_info = row.split(",")
         player_id, name, game_id, species, total_hp, ac, hit_dice_num, hit_dice_type,\
-        initiative_mod, initiative_roll, speed, current_square = player_info[:12]
+        initiative_mod, initiative_roll, speed, current_square, bonus = player_info[:13]
         player = Players(player_id=player_id,
                          name=name,
                          game_id=game_id,
@@ -68,6 +68,7 @@ def load_players():
                          ac=ac,
                          hit_dice_num=hit_dice_num,
                          hit_dice_type=hit_dice_type,
+                         bonus=bonus,
                          initiative_mod=initiative_mod,
                          initiative_roll=initiative_roll,
                          speed=speed,
@@ -84,7 +85,7 @@ def load_monsters():
         row = row.rstrip()
         monster_info = row.split(",")
         monster_id, room_id, species, total_hp, ac, hit_dice_num, hit_dice_type,\
-        initiative_mod, initiative_roll, speed, current_square = monster_info[:11]
+        initiative_mod, initiative_roll, speed, current_square, bonus = monster_info[:12]
         monster = Monsters(monster_id=monster_id,
                            room_id=room_id,
                            species=species,
@@ -92,6 +93,7 @@ def load_monsters():
                            ac=ac,
                            hit_dice_num=hit_dice_num,
                            hit_dice_type=hit_dice_type,
+                           bonus=bonus,
                            initiative_mod=initiative_mod,
                            initiative_roll=initiative_roll,
                            speed=speed,
