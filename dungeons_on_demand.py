@@ -92,11 +92,27 @@ def load_room():
 # retrieve room
 #     loads up monster stats, initiative list, player info
 #     puts room id, game id into session cookie
-#
+
+@app.route('/roll_initiative')
+def roll_initiative():
+    """rolls initiative for the characters and monsters"""
+    """pulls init mod from db, randomizes d20 roll, writes current roll to db"""
+
 # roll initiative
 #     rolls for monsters and players based on mods
 #     creates list of initiative rolls, writes to db
-#
+
+@app.route('/turn_action', methods=['GET'])
+def turn_action():
+    """cycles through the turn options for a move--player vs. monster passed as arg"""
+    """triggered by clicking 'turn' in initiative column when live"""
+    """first prompts to move--either click to square, or click on self to stay"""
+    """then offers option for attack, calls attack calculation function"""
+    """if char_type monster, calculates the damage and returns it"""
+    """if char_type player, launches dialog box to get damage from DM"""
+    """commits any attack info, movement to db"""
+    """calls function to advance to next in the initiative list"""
+
 # track turns
 #     highlights the current player on initiative list
 #     prompts DM for movement (click done when done)
@@ -106,16 +122,38 @@ def load_room():
 #     requests target then calculates damage received based on target
 #     check if any other moves? if no, continue to next character
 #     highlights the next character and loops
-#
+
+@app.route('/roll_monster_attack', methods=['GET'])
+def monster_attack():
+    """calculates how much damage a monster has done"""
+    """receives monster ID and player ID as args in URL"""
+    """calculates total damage and damage player took based on AC"""
+    """updates player's HP and commits info to db"""
+
 # roll monster damage
 #     randomize on number of dice and type
 #     return the damage value
-#
+
+@app.route('/roll_monster_damage', methods=['GET'])
+def player_attack():
+    """calculates how much damage a monster has received"""
+    """monster ID, player ID, and damage roll as args in URL"""
+    """calculates monster's new total HP and checks if dead or not"""
+    """updates monster's HP on sidebar, commits to DB"""
+
 # calculate damage received
 #     total damage and armor class modifier
 #     for monster, check if damage more than HP and if yes, return "dead", if no, update HP
 #     return damage received
-#
+
+@app.route('/close_room', methods=['POST'])
+def close_room():
+    """commits all room status to db for future reference, flags done if needed"""
+    """room id, game id, room complete or not passed in body/session"""
+    """sets all current squares to db"""
+    """dumps room and game id from session"""
+    """redirects back to game listing page"""
+
 # close room
 #     save room status preserves the room as it is and makes the monsters reloadable
 #     complete room flags that the room is done and not to be re-entered, removes from playable list
@@ -124,7 +162,14 @@ def load_room():
 #
 # update HP
 #     done manually by the DM for players
-#
+
+@app.route('/view_stats')
+def view_player_stats():
+    """updates stat page with current info for the game"""
+    """shows number of kills and damage by each player"""
+    """shows by current room and by total campaign"""
+    """shows perhaps a chart or two???"""
+
 # calculate player stats
 #     every time a player makes an attack, recalculate:
 #     #or should this just be done when the view is changed to the stats page?
@@ -133,7 +178,13 @@ def load_room():
 #         average damage per player (of the group, and individually)
 #         total kills
 #         available for that room and also for the whole game, toggle switch? tab?
-#
+
+@app.route('/change_view')
+def show_new_view():
+    """switches the currently visible layer--board, or stats"""
+    """uses CSS classes to toggle visible or not"""
+    """sets a flag in the session"""
+    """redirects to the appropriate route--view stats, view room"""
 # change view
 #     changes which layer is currently visible -- game board, player stats
 #
