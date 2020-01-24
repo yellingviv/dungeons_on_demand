@@ -27,7 +27,11 @@ def get_monster_list(diff, num):
         monst_info['hp'] = monster['hit_points']
         dice = monster['hit_dice']
         dice_info = re.split(r'\D+', dice)
-        monst_info['dice_num'], monst_info['dice_type'], monst_info['bonus'] = dice_info
+        if len(dice_info) == 3:
+            monst_info['dice_num'], monst_info['dice_type'], monst_info['bonus'] = dice_info
+        elif len(dice_info) == 2:
+            monst_info['dice_num'], monst_info['dice_type'] = dice_info
+            monst_info['bonus'] = 0
         monst_info['speed'] = monster['speed']
         # speed returns a dict with different types of movement and speed... OH NO
         monst_info['str'] = monster['strength']
