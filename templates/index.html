@@ -3,10 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>Dungeons On Demand</title>
+    <link rel="stylesheet"
+      href="/static/whatever.css">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"
+      crossorigin></script>
   </head>
 <body>
 
 Initial placeholder.
+
+Divs that will be needed:
+
+- index page:
+--- not logged in
+--- log in flow
+
+- logged in game and room selection spread
+--- a div for each game, with room sub-divs inside
+--- div to create new game, sub-divs in games for new room
+
+- new game flow - dialog boxes? layer? something like that?
+--- name the game
+--- add character information by character, prompt for another character or no
+--- return to selection spread to create room
+
+- new room flow
+--- name the room
+--- indicate number of monsters and level
+--- pushes to room screen
+
+- room screen
+--- player info on left
+------ each player name is a div that opens out to show detail when clicked on
+--- tabs to return to home, look at stats, be in room on far left
+--- room squares in the middle
+--- monster info on the left side
+------ also open out to show detail on click, like PCs
+--- initiative list above the monster list
 
 </body>
 </html>
