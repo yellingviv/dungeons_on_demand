@@ -22,37 +22,34 @@ class MonsterCard extends React.Component {
 	}
 }
 
-
-const monsterCardData = [
-
-    // need to pull this from the back end
-  {
-    monster_id,
-    type,
-    hp,
-    initiative,
-    ac,
-    dice_num, dice_type, bonus
-    str, dex, con,
-    int, wis, cha,
-    speed (swim, fly, hover),
-    size
-  },
-
-];
-
-
 class monsterCardContainer extends React.Component {
   render() {
     const monsterCards = [];
 
-    for (const currentCard of MonsterCardData) {
-      tradingCards.push(
+    // okay so monsterdata is coming from the API, how do I get it to here?
+    for (const currentMonst of MonsterData) {
+      monsterCards.push(
       	<MonsterCard
-      		key={currentCard.name}
-      		name={currentCard.name}
-      		skill={currentCard.skill}
-      		imgUrl={currentCard.imgUrl}
+      		key={currentMonst.monster_id}
+      		monster_id={currentMonst.monster_id}
+      	    type={currentMonst.type}
+      		hp={currentMonst.hp}
+            initiative={currentMonst.initiative}
+            ac={currentMonst.ac}
+            dice_num={currentMonst.dice_num}
+            dice_type={currentMonst.dice_type}
+            bonus={currentMonst.bonus}
+            str={currentMonst.str}
+            dex={currentMonst.dex}
+            con={currentMonst.con}
+            int={currentMonst.int}
+            wis={currentMonst.wis}
+            cha={currentMonst.cha}
+            speed={currentMonst.speed}
+            swim={currentMonst.swim}
+            fly={currentMonst.fly}
+            hover={currentMonst.hover}
+            size={currentMonst.size}
       	/>
       	);
     }
@@ -65,4 +62,4 @@ class monsterCardContainer extends React.Component {
   }
 }
 
-ReactDOM.render (<MonsterListContainer />, document.getElementById('container'));
+ReactDOM.render (<MonsterListContainer />, document.getElementById('monster_container'));
