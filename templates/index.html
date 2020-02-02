@@ -14,7 +14,7 @@
       crossorigin></script>
   </head>
 <body>
-
+<!--
     <div class="Homepage_loggedout">
         <h1>Dungeons on Demand</h1>
         <p id="homepage_blurb">
@@ -33,9 +33,19 @@
     * log in
     * sign up
     </div>
-
+-->
 Initial placeholder.
 
+<h1>Welcome to Dungeons on Demand!</h1>
+<br>
+Request your monsters here:<br>
+<br>
+<form action="/new_room" method="POST" id="new_room">
+    How many monsters? <input type=number name="num"><br>
+    What difficulty level? <input type=number name="diff">
+    <input type=submit value="Summon Monsters!" name="submit">
+</form>
+<!--
 Divs that will be needed:
 
 - index page:
@@ -64,6 +74,6 @@ Divs that will be needed:
 --- monster info on the left side
 ------ also open out to show detail on click, like PCs
 --- initiative list above the monster list
-
+-->
 </body>
 </html>

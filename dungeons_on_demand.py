@@ -1,6 +1,10 @@
 from flask import Flask, render_template, redirect, request, flash, session
 from dungeon_model import connect_to_db, db, DMs, Games, Rooms, Players, Player_Actions, Monster_Actions, Monsters
 from passlib.context import CryptContext
+import requests
+import json
+import re
+from random import choices
 
 app = Flask(__name__)
 app.secret_key = 'DNDDEMANDGEN'
@@ -75,8 +79,45 @@ def new_room_info():
 
 @app.route('/new_room', methods=['POST'])
 def create_new_room():
-    """creates new room based on the information provided"""
-    """renders page with new room spread and data sidebar"""
+    """pulls a new list of monsters according to DM request and displays them"""
+
+    URL = 'https://api.open5e.com/monsters/?challenge_rating='
+    diff = request.form.get('diff')
+    num = request.form.get('num')
+    call = URL + diff
+    response = requests.get(call)
+    response_json = json.loads(response.text)
+    payload = dict(response_json)
+    monst_list = payload['results']
+    rand = int(num)
+    monst_choices = choices(monst_list, k=rand)
+
+    final_monst_list = []
+    for monster in monst_choices:
+        monst_info = {}
+        monst_info['type'] = monster['slug']
+        monst_info['size'] = monster['size']
+        monst_info['ac'] = monster['armor_class']
+        monst_info['hp'] = monster['hit_points']
+        dice = monster['hit_dice']
+        dice_info = re.split(r'\D+', dice)
+        if len(dice_info) == 3:
+            monst_info['dice_num'], monst_info['dice_type'], monst_info['bonus'] = dice_info
+        elif len(dice_info) == 2:
+            monst_info['dice_num'], monst_info['dice_type'] = dice_info
+            monst_info['bonus'] = 0
+        monst_info['speed'] = monster['speed']
+        # speed returns a dict with different types of movement and speed... OH NO
+        monst_info['str'] = monster['strength']
+        monst_info['dex'] = monster['dexterity']
+        monst_info['con'] = monster['constitution']
+        monst_info['int'] = monster['intelligence']
+        monst_info['wis'] = monster['wisdom']
+        monst_info['cha'] = monster['charisma']
+        final_monst_list.append(monst_info)
+
+    return render_template("monsters.html",
+                            monsterData=final_monst_list)
 
 # create new room
 #     associated with a game
