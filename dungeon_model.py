@@ -138,6 +138,9 @@ class Monsters(db.Model):
     initiative_mod = db.Column(db.Integer)
     initiative_roll = db.Column(db.Integer)
     speed = db.Column(db.Integer)
+    fly = db.Column(db.Integer)
+    swim = db.Column(db.Integer)
+    hover = db.Column(db.Boolean)
     current_square = db.Column(db.Integer)
 
     monster_actions = db.relationship("Monster_Actions")
