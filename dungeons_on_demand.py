@@ -5,6 +5,7 @@ import requests
 import json
 import re
 from random import choices
+from support_functions import instantiate_monster, instantiate_player
 
 app = Flask(__name__)
 app.secret_key = 'DNDDEMANDGEN'
@@ -95,7 +96,7 @@ def create_new_room():
     final_monst_list = []
     for monster in monst_choices:
         monst_info = {}
-        monst_info['type'] = monster['slug']
+        monst_info['type'] = monster['name']
         monst_info['size'] = monster['size']
         monst_info['ac'] = monster['armor_class']
         monst_info['hp'] = monster['hit_points']
@@ -106,15 +107,22 @@ def create_new_room():
         elif len(dice_info) == 2:
             monst_info['dice_num'], monst_info['dice_type'] = dice_info
             monst_info['bonus'] = 0
-        monst_info['speed'] = monster['speed']
-        # speed returns a dict with different types of movement and speed... OH NO
+        # speed returns a dict with multiple values so parse out
+        monst_info['speed'] = test_monster['speed'].get('walk', 0)
+        monst_info['burrow'] = test_monster['speed'].get('burrow', 0)
+        monst_info['swim'] = test_monster['speed'].get('swim', 0)
+        monst_info['fly'] = test_monster['speed'].get('fly', 0)
+        monst_info['hover'] = test_monster['speed'].get('hover', False)
         monst_info['str'] = monster['strength']
         monst_info['dex'] = monster['dexterity']
         monst_info['con'] = monster['constitution']
         monst_info['int'] = monster['intelligence']
         monst_info['wis'] = monster['wisdom']
         monst_info['cha'] = monster['charisma']
+        monst_info['room_id'] = session.get('room_id')
+        db.session.add(instantiate_monster(monst_info))
         final_monst_list.append(monst_info)
+    db.session.commit()
 
     return render_template("monsters.html",
                             monsterData=final_monst_list)
