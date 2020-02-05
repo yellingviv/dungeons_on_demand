@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block TITLE %}Monsters For Your Room!{% endblock %}
+
+{%block BODY %}
+    <script src="/static/js/monsterList.jsx">
+      const MonsterData = {{ monsterData }};
+    </script>
+{% endblock %}
