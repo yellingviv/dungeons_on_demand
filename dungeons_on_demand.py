@@ -77,6 +77,7 @@ def create_new_game():
 @app.route('/new_room', methods=['GET'])
 def new_room_info():
     """serves form about new room to get info from DM"""
+    return render_template("monsters.html")
 
 @app.route('/new_room', methods=['POST'])
 def create_new_room():
@@ -100,14 +101,17 @@ def create_new_room():
         monst_info['size'] = monster['size']
         monst_info['ac'] = monster['armor_class']
         monst_info['hp'] = monster['hit_points']
+        # dice returns numDnum+num, so break into number, type, bonus
         dice = monster['hit_dice']
         dice_info = re.split(r'\D+', dice)
         if len(dice_info) == 3:
             monst_info['dice_num'], monst_info['dice_type'], monst_info['bonus'] = dice_info
         elif len(dice_info) == 2:
+            # not every monster has a bonus, so if not, set bonus to zero
             monst_info['dice_num'], monst_info['dice_type'] = dice_info
             monst_info['bonus'] = 0
         # speed returns a dict with multiple values so parse out
+        # monsters usually don't have all speeds so set to zero if not there
         monst_info['speed'] = test_monster['speed'].get('walk', 0)
         monst_info['burrow'] = test_monster['speed'].get('burrow', 0)
         monst_info['swim'] = test_monster['speed'].get('swim', 0)
@@ -124,8 +128,59 @@ def create_new_room():
         final_monst_list.append(monst_info)
     db.session.commit()
 
-    return render_template("monsters.html",
-                            monsterData=final_monst_list)
+    return jsonify(final_monst_list)
+
+
+@app.route('/monster_test')
+def pull_monster_json():
+    """pulls a new list of monsters according to DM request and displays them"""
+
+    URL = 'https://api.open5e.com/monsters/?challenge_rating='
+    diff = 3
+    num = 3
+    call = URL + diff
+    response = requests.get(call)
+    response_json = json.loads(response.text)
+    payload = dict(response_json)
+    monst_list = payload['results']
+    rand = int(num)
+    monst_choices = choices(monst_list, k=rand)
+
+    final_monst_list = []
+    for monster in monst_choices:
+        monst_info = {}
+        monst_info['type'] = monster['name']
+        monst_info['size'] = monster['size']
+        monst_info['ac'] = monster['armor_class']
+        monst_info['hp'] = monster['hit_points']
+        # dice returns numDnum+num, so break into number, type, bonus
+        dice = monster['hit_dice']
+        dice_info = re.split(r'\D+', dice)
+        if len(dice_info) == 3:
+            monst_info['dice_num'], monst_info['dice_type'], monst_info['bonus'] = dice_info
+        elif len(dice_info) == 2:
+            # not every monster has a bonus, so if not, set bonus to zero
+            monst_info['dice_num'], monst_info['dice_type'] = dice_info
+            monst_info['bonus'] = 0
+        # speed returns a dict with multiple values so parse out
+        # monsters usually don't have all speeds so set to zero if not there
+        monst_info['speed'] = test_monster['speed'].get('walk', 0)
+        monst_info['burrow'] = test_monster['speed'].get('burrow', 0)
+        monst_info['swim'] = test_monster['speed'].get('swim', 0)
+        monst_info['fly'] = test_monster['speed'].get('fly', 0)
+        monst_info['hover'] = test_monster['speed'].get('hover', False)
+        monst_info['str'] = monster['strength']
+        monst_info['dex'] = monster['dexterity']
+        monst_info['con'] = monster['constitution']
+        monst_info['int'] = monster['intelligence']
+        monst_info['wis'] = monster['wisdom']
+        monst_info['cha'] = monster['charisma']
+        monst_info['room_id'] = session.get('room_id')
+        db.session.add(instantiate_monster(monst_info))
+        final_monst_list.append(monst_info)
+    db.session.commit()
+
+    return jsonify(final_monst_list)
 
 # create new room
 #     associated with a game
