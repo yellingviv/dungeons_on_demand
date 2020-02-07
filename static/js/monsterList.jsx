@@ -25,18 +25,23 @@ class MonsterCard extends React.Component {
 class monsterCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {monsterCards = []}
+		this.state = {
+	 		monsterCards = []
+		}
+		this.makeMonsterCards = this.makeMonsterCards.bind(this);
 	}
 
+	componentDidMount() {
+		let response = fetch('/monster_test')
+		respone.then((res) => res.json()).then((data) =>
+			console.log(data)
+			makeMonsterCards(data)
+		)
+	}
 
-  render() {
-		if (this.state.monsterCards.length === 0) {
-			return (
-				<div> Loading ... </div>
-			)
-		}
-    // okay so monsterdata is coming from the API, how do I get it to here?
-    for (const currentMonst of MonsterData) {
+	makeMonsterCards(monsterData) {
+		let monsterCards = []
+		for (const currentMonst of MonsterData) {
       monsterCards.push(
       	<MonsterCard
       		key={currentMonst.monster_id}
@@ -62,10 +67,21 @@ class monsterCardContainer extends React.Component {
       	/>
       	);
     }
+		this.setState(monsterCards: monsterCards)
+	}
+
+  render() {
+		if (this.state.monsterCards.length === 0) {
+			return (
+				<div> Loading ... </div>
+			)
+		}
+    // okay so monsterdata is coming from the API, how do I get it to here?
+
 
     return (
       <div>
-        {MonsterCards}
+        {this.state.monsterCards}
       </div>
     );
   }
