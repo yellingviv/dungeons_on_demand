@@ -1,11 +1,11 @@
 from flask import Flask, render_template, redirect, request, flash, session
 from dungeon_model import connect_to_db, db, DMs, Games, Rooms, Players, Player_Actions, Monster_Actions, Monsters
-from passlib.context import CryptContext
+# from passlib.context import CryptContext
 import requests
 import json
 import re
 from random import choices
-from support_functions import instantiate_monster, instantiate_player
+from support_functions import instantiate_monster #, instantiate_player
 
 app = Flask(__name__)
 app.secret_key = 'DNDDEMANDGEN'
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     connect_to_db(app)
     app.run(port=5000, host='0.0.0.0')
 
-pwd = CryptContext(schemes=['bcrypt'], deprecated='auto')
+# pwd = CryptContext(schemes=['bcrypt'], deprecated='auto')
 
 #####
 # some pseudo code just to get shit down
@@ -23,6 +23,8 @@ pwd = CryptContext(schemes=['bcrypt'], deprecated='auto')
 @app.route('/')
 def serve_homepage():
     """render the homepage with option to sign in or register"""
+
+    return render_template("index.html")
 
 @app.route('/register', methods=['GET'])
 def registration():
