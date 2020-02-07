@@ -23,9 +23,18 @@ class MonsterCard extends React.Component {
 }
 
 class monsterCardContainer extends React.Component {
-  render() {
-    const monsterCards = [];
+	constructor(props) {
+		super(props);
+		this.state = {monsterCards = []}
+	}
 
+
+  render() {
+		if (this.state.monsterCards.length === 0) {
+			return (
+				<div> Loading ... </div>
+			)
+		}
     // okay so monsterdata is coming from the API, how do I get it to here?
     for (const currentMonst of MonsterData) {
       monsterCards.push(
