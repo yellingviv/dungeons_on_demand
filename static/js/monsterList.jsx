@@ -26,21 +26,24 @@ class monsterCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-	 		monsterCards = []
+            console.log(this.state);
+	 		monsterCards = [];
 		}
 		this.makeMonsterCards = this.makeMonsterCards.bind(this);
 	}
 
 	componentDidMount() {
+        console.log("calling the monster api");
 		let response = fetch('/monster_test')
 		respone.then((res) => res.json()).then((data) =>
-			console.log(data)
-			makeMonsterCards(data)
+			console.log(data);
+			makeMonsterCards(data);
 		)
 	}
 
 	makeMonsterCards(monsterData) {
-		let monsterCards = []
+		let monsterCards = [];
+        console.log("starting the for loop");
 		for (const currentMonst of MonsterData) {
       monsterCards.push(
       	<MonsterCard
@@ -66,6 +69,7 @@ class monsterCardContainer extends React.Component {
             size={currentMonst.size}
       	/>
       	);
+        console.log("new monster card created");
     }
 		this.setState(monsterCards: monsterCards)
 	}
