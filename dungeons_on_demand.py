@@ -10,9 +10,7 @@ from support_functions import instantiate_monster #, instantiate_player
 app = Flask(__name__)
 app.secret_key = 'DNDDEMANDGEN'
 
-if __name__ == '__main__':
-    connect_to_db(app)
-    app.run(port=5000, host='0.0.0.0')
+
 
 # pwd = CryptContext(schemes=['bcrypt'], deprecated='auto')
 
@@ -76,12 +74,16 @@ def create_new_game():
 #     give it a name
 #     return to game list showing the new game available
 
+@app.route('/a', methods=['GET'])
+def ndakje():
+    return 'b'
+
 @app.route('/new_room', methods=['GET'])
 def new_room_info():
     """serves form about new room to get info from DM"""
     return render_template("monsters.html")
 
-@app.route('/new_room', methods=['POST'])
+@app.route('/show_monsters', methods=['POST'])
 def create_new_room():
     """pulls a new list of monsters according to DM request and displays them"""
 
@@ -301,3 +303,8 @@ def show_new_view():
 #     mouse over other characters to get option to attack
 #     if attack, point to roll damage (for PC, can be manually entered)
 #     etc
+
+if __name__ == '__main__':
+
+    connect_to_db(app)
+    app.run(debug=True, port=5000, host='0.0.0.0')
