@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, flash, session
+from flask import Flask, render_template, redirect, request, flash, session, jsonify
 from dungeon_model import connect_to_db, db, DMs, Games, Rooms, Players, Player_Actions, Monster_Actions, Monsters
 # from passlib.context import CryptContext
 import requests
@@ -74,14 +74,10 @@ def create_new_game():
 #     give it a name
 #     return to game list showing the new game available
 
-@app.route('/a', methods=['GET'])
-def ndakje():
-    return 'b'
-
 @app.route('/new_room', methods=['GET'])
 def new_room_info():
     """serves form about new room to get info from DM"""
-    return render_template("monsters.html")
+    return render_template("base.html")
 
 @app.route('/show_monsters', methods=['POST'])
 def create_new_room():
@@ -140,8 +136,8 @@ def pull_monster_json():
     """pulls a new list of monsters according to DM request and displays them"""
 
     URL = 'https://api.open5e.com/monsters/?challenge_rating='
-    diff = 3
-    num = 3
+    diff = '3'
+    num = '3'
     call = URL + diff
     response = requests.get(call)
     response_json = json.loads(response.text)
@@ -168,11 +164,11 @@ def pull_monster_json():
             monst_info['bonus'] = 0
         # speed returns a dict with multiple values so parse out
         # monsters usually don't have all speeds so set to zero if not there
-        monst_info['speed'] = test_monster['speed'].get('walk', 0)
-        monst_info['burrow'] = test_monster['speed'].get('burrow', 0)
-        monst_info['swim'] = test_monster['speed'].get('swim', 0)
-        monst_info['fly'] = test_monster['speed'].get('fly', 0)
-        monst_info['hover'] = test_monster['speed'].get('hover', False)
+        monst_info['speed'] = monster['speed'].get('walk', 0)
+        monst_info['burrow'] = monster['speed'].get('burrow', 0)
+        monst_info['swim'] = monster['speed'].get('swim', 0)
+        monst_info['fly'] = monster['speed'].get('fly', 0)
+        monst_info['hover'] = monster['speed'].get('hover', False)
         monst_info['str'] = monster['strength']
         monst_info['dex'] = monster['dexterity']
         monst_info['con'] = monster['constitution']
@@ -180,9 +176,10 @@ def pull_monster_json():
         monst_info['wis'] = monster['wisdom']
         monst_info['cha'] = monster['charisma']
         monst_info['room_id'] = session.get('room_id')
-        db.session.add(instantiate_monster(monst_info))
+        # db.session.add(instantiate_monster(monst_info))
         final_monst_list.append(monst_info)
-    db.session.commit()
+    #db.session.commit()
+    print(final_monst_list)
 
     return jsonify(final_monst_list)
 

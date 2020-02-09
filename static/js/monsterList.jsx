@@ -6,16 +6,18 @@ class MonsterCard extends React.Component {
 				<h2 id="hp">HP: {this.props.hp} </h2>
                 <p>Initiative: {this.props.initiative}<br />
                 AC: {this.props.ac}<br />
-                Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus}<br />
+                Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus}</p>
                 <table>
-                    <tr>
-                        <td>STR: {this.props.str}</td><td>DEX: {this.props.dex}</td><td>CON: {this.props.con}</td>
-                    </tr>
-                    <tr>
-                        <td>INT: {this.props.int}</td><td>WIS: {this.props.wis}</td><td>CHA: {this.props.cha}</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>STR: {this.props.str}</td><td>DEX: {this.props.dex}</td><td>CON: {this.props.con}</td>
+                        </tr>
+                        <tr>
+                            <td>INT: {this.props.int}</td><td>WIS: {this.props.wis}</td><td>CHA: {this.props.cha}</td>
+                        </tr>
+                    </tbody>
                 </table>
-                Speed: {this.props.speed} Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover}<br />
+                <p>Speed: {this.props.speed} Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover}<br />
                 Size: {this.props.size}
                 </p>
 			</div>
@@ -33,21 +35,21 @@ class MonsterCardContainer extends React.Component {
 	}
 
 	componentDidMount() {
-        console.log("calling the monster api");
 		let response = fetch('/monster_test');
-		respone.then((res) => res.json()).then((data) => {
-			console.log(data)
-			makeMonsterCards(data)
+        console.log("calling the monster api");
+		response.then((res) => res.json()).then((data) => {
+			this.makeMonsterCards(data)
         })
 	}
 
 	makeMonsterCards(monsterData) {
+        console.log('makemonstercards and data', monsterData)
 		let monsterCards = [];
         console.log("starting the for loop");
-		for (const currentMonst of MonsterData) {
+		for (const currentMonst of monsterData) {
           monsterCards.push(
           	<MonsterCard
-          		key={currentMonst.monster_id}
+          		key={currentMonst.type}
           		monster_id={currentMonst.monster_id}
           	    type={currentMonst.type}
           		hp={currentMonst.hp}
@@ -71,20 +73,21 @@ class MonsterCardContainer extends React.Component {
           );
           console.log("new monster card created");
         }
-	    this.setState(monsterCards: monsterCards);
+        console.log("monster cards!", monsterCards);
+	    this.setState({ monsterCards: monsterCards });
 	}
 
-  render() {
+    render() {
 		if (this.state.monsterCards.length === 0) {
 			return (
 				<div> Loading ... </div>
 			);
 		}
-    return (
-      <div>
-        {this.state.monsterCards}
-      </div>
-    );
+        return (
+          <div>
+            {this.state.monsterCards}
+          </div>
+        );
   }
 }
 
