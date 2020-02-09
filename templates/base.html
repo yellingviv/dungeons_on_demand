@@ -9,13 +9,37 @@
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"
       crossorigin></script>
   </head>
 <body>
-  {% block BODY %}
-  {% endblock %}
+    <div id="game">
+        <div id="navbar">
+            navbar goes here
+        </div>
+        <div id="monster_container">
+            monsters go here
+        </div>
+        <div id="player_container">
+            players go here
+        </div>
+        <div id="statistics_container">
+            stats go here
+        </div>
+        <div id="initiative_tracker">
+            initiative goes here
+        </div>
+    </div>
+    <!-- master component -->
+    <!-- navbar component -->
+    <script src="/static/js/monsterList.jsx" type="text/jsx"></script>
+    <!-- player component -->
+    <!-- statistics component -->
+    <!-- initiative component -->
   <br>
   <br>
 <footer>

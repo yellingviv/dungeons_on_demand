@@ -1,11 +1,11 @@
-class monsterCard extends React.Component {
+class MonsterCard extends React.Component {
 	render() {
 		return (
 			<div className="monster" id={this.props.monster_id}>
 				<h2>Type: {this.props.type}</h2>
 				<h2 id="hp">HP: {this.props.hp} </h2>
                 <p>Initiative: {this.props.initiative}<br />
-                AC: {this.props.ac}<br>
+                AC: {this.props.ac}<br />
                 Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus}<br />
                 <table>
                     <tr>
@@ -17,16 +17,17 @@ class monsterCard extends React.Component {
                 </table>
                 Speed: {this.props.speed} Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover}<br />
                 Size: {this.props.size}
+                </p>
 			</div>
 		);
 	}
 }
 
-class monsterCardContainer extends React.Component {
+class MonsterCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            monsterCards = [];
+            monsterCards: []
 		}
 		this.makeMonsterCards = this.makeMonsterCards.bind(this);
 	}
@@ -34,10 +35,10 @@ class monsterCardContainer extends React.Component {
 	componentDidMount() {
         console.log("calling the monster api");
 		let response = fetch('/monster_test');
-		respone.then((res) => res.json()).then((data) =>
-			console.log(data);
-			makeMonsterCards(data);
-		)
+		respone.then((res) => res.json()).then((data) => {
+			console.log(data)
+			makeMonsterCards(data)
+        })
 	}
 
 	makeMonsterCards(monsterData) {
