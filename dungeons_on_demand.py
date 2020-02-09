@@ -175,11 +175,13 @@ def pull_monster_json():
         monst_info['int'] = monster['intelligence']
         monst_info['wis'] = monster['wisdom']
         monst_info['cha'] = monster['charisma']
-        monst_info['room_id'] = session.get('room_id')
-        # db.session.add(instantiate_monster(monst_info))
+        #monst_info['room_id'] = session.get('room_id')
+        this_monst = instantiate_monster(monst_info)
+        db.session.add(this_monst)
+        db.session.commit()
+        monst_info['monster_id'] = this_monst.monster_id
         final_monst_list.append(monst_info)
-    #db.session.commit()
-    print(final_monst_list)
+    print(final_monst_list[0])
 
     return jsonify(final_monst_list)
 

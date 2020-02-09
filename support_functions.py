@@ -1,9 +1,9 @@
 from dungeon_model import Monsters, Players
 
-def instantiate_monster(monster_info):
+def instantiate_monster(monst_info):
     """receives dictionary of monster info and adds to DB"""
 
-    room_id = monst_info['room_id']
+    # room_id = 10
     species = monst_info['type']
     size = monst_info['size']
     ac = monst_info['ac']
@@ -23,7 +23,7 @@ def instantiate_monster(monster_info):
     cha = monst_info['cha']
     int = monst_info['int']
     initiative_mod = monst_info['dex']
-    monster = Monsters(room_id=room_id,
+    monster = Monsters(# room_id=room_id,
                        species=species,
                        size=size,
                        total_hp=total_hp,
