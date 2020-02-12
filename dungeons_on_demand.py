@@ -33,6 +33,16 @@ def create_new_user():
     """creates new user account with info from the form"""
     """redirects to homepage and flashes success message"""
 
+    username = response.form.get('username')
+    password = response.form.get('password')
+    if db.session.query(DMs).filter_by(username=username):
+        return "Username already exists"
+    new_DM = DMs(username=username,
+                 password=password)
+    db.session.add(new_DM)
+    db.session.commit()
+    return redirect('fuckin login modal idk man')
+
 @app.route('/login', methods=['POST'])
 def user_login():
     """takes username and password hash to validate user"""
