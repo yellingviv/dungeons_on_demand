@@ -1,0 +1,29 @@
+make a master "game container"
+
+game container can hold containers for all other items such as mosnters, players, initiative, stats, etc
+
+then the master container can pass down state to each of those containers so that we can toggle between them with a button press that will indicate which should have the state of visible at a given time
+
+they will hold their other state in the background and can just come forward to be visible as called
+
+class MonsterContainer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+}
+
+class GameContainer extends React.Component {
+  constructor() {
+    this.setState;
+    this.State = { active = Monster };
+  }
+  render() {
+    if this.state.active === 'Monster' {
+      <MonsterContainer />
+    }
+    <PlayerContainer />
+  }
+}
+
+
+pull monster data from API in parent container and then pass it down to the monster container as a prop so that I don't have to worry about multiple API calls unless specifically prompted and all that happens in the monster container is the rendering
