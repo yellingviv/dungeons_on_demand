@@ -39,8 +39,21 @@ class GameContainer extends React.Component {
 	}
 }
 
+formTracking(evt) {
+	let name = evt.target.name;
+	let value = nevt.target.value;
+	this.setState({name: value});
+}
+
 handleRegClick() {
-	let response = fetch('/register');
+	const regData = {username: this.state.new_username, password: this.state.new_password}
+	let response = fetch('/register', {
+		method: 'POST',
+		headers: {
+    'Content-Type': 'application/json'
+  	},
+  	body: JSON.stringify(regData)
+	});
 	response.then((res) => res.json()).then((data) => {
 		console.log(data);
 		if data != "failed" {
@@ -52,6 +65,24 @@ handleRegClick() {
 	this.setState({stuff_from_server: 'yep', logged_in: response.user_id, message: response.message})
 }
 
+handleLoginClick(loginData) {
+	let response = fetch('/login', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(loginData)
+	});
+	response.then((res) => res.json()).then((data) => {
+		console.log(data);
+		if data != "failed" {
+			// now we make the room space happen
+		} else {
+			alert("Error logging in. Please check your username and password and try again.");
+		}
+	});
+}
+
 offerLoginOrReg() {
 	console.log(this.state)
 	render() {
@@ -59,44 +90,21 @@ offerLoginOrReg() {
 			<div class="user_access" id="login">
 				<h2>Login</h2>
 				<form>
-					Username: <input type="text", id="username" /><br />
-					Password: <input type="password", id="password" /><br />
-					<input type="submit", value="Login" id="call_login"/>
+					Username: <input onChange={this.formTracking} type="text", name="username" /><br />
+					Password: <input type="password", name="password" /><br />
+					<input onCLick={this.handleLoginClick} type="submit", value="Login", name="call_login"/>
 				</form>
 			</div>
 			<div class="user_access" id="register">
 				<h2>Register</h2>
 				<form>
-					Select username: <input type="text" id="new_username" /><br />
-					Create password: <input type="password" id="new_password" /><br />
-					<input onClick={this.handleClick} type="submit", value="Register" id="call_reg" />
+					Select username: <input type="text" name="new_username" /><br />
+					Create password: <input type="password" name="new_password" /><br />
+					<input onClick={this.handleRegClick} type="submit", value="Register", name="call_reg" />
 				</form>
 			</div>
 		);
 	}
-	const reg_button = document.getElementById("call_reg");
-	const
-	reg_button.addEventListener("click", register => {
-		response = fetch('/register');
-		response.then((res) => res.json()).then((data) => {
-			if data != "failed" {
-				alert("Your account has been created. Please login.");
-			} else {
-				alert("That username is already claimed. Please login or try a different username.");
-			}
-		});
-	});
-	const login_button = document.getElementById("call_login");
-	login_button.addEventListener("click", login => {
-		response = fetch('/login');
-		response.then((res) => res.json()).then((data) => {
-			if data != "failed" {
-				serveRoomMenu(user_id);
-			} else {
-				alert("Error logging in. Please check your username and password and try again.");
-			}
-		});
-	});
 }
 
 // this should only be called once the user is logged in -- how to assure this?
