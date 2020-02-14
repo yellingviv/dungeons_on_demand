@@ -41,12 +41,17 @@ class GameContainer extends React.Component {
 
 formTracking(evt) {
 	let name = evt.target.name;
-	let value = nevt.target.value;
-	this.setState({name: value});
+	let value = evt.target.value;
+	this.setState({...this.state, [name]: value});
+	// extending or spreading
+	// let example = {firstname: 'hi', lastname: 'hello'};
+	// example = {...example, lastname: 'goodbye'};
 }
 
 handleRegClick() {
+	console.log('entered handleRegClick');
 	const regData = {username: this.state.new_username, password: this.state.new_password}
+	console.log('reg data is: ', regData);
 	let response = fetch('/register', {
 		method: 'POST',
 		headers: {
@@ -91,15 +96,15 @@ offerLoginOrReg() {
 				<h2>Login</h2>
 				<form>
 					Username: <input onChange={this.formTracking} type="text", name="username" /><br />
-					Password: <input type="password", name="password" /><br />
+					Password: <input onChange={this.formTracking} type="password", name="password" /><br />
 					<input onCLick={this.handleLoginClick} type="submit", value="Login", name="call_login"/>
 				</form>
 			</div>
 			<div class="user_access" id="register">
 				<h2>Register</h2>
 				<form>
-					Select username: <input type="text" name="new_username" /><br />
-					Create password: <input type="password" name="new_password" /><br />
+					Select username: <input onChange={this.formTracking} type="text" name="new_username" /><br />
+					Create password: <input onChange={this.formTracking} type="password" name="new_password" /><br />
 					<input onClick={this.handleRegClick} type="submit", value="Register", name="call_reg" />
 				</form>
 			</div>
