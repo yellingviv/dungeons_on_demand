@@ -22,19 +22,19 @@ app.secret_key = 'DNDDEMANDGEN'
 def serve_homepage():
     """render the homepage with option to sign in or register"""
 
-    return render_template("index.html")
+    return render_template("base.html")
 
 @app.route('/register', methods=['GET'])
 def registration():
     """render the registration page for new users"""
 
 @app.route('/register', methods=['POST'])
-def create_new_user():
+def create_new_user(new_user):
     """creates new user account with info from the form"""
     """redirects to homepage and flashes success message"""
 
-    username = response.form.get('username')
-    password = response.form.get('password')
+    username = new_user['username']
+    password = new_user['password']
     if db.session.query(DMs).filter_by(username=username):
         return "Username already exists"
     new_DM = DMs(username=username,

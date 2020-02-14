@@ -19,7 +19,11 @@ class GameContainer extends React.Component {
 
 	componentDidMount() {
     if this.state.logged_in === '' {
-      // serve the log in or create account modal
+			offerLoginOrReg();
+      response = fetch('/register');
+			response.then((res) => res.json()).then((data) => {
+				this.makeMonsterCards(data)
+	        })
     } else {
       // serve the option to create a new room (or in future versions, games and new rooms)
       // once the new room is called, that should change the view state of the room to the room id
@@ -32,7 +36,11 @@ class GameContainer extends React.Component {
       // show the player list -- in the future this will toggle off initiative and show stats
     }
 	}
+}
 
+offerLoginOrReg() {
+
+}
 
 // this should only be called once the user is logged in -- how to assure this?
 // should this actually go inside yet a larger container, that calls this once logged in state is set?
