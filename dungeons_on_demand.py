@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request, flash, session, jsonify
 from dungeon_model import connect_to_db, db, DMs, Games, Rooms, Players, Player_Actions, Monster_Actions, Monsters
-# from passlib.context import CryptContext
 import requests
 import json
 import re
@@ -10,23 +9,11 @@ from support_functions import instantiate_monster #, instantiate_player
 app = Flask(__name__)
 app.secret_key = 'DNDDEMANDGEN'
 
-
-
-# pwd = CryptContext(schemes=['bcrypt'], deprecated='auto')
-
-#####
-# some pseudo code just to get shit down
-#####
-
 @app.route('/')
 def serve_homepage():
     """render the homepage with option to sign in or register"""
 
     return render_template("base.html")
-
-@app.route('/register', methods=['GET'])
-def registration():
-    """render the registration page for new users"""
 
 @app.route('/register', methods=['POST'])
 def create_new_user(new_user):
@@ -35,18 +22,35 @@ def create_new_user(new_user):
 
     username = new_user['username']
     password = new_user['password']
-    if db.session.query(DMs).filter_by(username=username):
-        return "Username already exists"
+    response = {'message': ''}
+    if db.session.query(DMs).filter_by(username=username).first():
+        response['message'] = 'failed'
+        return jsonify(response)
     new_DM = DMs(username=username,
                  password=password)
     db.session.add(new_DM)
     db.session.commit()
-    return redirect('fuckin login modal idk man')
+    response['message'] = "Successfully created account! Please log in."
+    return jsonify(response)
 
 @app.route('/login', methods=['POST'])
-def user_login():
+def user_login(user_data):
     """takes username and password hash to validate user"""
     """adds auth to session, renders DM homepage with games and rooms"""
+
+    results = {'username': False, 'password': False}
+    username = user_data['username']
+    password = user_data['password']
+    user = db.session.query(DMs).filter_by(username=username).first()
+    if user:
+        results['username'] = True
+        if user.password == password:
+            results['password'] = True
+            return jsonify(results)
+        else:
+            return jsonify(results)
+    else:
+        return jsonify(results)
 
 @app.route('/logout')
 def user_logout():
