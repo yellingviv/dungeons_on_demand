@@ -54,6 +54,3 @@ class InitiativeTab extends React.Component {
         );
   }
 }
-
-
-ReactDOM.render (<InitiativeContainer />, document.getElementById('initiative_container'));

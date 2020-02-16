@@ -90,5 +90,3 @@ class MonsterCardContainer extends React.Component {
         );
   }
 }
-
-ReactDOM.render (<MonsterCardContainer />, document.getElementById('monster_container'));
