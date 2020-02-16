@@ -20,8 +20,11 @@ def create_new_user(new_user):
     """creates new user account with info from the form"""
     """redirects to homepage and flashes success message"""
 
-    username = new_user['username']
-    password = new_user['password']
+    print('new user: ', new_user)
+    user_json = json.loads(new_user)
+    user_reg = dict(new_user)
+    username = user_reg['username']
+    password = user_reg['password']
     response = {'message': ''}
     if db.session.query(DMs).filter_by(username=username).first():
         response['message'] = 'failed'

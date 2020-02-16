@@ -4,8 +4,7 @@
 
 class LoginOrReg extends React.Component {
     constructor(props) {
-        console.log("this is right after instantiating LoginOrReg");
-        super()
+        super(props)
         this.state = {
             reg_message: ''
         }
@@ -18,8 +17,8 @@ class LoginOrReg extends React.Component {
     formTracking(evt) {
     	let name = evt.target.name;
     	let value = evt.target.value;
-        console.log("is THIS where we have state problems?");
-    	this.setState({...this.state, [name]: value});
+    	this.setState({[name]: value});
+        console.log(this.state);
     	// extending or spreading
     	// let example = {firstname: 'hi', lastname: 'hello'};
     	// example = {...example, lastname: 'goodbye'};
@@ -29,12 +28,14 @@ class LoginOrReg extends React.Component {
     	console.log('entered handleRegClick');
     	const regData = {username: this.state.new_username, password: this.state.new_password};
     	console.log('reg data is: ', regData);
+        const body_pass = JSON.stringify(regData);
+        console.log('and the body is...', body_pass);
     	let response = fetch('/register', {
     		method: 'POST',
     		headers: {
         'Content-Type': 'application/json'
       	},
-      	body: JSON.stringify(regData)
+      	body: body_pass
     	});
     	response.then((res) => res.json()).then((data) => {
     		console.log(data);
@@ -92,7 +93,7 @@ class LoginOrReg extends React.Component {
                                 <form>
                                     Select username: <input onChange={this.formTracking} type="text" name="new_username" /><br />
                                     Create password: <input onChange={this.formTracking} type="password" name="new_password" /><br />
-                                    <input onClick={this.handleRegClick} type="submit" value="Register" name="call_reg" />
+                                    <button type="button" onClick={this.handleRegClick} name="call_reg">Register</button>
                                 </form>
                             </td>
                         </tr>
@@ -113,7 +114,6 @@ class LoginOrReg extends React.Component {
 
 class GameContainer extends React.Component {
 	constructor(props) {
-        console.log("here is the GameContainer constructor");
 		super(props);
 		this.state = {
             logged_in: '',
@@ -125,7 +125,6 @@ class GameContainer extends React.Component {
 
     render() {
         if (this.state.logged_in === '') {
-            console.log("now we call loginorreg from the game container");
             return (<LoginOrReg />);
         } else if (this.state.logged_in != '') {
             console.log("this should not be happening");
