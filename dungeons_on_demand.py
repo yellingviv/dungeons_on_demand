@@ -16,15 +16,18 @@ def serve_homepage():
     return render_template("base.html")
 
 @app.route('/register', methods=['POST'])
-def create_new_user(new_user):
+def create_new_user():
     """creates new user account with info from the form"""
     """redirects to homepage and flashes success message"""
 
-    print('new user: ', new_user)
-    user_json = json.loads(new_user)
-    user_reg = dict(new_user)
-    username = user_reg['username']
-    password = user_reg['password']
+    user_info = request.get_json
+    print("this is what I received: ", user_info)
+    user_json = json.loads(user_info.text)
+    user_dict = dict(user_json)
+    print(user_dict)
+    username = user_dict('username')
+    password = user_dict('password')
+    print("here we are let's see what we have: ", username, password)
     response = {'message': ''}
     if db.session.query(DMs).filter_by(username=username).first():
         response['message'] = 'failed'
@@ -34,6 +37,7 @@ def create_new_user(new_user):
     db.session.add(new_DM)
     db.session.commit()
     response['message'] = "Successfully created account! Please log in."
+    print(response)
     return jsonify(response)
 
 @app.route('/login', methods=['POST'])
