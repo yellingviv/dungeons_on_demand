@@ -20,13 +20,11 @@ def create_new_user():
     """creates new user account with info from the form"""
     """redirects to homepage and flashes success message"""
 
-    user_info = request.get_json
-    print("this is what I received: ", user_info)
-    user_json = json.loads(user_info.text)
+    user_info = request.data
+    user_json = json.loads(user_info)
     user_dict = dict(user_json)
-    print(user_dict)
-    username = user_dict('username')
-    password = user_dict('password')
+    username = user_dict['username']
+    password = user_dict['password']
     print("here we are let's see what we have: ", username, password)
     response = {'message': ''}
     if db.session.query(DMs).filter_by(username=username).first():
