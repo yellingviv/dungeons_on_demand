@@ -6,7 +6,11 @@ class LoginOrReg extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            reg_message: ''
+            reg_message: '',
+            username: undefined,
+            password: undefined,
+            new_username: undefined,
+            new_password: undefined
         }
         this.formTracking = this.formTracking.bind(this);
         this.handleRegClick = this.handleRegClick.bind(this);
@@ -15,17 +19,13 @@ class LoginOrReg extends React.Component {
     }
 
     formTracking(evt) {
-    	let name = evt.target.name;
-    	let value = evt.target.value;
-    	this.setState({[name]: value});
-        console.log(this.state);
-    	// extending or spreading
-    	// let example = {firstname: 'hi', lastname: 'hello'};
-    	// example = {...example, lastname: 'goodbye'};
+    	this.setState({[evt.target.name]: evt.target.value});
+      console.log(this.state);
     }
 
     handleRegClick() {
     	console.log('entered handleRegClick');
+      console.log(this.state);
     	const regData = {username: this.state.new_username, password: this.state.new_password};
     	console.log('reg data is: ', regData);
         const body_pass = JSON.stringify(regData);
