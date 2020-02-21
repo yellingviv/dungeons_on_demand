@@ -4,7 +4,6 @@
 
 // okay frands we need to learn react router oh boy oh no oh goody
 
-
 class GameContainer extends React.Component {
 	constructor(props) {
 		super(props);
@@ -17,13 +16,15 @@ class GameContainer extends React.Component {
 	}
 
     render() {
-        if (this.state.logged_in === '') {
-            return (<LoginOrReg />);
-        } else if (this.state.logged_in != '') {
-            console.log("this should not be happening");
+        if (!this.state.logged_in) {
+            return (<LoginOrReg callback={this.setState} />);
+        } else if (this.state.logged_in) {
+            console.log("successfully changed the state of logged in");
+            return (<div>"oh hi"</div>);
+        }
           // serve the option to create a new room (or in future versions, games and new rooms)
           // once the new room is called, that should change the view state of the room to the room id
-        } else if (this.state.room_view === 'live') {
+        if (this.state.room_view === 'live') {
             return (<MonsterCardContainer />);
         } else if (this.state.player_view === 'live') {
             console.log("this should not show yet");

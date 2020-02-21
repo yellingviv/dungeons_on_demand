@@ -1,4 +1,8 @@
-class LoginOrReg extends React.Component {
+interface Props {
+  callback: ()  => void;
+}
+
+class LoginOrReg extends React.Component <Props> {
     constructor(props) {
         super(props)
         this.state = {
@@ -17,16 +21,13 @@ class LoginOrReg extends React.Component {
 
     handleClick(evt) {
       evt.preventDefault();
-      if (evt.target.name === "call_login") {
-        const flow = "login";
-      } else if (evt.target.name === "call_reg") {
-        const flow = "register";
-      }
+      const flow = evt.target.name === "login"?"login":"register";
+      console.log("button pressed is: ", evt.target.name);
     	const userData = {username: this.state.username, password: this.state.password};
     	console.log('user data is: ', userData);
       const body_pass = JSON.stringify(userData);
       console.log('and the body is...', body_pass);
-    	let response = fetch('/'flow, {
+    	let response = fetch('/'+flow, {
     		method: 'POST',
     		headers: {
         'Content-Type': 'application/json'
@@ -37,9 +38,10 @@ class LoginOrReg extends React.Component {
     		if (data['status'] === "failed") {
     			console.log(data['message']);
     		}
-    	});
-    	this.setState({response: data['message']});
+      this.setState({reg_message: data['message']});
       console.log(data['message']);
+    	});
+      this.props.callback({logged_in: true});
     }
 
     offerLoginOrReg() {
@@ -58,16 +60,16 @@ class LoginOrReg extends React.Component {
                         </tr>
                         <tr>
                             <td>
-                                <form onSubmit={this.handleClick}>
+                                <form onSubmit={this.handleClick} name="login">
                                     Username: <input onChange={this.formTracking} type="text" name="username" /><br />
                                     Password: <input onChange={this.formTracking} type="password" name="password" /><br />
                                     <input type="submit" value="Login" name="call_login"/>
                                 </form>
                             </td>
                             <td>
-                                <form onSubmit={this.handleClick}>
-                                    Select username: <input onChange={this.formTracking} type="text" name="new_username" /><br />
-                                    Create password: <input onChange={this.formTracking} type="password" name="new_password" /><br />
+                                <form onSubmit={this.handleClick} name="registration">
+                                    Select username: <input onChange={this.formTracking} type="text" name="username" /><br />
+                                    Create password: <input onChange={this.formTracking} type="password" name="password" /><br />
                                     <input type="submit" value="Register" name="call_reg" />
                                 </form>
                             </td>

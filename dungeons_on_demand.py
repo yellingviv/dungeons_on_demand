@@ -59,6 +59,7 @@ def user_login():
             results['password'] = True
             results['dm_id'] = user.dm_id
             results['status'] = "success"
+            results['message'] = "Successfully logged in!"
             print(results)
             return jsonify(results)
         else:
