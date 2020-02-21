@@ -55,13 +55,17 @@ class LoginOrReg extends React.Component {
     		body: JSON.stringify(loginData)
     	});
     	response.then((res) => res.json()).then((data) => {
-    		console.log(data);
-    		if (data != "failed") {
-            console.log('hey it worked!');
+    		console.log("the data received is: ", data);
+    		if (data["dm_id"]) {
+            console.log('it worked');
     			// now we make the room space happen
-    		} else {
-    			alert("Error logging in. Please check your username and password and try again.");
-    		}
+    		} else if (data["username"] != true) {
+    			console.log("error with username: ", data['username']);
+    		} else if (data["password"] != true) {
+          console.log("error with password: ", data['password']);
+        } else {
+          console.log("mysterious unknown error wtf");
+        }
     	});
     }
 

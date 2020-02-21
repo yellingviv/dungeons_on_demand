@@ -48,10 +48,9 @@ def user_login():
     login_dict = dict(login_json)
     username = login_dict['username']
     password = login_dict['password']
-    user = db.session.query(DMs).filter_by(username=username).all()
+    user = db.session.query(DMs).filter_by(username=username).first()
     print(user)
     if user:
-        print("user found: ", user)
         results['username'] = True
         if user.password == password:
             print("password found: ", password)
@@ -62,7 +61,7 @@ def user_login():
         else:
             return jsonify(results)
     else:
-        print('user not found')
+        print('user not found, results are: ', results)
         return jsonify(results)
 
 @app.route('/logout')
