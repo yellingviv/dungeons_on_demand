@@ -28,13 +28,15 @@ def create_new_user():
     print("here we are let's see what we have: ", username, password)
     response = {'message': ''}
     if db.session.query(DMs).filter_by(username=username).first():
-        response['message'] = 'failed'
+        response['message'] = "Username already in use, please try again."
+        response['status'] = "failed"
         return jsonify(response)
     new_DM = DMs(username=username,
                  password=password)
     db.session.add(new_DM)
     db.session.commit()
     response['message'] = "Successfully created account! Please log in."
+    response['status'] = "success"
     print(response)
     return jsonify(response)
 
@@ -56,12 +58,17 @@ def user_login():
             print("password found: ", password)
             results['password'] = True
             results['dm_id'] = user.dm_id
+            results['status'] = "success"
             print(results)
             return jsonify(results)
         else:
+            results['status'] = "failed"
+            results['message'] = "Incorrect password, please try again."
             return jsonify(results)
     else:
         print('user not found, results are: ', results)
+        results['status'] = "failed"
+        results['message'] = "Username not found, please try again."
         return jsonify(results)
 
 @app.route('/logout')
