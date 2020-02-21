@@ -41,7 +41,6 @@ def create_new_user():
 @app.route('/login', methods=['POST'])
 def user_login():
     """takes username and password hash to validate user"""
-    """adds auth to session, renders DM homepage with games and rooms"""
 
     results = {'username': False, 'password': False}
     login_info = request.data
@@ -49,13 +48,15 @@ def user_login():
     login_dict = dict(login_json)
     username = login_dict['username']
     password = login_dict['password']
-    user = db.session.query(DMs).filter_by(username=username).first()
+    user = db.session.query(DMs).filter_by(username=username).all()
+    print(user)
     if user:
         print("user found: ", user)
         results['username'] = True
         if user.password == password:
             print("password found: ", password)
             results['password'] = True
+            results['dm_id'] = user.dm_id
             print(results)
             return jsonify(results)
         else:

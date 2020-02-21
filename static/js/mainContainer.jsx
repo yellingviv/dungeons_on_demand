@@ -22,11 +22,12 @@ class LoginOrReg extends React.Component {
     	this.setState({[evt.target.name]: evt.target.value});
     }
 
-    handleRegClick() {
+    handleRegClick(evt) {
+      evt.preventDefault();
     	const regData = {username: this.state.new_username, password: this.state.new_password};
     	console.log('reg data is: ', regData);
-        const body_pass = JSON.stringify(regData);
-        console.log('and the body is...', body_pass);
+      const body_pass = JSON.stringify(regData);
+      console.log('and the body is...', body_pass);
     	let response = fetch('/register', {
     		method: 'POST',
     		headers: {
@@ -42,9 +43,10 @@ class LoginOrReg extends React.Component {
     	this.setState({response: response.message});
     }
 
-    handleLoginClick() {
-        const loginData = {username: this.state.username, password: this.state.password};
-        console.log('login data is: ', loginData);
+    handleLoginClick(evt) {
+      evt.preventDefault();
+      const loginData = {username: this.state.username, password: this.state.password};
+      console.log('login data is: ', loginData);
     	let response = fetch('/login', {
     		method: 'POST',
     		headers: {
@@ -79,17 +81,17 @@ class LoginOrReg extends React.Component {
                         </tr>
                         <tr>
                             <td>
-                                <form>
+                                <form onSubmit={this.handleLoginClick}>
                                     Username: <input onChange={this.formTracking} type="text" name="username" /><br />
                                     Password: <input onChange={this.formTracking} type="password" name="password" /><br />
-                                    <input onClick={this.handleLoginClick} type="submit" value="Login" name="call_login"/>
+                                    <input type="submit" value="Login" name="call_login"/>
                                 </form>
                             </td>
                             <td>
-                                <form>
+                                <form onSubmit={this.handleRegClick}>
                                     Select username: <input onChange={this.formTracking} type="text" name="new_username" /><br />
                                     Create password: <input onChange={this.formTracking} type="password" name="new_password" /><br />
-                                    <button type="button" onClick={this.handleRegClick} name="call_reg">Register</button>
+                                    <input type="submit" value="Register" name="call_reg" />
                                 </form>
                             </td>
                         </tr>
