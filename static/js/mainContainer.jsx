@@ -20,12 +20,9 @@ class LoginOrReg extends React.Component {
 
     formTracking(evt) {
     	this.setState({[evt.target.name]: evt.target.value});
-      console.log(this.state);
     }
 
     handleRegClick() {
-    	console.log('entered handleRegClick');
-      console.log(this.state);
     	const regData = {username: this.state.new_username, password: this.state.new_password};
     	console.log('reg data is: ', regData);
         const body_pass = JSON.stringify(regData);
@@ -38,7 +35,6 @@ class LoginOrReg extends React.Component {
       	body: body_pass
     	});
     	response.then((res) => res.json()).then((data) => {
-    		console.log(data);
     		if (response.message === "failed") {
     			alert("That username is already claimed. Please login or try a different username.");
     		}
@@ -59,7 +55,7 @@ class LoginOrReg extends React.Component {
     	response.then((res) => res.json()).then((data) => {
     		console.log(data);
     		if (data != "failed") {
-                console.log('hey it worked!');
+            console.log('hey it worked!');
     			// now we make the room space happen
     		} else {
     			alert("Error logging in. Please check your username and password and try again.");
