@@ -1,7 +1,3 @@
-interface Props {
-  callback: ()  => void;
-}
-
 class LoginOrReg extends React.Component <Props> {
     constructor(props) {
         super(props)
@@ -41,7 +37,6 @@ class LoginOrReg extends React.Component <Props> {
       this.setState({reg_message: data['message']});
       console.log(data['message']);
     	});
-      this.props.callback({logged_in: true});
     }
 
     offerLoginOrReg() {
@@ -81,10 +76,8 @@ class LoginOrReg extends React.Component <Props> {
     }
 
     render() {
-        return(
-            <div>
-                {this.offerLoginOrReg()}
-            </div>
+        return (
+            <div> {this.offerLoginOrReg()} </div>
         );
     }
 }
