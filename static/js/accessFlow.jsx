@@ -37,7 +37,7 @@ class LoginOrReg extends React.Component <Props> {
     }
 
     offerLoginOrReg() {
-        if ({this.props.req} === "login") {
+        if (this.props.req === "login") {
     		return (
                 <div className="access_flow">
                     <p>{this.state.reg_message}</p>
