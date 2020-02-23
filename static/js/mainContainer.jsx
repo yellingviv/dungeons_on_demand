@@ -8,28 +8,61 @@ class GameContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            logged_in: '',
+            logged_in: false,
             room_view: '',
             player_view: '',
             initiative_view: '',
 		};
 	}
 
+    login = () => {
+        this.setState({logged_in: !this.state.logged_in})
+    }
+
     render() {
         if (!this.state.logged_in) {
-            return (<LoginOrReg callback={this.setState} />);
-        } else if (this.state.logged_in) {
-            console.log("successfully changed the state of logged in");
-            return (<div>"oh hi"</div>);
+            return (
+                <Router>
+                    <div className="homepage">
+                        <Link to="/login"><button name="login" type="button" /></Link>
+                        <Link to="/register"><button name="register" type="button" /></Link>
+                    <Switch>
+                    <Route path="/login">
+                        <LoginOrReg login={this.login} req="login" />
+                    </Route>
+                    <Route path="/register">
+                        <LoginOrReg req="register" />
+                    </Route>
+                    </div>
+                </Router>
+            );
+        } else {
+            return (
+                <Router>
+                  <div>
+                    <Link to="/">Home</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                      <Route path="/">
+                        <Home />
+                      </Route>
+                    </Switch>
+                  </div>
+                </Router>
+            )
         }
-          // serve the option to create a new room (or in future versions, games and new rooms)
-          // once the new room is called, that should change the view state of the room to the room id
-        if (this.state.room_view === 'live') {
-            return (<MonsterCardContainer />);
-        } else if (this.state.player_view === 'live') {
-            console.log("this should not show yet");
-          // show the player list -- in the future this will toggle off initiative and show stats
-        }
+    }
+
+    Home() {
+      return (
+        <div className="homepage">
+            home page placeholder
+        </div>
+      );
+    }
+
+    About() {
+      return <h2>About</h2>;
     }
 }
 
