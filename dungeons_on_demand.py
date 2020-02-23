@@ -3,7 +3,7 @@ from dungeon_model import connect_to_db, db, DMs, Games, Rooms, Players, Player_
 import requests
 import json
 import re
-from random import choices
+from random import choices, randint
 from support_functions import instantiate_monster #, instantiate_player
 
 app = Flask(__name__)
@@ -239,9 +239,17 @@ def roll_initiative():
     """rolls initiative for the characters and monsters"""
     """pulls init mod from db, randomizes d20 roll, writes current roll to db"""
 
-# roll initiative
-#     rolls for monsters and players based on mods
-#     creates list of initiative rolls, writes to db
+    monster_id = request.args.get('monster_id')
+    print("the monster ID received is... ", monster_id)
+    monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
+    print("show me my monster! ", monster)
+    initiative_roll = monster.initiative_mod + randint(1, 20)
+    print("the roll is... ", initiative_roll)
+    monster.initiative_roll = initiative_roll
+    db.session.commit()
+
+    return jsonify(initiative_roll)
+
 
 @app.route('/turn_action', methods=['GET'])
 def turn_action():
