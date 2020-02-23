@@ -1,4 +1,12 @@
 class MonsterCard extends React.Component {
+    rollInit(monster_id) {
+        const init_url = '/roll_initiative?monster_id=' + monster_id;
+        let response = fetch('/roll_initiative');
+        response.then((res) => res.json()).then((data) => {
+			console.log('we rolled some initiative, yo: ', data);
+        });
+    }
+    
 	render() {
 		return (
 			<div className="monster" id={this.props.monster_id}>
@@ -20,6 +28,7 @@ class MonsterCard extends React.Component {
                 <p>Speed: {this.props.speed} Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover}<br />
                 Size: {this.props.size}
                 </p>
+                <p><button name="roll_init" type="button" onClick={this.rollInit(this.props.monster_id)} /></p>
 			</div>
 		);
 	}
