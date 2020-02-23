@@ -8,24 +8,22 @@ class GameContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            logged_in: false,
-            room_view: '',
-            player_view: '',
-            initiative_view: '',
+            logged_in: false
 		};
 	}
 
-    login = () => {
+    login() {
         this.setState({logged_in: !this.state.logged_in})
     }
 
     render() {
-        if (!this.state.logged_in) {
+        if (this.state.logged_in === false) {
             return (
                 <Router>
                     <div className="homepage">
                         <Link to="/login"><button name="login" type="button" /></Link>
                         <Link to="/register"><button name="register" type="button" /></Link>
+
                     <Switch>
                     <Route path="/login">
                         <LoginOrReg login={this.login} req="login" />
@@ -40,12 +38,28 @@ class GameContainer extends React.Component {
             return (
                 <Router>
                   <div>
-                    <Link to="/">Home</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
-                      <Route path="/">
-                        <Home />
-                      </Route>
+                    <Link to="/">Logout</Link>
+                    <Link to="/requestMonsters">Request Monsters</Link>
+                    <Link to="/viewMonsters">View Monsters</Link>
+                    <Link to="/viewInitiative">View Initiative</Link>
+                    <Link to="/gameStats">View Game Stats</Link>
+                    
+                    <Switch>
+                        <Route path="/requestMonsters">
+                            <SummonMonsters />
+                        </Route>
+                        <Route path="/viewMonsters">
+                            <MonsterCardContainer />
+                        </Route>
+                        <Route path="/viewInitiative">
+                            <InitiativeContainer />
+                        </Route>
+                        <Route path="/gameStats">
+                            <GameStats />
+                        </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
                     </Switch>
                   </div>
                 </Router>
@@ -62,7 +76,7 @@ class GameContainer extends React.Component {
     }
 
     About() {
-      return <h2>About</h2>;
+      return (<h2>About</h2>)
     }
 }
 
