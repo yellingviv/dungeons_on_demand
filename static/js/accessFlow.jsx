@@ -66,7 +66,9 @@ class LoginOrReg extends React.Component <Props> {
 
     render() {
         return (
-            <div> {this.offerLoginOrReg} </div>
+            <div className="access_flow">
+                {this.offerLoginOrReg}
+            </div>
         );
     }
 }
