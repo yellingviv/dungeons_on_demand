@@ -1,3 +1,9 @@
+const Router = ReactRouterDOM.BrowserRouter;
+const Route = ReactRouterDOM.Route;
+const Switch = ReactRouterDOM.Switch;
+const Link = ReactRouterDOM.Link;
+const Redirect = ReactRouterDOM.Redirect;
+
 class GameContainer extends React.Component {
 	constructor(props) {
 		super(props);
@@ -20,7 +26,6 @@ class GameContainer extends React.Component {
 
     render() {
         if (this.state.logged_in === false) {
-            console.log("not logged in, heading to return");
             return (
                 <Router>
                     <div className="homepage">
@@ -34,11 +39,11 @@ class GameContainer extends React.Component {
                     <Route path="/register">
                         <LoginOrReg req="register" />
                     </Route>
+                    </Switch>
                     </div>
                 </Router>
             );
         } else {
-            console.log("how did we get here?");
             return (
                 <Router>
                   <div>
