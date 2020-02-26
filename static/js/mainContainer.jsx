@@ -25,7 +25,8 @@ class GameContainer extends React.Component {
     }
 
     render() {
-        if (this.state.logged_in === false) {
+        console.log("what is going on with state before the while: ", this.state.logged_in);
+        while (this.state.logged_in === false) {
             return (
                 <Router>
                     <div className="homepage">
@@ -43,7 +44,10 @@ class GameContainer extends React.Component {
                     </div>
                 </Router>
             );
-        } else {
+            console.log("what is going on with state after log in render: ", this.state.logged_in);
+        }
+        console.log("what is going on with state outside of the while: ", this.state.logged_in);
+        while (this.state.logged_in === true) {
             return (
                 <Router>
                   <div>
