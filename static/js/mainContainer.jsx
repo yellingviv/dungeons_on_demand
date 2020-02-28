@@ -50,7 +50,6 @@ class GameContainer extends React.Component {
             return (
                 <Router>
                   <div>
-                    <Link to="/">Logout</Link><br />
                     <Link to="/requestMonsters">Request Monsters</Link><br />
                     <Link to="/viewMonsters">View Monsters</Link><br />
                     <Link to="/viewInitiative">View Initiative</Link><br />
@@ -68,9 +67,6 @@ class GameContainer extends React.Component {
                         </Route>
                         <Route path="/gameStats">
                             <GameStats />
-                        </Route>
-                        <Route path="/">
-                            <Home />
                         </Route>
                     </Switch>
                   </div>
