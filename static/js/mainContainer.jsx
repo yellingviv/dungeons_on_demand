@@ -8,9 +8,13 @@ class GameContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            logged_in: false
+            logged_in: false,
+            game_is_live: false,
+            diff: 0,
+            num: 0
 		};
     this.login = this.login.bind(this);
+    this.formHandling = this.formHandling.bind(this);
 	}
 
     login() {
@@ -18,12 +22,13 @@ class GameContainer extends React.Component {
         console.log("set state: ", this.state.logged_in);
     }
 
-    Home() {
-      return (
-        <div className="homepage">
-            home page placeholder
-        </div>
-      );
+    gameLive() {
+      this.setState({game_is_live: true});
+      console.log("activated game");
+    }
+
+    formHandling(evt) {
+      this.setState({[evt.target.name]: evt.target.value});
     }
 
     render() {
@@ -47,31 +52,47 @@ class GameContainer extends React.Component {
             );
         }
         while (this.state.logged_in === true) {
-            return (
-                <Router>
-                  <div>
-                    <Link to="/requestMonsters">Request Monsters</Link><br />
-                    <Link to="/viewMonsters">View Monsters</Link><br />
-                    <Link to="/viewInitiative">View Initiative</Link><br />
-                    <Link to="/gameStats">View Game Stats</Link>
+            if (this.state.game_is_live === false) {
+              return (
+                  <Router>
+                    <div>
+                    Request Monsters!<br />
+                    <br />
+                    Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" /><br />
+                    Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="1" max="30" /><br />
+                      <Link to="/requestMonsters"><button name="login" type="button">Login</button></Link><br />
 
-                    <Switch>
-                        <Route path="/requestMonsters">
-                            <SummonMonsters />
-                        </Route>
-                        <Route path="/viewMonsters">
-                            <MonsterCardContainer />
-                        </Route>
-                        <Route path="/viewInitiative">
-                            <InitiativeContainer />
-                        </Route>
-                        <Route path="/gameStats">
-                            <GameStats />
-                        </Route>
-                    </Switch>
+                  <Switch>
+                      <Route path="/requestMonsters">
+                          <MonsterCardContainer diff={this.state.diff} num={this.state.num} game={this.gameLive} />
+                      </Route>
+                  </Switch>
                   </div>
                 </Router>
-            );
+              );
+            } else {
+              return (
+                  <Router>
+                    <div>
+                      <Link to="/viewMonsters">View Monsters</Link><br />
+                      <Link to="/viewInitiative">View Initiative</Link><br />
+                      <Link to="/gameStats">View Game Stats</Link>
+
+                      <Switch>
+                          <Route path="/viewMonsters">
+                              <MonsterCardContainer />
+                          </Route>
+                          <Route path="/viewInitiative">
+                              <InitiativeContainer />
+                          </Route>
+                          <Route path="/gameStats">
+                              <GameStats />
+                          </Route>
+                      </Switch>
+                    </div>
+                  </Router>
+              );
+            }
         }
     }
 }
