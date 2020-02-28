@@ -117,9 +117,14 @@ def new_room_info():
 def create_new_room():
     """pulls a new list of monsters according to DM request and displays them"""
 
+    print("show monsters endpoint has been hit")
     URL = 'https://api.open5e.com/monsters/?challenge_rating='
-    diff = request.form.get('diff')
-    num = request.form.get('num')
+    monst_request = request.data
+    monst_json = json.loads(monst_request)
+    monst_dict = dict(monst_json)
+    print("received from app: ", monst_dict)
+    diff = monst_dict['diff']
+    num = monst_dict['num']
     call = URL + diff
     response = requests.get(call)
     response_json = json.loads(response.text)
@@ -127,6 +132,7 @@ def create_new_room():
     monst_list = payload['results']
     rand = int(num)
     monst_choices = choices(monst_list, k=rand)
+    print("the monsters: ", monst_choices)
 
     final_monst_list = []
     for monster in monst_choices:
@@ -146,11 +152,11 @@ def create_new_room():
             monst_info['bonus'] = 0
         # speed returns a dict with multiple values so parse out
         # monsters usually don't have all speeds so set to zero if not there
-        monst_info['speed'] = test_monster['speed'].get('walk', 0)
-        monst_info['burrow'] = test_monster['speed'].get('burrow', 0)
-        monst_info['swim'] = test_monster['speed'].get('swim', 0)
-        monst_info['fly'] = test_monster['speed'].get('fly', 0)
-        monst_info['hover'] = test_monster['speed'].get('hover', False)
+        monst_info['speed'] = monster['speed'].get('walk', 0)
+        monst_info['burrow'] = monster['speed'].get('burrow', 0)
+        monst_info['swim'] = monster['speed'].get('swim', 0)
+        monst_info['fly'] = monster['speed'].get('fly', 0)
+        monst_info['hover'] = monster['speed'].get('hover', False)
         monst_info['str'] = monster['strength']
         monst_info['dex'] = monster['dexterity']
         monst_info['con'] = monster['constitution']
@@ -164,6 +170,8 @@ def create_new_room():
         db.session.commit()
         monst_info['monster_id'] = this_monst.monster_id
         final_monst_list.append(monst_info)
+        print("monster ", monst_info['monster_id'], " added to db")
+    print("monsters sent to db")
 
     return jsonify(final_monst_list)
 
