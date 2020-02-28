@@ -2,7 +2,7 @@ class MonsterCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-            room_id: 10;
+            room_id: 10
     }
     this.rollInit = this.rollInit.bind(this);
   }
@@ -33,7 +33,7 @@ class MonsterCard extends React.Component {
                         </tr>
                     </tbody>
                 </table>
-                <p>Speed: {this.props.speed} Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover}<br />
+                <p>Speed: {this.props.speed} (Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover})<br />
                 Size: {this.props.size}
                 </p>
                 <p><button name="roll_init" type="button" onClick={this.rollInit(this.props.monster_id)} /></p>
@@ -52,11 +52,20 @@ class MonsterCardContainer extends React.Component {
 	}
 
 	componentDidMount() {
-		let response = fetch('/show_monsters');
-        console.log("calling the monster api");
+    const monstRequest = {diff: this.props.diff, num: this.props.num};
+    const bodyPass = JSON.stringify(monstRequest);
+    console.log("calling the monster api with info: ", monstRequest);
+		let response = fetch('/show_monsters', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+            body: bodyPass
+        });
+    console.log("api call happening")
 		response.then((res) => res.json()).then((data) => {
 			this.makeMonsterCards(data)
-        })
+    });
+    {this.props.game()};
+    console.log("called to main container to set game status to live");
 	}
 
 	makeMonsterCards(monsterData) {
@@ -66,24 +75,24 @@ class MonsterCardContainer extends React.Component {
           	<MonsterCard
           		key={currentMonst.type}
           		monster_id={currentMonst.monster_id}
-          	    type={currentMonst.type}
+          	  type={currentMonst.type}
           		hp={currentMonst.hp}
-                initiative={currentMonst.initiative}
-                ac={currentMonst.ac}
-                dice_num={currentMonst.dice_num}
-                dice_type={currentMonst.dice_type}
-                bonus={currentMonst.bonus}
-                str={currentMonst.str}
-                dex={currentMonst.dex}
-                con={currentMonst.con}
-                int={currentMonst.int}
-                wis={currentMonst.wis}
-                cha={currentMonst.cha}
-                speed={currentMonst.speed}
-                swim={currentMonst.swim}
-                fly={currentMonst.fly}
-                hover={currentMonst.hover}
-                size={currentMonst.size}
+              initiative={currentMonst.initiative}
+              ac={currentMonst.ac}
+              dice_num={currentMonst.dice_num}
+              dice_type={currentMonst.dice_type}
+              bonus={currentMonst.bonus}
+              str={currentMonst.str}
+              dex={currentMonst.dex}
+              con={currentMonst.con}
+              int={currentMonst.int}
+              wis={currentMonst.wis}
+              cha={currentMonst.cha}
+              speed={currentMonst.speed}
+              swim={currentMonst.swim}
+              fly={currentMonst.fly}
+              hover={currentMonst.hover}
+              size={currentMonst.size}
           	/>
           );
         }
@@ -91,15 +100,16 @@ class MonsterCardContainer extends React.Component {
 	}
 
     render() {
-		if (this.state.monsterCards.length === 0) {
-			return (
-				<div> Loading ... </div>
-			);
-		}
-        return (
-          <div>
-            {this.state.monsterCards}
-          </div>
-        );
+  		if (this.state.monsterCards.length === 0) {
+  			return (
+  				<div> Loading ... </div>
+  			);
+  		} else {
+          return (
+            <div>
+              {this.state.monsterCards}
+            </div>
+          );
+      }
   }
 }
