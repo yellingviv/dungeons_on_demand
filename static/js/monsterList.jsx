@@ -1,4 +1,12 @@
 class MonsterCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+            room_id: 10;
+    }
+    this.rollInit = this.rollInit.bind(this);
+  }
+
     rollInit(monster_id) {
         const init_url = '/roll_initiative?monster_id=' + monster_id;
         let response = fetch('/roll_initiative');
@@ -6,7 +14,7 @@ class MonsterCard extends React.Component {
 			console.log('we rolled some initiative, yo: ', data);
         });
     }
-    
+
 	render() {
 		return (
 			<div className="monster" id={this.props.monster_id}>
@@ -44,7 +52,7 @@ class MonsterCardContainer extends React.Component {
 	}
 
 	componentDidMount() {
-		let response = fetch('/monster_test');
+		let response = fetch('/show_monsters');
         console.log("calling the monster api");
 		response.then((res) => res.json()).then((data) => {
 			this.makeMonsterCards(data)
@@ -52,9 +60,7 @@ class MonsterCardContainer extends React.Component {
 	}
 
 	makeMonsterCards(monsterData) {
-        console.log('makemonstercards and data', monsterData)
 		let monsterCards = [];
-        console.log("starting the for loop");
 		for (const currentMonst of monsterData) {
           monsterCards.push(
           	<MonsterCard
@@ -80,9 +86,7 @@ class MonsterCardContainer extends React.Component {
                 size={currentMonst.size}
           	/>
           );
-          console.log("new monster card created");
         }
-        console.log("monster cards!", monsterCards);
 	    this.setState({ monsterCards: monsterCards });
 	}
 
