@@ -15,6 +15,7 @@ class GameContainer extends React.Component {
 		};
     this.login = this.login.bind(this);
     this.formHandling = this.formHandling.bind(this);
+    this.gameLive = this.gameLive.bind(this);
 	}
 
     login() {
@@ -60,7 +61,7 @@ class GameContainer extends React.Component {
                     <br />
                     Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" /><br />
                     Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="1" max="30" /><br />
-                      <Link to="/requestMonsters"><button name="login" type="button">Login</button></Link><br />
+                      <Link to="/requestMonsters"><button name="login" type="button">Call Monsters</button></Link><br />
 
                   <Switch>
                       <Route path="/requestMonsters">
