@@ -1,4 +1,4 @@
-class SummonMonsters extends React.Component {
+class GameStats extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
