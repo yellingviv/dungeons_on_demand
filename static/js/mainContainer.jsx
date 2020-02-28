@@ -10,10 +10,12 @@ class GameContainer extends React.Component {
 		this.state = {
             logged_in: false
 		};
+    this.login = this.login.bind(this);
 	}
 
     login() {
-        this.setState({logged_in: !this.state.logged_in})
+        this.setState({logged_in: !this.state.logged_in});
+        console.log("set state: ", this.state.logged_in);
     }
 
     Home() {

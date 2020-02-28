@@ -33,7 +33,7 @@ class LoginOrReg extends React.Component {
     		}
             this.setState({reg_message: data['message']});
             if (flow === "login") {
-              {this.props.login};
+              {this.props.login()};
               console.log('called login');
             }
         });
