@@ -27,7 +27,6 @@ class GameContainer extends React.Component {
     }
 
     render() {
-        console.log("what is going on with state before the while: ", this.state.logged_in);
         while (this.state.logged_in === false) {
             return (
                 <Router>
@@ -46,17 +45,15 @@ class GameContainer extends React.Component {
                     </div>
                 </Router>
             );
-            console.log("what is going on with state after log in render: ", this.state.logged_in);
         }
-        console.log("what is going on with state outside of the while: ", this.state.logged_in);
         while (this.state.logged_in === true) {
             return (
                 <Router>
                   <div>
-                    <Link to="/">Logout</Link>
-                    <Link to="/requestMonsters">Request Monsters</Link>
-                    <Link to="/viewMonsters">View Monsters</Link>
-                    <Link to="/viewInitiative">View Initiative</Link>
+                    <Link to="/">Logout</Link><br />
+                    <Link to="/requestMonsters">Request Monsters</Link><br />
+                    <Link to="/viewMonsters">View Monsters</Link><br />
+                    <Link to="/viewInitiative">View Initiative</Link><br />
                     <Link to="/gameStats">View Game Stats</Link>
 
                     <Switch>
