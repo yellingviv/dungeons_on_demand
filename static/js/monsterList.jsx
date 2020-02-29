@@ -51,28 +51,13 @@ class MonsterCardContainer extends React.Component {
 		this.makeMonsterCards = this.makeMonsterCards.bind(this);
 	}
 
-	componentDidMount() {
-    const monstRequest = {diff: this.props.diff, num: this.props.num};
-    const bodyPass = JSON.stringify(monstRequest);
-    console.log("calling the monster api with info: ", monstRequest);
-		let response = fetch('/show_monsters', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-            body: bodyPass
-        });
-    console.log("api call happening")
-		response.then((res) => res.json()).then((data) => {
-			this.makeMonsterCards(data)
-    });
-    {this.props.game()};
-    console.log("called to main container to set game status to live");
-	}
+// move to main container at initial call and save the info in state to pass to container for viewing
 
 	makeMonsterCards(monsterData) {
+    console.log("we are in the monster land: ", monsterData);
 		let monsterCards = [];
-		for (const currentMonst of monsterData) {
-          monsterCards.push(
-          	<MonsterCard
+    return (
+		monsterData.map((currentMonst) => <MonsterCard
           		key={currentMonst.type}
           		monster_id={currentMonst.monster_id}
           	  type={currentMonst.type}
@@ -94,22 +79,17 @@ class MonsterCardContainer extends React.Component {
               hover={currentMonst.hover}
               size={currentMonst.size}
           	/>
-          );
-        }
-	    this.setState({ monsterCards: monsterCards });
+//          );
+          )
+//	    this.setState({ monsterCards: monsterCards });
+      );
 	}
 
     render() {
-  		if (this.state.monsterCards.length === 0) {
-  			return (
-  				<div> Loading ... </div>
-  			);
-  		} else {
-          return (
-            <div>
-              {this.state.monsterCards}
-            </div>
-          );
-      }
+      const monsterData = this.props.monsterList;
+      console.log("we are sending: ", monsterData);
+      return (
+        this.makeMonsterCards(monsterData)
+      )
   }
 }

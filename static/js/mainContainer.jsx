@@ -11,11 +11,14 @@ class GameContainer extends React.Component {
             logged_in: false,
             game_is_live: false,
             diff: 0,
-            num: 0
+            num: 0,
+            monsterList: []
 		};
     this.login = this.login.bind(this);
     this.formHandling = this.formHandling.bind(this);
     this.gameLive = this.gameLive.bind(this);
+    this.initiateMonsters = this.initiateMonsters.bind(this);
+    this.monsterSummoning = this.monsterSummoning.bind(this);
 	}
 
     login() {
@@ -30,6 +33,27 @@ class GameContainer extends React.Component {
 
     formHandling(evt) {
       this.setState({[evt.target.name]: evt.target.value});
+    }
+
+    initiateMonsters() {
+        this.gameLive();
+        this.monsterSummoning();
+    }
+
+    monsterSummoning() {
+      const monstRequest = {diff: this.state.diff, num: this.state.num};
+      const bodyPass = JSON.stringify(monstRequest);
+      console.log("calling the monster api with info: ", monstRequest);
+      let response = fetch('/show_monsters', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+              body: bodyPass
+          });
+      console.log("api call happening")
+      response.then((res) => res.json()).then((data) => {
+        this.state.monsterList = data;
+        console.log("assigned to monsterList: ", this.state.monsterList);
+      });
     }
 
     render() {
@@ -55,21 +79,13 @@ class GameContainer extends React.Component {
         while (this.state.logged_in === true) {
             if (this.state.game_is_live === false) {
               return (
-                  <Router>
                     <div>
                     Request Monsters!<br />
                     <br />
                     Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" /><br />
                     Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="1" max="30" /><br />
-                      <Link to="/requestMonsters"><button name="login" type="button">Call Monsters</button></Link><br />
-
-                  <Switch>
-                      <Route path="/requestMonsters">
-                          <MonsterCardContainer diff={this.state.diff} num={this.state.num} game={this.gameLive} />
-                      </Route>
-                  </Switch>
+                    <button onClick={this.initiateMonsters} name="login" type="button">Call Monsters</button><br />
                   </div>
-                </Router>
               );
             } else {
               return (
@@ -81,7 +97,7 @@ class GameContainer extends React.Component {
 
                       <Switch>
                           <Route path="/viewMonsters">
-                              <MonsterCardContainer />
+                              <MonsterCardContainer monsterList={this.state.monsterList}/>
                           </Route>
                           <Route path="/viewInitiative">
                               <InitiativeContainer />
