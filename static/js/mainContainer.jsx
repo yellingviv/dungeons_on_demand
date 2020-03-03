@@ -51,7 +51,7 @@ class GameContainer extends React.Component {
           });
       console.log("api call happening")
       response.then((res) => res.json()).then((data) => {
-        this.state.monsterList = data;
+        this.setState({monsterList: data});
         console.log("assigned to monsterList: ", this.state.monsterList);
       });
     }
