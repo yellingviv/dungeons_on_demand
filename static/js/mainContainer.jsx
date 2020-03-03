@@ -35,7 +35,8 @@ class GameContainer extends React.Component {
       this.setState({[evt.target.name]: evt.target.value});
     }
 
-    initiateMonsters() {
+    initiateMonsters(evt) {
+        evt.preventDefault();
         this.gameLive();
         this.monsterSummoning();
     }
@@ -54,6 +55,9 @@ class GameContainer extends React.Component {
         this.setState({monsterList: data});
         console.log("assigned to monsterList: ", this.state.monsterList);
       });
+      return (
+        <MonsterCardContainer monsterList={this.state.monsterList} />
+      );
     }
 
     render() {
@@ -66,10 +70,10 @@ class GameContainer extends React.Component {
 
                     <Switch>
                     <Route path="/login">
-                        <LoginOrReg login={this.login} req="login" />
+                        <LoginOrReg login={this.login} req="Login" />
                     </Route>
                     <Route path="/register">
-                        <LoginOrReg req="register" />
+                        <LoginOrReg req="Register" />
                     </Route>
                     </Switch>
                     </div>
@@ -82,9 +86,11 @@ class GameContainer extends React.Component {
                     <div>
                     Request Monsters!<br />
                     <br />
+                    <form id="monster_request" onSubmit={this.initiateMonsters}>
                     Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" /><br />
                     Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="1" max="30" /><br />
-                    <button onClick={this.initiateMonsters} name="login" type="button">Call Monsters</button><br />
+                    <input type="submit" name="init_monsters" value="Call Monsters" /><br />
+                    </form>
                   </div>
               );
             } else {

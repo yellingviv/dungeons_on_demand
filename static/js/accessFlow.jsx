@@ -4,7 +4,8 @@ class LoginOrReg extends React.Component {
         this.state = {
             reg_message: '',
             username: '',
-            password: ''
+            password: '',
+            flow: ''
         }
         this.formTracking = this.formTracking.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -17,12 +18,12 @@ class LoginOrReg extends React.Component {
 
     handleClick(evt) {
       evt.preventDefault();
-      const flow = evt.target.name === "login"?"login":"register";
+      const flow = evt.target.name === "Login"?"Login":"Register";
       const userData = {username: this.state.username, password: this.state.password};
       const body_pass = JSON.stringify(userData);
       this.state.password = '';
       this.state.username = '';
-      let response = fetch('/'+flow, {
+      let response = fetch('/'+flow.toLowerCase(), {
     		method: 'POST',
     		headers: {'Content-Type': 'application/json'},
       	    body: body_pass
@@ -32,39 +33,29 @@ class LoginOrReg extends React.Component {
     			console.log(data['message']);
     		}
             this.setState({reg_message: data['message']});
-            if (flow === "login") {
+            if (flow === "Login") {
+              setState({flow: "Login"});
               {this.props.login()};
               console.log('called login');
             }
+            return (
+              <p>{this.state.reg_message}</p>
+            )
         });
     }
 
     offerLoginOrReg() {
-        if (this.props.req === "login") {
+        setState({flow: this.props.req})
     		return (
                 <div className="access_flow">
-                    <p>{this.state.reg_message}</p>
-                    <h2>Login</h2>
-                    <form onSubmit={this.handleClick} name="login">
+                    <h2>{this.state.flow}</h2>
+                    <form onSubmit={this.handleClick} name={this.props.req}>
                         Username: <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
                         Password: <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
-                        <input type="submit" value="Login" name="call_login" />
+                        <input type="submit" value={this.props.req} name="call_access" />
                     </form>
                 </div>
             );
-        } else {
-            return (
-                <div className="access_flow">
-                    <p>{this.state.reg_message}</p>
-                    <h2>Register</h2>
-                    <form onSubmit={this.handleClick} name="registration">
-                        Select username: <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
-                        Create password: <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
-                        <input type="submit" value="Register" name="call_reg" />
-                    </form>
-                </div>
-            );
-        }
     }
 
     render() {
