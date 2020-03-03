@@ -142,7 +142,7 @@ class Monsters(db.Model):
     burrow = db.Column(db.Integer)
     swim = db.Column(db.Integer)
     fly = db.Column(db.Integer)
-    hover = db.Column(db.Boolean)
+    hover = db.Column(db.String(5))
     current_square = db.Column(db.Integer)
     str = db.Column(db.Integer)
     dex = db.Column(db.Integer)
@@ -156,7 +156,7 @@ class Monsters(db.Model):
     # rooms = db.relationship("Rooms")
 
     def __repr__(self):
-        return f"<Monster: {self.monster_id}, for room {self.room_id}>"
+        return f"<Monster: {self.monster_id}, which is a {self.species}>"
 
 
 ##############################################################################

@@ -2,25 +2,31 @@ class MonsterCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-            room_id: 10
+            room_id: 10,
+            initiative: {}
     }
     this.rollInit = this.rollInit.bind(this);
   }
 
-    rollInit(monster_id) {
+    rollInit(evt) {
+        const monster_id = evt.target.id;
+        console.log("target id: ", monster_id)
         const init_url = '/roll_initiative?monster_id=' + monster_id;
-        let response = fetch('/roll_initiative');
+        console.log("we called out this way: ", init_url);
+        let response = fetch(init_url);
         response.then((res) => res.json()).then((data) => {
-			console.log('we rolled some initiative, yo: ', data);
+			       console.log('we rolled some initiative, yo: ', data);
+             this.setState({initiative: {[monster_id]: data}});
         });
+        console.log("state is now: ", this.state);
     }
 
 	render() {
 		return (
-			<div className="monster" id={this.props.monster_id}>
+			<div className="monster">
 				<h2>Type: {this.props.type}</h2>
 				<h2 id="hp">HP: {this.props.hp} </h2>
-                <p>Initiative: {this.props.initiative}<br />
+                <p>Initiative: {this.props.initiative_mod}<br />
                 AC: {this.props.ac}<br />
                 Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus}</p>
                 <table>
@@ -36,7 +42,10 @@ class MonsterCard extends React.Component {
                 <p>Speed: {this.props.speed} (Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover})<br />
                 Size: {this.props.size}
                 </p>
-                <p><button name="roll_init" type="button" onClick={this.rollInit(this.props.monster_id)} /></p>
+                <p>
+                  Current Initiative: {this.state.initiative[this.props.monster_id]}<br />
+                  <button name="roll_init" type="button" id={this.props.monster_id} onClick={this.rollInit}>Roll Initiative</button>
+                </p>
 			</div>
 		);
 	}
@@ -62,7 +71,7 @@ class MonsterCardContainer extends React.Component {
           		monster_id={currentMonst.monster_id}
           	  type={currentMonst.type}
           		hp={currentMonst.hp}
-              initiative={currentMonst.initiative}
+              initiative_mod={currentMonst.initiative_mod}
               ac={currentMonst.ac}
               dice_num={currentMonst.dice_num}
               dice_type={currentMonst.dice_type}

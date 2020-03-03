@@ -35,6 +35,8 @@ def create_new_user():
                  password=password)
     db.session.add(new_DM)
     db.session.commit()
+    DM_id = new_DM.dm_id
+    session['dm_id'] = DM_id
     response['message'] = "Successfully created account! Please log in."
     response['status'] = "success"
     print(response)
@@ -156,7 +158,10 @@ def create_new_room():
         monst_info['burrow'] = monster['speed'].get('burrow', 0)
         monst_info['swim'] = monster['speed'].get('swim', 0)
         monst_info['fly'] = monster['speed'].get('fly', 0)
-        monst_info['hover'] = monster['speed'].get('hover', False)
+        if monster['speed'].get('hover'):
+            monst_info['hover'] = 'Yes'
+        else:
+            monst_info['hover'] = 'No'
         monst_info['str'] = monster['strength']
         monst_info['dex'] = monster['dexterity']
         monst_info['con'] = monster['constitution']
@@ -168,19 +173,13 @@ def create_new_room():
         this_monst = instantiate_monster(monst_info)
         db.session.add(this_monst)
         db.session.commit()
+        monst_info['initiative_mod'] = this_monst.initiative_mod
         monst_info['monster_id'] = this_monst.monster_id
         final_monst_list.append(monst_info)
         print("monster ", monst_info['monster_id'], " added to db")
     print("monsters sent to db")
 
     return jsonify(final_monst_list)
-
-# create new room
-#     associated with a game
-#     pass level and number of monsters
-#     return monster info from api
-#     give positioning of monsters
-#     put the room id, game id into the session cookie
 
 @app.route('/load_room')
 def load_room():
@@ -199,6 +198,7 @@ def roll_initiative():
     print("the monster ID received is... ", monster_id)
     monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
     print("show me my monster! ", monster)
+    print("Initiative mod is: ", monster.initiative_mod)
     initiative_roll = monster.initiative_mod + randint(1, 20)
     print("the roll is... ", initiative_roll)
     monster.initiative_roll = initiative_roll
