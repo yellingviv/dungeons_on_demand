@@ -231,13 +231,18 @@ def turn_action():
 @app.route('/roll_monster_attack', methods=['GET'])
 def monster_attack():
     """calculates how much damage a monster has done"""
-    """receives monster ID and player ID as args in URL"""
-    """calculates total damage and damage player took based on AC"""
-    """updates player's HP and commits info to db"""
 
-# roll monster damage
-#     randomize on number of dice and type
-#     return the damage value
+    monster_id = request.args.get('monster_id')
+    monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
+    dice_num = monster.hit_dice_num
+    dice_type = monster.hit_dice_type
+    damage = 0
+    for i in range(dice_num):
+        damage = damage + randint(1, dice_type)
+    if monster.bonus:
+        damage = damage + monster.bonus
+
+    return jsonify(damage)
 
 @app.route('/roll_monster_damage', methods=['GET'])
 def player_attack():
@@ -247,15 +252,19 @@ def player_attack():
     """updates monster's HP on sidebar, commits to DB"""
 
     monster_id = request.args.get('monster_id')
-    damage = request.args.get('damage')
-    current_hp = request.args.get('hp')
+    damage = int(request.args.get('damage'))
+    current_hp = int(request.args.get('hp'))
+    print("the hp passed in from the app is: ", current_hp)
     # add check for player id later when I have the ability to do that
     # calculate damage based on armor class and total damage, then return the updated HP
     monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
+    if current_hp == 0:
+        current_hp = monster.total_hp
+        print("the monster in the db has: ", monster.total_hp)
     print("show me my monster! ", monster)
-    print("current HP is: ", current_hp)
+    print("final current HP is: ", current_hp)
     new_hp = current_hp - damage
-    if new_hp < 0:
+    if new_hp < 1:
         monster.species = "Dead"
         monster.total_hp = 0
         db.session.commit()

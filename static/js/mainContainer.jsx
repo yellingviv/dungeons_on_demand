@@ -44,7 +44,6 @@ class GameContainer extends React.Component {
     monsterSummoning() {
       const monstRequest = {diff: this.state.diff, num: this.state.num};
       const bodyPass = JSON.stringify(monstRequest);
-      console.log("calling the monster api with info: ", monstRequest);
       let response = fetch('/show_monsters', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},

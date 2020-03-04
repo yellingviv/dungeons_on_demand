@@ -5,11 +5,15 @@ class MonsterCard extends React.Component {
             room_id: 10,
             initiative: {},
             hp: {},
-            damage: {}
+            damage: {},
+            hit_roll: {},
+            attack: {}
     }
     this.rollInit = this.rollInit.bind(this);
     this.dealDamage = this.dealDamage.bind(this);
-    this.calculateDamage = this.calculateDamage.bind(this);
+    this.rollToHit = this.rollToHit.bind(this);
+    this.rollToDamage = this.rollToDamage.bind(this);
+    this.damageHandling = this.damageHandling.bind(this);
   }
 
     rollInit(evt) {
@@ -25,23 +29,57 @@ class MonsterCard extends React.Component {
         console.log("state is now: ", this.state);
     }
 
-    dealDamage(evt) {
+    rollToHit(evt) {
       const monster_id = evt.target.id;
-      console.log("dealDamage called, attempting to update html");
-      document.getElementById("damage_fields").innerHTML = "<form name='damage_call' onClick={this.calculateDamage}>How much damage? <input type='number' name='damage' onChange={this.damageHandling}/><br />Which player? <input type='text' name='player' /></form>";
+      const min = Math.ceil(1);
+      const max = Math.floor(21);
+      const roll = Math.floor(Math.random() * (max - min)) + min;
+      this.setState({hit_roll: {[monster_id]: roll}});
     }
 
-    calculateDamage(evt) {
+    rollToDamage(evt) {
+      const monster_id = evt.target.id;
+      const attack_url = '/roll_monster_attack?monster_id=' + monster_id;
+      let response = fetch(attack_url);
+      response.then((res) => res.json()).then((data) => {
+        console.log("we got back a roll: ", data);
+        this.setState({attack: {[monster_id]: data}});
+      });
+      console.log("state is now: ", this.state);
+    }
+
+    damageHandling(evt) {
+      this.setState({damage: {[evt.target.id]: evt.target.value}});
+    }
+
+    dealDamage(evt) {
       evt.preventDefault();
       const monster_id = evt.target.id;
+      console.log("this is our current state: ", this.state.damage);
       const damage = this.state.damage[monster_id];
-      console.log("monster to hurt: ", monster_id);
+      console.log("okay this is where we are: ", this.state.hp[monster_id]);
+      let current_hp = 10;
+      if (!this.state.hp[monster_id]) {
+        current_hp = 0;
+        console.log("we tried to set it to zero?");
+      } else {
+        current_hp = this.state.hp[monster_id];
+        console.log("we set the hp to the current state");
+      }
+      console.log("this is the hp coming out of this: ", current_hp)
       console.log("damage to deal: ", damage);
-      const damage_url = "/roll_monster_damage?monster_id=" + monster_id + "&damage=" + damage;
+      const damage_url = "/roll_monster_damage?monster_id=" + monster_id + "&damage=" + damage + "&hp=" + current_hp;
       let response = fetch(damage_url);
       response.then((res) => res.json()).then((data) => {
         console.log("damage done! ", data);
-        this.setState({hp: {[monster_id]: data}});
+        if (data === "dead") {
+          this.setState({hp: {[monster_id]: 0}});
+          document.getElementById("damage_fields").innerHTML = "Monster defeated!!"
+        } else {
+          this.setState({hp: {[monster_id]: data}});
+          console.log("updated: ", this.state.hp[monster_id]);
+        }
+        this.setState({damage: {[monster_id]: ''}});
       })
     }
 
@@ -49,10 +87,12 @@ class MonsterCard extends React.Component {
 		return (
 			<div className="monster">
 				<h2>Type: {this.props.type}</h2>
-				<h2 id="hp">HP: {this.props.hp} </h2>
+				<h2 id="hp">Total HP: {this.props.hp} </h2>
         <p>Initiative: {this.props.initiative_mod}<br />
         AC: {this.props.ac}<br />
-        Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus}</p>
+        Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus} <br />
+        <button id={this.props.monster_id} onClick={this.rollToHit}>Roll To Hit</button> {this.state.hit_roll[this.props.monster_id]} <br />
+        <button id={this.props.monster_id} onClick={this.rollToDamage}>Roll for Damage</button> {this.state.attack[this.props.monster_id]}</p>
         <table>
             <tbody>
                 <tr>
@@ -68,8 +108,12 @@ class MonsterCard extends React.Component {
         </p>
         <p>
           Current Initiative: {this.state.initiative[this.props.monster_id]} <button name="roll_init" type="button" id={this.props.monster_id} onClick={this.rollInit}>Roll Initiative</button><br />
-          Current HP: {this.state.hp[this.props.monster_id]} <button id={this.props.monster_id} onClick={this.dealDamage}>Deal Damage</button><br />
+          Current HP: {this.state.hp[this.props.monster_id]} <br />
         </p>
+          <form onSubmit={this.dealDamage} id={this.props.monster_id}>
+          Damage dealt: <input type='number' onChange={this.damageHandling} id={this.props.monster_id} name='damage' value={this.state.damage[this.props.monster_id]}/><br />
+          Attacking player: <input type='text' name='player' /><br />
+          <input type='submit' value='Deal Damage' /></form>
         <p id="damage_fields">
         </p>
 			</div>
@@ -89,10 +133,10 @@ class MonsterCardContainer extends React.Component {
 // move to main container at initial call and save the info in state to pass to container for viewing
 
 	makeMonsterCards(monsterData) {
-    console.log("we are in the monster land: ", monsterData);
 		let monsterCards = [];
     return (
-		monsterData.map((currentMonst) => <MonsterCard
+		monsterData.map((currentMonst) =>
+          <MonsterCard
           		key={currentMonst.type}
           		monster_id={currentMonst.monster_id}
           	  type={currentMonst.type}
@@ -114,15 +158,12 @@ class MonsterCardContainer extends React.Component {
               hover={currentMonst.hover}
               size={currentMonst.size}
           	/>
-//          );
           )
-//	    this.setState({ monsterCards: monsterCards });
       );
 	}
 
     render() {
       const monsterData = this.props.monsterList;
-      console.log("we are sending: ", monsterData);
       return (
         this.makeMonsterCards(monsterData)
       )

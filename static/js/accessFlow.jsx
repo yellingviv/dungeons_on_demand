@@ -46,7 +46,6 @@ class LoginOrReg extends React.Component {
     }
 
     offerLoginOrReg() {
-      console.log("we have called the function. our req is: ", this.props.req);
       if (this.props.req === "Login") {
     		return (
                 <div className="access_flow" id="login_flow">

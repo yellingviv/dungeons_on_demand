@@ -1,4 +1,6 @@
 from dungeon_model import Monsters, Players
+import re
+import math
 
 def instantiate_monster(monst_info):
     """receives dictionary of monster info and adds to DB"""
@@ -22,7 +24,10 @@ def instantiate_monster(monst_info):
     wis = monst_info['wis']
     cha = monst_info['cha']
     int = monst_info['int']
-    initiative_mod = monst_info['dex']
+    initiative = (monst_info['dex'] - 10) / 2
+    print("we made an initiative and here it is: ", initiative)
+    initiative_mod = math.trunc(initiative)
+    print("let's see if we modded: ", initiative_mod)
     monster = Monsters(# room_id=room_id,
                        species=species,
                        size=size,
