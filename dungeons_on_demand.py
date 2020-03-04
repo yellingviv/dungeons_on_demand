@@ -248,8 +248,20 @@ def player_attack():
 
     monster_id = request.args.get('monster_id')
     damage = request.args.get('damage')
+    current_hp = request.args.get('hp')
     # add check for player id later when I have the ability to do that
     # calculate damage based on armor class and total damage, then return the updated HP
+    monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
+    print("show me my monster! ", monster)
+    print("current HP is: ", current_hp)
+    new_hp = current_hp - damage
+    if new_hp < 0:
+        monster.species = "Dead"
+        monster.total_hp = 0
+        db.session.commit()
+        new_hp = "dead"
+
+    return jsonify(new_hp)
 
 
 @app.route('/close_room', methods=['POST'])
