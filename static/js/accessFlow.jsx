@@ -34,21 +34,21 @@ class LoginOrReg extends React.Component {
     		}
             this.setState({reg_message: data['message']});
             if (flow === "Login") {
-              setState({flow: "Login"});
+              this.setState({flow: "Login"});
               {this.props.login()};
               console.log('called login');
+            } else if (flow === "Register") {
+              this.setState({flow: "Register"});
+              console.log("called registration");
+              document.getElementById("access_flow").innerHTML = <p>{this.state.reg_message}</p>;
             }
-            return (
-              <p>{this.state.reg_message}</p>
-            )
         });
     }
 
     offerLoginOrReg() {
-        setState({flow: this.props.req})
     		return (
-                <div className="access_flow">
-                    <h2>{this.state.flow}</h2>
+                <div className="access_flow" id="access_flow">
+                    <h2>{this.props.req}</h2>
                     <form onSubmit={this.handleClick} name={this.props.req}>
                         Username: <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
                         Password: <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
