@@ -233,14 +233,22 @@ def monster_attack():
     """calculates how much damage a monster has done"""
 
     monster_id = request.args.get('monster_id')
+    crit = request.args.get('crit')
     monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
     dice_num = monster.hit_dice_num
     dice_type = monster.hit_dice_type
     damage = 0
-    for i in range(dice_num):
+    print("we got ", monster_id, " with dice of ", dice_num, "d", dice_type, " and crit status of: ", crit)
+    if crit:
+        roll_num = dice_num * 2
+    else:
+        roll_num = dice_num
+    for i in range(roll_num):
         damage = damage + randint(1, dice_type)
+    print("total damage rolled: ", damage)
     if monster.bonus:
         damage = damage + monster.bonus
+    print("with bonus: ", damage)
 
     return jsonify(damage)
 

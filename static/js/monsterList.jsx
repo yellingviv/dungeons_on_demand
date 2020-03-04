@@ -7,7 +7,8 @@ class MonsterCard extends React.Component {
             hp: {},
             damage: {},
             hit_roll: {},
-            attack: {}
+            attack: {},
+            crit: {}
     }
     this.rollInit = this.rollInit.bind(this);
     this.dealDamage = this.dealDamage.bind(this);
@@ -39,7 +40,12 @@ class MonsterCard extends React.Component {
 
     rollToDamage(evt) {
       const monster_id = evt.target.id;
-      const attack_url = '/roll_monster_attack?monster_id=' + monster_id;
+      if (this.state.hit_roll[monster_id]) {
+        this.setState({crit: {[monster_id]: true}});
+      }
+      const crit = this.state.crit[monster_id];
+      console.log("is this a crit? ", crit);
+      const attack_url = '/roll_monster_attack?monster_id=' + monster_id + "?crit=" + crit;
       let response = fetch(attack_url);
       response.then((res) => res.json()).then((data) => {
         console.log("we got back a roll: ", data);
