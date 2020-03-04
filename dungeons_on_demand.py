@@ -246,10 +246,11 @@ def player_attack():
     """calculates monster's new total HP and checks if dead or not"""
     """updates monster's HP on sidebar, commits to DB"""
 
-# calculate damage received
-#     total damage and armor class modifier
-#     for monster, check if damage more than HP and if yes, return "dead", if no, update HP
-#     return damage received
+    monster_id = request.args.get('monster_id')
+    damage = request.args.get('damage')
+    # add check for player id later when I have the ability to do that
+    # calculate damage based on armor class and total damage, then return the updated HP
+
 
 @app.route('/close_room', methods=['POST'])
 def close_room():
