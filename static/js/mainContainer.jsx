@@ -88,7 +88,7 @@ class GameContainer extends React.Component {
                     <br />
                     <form id="monster_request" onSubmit={this.initiateMonsters}>
                     Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" /><br />
-                    Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="1" max="30" /><br />
+                    Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="0" max="30" /><br />
                     <input type="submit" name="init_monsters" value="Call Monsters" /><br />
                     </form>
                   </div>
