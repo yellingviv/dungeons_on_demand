@@ -45,7 +45,7 @@ class MonsterCard extends React.Component {
       }
       const crit = this.state.crit[monster_id];
       console.log("is this a crit? ", crit);
-      const attack_url = '/roll_monster_attack?monster_id=' + monster_id + "?crit=" + crit;
+      const attack_url = '/roll_monster_attack?monster_id=' + monster_id + "&crit=" + crit;
       let response = fetch(attack_url);
       response.then((res) => res.json()).then((data) => {
         console.log("we got back a roll: ", data);
