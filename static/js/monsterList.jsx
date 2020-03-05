@@ -6,6 +6,7 @@ class MonsterCard extends React.Component {
             initiative: {},
             hp: {},
             damage: {},
+            player_attacking: {},
             hit_roll: {},
             attack: {},
             crit: {}
@@ -55,7 +56,7 @@ class MonsterCard extends React.Component {
     }
 
     damageHandling(evt) {
-      this.setState({damage: {[evt.target.id]: evt.target.value}});
+      this.setState({[evt.target.name]: {[evt.target.id]: evt.target.value}});
     }
 
     dealDamage(evt) {
@@ -118,7 +119,7 @@ class MonsterCard extends React.Component {
           <form onSubmit={this.dealDamage} id={this.props.monster_id}>
           Combat damage: <br />
           Damage dealt: <input type='number' onChange={this.damageHandling} id={this.props.monster_id} name='damage' value={this.state.damage[this.props.monster_id]}/><br />
-          Attacking player: <input type='text' name='player' /><br />
+          Attacking player: <input type='text' name='player_attacking' onChange={this.damageHandling} id={this.props.monster_id} value={this.state.player_attacking[this.props.monster_id]}/><br />
           <input type='submit' value='Deal Damage' /></form>
         <p id="damage_fields">
         </p>
