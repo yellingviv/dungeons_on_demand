@@ -148,7 +148,7 @@ class GameContainer extends React.Component {
               return (
                   <Router>
                     <div>
-											<Link to="/viewPlayers">Combat View</Link> - <Link to="/gameStats">Game Stats</Link><br />
+											<Link to="/combatView">Combat View</Link> - <Link to="/gameStats">Game Stats</Link><br />
 											<Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link>
                       <Switch>
                           <Route path="/viewMonsters">
