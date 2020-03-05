@@ -7,7 +7,8 @@ def instantiate_player(player_info, game_id):
 
     game_id = game_id
     character = player_info
-    char_name = character['name']
+    name = character['name']
+    char_name = name.title()
     char_init = character['init']
     new_character = Players(name=char_name,
                             game_id=game_id,
