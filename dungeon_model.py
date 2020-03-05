@@ -30,6 +30,7 @@ class Games(db.Model):
 
     dm = db.relationship("DMs")
     players = db.relationship("Players")
+    monsters = db.relationship("Monsters")
     # rooms = db.relationship("Rooms")
 
     def __repr__(self):
@@ -128,7 +129,7 @@ class Monsters(db.Model):
     __tablename__ = "monsters"
 
     monster_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    # room_id = db.Column(db.Integer, db.ForeignKey('rooms.room_id'), nullable=False)
+    game_id = db.Column(db.Integer, db.ForeignKey('games.game_id'), nullable=False)
     species = db.Column(db.String(50))
     size = db.Column(db.String(10))
     total_hp = db.Column(db.Integer)
@@ -153,7 +154,7 @@ class Monsters(db.Model):
 
     monster_actions = db.relationship("Monster_Actions")
     player_actions = db.relationship("Player_Actions")
-    # rooms = db.relationship("Rooms")
+    games = db.relationship("Games")
 
     def __repr__(self):
         return f"<Monster: {self.monster_id}, which is a {self.species}>"
