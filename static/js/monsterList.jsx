@@ -21,7 +21,7 @@ class MonsterCard extends React.Component {
     rollInit(evt) {
         const monster_id = evt.target.id;
         console.log("target id: ", monster_id);
-        const init_url = '/roll_initiative?monster_id=' + monster_id;
+        const init_url = '/roll_initiative?monsterId=' + monster_id;
         console.log("we called out this way: ", init_url);
         let response = fetch(init_url);
         response.then((res) => res.json()).then((data) => {
@@ -49,10 +49,8 @@ class MonsterCard extends React.Component {
       const attack_url = '/roll_monster_attack?monster_id=' + monster_id + "&crit=" + crit;
       let response = fetch(attack_url);
       response.then((res) => res.json()).then((data) => {
-        console.log("we got back a roll: ", data);
         this.setState({attack: {[monster_id]: data}});
       });
-      console.log("state is now: ", this.state);
     }
 
     damageHandling(evt) {
@@ -62,29 +60,22 @@ class MonsterCard extends React.Component {
     dealDamage(evt) {
       evt.preventDefault();
       const monster_id = evt.target.id;
-      console.log("this is our current state: ", this.state.damage);
       const damage = this.state.damage[monster_id];
-      console.log("okay this is where we are: ", this.state.hp[monster_id]);
+      const player = this.state.player_attacking[monster_id];
       let current_hp = 10;
       if (!this.state.hp[monster_id]) {
         current_hp = 0;
-        console.log("we tried to set it to zero?");
       } else {
         current_hp = this.state.hp[monster_id];
-        console.log("we set the hp to the current state");
       }
-      console.log("this is the hp coming out of this: ", current_hp)
-      console.log("damage to deal: ", damage);
       const damage_url = "/roll_monster_damage?monster_id=" + monster_id + "&damage=" + damage + "&hp=" + current_hp;
       let response = fetch(damage_url);
       response.then((res) => res.json()).then((data) => {
-        console.log("damage done! ", data);
         if (data === "dead") {
           this.setState({hp: {[monster_id]: 0}});
           document.getElementById("damage_fields").innerHTML = "Monster defeated!!"
         } else {
           this.setState({hp: {[monster_id]: data}});
-          console.log("updated: ", this.state.hp[monster_id]);
         }
         this.setState({damage: {[monster_id]: ''}});
       })

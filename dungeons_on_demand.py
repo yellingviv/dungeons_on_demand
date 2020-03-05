@@ -78,6 +78,10 @@ def user_login():
 def user_logout():
     """removes auth from session and redirects user to homepage"""
 
+    session['dm_id'] = ''
+
+    return jsonify(session['dm_id'])
+
 
 @app.route('/new_character', methods=['POST'])
 def new_character():
@@ -205,18 +209,21 @@ def roll_initiative():
     """rolls initiative for the characters and monsters"""
     """pulls init mod from db, randomizes d20 roll, writes current roll to db"""
 
-    monster_id = request.args.get('monster_id')
+    monster_id = request.args.get('monsterId')
     print("the monster ID received is... ", monster_id)
-    monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
-    print("show me my monster! ", monster)
-    print("Initiative mod is: ", monster.initiative_mod)
-    initiative_roll = monster.initiative_mod + randint(1, 20)
-    print("the roll is... ", initiative_roll)
-    monster.initiative_roll = initiative_roll
+    player_id = request.args.get('playerId')
+    print("the player ID received is...", player_id)
+    if monster_id:
+        monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
+        initiative_roll = monster.initiative_mod + randint(1, 20)
+        monster.initiative_roll = initiative_roll
+    elif player_id:
+        player = db.session.query(Players).filter_by(player_id=player_id).first()
+        initiative_roll = player.initiative_mod + randint(1, 20)
+        player.initiative_roll = initiative_roll
     db.session.commit()
 
     return jsonify(initiative_roll)
-
 
 @app.route('/turn_action', methods=['GET'])
 def turn_action():

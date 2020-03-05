@@ -65,7 +65,8 @@ class GameContainer extends React.Component {
 	          body: bodyPass
 	        });
 					charResponse.then((res) => res.json()).then((data) => {
-						console.log("characters created? ", data);
+						this.setState({characterList: data});
+						console.log("assigned to characterList: ", this.state.characterList);
 					});
 				});
 		}
@@ -140,14 +141,6 @@ class GameContainer extends React.Component {
 										</table>
 										Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
 										<Link to="/combatView"><button id="start_combat" onClick={this.startCombat}>Start Combat</button></Link>
-
-										<Switch>
-												<Route path="/combatView">
-														<MonsterCardContainer monsterList={this.state.monsterList}/>
-														<InitiativeContainer />
-														<PlayerCardContainer playerList={this.state.characterList}/>
-												</Route>
-										</Switch>
                   </div>
 								</Router>
               );
@@ -155,10 +148,8 @@ class GameContainer extends React.Component {
               return (
                   <Router>
                     <div>
-                      <Link to="/viewMonsters">View Monsters</Link><br />
-                      <Link to="/viewInitiative">View Initiative</Link><br />
-                      <Link to="/gameStats">View Game Stats</Link>
-
+											<Link to="/viewPlayers">Combat View</Link> - <Link to="/gameStats">Game Stats</Link><br />
+											<Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link>
                       <Switch>
                           <Route path="/viewMonsters">
                               <MonsterCardContainer monsterList={this.state.monsterList}/>
@@ -169,6 +160,14 @@ class GameContainer extends React.Component {
                           <Route path="/gameStats">
                               <GameStats />
                           </Route>
+													<Route path="/viewPlayers">
+															<PlayerCardContainer playerList={this.state.characterList} />
+													</Route>
+													<Route path="/combatView">
+															<MonsterCardContainer monsterList={this.state.monsterList} />
+															<InitiativeContainer monsterList={this.state.monsterList} playerList={this.state.characterList} />
+															<PlayerCardContainer playerList={this.state.characterList} />
+													</Route>
                       </Switch>
                     </div>
                   </Router>
