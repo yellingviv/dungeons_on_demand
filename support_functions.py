@@ -40,9 +40,8 @@ def instantiate_monster(monst_info):
     cha = monst_info['cha']
     int = monst_info['int']
     initiative = (monst_info['dex'] - 10) / 2
-    print("we made an initiative and here it is: ", initiative)
     initiative_mod = math.trunc(initiative)
-    print("let's see if we modded: ", initiative_mod)
+    game_id = monst_info['game_id']
     monster = Monsters(# room_id=room_id,
                        species=species,
                        size=size,
@@ -62,6 +61,7 @@ def instantiate_monster(monst_info):
                        con=con,
                        wis=wis,
                        cha=cha,
-                       int=int)
+                       int=int,
+                       game_id=game_id)
 
     return monster
