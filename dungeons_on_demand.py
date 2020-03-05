@@ -15,6 +15,7 @@ def serve_homepage():
 
     return render_template("base.html")
 
+
 @app.route('/register', methods=['POST'])
 def create_new_user():
     """creates new user account with info from the form"""
@@ -40,6 +41,7 @@ def create_new_user():
     response['status'] = "success"
     print(response)
     return jsonify(response)
+
 
 @app.route('/login', methods=['POST'])
 def user_login():
@@ -74,6 +76,7 @@ def user_login():
         results['message'] = "Username not found, please try again."
         return jsonify(results)
 
+
 @app.route('/logout')
 def user_logout():
     """removes auth from session and redirects user to homepage"""
@@ -104,6 +107,7 @@ def new_character():
 
     return jsonify(player_list)
 
+
 @app.route('/new_game', methods=['GET'])
 def create_new_game():
     """creates a new game instance based on the information provided"""
@@ -117,13 +121,10 @@ def create_new_game():
     db.session.commit()
     game_id = game.game_id
     print("the game id is:", game_id)
+    session['game_id'] = game_id
 
     return jsonify(game_id)
 
-# create new game
-#     input player information
-#     give it a name
-#     return to game list showing the new game available
 
 @app.route('/new_room', methods=['GET'])
 def new_room_info():
@@ -183,8 +184,8 @@ def create_new_monsters():
         monst_info['int'] = monster['intelligence']
         monst_info['wis'] = monster['wisdom']
         monst_info['cha'] = monster['charisma']
-        # this is a temporarily placeholder room ID while I work on this
-        monst_info['room_id'] = 10
+        # this is a temporary game id so that it can be updated when combat starts
+        monst_info['game_id'] = 0
         this_monst = instantiate_monster(monst_info)
         db.session.add(this_monst)
         db.session.commit()
@@ -195,6 +196,29 @@ def create_new_monsters():
     print("monsters sent to db")
 
     return jsonify(final_monst_list)
+
+
+@app.route('/monster_update')
+def update_monster_game():
+    """add the game id of the newly instantiated game to the extant monsters"""
+
+    game_id = request.args.get('gameId')
+    monsters = db.session.query(Monsters).filter_by(game_id=0).all()
+    print("here are my monsters: ", monsters)
+    for monster in monsters:
+        monster.game_id = game_id
+        print("this has been updated: ", monster)
+    db.session.commit()
+    new_game_id = []
+    for monster in monsters:
+        new_game_id.append(monster.game_id)
+    if set(new_game_id) = game_id:
+        message = "success"
+    else:
+        message = "fail"
+
+    return jsonify(message)
+
 
 @app.route('/load_room')
 def load_room():
@@ -224,6 +248,15 @@ def roll_initiative():
     db.session.commit()
 
     return jsonify(initiative_roll)
+
+
+@app.route('/order_initiative')
+def initiative_order():
+    """pulls all the currently rolled initiative for this game and returns in order"""
+
+    game_id = request.args.get('gameId')
+    characters = db.session.query()
+
 
 @app.route('/turn_action', methods=['GET'])
 def turn_action():
@@ -331,15 +364,6 @@ def view_player_stats():
 #         average damage per player (of the group, and individually)
 #         total kills
 #         available for that room and also for the whole game, toggle switch? tab?
-
-@app.route('/change_view')
-def show_new_view():
-    """switches the currently visible layer--board, or stats"""
-    """uses CSS classes to toggle visible or not"""
-    """sets a flag in the session"""
-    """redirects to the appropriate route--view stats, view room"""
-# change view
-#     changes which layer is currently visible -- game board, player stats
 #
 # move character
 #     advanced! not MVP!
