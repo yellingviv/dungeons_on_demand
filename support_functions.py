@@ -2,6 +2,28 @@ from dungeon_model import Monsters, Players
 import re
 import math
 
+def initiative_sort(init_order):
+    """sorts all the characters for a given combat by initiative"""
+
+    print("in initiative sort supporting function, about to enter for loop")
+    for i in range(len(init_order)):
+        eval = init_order[i][0]
+        print("eval set to: ", eval)
+        index = i
+        print("index set to: ", index)
+        while index > 0 and init_order[index - 1][0] > eval:
+            print("in the while loop")
+            init_order[index] = init_order[index - 1]
+            index = index - 1
+            print("index is now: ", index)
+            print("init order is now: ", init_order)
+        init_order[index] = eval
+        print("and again init order is now: ", init_order)
+    print("we will return init order as: ", init_order)
+
+    return init_order
+
+
 def instantiate_player(player_info, game_id):
     """receives info about player and adds to the DB"""
 
@@ -16,6 +38,7 @@ def instantiate_player(player_info, game_id):
     print("we just created: ", new_character)
 
     return(new_character)
+
 
 def instantiate_monster(monst_info):
     """receives dictionary of monster info and adds to DB"""
@@ -41,7 +64,7 @@ def instantiate_monster(monst_info):
     int = monst_info['int']
     initiative = (monst_info['dex'] - 10) / 2
     initiative_mod = math.trunc(initiative)
-    game_id = monst_info['game_id']
+    # game_id = monst_info['game_id']
     monster = Monsters(# room_id=room_id,
                        species=species,
                        size=size,
@@ -61,7 +84,7 @@ def instantiate_monster(monst_info):
                        con=con,
                        wis=wis,
                        cha=cha,
-                       int=int,
-                       game_id=game_id)
+                       int=int)
+                       # game_id=game_id)
 
     return monster
