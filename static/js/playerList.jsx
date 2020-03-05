@@ -7,7 +7,7 @@ class PlayerCard extends React.Component {
             damage: {},
             hit_roll: {},
             attack: {},
-            crit: {}
+            crit: {},
     }
     this.rollToHit = this.rollToHit.bind(this);
     this.rollInit = this.rollInit.bind(this);
@@ -28,6 +28,7 @@ class PlayerCard extends React.Component {
            console.log('we rolled some player initiative, yo: ', data);
            this.setState({initiative: {[player_id]: data}});
       });
+      {this.props.activated()};
     }
 
 	render() {
@@ -47,12 +48,15 @@ class PlayerCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            playerCards: []
+            playerCards: [],
+            activated: false
 		}
 		this.makePlayerCards = this.makePlayerCards.bind(this);
 	}
 
-// move to main container at initial call and save the info in state to pass to container for viewing
+  activated() {
+    this.setState({activated: true});
+  }
 
 	makePlayerCards(playerData) {
 		let playerCards = [];
@@ -70,6 +74,9 @@ class PlayerCardContainer extends React.Component {
 
     render() {
       const playerData = this.props.playerList;
+      if (this.state.activated === true) {
+        {this.props.firstMove()};
+      }
       return (
         this.makePlayerCards(playerData)
       )

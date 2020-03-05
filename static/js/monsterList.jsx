@@ -29,6 +29,7 @@ class MonsterCard extends React.Component {
              this.setState({initiative: {[monster_id]: data}});
         });
         console.log("state is now: ", this.state);
+        this.props.activated();
     }
 
     rollToHit(evt) {
@@ -123,12 +124,15 @@ class MonsterCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            monsterCards: []
+            monsterCards: [],
+            activated: false
 		}
 		this.makeMonsterCards = this.makeMonsterCards.bind(this);
 	}
 
-// move to main container at initial call and save the info in state to pass to container for viewing
+  activated() {
+    this.setState({activated: true});
+  }
 
 	makeMonsterCards(monsterData) {
 		let monsterCards = [];
@@ -162,6 +166,9 @@ class MonsterCardContainer extends React.Component {
 
     render() {
       const monsterData = this.props.monsterList;
+      if (this.state.activated === true) {
+        {this.props.firstMove()};
+      }
       return (
         this.makeMonsterCards(monsterData)
       )

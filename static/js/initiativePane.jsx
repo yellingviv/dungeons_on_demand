@@ -1,17 +1,19 @@
-class InitiativeContainer extends React.Component {
+class InitiativeCard extends React.Component {
 	render() {
 		return (
 			<div className="initiative" id={this.props.initiative_order}>
+					this is a placeholder while I make sure I at last have this right sheesh
       </div>
 		);
 	}
 }
 
-class InitiativeTab extends React.Component {
+class InitiativeCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            initiative: []
+            initiative: [],
+						game_id: 0
 		}
 		this.makeInitiativeOrder = this.makeInitiativeOrder.bind(this);
 	}
@@ -19,19 +21,18 @@ class InitiativeTab extends React.Component {
 // call to back end to calculate order of monsters and players with initiative rolls
 // initially will just be monsters until i can instantiate players too, focus on monst first
 
-	componentDidMount() {
-		let response = fetch('/initiative_order');
-        console.log("calling the initiative calculator");
-		response.then((res) => res.json()).then((data) => {
-			this.makeInitiativeOrder(data)
-        })
-	}
-
-  makeInitiativeOrder(intiativeData) {
+  makeInitiativeOrder(game_id) {
 		let initiative = [];
-		for (const currentPlayer of initiativeData) {
+		let initiativeData = [];
+		const initUrl = '/order_initiative?gameId=' + game_id;
+		let initOrder = fetch(initUrl)
+		initOrder.then((res) => res.json()).then((data) => {
+			console.log("a placeholder");
+			initiativeData = data;
+		});
+		for (const character of initiativeData) {
           initiative.push(
-          	<InitiativeTab
+          	<InitiativeCard
           		key={currentPlayer.initiative_order}
               who={currentPlayer.identifier}
               initiative={currentPlayer.initiative_roll}
@@ -42,15 +43,15 @@ class InitiativeTab extends React.Component {
 	}
 
     render() {
-		if (this.state.initiative.length === 0) {
-			return (
-				<div> Calculating ... </div>
-			);
-		}
+			if (this.props.MoveStatus === true) {
+				const game_id = this.props.game;
+				console.log("received from main container game id: ", this.props.game);
+				console.log("passing into function: ", game_id);
         return (
-          <div>
-            {this.state.initiative}
-          </div>
+          this.makeInitiativeOrder(game_id)
         );
+			} else {
+				return("Initiative comig soon...")
+			}
   }
 }

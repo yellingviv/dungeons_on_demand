@@ -16,7 +16,8 @@ class GameContainer extends React.Component {
 						player_init: 0,
 						characterList: [],
 						game_name: '',
-						game_id: 0
+						game_id: 0,
+						first_move: false
 		};
     this.login = this.login.bind(this);
     this.formHandling = this.formHandling.bind(this);
@@ -24,6 +25,7 @@ class GameContainer extends React.Component {
     this.monsterSummoning = this.monsterSummoning.bind(this);
 		this.addCharacter = this.addCharacter.bind(this);
 		this.startCombat = this.startCombat.bind(this);
+		this.firstMove = this.firstMove.bind(this);
 	}
 
     login() {
@@ -39,6 +41,11 @@ class GameContainer extends React.Component {
         evt.preventDefault();
         this.monsterSummoning();
     }
+
+		firstMove() {
+			this.setState({first_move: true});
+			console.log("activated first move protocol");
+		}
 
 		addCharacter(evt) {
 				evt.preventDefault();
@@ -68,7 +75,7 @@ class GameContainer extends React.Component {
 						this.setState({characterList: data});
 						console.log("assigned to characterList: ", this.state.characterList);
 					});
-					const monstUrl = '/monster_update?gameId=' + this.state.gameId;
+					const monstUrl = '/monster_update?gameId=' + this.state.game_id;
 					let monstResponse = fetch(monstUrl);
 					monstResponse.then((res) => res.json()).then((data) => {
 						console.log("did we successfully update the monsters? ", data);
@@ -157,21 +164,21 @@ class GameContainer extends React.Component {
 											<Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link>
                       <Switch>
                           <Route path="/viewMonsters">
-                              <MonsterCardContainer monsterList={this.state.monsterList} game={this.state.game_id} />
+                              <MonsterCardContainer monsterList={this.state.monsterList} firstMove={this.firstMove} />
                           </Route>
                           <Route path="/viewInitiative">
-                              <InitiativeContainer game={this.state.game_id} />
+                              <InitiativeCardContainer game={this.state.game_id} moveStatus={this.state.first_move} />
                           </Route>
                           <Route path="/gameStats">
                               <GameStats />
                           </Route>
 													<Route path="/viewPlayers">
-															<PlayerCardContainer playerList={this.state.characterList} />
+															<PlayerCardContainer playerList={this.state.characterList} firstMove={this.firstMove} />
 													</Route>
 													<Route path="/combatView">
-															<MonsterCardContainer monsterList={this.state.monsterList} game={this.state.game_id} />
-															<InitiativeContainer game={this.state.game_id} />
-															<PlayerCardContainer playerList={this.state.characterList} />
+															<MonsterCardContainer monsterList={this.state.monsterList} firstMove={this.firstMove} />
+															<PlayerCardContainer playerList={this.state.characterList} firstMove={this.firstMove} />
+															<InitiativeCardContainer game={this.state.game_id} moveStatus={this.state.first_move} />
 													</Route>
                       </Switch>
                     </div>
