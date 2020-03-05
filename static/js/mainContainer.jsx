@@ -14,7 +14,7 @@ class GameContainer extends React.Component {
             monsterList: [],
 						player_name: '',
 						player_init: 0,
-						character: [],
+						characterList: [],
 						game_name: '',
 						game_id: 0
 		};
@@ -44,9 +44,9 @@ class GameContainer extends React.Component {
 				evt.preventDefault();
 				const playerName = this.state.player_name;
 				const playerInit = this.state.player_init
-				this.setState({character: [...this.state.character, {name: playerName, init: playerInit}] });
+				this.setState({characterList: [...this.state.characterList, {name: playerName, init: playerInit}] });
 				console.log("added new player: ", playerName, playerInit);
-				console.log("the status of character state: ", this.state.character);
+				console.log("the status of character state: ", this.state.characterList);
 				this.state.player_name = '';
 				this.state.player_init = 0;
 		}
@@ -57,7 +57,7 @@ class GameContainer extends React.Component {
 				let gameResponse = fetch(gameUrl);
 				gameResponse.then((res) => res.json()).then((data) => {
 					this.setState({game_id: data});
-					const playerInfo = [this.state.game_id, this.state.character];
+					const playerInfo = [this.state.game_id, this.state.characterList];
 					const bodyPass = JSON.stringify(playerInfo);
 					let charResponse = fetch('/new_character', {
 						method: 'POST',
@@ -108,6 +108,7 @@ class GameContainer extends React.Component {
         while (this.state.logged_in === true) {
             if (this.state.game_id === 0) {
               return (
+								<Router>
                   <div>
 										<table>
 											<tbody>
@@ -138,8 +139,17 @@ class GameContainer extends React.Component {
 											</tbody>
 										</table>
 										Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
-										<button id="start_combat" onClick={this.startCombat}>Start Combat</button>
+										<Link to="/combatView"><button id="start_combat" onClick={this.startCombat}>Start Combat</button></Link>
+
+										<Switch>
+												<Route path="/combatView">
+														<MonsterCardContainer monsterList={this.state.monsterList}/>
+														<InitiativeContainer />
+														<PlayerCardContainer playerList={this.state.characterList}/>
+												</Route>
+										</Switch>
                   </div>
+								</Router>
               );
             } else {
               return (
