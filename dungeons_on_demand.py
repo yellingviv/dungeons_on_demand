@@ -4,7 +4,7 @@ import requests
 import json
 import re
 from random import choices, randint
-from support_functions import instantiate_monster, instantiate_player
+from support_functions import instantiate_monster, instantiate_player, initiative_sort
 
 app = Flask(__name__)
 app.secret_key = 'DNDDEMANDGEN'
@@ -185,7 +185,7 @@ def create_new_monsters():
         monst_info['wis'] = monster['wisdom']
         monst_info['cha'] = monster['charisma']
         # this is a temporary game id so that it can be updated when combat starts
-        monst_info['game_id'] = 0
+        # monst_info['game_id'] = 'null'
         this_monst = instantiate_monster(monst_info)
         db.session.add(this_monst)
         db.session.commit()
@@ -203,20 +203,13 @@ def update_monster_game():
     """add the game id of the newly instantiated game to the extant monsters"""
 
     game_id = request.args.get('gameId')
-    monsters = db.session.query(Monsters).filter_by(game_id=0).all()
+    monsters = db.session.query(Monsters).filter(Monsters.game_id.is_(None)).all()
     print("here are my monsters: ", monsters)
     for monster in monsters:
         monster.game_id = game_id
         print("this has been updated: ", monster)
     db.session.commit()
-    game_test = []
-    for monster in monsters:
-        if monster.game_id != game_id:
-            game_test.append('failed')
-    if 'failed' in game_test:
-        message = "fail"
-    else:
-        message = game_test
+    message = "updated"
 
     return jsonify(message)
 
@@ -235,9 +228,7 @@ def roll_initiative():
     """pulls init mod from db, randomizes d20 roll, writes current roll to db"""
 
     monster_id = request.args.get('monsterId')
-    print("the monster ID received is... ", monster_id)
     player_id = request.args.get('playerId')
-    print("the player ID received is...", player_id)
     if monster_id:
         monster = db.session.query(Monsters).filter_by(monster_id=monster_id).first()
         initiative_roll = monster.initiative_mod + randint(1, 20)
@@ -256,7 +247,26 @@ def initiative_order():
     """pulls all the currently rolled initiative for this game and returns in order"""
 
     game_id = request.args.get('gameId')
-    characters = db.session.query()
+    print("here is the game id that was received: ", game_id)
+    monsters = db.session.query(Monsters).filter_by(game_id=game_id).all()
+    print("the return from monster query: ", monsters)
+    players = db.session.query(Players).filter_by(game_id=game_id).all()
+    characters = []
+    characters.extend(monsters)
+    characters.extend(players)
+    print("here is what we are working with for momsters and players: ", characters)
+    init_order = []
+    for character in characters:
+        if character.monster_id:
+            init_order.append([character.initiative_roll, character.monster_id, "monst"])
+            print("just appended a monster to the order: ", character.monster_id)
+        elif character.player_id:
+            init_order.append([character.initiative_roll, character.player_id, "player"])
+            print("just appended a player to the order: ", character.player_id)
+    print("currently the init order is: ", init_order)
+    final_init = initiative_sort(init_order)
+
+    return jsonify(final_init)
 
 
 @app.route('/turn_action', methods=['GET'])
