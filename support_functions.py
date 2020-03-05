@@ -2,6 +2,20 @@ from dungeon_model import Monsters, Players
 import re
 import math
 
+def instantiate_player(player_info, game_id):
+    """receives info about player and adds to the DB"""
+
+    game_id = game_id
+    character = player_info
+    char_name = character['name']
+    char_init = character['init']
+    new_character = Players(name=char_name,
+                            game_id=game_id,
+                            initiative_mod=char_init)
+    print("we just created: ", new_character)
+
+    return(new_character)
+
 def instantiate_monster(monst_info):
     """receives dictionary of monster info and adds to DB"""
 

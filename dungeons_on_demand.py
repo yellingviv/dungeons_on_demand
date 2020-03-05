@@ -4,7 +4,7 @@ import requests
 import json
 import re
 from random import choices, randint
-from support_functions import instantiate_monster #, instantiate_player
+from support_functions import instantiate_monster, instantiate_player
 
 app = Flask(__name__)
 app.secret_key = 'DNDDEMANDGEN'
@@ -36,7 +36,6 @@ def create_new_user():
     db.session.add(new_DM)
     db.session.commit()
     DM_id = new_DM.dm_id
-    session['dm_id'] = DM_id
     response['message'] = "Successfully created account! Please log in."
     response['status'] = "success"
     print(response)
@@ -62,6 +61,7 @@ def user_login():
             results['dm_id'] = user.dm_id
             results['status'] = "success"
             results['message'] = "Successfully logged in!"
+            session['dm_id'] = user.dm_id
             print(results)
             return jsonify(results)
         else:
@@ -78,32 +78,43 @@ def user_login():
 def user_logout():
     """removes auth from session and redirects user to homepage"""
 
-# create dm account
-#     username, autoincrement id
-#     hash password and store the hash!!
-#
-# log in to dm account
-#     hash=pwd.hash('thepassword')
-#     pwd.verify('thepassword', hash) #returns true or false
-#     #figure out how to hash on the front end and just pass the hash, so I only store hashes
-#     #maybe use a front end JS library instead and just save the hash on creation?
-#     #I think I'm actually not going to use this library, I'm changing my mind on it
-#     add to session cookie that verified
-#     directs to DM screen with list of games and their Rooms
-#     button for new game on side, button for new room in each game room list
-#
-# log out of dm account
-#     dump that session cookie
-#     redirect to log in screen
+
+@app.route('/new_character', methods=['POST'])
+def new_character():
+    """adds new player character to the database"""
+
+    char_data = request.data
+    char_json = json.loads(char_data)
+    print("received from app: ", char_json)
+    game_id = char_json[0]
+    player_list = []
+    for character in char_json[1]:
+        player = instantiate_player(character, game_id)
+        db.session.add(player)
+        db.session.commit()
+        char_id = player.player_id
+        print("added to the db: ", player)
+        player_list.append({'name': player.name,
+                            'init': player.initiative_mod,
+                            'player_id': char_id})
+
+    return jsonify(player_list)
 
 @app.route('/new_game', methods=['GET'])
-def new_game_info():
-    """serves form about new game to get info from DM"""
-
-@app.route('/new_game', methods=['POST'])
 def create_new_game():
     """creates a new game instance based on the information provided"""
-    """redirects back to DM dashboard with game now shown"""
+    """returns the game id to the front end so characters can be instantiated"""
+
+    dm_id = session['dm_id']
+    game_name = request.args.get('gameName')
+    game = Games(dm_id=dm_id,
+                name=game_name)
+    db.session.add(game)
+    db.session.commit()
+    game_id = game.game_id
+    print("the game id is:", game_id)
+
+    return jsonify(game_id)
 
 # create new game
 #     input player information
@@ -116,7 +127,7 @@ def new_room_info():
     return render_template("base.html")
 
 @app.route('/show_monsters', methods=['POST'])
-def create_new_room():
+def create_new_monsters():
     """pulls a new list of monsters according to DM request and displays them"""
 
     print("show monsters endpoint has been hit")

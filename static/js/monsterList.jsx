@@ -93,9 +93,12 @@ class MonsterCard extends React.Component {
 		return (
 			<div className="monster">
 				<h2>Type: {this.props.type}</h2>
-				<h2 id="hp">Total HP: {this.props.hp} </h2>
-        <p>Initiative: {this.props.initiative_mod}<br />
-        AC: {this.props.ac}<br />
+				<p>Total HP: {this.props.hp} <br />
+        Current HP: {this.state.hp[this.props.monster_id]} <br /></p>
+        <p>Initiative Mod: {this.props.initiative_mod}<br />
+        Current Initiative: {this.state.initiative[this.props.monster_id]} <br />
+        <button name="roll_init" type="button" id={this.props.monster_id} onClick={this.rollInit}>Roll Initiative</button></p>
+        <p>AC: {this.props.ac}<br />
         Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus} <br />
         <button id={this.props.monster_id} onClick={this.rollToHit}>Roll To Hit</button> {this.state.hit_roll[this.props.monster_id]} <br />
         <button id={this.props.monster_id} onClick={this.rollToDamage}>Roll for Damage</button> {this.state.attack[this.props.monster_id]}</p>
@@ -112,11 +115,8 @@ class MonsterCard extends React.Component {
         <p>Speed: {this.props.speed} (Swim: {this.props.swim}, Fly: {this.props.fly}, Hover? {this.props.hover})<br />
         Size: {this.props.size}
         </p>
-        <p>
-          Current Initiative: {this.state.initiative[this.props.monster_id]} <button name="roll_init" type="button" id={this.props.monster_id} onClick={this.rollInit}>Roll Initiative</button><br />
-          Current HP: {this.state.hp[this.props.monster_id]} <br />
-        </p>
           <form onSubmit={this.dealDamage} id={this.props.monster_id}>
+          Combat damage: <br />
           Damage dealt: <input type='number' onChange={this.damageHandling} id={this.props.monster_id} name='damage' value={this.state.damage[this.props.monster_id]}/><br />
           Attacking player: <input type='text' name='player' /><br />
           <input type='submit' value='Deal Damage' /></form>

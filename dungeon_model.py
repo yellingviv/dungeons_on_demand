@@ -30,7 +30,7 @@ class Games(db.Model):
 
     dm = db.relationship("DMs")
     players = db.relationship("Players")
-    rooms = db.relationship("Rooms")
+    # rooms = db.relationship("Rooms")
 
     def __repr__(self):
         """Provide helpful representation when printed"""
@@ -52,12 +52,12 @@ class Players(db.Model):
     hit_dice_type = db.Column(db.Integer)
     bonus = db.Column(db.Integer)
     initiative_mod = db.Column(db.Integer)
-    initiative_roll = db.Column(db.Integer, nullable=False)
+    initiative_roll = db.Column(db.Integer)
     speed = db.Column(db.Integer)
     current_square = db.Column(db.Integer)
 
-    monster_actions = db.relationship("Monster_Actions")
-    player_actions = db.relationship("Player_Actions")
+    # monster_actions = db.relationship("Monster_Actions")
+    # player_actions = db.relationship("Player_Actions")
     games = db.relationship("Games")
 
     def __repr__(self):
@@ -72,11 +72,11 @@ class Rooms(db.Model):
     room_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     width = db.Column(db.Integer, nullable=False)
     length = db.Column(db.Integer, nullable=False)
-    game_id = db.Column(db.Integer, db.ForeignKey('games.game_id'), nullable=False)
+    # game_id = db.Column(db.Integer, db.ForeignKey('games.game_id'), nullable=False)
     level = db.Column(db.Integer)
     complete = db.Column(db.Boolean, nullable=False)
 
-    games = db.relationship("Games")
+    # games = db.relationship("Games")
     monster_actions = db.relationship("Monster_Actions")
     player_actions = db.relationship("Player_Actions")
     # monsters = db.relationship("Monsters")
