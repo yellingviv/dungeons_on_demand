@@ -68,6 +68,11 @@ class GameContainer extends React.Component {
 						this.setState({characterList: data});
 						console.log("assigned to characterList: ", this.state.characterList);
 					});
+					const monstUrl = '/monster_update?gameId=' + this.state.gameId;
+					let monstResponse = fetch(monstUrl);
+					monstResponse.then((res) => res.json()).then((data) => {
+						console.log("did we successfully update the monsters? ", data);
+					});
 				});
 		}
 
@@ -152,10 +157,10 @@ class GameContainer extends React.Component {
 											<Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link>
                       <Switch>
                           <Route path="/viewMonsters">
-                              <MonsterCardContainer monsterList={this.state.monsterList}/>
+                              <MonsterCardContainer monsterList={this.state.monsterList} game={this.state.game_id} />
                           </Route>
                           <Route path="/viewInitiative">
-                              <InitiativeContainer />
+                              <InitiativeContainer game={this.state.game_id} />
                           </Route>
                           <Route path="/gameStats">
                               <GameStats />
@@ -164,8 +169,8 @@ class GameContainer extends React.Component {
 															<PlayerCardContainer playerList={this.state.characterList} />
 													</Route>
 													<Route path="/combatView">
-															<MonsterCardContainer monsterList={this.state.monsterList} />
-															<InitiativeContainer monsterList={this.state.monsterList} playerList={this.state.characterList} />
+															<MonsterCardContainer monsterList={this.state.monsterList} game={this.state.game_id} />
+															<InitiativeContainer game={this.state.game_id} />
 															<PlayerCardContainer playerList={this.state.characterList} />
 													</Route>
                       </Switch>
