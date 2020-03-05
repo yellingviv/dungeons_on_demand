@@ -209,13 +209,14 @@ def update_monster_game():
         monster.game_id = game_id
         print("this has been updated: ", monster)
     db.session.commit()
-    new_game_id = []
+    game_test = []
     for monster in monsters:
-        new_game_id.append(monster.game_id)
-    if set(new_game_id) = game_id:
-        message = "success"
-    else:
+        if monster.game_id != game_id:
+            game_test.append('failed')
+    if 'failed' in game_test:
         message = "fail"
+    else:
+        message = game_test
 
     return jsonify(message)
 
