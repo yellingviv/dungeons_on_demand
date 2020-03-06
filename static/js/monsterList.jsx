@@ -18,18 +18,14 @@ class MonsterCard extends React.Component {
     this.damageHandling = this.damageHandling.bind(this);
   }
 
-    rollInit(evt) {
-        const monster_id = evt.target.id;
-        console.log("target id: ", monster_id);
+    rollInit(monster_id) {
+        // const monster_id = evt.target.id;
         const init_url = '/roll_initiative?monsterId=' + monster_id;
-        console.log("we called out this way: ", init_url);
         let response = fetch(init_url);
         response.then((res) => res.json()).then((data) => {
-			       console.log('we rolled some initiative, yo: ', data);
+			       console.log('we rolled some monster initiative, yo: ', data);
              this.setState({initiative: {[monster_id]: data}});
         });
-        console.log("state is now: ", this.state);
-        this.props.activated();
     }
 
     rollToHit(evt) {
@@ -83,6 +79,7 @@ class MonsterCard extends React.Component {
     }
 
 	render() {
+    this.rollInit(this.props.monster_id);
 		return (
 			<div className="monster">
 				<h2>Type: {this.props.type}</h2>
@@ -90,7 +87,8 @@ class MonsterCard extends React.Component {
         Current HP: {this.state.hp[this.props.monster_id]} <br /></p>
         <p>Initiative Mod: {this.props.initiative_mod}<br />
         Current Initiative: {this.state.initiative[this.props.monster_id]} <br />
-        <button name="roll_init" type="button" id={this.props.monster_id} onClick={this.rollInit}>Roll Initiative</button></p>
+        // <button name="roll_init" type="button" id={this.props.monster_id} onClick={this.rollInit}>Roll Initiative</button>
+        </p>
         <p>AC: {this.props.ac}<br />
         Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus} <br />
         <button id={this.props.monster_id} onClick={this.rollToHit}>Roll To Hit</button> {this.state.hit_roll[this.props.monster_id]} <br />
@@ -128,10 +126,12 @@ class MonsterCardContainer extends React.Component {
             activated: false
 		}
 		this.makeMonsterCards = this.makeMonsterCards.bind(this);
+    this.activated = this.activated.bind(this);
 	}
 
   activated() {
     this.setState({activated: true});
+    {this.props.firstMove()};
   }
 
 	makeMonsterCards(monsterData) {
@@ -159,6 +159,7 @@ class MonsterCardContainer extends React.Component {
               fly={currentMonst.fly}
               hover={currentMonst.hover}
               size={currentMonst.size}
+              activated={this.activated}
           	/>
           )
       );
@@ -166,9 +167,6 @@ class MonsterCardContainer extends React.Component {
 
     render() {
       const monsterData = this.props.monsterList;
-      if (this.state.activated === true) {
-        {this.props.firstMove()};
-      }
       return (
         this.makeMonsterCards(monsterData)
       )

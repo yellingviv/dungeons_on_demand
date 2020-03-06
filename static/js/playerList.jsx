@@ -3,14 +3,12 @@ class PlayerCard extends React.Component {
     super(props);
     this.state = {
             room_id: 10,
-            initiative: {},
             damage: {},
             hit_roll: {},
             attack: {},
             crit: {},
     }
     this.rollToHit = this.rollToHit.bind(this);
-    this.rollInit = this.rollInit.bind(this);
   }
 
     rollToHit(evt) {
@@ -21,23 +19,13 @@ class PlayerCard extends React.Component {
       this.setState({hit_roll: {[player_id]: roll}});
     }
 
-    rollInit(evt) {
-      const player_id = evt.target.id;
-      let response = fetch('/roll_initiative?playerId=' + player_id);
-      response.then((res) => res.json()).then((data) => {
-           console.log('we rolled some player initiative, yo: ', data);
-           this.setState({initiative: {[player_id]: data}});
-      });
-      {this.props.activated()};
-    }
-
 	render() {
 		return (
 			<div className="player">
 				<h2>Name: {this.props.name}</h2>
         <p>Initiative Mod: {this.props.initiative_mod}<br />
-        Current Initiative: {this.state.initiative[this.props.player_id]} <br />
-        <button name="roll_init" type="button" id={this.props.player_id} onClick={this.rollInit}>Roll Initiative</button></p>
+        Current Initiative: {this.props.initiative} <br />
+        </p>
         <button id={this.props.player_id} onClick={this.rollToHit}>Roll To Hit</button> {this.state.hit_roll[this.props.player_id]} <br />
 			</div>
 		);
@@ -52,31 +40,46 @@ class PlayerCardContainer extends React.Component {
             activated: false
 		}
 		this.makePlayerCards = this.makePlayerCards.bind(this);
+    this.activated = this.activated.bind(this);
+    this.rollInit = this.rollInit.bind(this);
 	}
 
   activated() {
     this.setState({activated: true});
   }
 
+  rollInit(player_id) {
+    // const player_id = evt.target.id;
+    console.log("this is the ID I received: ", player_id);
+    let response = fetch('/roll_initiative?playerId=' + player_id);
+    response.then((res) => res.json()).then((data) => {
+         console.log('we rolled some player initiative, yo: ', data);
+         return (data);
+    });
+  }
+
 	makePlayerCards(playerData) {
 		let playerCards = [];
-    return (
-		playerData.map((currentPlayer) =>
-          <PlayerCard
-          		key={currentPlayer.player_id}
-          		player_id={currentPlayer.player_id}
-              initiative_mod={currentPlayer.init}
-              name={currentPlayer.name}
-          	/>
-          )
-      );
+    console.log("THERE ARE %i players", playerData.length);
+      for (const currentPlayer of playerData) {
+          console.log("this is what I am passing in: ", currentPlayer.player_id);
+          this.rollInit(currentPlayer.player_id).then((res) =>
+          playerCards.push(
+              <PlayerCard
+              		key={currentPlayer.player_id}
+              		player_id={currentPlayer.player_id}
+                  initiative_mod={currentPlayer.init}
+                  initiative={res}
+                  name={currentPlayer.name}
+                  activated={this.activated}
+              	/>
+          ))}
+      return (this.state.playerCards);
 	}
 
     render() {
       const playerData = this.props.playerList;
-      if (this.state.activated === true) {
-        {this.props.firstMove()};
-      }
+      console.log("rendering playerData in PlayerCards: ", playerData);
       return (
         this.makePlayerCards(playerData)
       )

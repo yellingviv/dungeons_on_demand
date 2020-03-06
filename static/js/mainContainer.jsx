@@ -44,13 +44,13 @@ class GameContainer extends React.Component {
 
 		firstMove() {
 			this.setState({first_move: true});
-			console.log("activated first move protocol");
+			console.log("activated first move protocol: ", this.state.first_move);
 		}
 
 		addCharacter(evt) {
 				evt.preventDefault();
 				const playerName = this.state.player_name;
-				const playerInit = this.state.player_init
+				const playerInit = this.state.player_init;
 				this.setState({characterList: [...this.state.characterList, {name: playerName, init: playerInit}] });
 				console.log("added new player: ", playerName, playerInit);
 				console.log("the status of character state: ", this.state.characterList);
@@ -59,11 +59,13 @@ class GameContainer extends React.Component {
 		}
 
 		startCombat (evt) {
+				console.log("called startCombat");
 				const gameName = this.state.game_name;
 				const gameUrl = '/new_game?gameName=' + gameName;
 				let gameResponse = fetch(gameUrl);
 				gameResponse.then((res) => res.json()).then((data) => {
 					this.setState({game_id: data});
+					console.log("set game_id: ", data);
 					const playerInfo = [this.state.game_id, this.state.characterList];
 					const bodyPass = JSON.stringify(playerInfo);
 					let charResponse = fetch('/new_character', {
@@ -71,6 +73,7 @@ class GameContainer extends React.Component {
 						headers: {'Content-Type': 'application/json'},
 	          body: bodyPass
 	        });
+					console.log("called the new character endpoint with: ", bodyPass);
 					charResponse.then((res) => res.json()).then((data) => {
 						this.setState({characterList: data});
 						console.log("assigned to characterList: ", this.state.characterList);
@@ -121,7 +124,6 @@ class GameContainer extends React.Component {
         while (this.state.logged_in === true) {
             if (this.state.game_id === 0) {
               return (
-								<Router>
                   <div>
 										<table>
 											<tbody>
@@ -152,9 +154,8 @@ class GameContainer extends React.Component {
 											</tbody>
 										</table>
 										Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
-										<Link to="/combatView"><button id="start_combat" onClick={this.startCombat}>Start Combat</button></Link>
+										<button id="start_combat" onClick={this.startCombat}>Start Combat</button>
                   </div>
-								</Router>
               );
             } else {
               return (

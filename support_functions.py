@@ -5,20 +5,15 @@ import math
 def initiative_sort(init_order):
     """sorts all the characters for a given combat by initiative"""
 
-    print("in initiative sort supporting function, about to enter for loop")
+    print("passed into sort function: ", init_order)
     for i in range(len(init_order)):
-        eval = init_order[i][0]
-        print("eval set to: ", eval)
+        check = init_order[i]
+        print("the check is: ", check, " and i is: ", i)
         index = i
-        print("index set to: ", index)
-        while index > 0 and init_order[index - 1][0] > eval:
-            print("in the while loop")
+        while index > 0 and init_order[index - 1][0] > check[0]:
             init_order[index] = init_order[index - 1]
             index = index - 1
-            print("index is now: ", index)
-            print("init order is now: ", init_order)
-        init_order[index] = eval
-        print("and again init order is now: ", init_order)
+        init_order[index] = check
     print("we will return init order as: ", init_order)
 
     return init_order
@@ -34,10 +29,11 @@ def instantiate_player(player_info, game_id):
     char_init = character['init']
     new_character = Players(name=char_name,
                             game_id=game_id,
-                            initiative_mod=char_init)
+                            initiative_mod=char_init,
+                            type='pla')
     print("we just created: ", new_character)
 
-    return(new_character)
+    return new_character
 
 
 def instantiate_monster(monst_info):
@@ -84,7 +80,8 @@ def instantiate_monster(monst_info):
                        con=con,
                        wis=wis,
                        cha=cha,
-                       int=int)
+                       int=int,
+                       type='mon')
                        # game_id=game_id)
 
     return monster

@@ -56,6 +56,7 @@ class Players(db.Model):
     initiative_roll = db.Column(db.Integer)
     speed = db.Column(db.Integer)
     current_square = db.Column(db.Integer)
+    type = db.Column(db.String(3))
 
     # monster_actions = db.relationship("Monster_Actions")
     # player_actions = db.relationship("Player_Actions")
@@ -151,6 +152,7 @@ class Monsters(db.Model):
     wis = db.Column(db.Integer)
     cha = db.Column(db.Integer)
     int = db.Column(db.Integer)
+    type = db.Column(db.String(3))
 
     monster_actions = db.relationship("Monster_Actions")
     player_actions = db.relationship("Player_Actions")

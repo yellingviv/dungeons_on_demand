@@ -92,7 +92,7 @@ def new_character():
 
     char_data = request.data
     char_json = json.loads(char_data)
-    print("received from app: ", char_json)
+    print("character info received from app: ", char_json)
     game_id = char_json[0]
     player_list = []
     for character in char_json[1]:
@@ -104,6 +104,7 @@ def new_character():
         player_list.append({'name': player.name,
                             'init': player.initiative_mod,
                             'player_id': char_id})
+    print("returning characters to the app: ", player_list)
 
     return jsonify(player_list)
 
@@ -247,24 +248,27 @@ def initiative_order():
     """pulls all the currently rolled initiative for this game and returns in order"""
 
     game_id = request.args.get('gameId')
-    print("here is the game id that was received: ", game_id)
     monsters = db.session.query(Monsters).filter_by(game_id=game_id).all()
-    print("the return from monster query: ", monsters)
     players = db.session.query(Players).filter_by(game_id=game_id).all()
     characters = []
     characters.extend(monsters)
     characters.extend(players)
-    print("here is what we are working with for momsters and players: ", characters)
+    print("calling init for: ", characters)
     init_order = []
     for character in characters:
-        if character.monster_id:
+        if character.type == 'mon':
             init_order.append([character.initiative_roll, character.monster_id, "monst"])
-            print("just appended a monster to the order: ", character.monster_id)
-        elif character.player_id:
+        elif character.type == 'pla':
             init_order.append([character.initiative_roll, character.player_id, "player"])
-            print("just appended a player to the order: ", character.player_id)
-    print("currently the init order is: ", init_order)
-    final_init = initiative_sort(init_order)
+    print("passing this to get sorted: ", init_order)
+    ordered_init = initiative_sort(init_order)
+    final_init = []
+    for i in range(len(ordered_init) - 1):
+        if ordered_init[i][2] == 'monst':
+            final_init.append({i: {'monster_id': ordered_init[i][1], 'init': ordered_init[i][0]}})
+        elif ordered_init[i][2] == 'player':
+            final_init.append({i: {'player_id': ordered_init[i][1], 'init': ordered_init[i][0]}})
+    print("final results of initiative ordering: ", final_init)
 
     return jsonify(final_init)
 
