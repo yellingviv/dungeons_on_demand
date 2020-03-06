@@ -3,7 +3,7 @@ class InitiativeCard extends React.Component {
 		super(props);
 		this.state = {
 						initiative: [],
-						game_id: 0
+						game_id: 0,
 		}
 	}
 
@@ -20,15 +20,16 @@ class InitiativeCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            initiative: [],
-						init_data: [],
-						game_id: 0
+						game_id: 0,
+						initiative: []
 		}
 		this.showInitiativeOrder = this.showInitiativeOrder.bind(this);
+		this.getInit = this.getInit.bind(this);
+
 	}
 
-	componentDidMount() {
-		console.log("called the componentdidmount function")
+	getInit() {
+		console.log("called the getinit function")
 		const game_id = this.props.game;
 		let initiativeData = [];
 		const initUrl = '/order_initiative?gameId=' + game_id;
@@ -43,7 +44,9 @@ class InitiativeCardContainer extends React.Component {
   showInitiativeOrder() {
 			let initiative = [];
 			console.log(this.state.init_data)
-			this.state.init_data.forEach((item, index) => {
+			const init_list = this.state.init_data;
+			init_list.forEach((item, index) => {
+						console.log(item, index);
 	          initiative.push(
 	          	<InitiativeCard
 	          		key={index}
@@ -53,16 +56,22 @@ class InitiativeCardContainer extends React.Component {
 	          	/>
 	          );
 	        })
-		    this.setState({ initiative: initiative });
 				console.log(this.state.initiative)
 		}
 
     render() {
-				console.log("called the render initiative function")
-				const game_id = this.props.game;
-				console.log("received game id from main container game id: ", this.props.game);
+			console.log("current situation with initiative: ", this.state.initiative, " and init_data ", this.state.init_data);
+			if (!this.state.init_data) {
+				console.log("summoning the stuff");
+				this.getInit();
+				return (
+					<div>Loading...</div>
+				)
+			} else if (this.state.init_data) {
+				console.log("called the show init function");
         return (
           this.showInitiativeOrder()
         );
 			}
   }
+}

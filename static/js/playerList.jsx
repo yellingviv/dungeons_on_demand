@@ -36,7 +36,6 @@ class PlayerCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            playerCards: [],
             activated: false
 		}
 		this.makePlayerCards = this.makePlayerCards.bind(this);
@@ -48,40 +47,53 @@ class PlayerCardContainer extends React.Component {
     this.setState({activated: true});
   }
 
-  rollInit(player_id) {
+  rollInit(playerData) {
     // const player_id = evt.target.id;
-    console.log("this is the ID I received: ", player_id);
-    let response = fetch('/roll_initiative?playerId=' + player_id);
-    response.then((res) => res.json()).then((data) => {
-         console.log('we rolled some player initiative, yo: ', data);
-         return (data);
-    });
+    let initiative = [];
+    for (const player of playerData) {
+      const player_id = player['player_id'];
+      console.log("in the for loop, my player_id is: ", player_id)
+      let response = fetch('/roll_initiative?playerId=' + player_id);
+      response.then((res) => res.json()).then((data) => {
+           console.log('we rolled some player initiative, yo: ', data);
+           initiative.push({[player_id]: data});
+           console.log("pushed to initiative list: ", initiative);
+      });
+      this.setState({initiative: initiative});
+    }
   }
 
-	makePlayerCards(playerData) {
+	makePlayerCards() {
 		let playerCards = [];
     console.log("THERE ARE %i players", playerData.length);
       for (const currentPlayer of playerData) {
           console.log("this is what I am passing in: ", currentPlayer.player_id);
-          this.rollInit(currentPlayer.player_id).then((res) =>
+          this.state.initiative[currentPlayer.player_id].then((res) =>
           playerCards.push(
               <PlayerCard
               		key={currentPlayer.player_id}
               		player_id={currentPlayer.player_id}
                   initiative_mod={currentPlayer.init}
-                  initiative={res}
+                  initiative={this.state.initiative[currentPlayer.player_id]}
                   name={currentPlayer.name}
                   activated={this.activated}
               	/>
           ))}
-      return (this.state.playerCards);
+      this.setState({playerCards: playerCards});
 	}
 
     render() {
       const playerData = this.props.playerList;
-      console.log("rendering playerData in PlayerCards: ", playerData);
-      return (
-        this.makePlayerCards(playerData)
-      )
-  }
+      console.log("passed into playerCard render: ", playerData);
+      if (!this.state.initiative) {
+        console.log("no initiative found, calling init func");
+        this.rollInit(playerData);
+        return (<div>Loading...</div>);
+      } else {
+        console.log("initiative found, making cards");
+        return (
+          this.makePlayerCards(playerData)
+        );
+      }
+    }
 }
