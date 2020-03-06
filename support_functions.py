@@ -6,7 +6,7 @@ def initiative_sort(init_order):
     """sorts all the characters for a given combat by initiative"""
 
     print("passed into sort function: ", init_order)
-    for i in range(len(init_order)):
+    for i in range(len(init_order) - 1):
         check = init_order[i]
         print("the check is: ", check, " and i is: ", i)
         index = i

@@ -263,11 +263,11 @@ def initiative_order():
     print("passing this to get sorted: ", init_order)
     ordered_init = initiative_sort(init_order)
     final_init = []
-    for i in range(len(ordered_init) - 1):
+    for i in range(len(ordered_init)):
         if ordered_init[i][2] == 'monst':
-            final_init.append({i: {'monster_id': ordered_init[i][1], 'init': ordered_init[i][0]}})
+            final_init.append({'id': ordered_init[i][1], 'init': ordered_init[i][0], 'type': 'mon'})
         elif ordered_init[i][2] == 'player':
-            final_init.append({i: {'player_id': ordered_init[i][1], 'init': ordered_init[i][0]}})
+            final_init.append({'id': ordered_init[i][1], 'init': ordered_init[i][0], 'type': 'play'})
     print("final results of initiative ordering: ", final_init)
 
     return jsonify(final_init)

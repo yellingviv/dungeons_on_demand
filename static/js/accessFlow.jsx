@@ -19,6 +19,7 @@ class LoginOrReg extends React.Component {
     handleClick(evt) {
       evt.preventDefault();
       const flow = evt.target.name === "Login"?"Login":"Register";
+      this.setState({flow: flow});
       const userData = {username: this.state.username, password: this.state.password};
       const body_pass = JSON.stringify(userData);
       this.state.password = '';
@@ -28,27 +29,26 @@ class LoginOrReg extends React.Component {
     		headers: {'Content-Type': 'application/json'},
       	    body: body_pass
     	});
-        response.then((res) => res.json()).then((data) => {
+      response.then((res) => res.json()).then((data) => {
     		if (data['status'] === "failed") {
     			console.log(data['message']);
     		}
-            this.setState({reg_message: data['message']});
-            if (flow === "Login") {
-              this.setState({flow: "Login"});
-              {this.props.login()};
-              console.log('called login');
-            } else if (flow === "Register") {
-              this.setState({flow: "Register"});
-              console.log("called registration");
-              document.getElementById("reg_flow").innerHTML = "You have successfully registered! Please login."
-            }
-        });
+        this.setState({reg_message: data['message']});
+        if (flow === "Login") {
+          {this.props.login()};
+          console.log('called login');
+        }
+        else if (flow === "Register") {
+          this.setState({flow: "pass_thru"});
+        }
+      });
     }
 
     offerLoginOrReg() {
+      // {this.regStatus()}
       if (this.props.req === "Login") {
-    		return (
-                <div className="access_flow" id="login_flow">
+      		return (
+                <div className="access_flow" id="access_flow">
                     <h2>{this.props.req}</h2>
                     <form onSubmit={this.handleClick} name={this.props.req}>
                         Username: <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
@@ -56,9 +56,16 @@ class LoginOrReg extends React.Component {
                         <input type="submit" value={this.props.req} name="call_access" />
                     </form>
                 </div>
-            );} else if (this.props.req === "Register") {
+            );
+        } else if (this.state.flow === "pass_thru") {
             return (
-                <div className="access_flow" id="reg_flow">
+              <div className="access_flow" id="access_flow">
+                  You have successfully registered! Please login.
+              </div>
+            );
+        } else if (this.props.req === "Register") {
+            return (
+                <div className="access_flow" id="access_flow">
                     <h2>{this.props.req}</h2>
                     <form onSubmit={this.handleClick} name={this.props.req}>
                         Username: <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
@@ -71,7 +78,7 @@ class LoginOrReg extends React.Component {
 
     render() {
         return (
-            <div className="access_flow">
+            <div className="account_flow">
                 {this.offerLoginOrReg()}
             </div>
         );

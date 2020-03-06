@@ -17,7 +17,8 @@ class GameContainer extends React.Component {
 						characterList: [],
 						game_name: '',
 						game_id: 0,
-						first_move: false
+						first_move: false,
+						req: ''
 		};
     this.login = this.login.bind(this);
     this.formHandling = this.formHandling.bind(this);
@@ -26,12 +27,18 @@ class GameContainer extends React.Component {
 		this.addCharacter = this.addCharacter.bind(this);
 		this.startCombat = this.startCombat.bind(this);
 		this.firstMove = this.firstMove.bind(this);
+		this.handleReq = this.handleReq.bind(this);
 	}
 
     login() {
         this.setState({logged_in: !this.state.logged_in});
         console.log("set state: ", this.state.logged_in);
     }
+
+		handleReq(evt) {
+			this.setState({req: evt.target.name});
+			console.log("set req to: ", this.state.req);
+		}
 
     formHandling(evt) {
       this.setState({[evt.target.name]: evt.target.value});
@@ -106,15 +113,15 @@ class GameContainer extends React.Component {
             return (
                 <Router>
                     <div className="homepage">
-                        <Link to="/login"><button name="login" type="button">Login</button></Link>
-                        <Link to="/register"><button name="register" type="button">Register</button></Link>
+                        <Link to="/login"><button name="Login" type="button" onClick={this.handleReq}>Login</button></Link>
+                        <Link to="/register"><button name="Register" type="button" onClick={this.handleReq}>Register</button></Link>
 
                     <Switch>
                     <Route path="/login">
-                        <LoginOrReg login={this.login} req="Login" />
+                        <LoginOrReg login={this.login} req={this.state.req} />
                     </Route>
                     <Route path="/register">
-                        <LoginOrReg req="Register" />
+                        <LoginOrReg req={this.state.req} />
                     </Route>
                     </Switch>
                     </div>
@@ -165,21 +172,21 @@ class GameContainer extends React.Component {
 											<Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link>
                       <Switch>
                           <Route path="/viewMonsters">
-                              <MonsterCardContainer monsterList={this.state.monsterList} firstMove={this.firstMove} />
+                              <MonsterCardContainer monsterList={this.state.monsterList} />
                           </Route>
                           <Route path="/viewInitiative">
-                              <InitiativeCardContainer game={this.state.game_id} moveStatus={this.state.first_move} />
+                              <InitiativeCardContainer game={this.state.game_id} />
                           </Route>
                           <Route path="/gameStats">
                               <GameStats />
                           </Route>
 													<Route path="/viewPlayers">
-															<PlayerCardContainer playerList={this.state.characterList} firstMove={this.firstMove} />
+															<PlayerCardContainer playerList={this.state.characterList} />
 													</Route>
 													<Route path="/combatView">
-															<MonsterCardContainer monsterList={this.state.monsterList} firstMove={this.firstMove} />
-															<PlayerCardContainer playerList={this.state.characterList} firstMove={this.firstMove} />
-															<InitiativeCardContainer game={this.state.game_id} moveStatus={this.state.first_move} />
+															<MonsterCardContainer monsterList={this.state.monsterList} />
+															<PlayerCardContainer playerList={this.state.characterList} />
+															<InitiativeCardContainer game={this.state.game_id} />
 													</Route>
                       </Switch>
                     </div>

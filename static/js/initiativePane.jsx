@@ -21,41 +21,48 @@ class InitiativeCardContainer extends React.Component {
 		super(props);
 		this.state = {
             initiative: [],
+						init_data: [],
 						game_id: 0
 		}
 		this.showInitiativeOrder = this.showInitiativeOrder.bind(this);
 	}
 
-// call to back end to calculate order of monsters and players with initiative rolls
-// initially will just be monsters until i can instantiate players too, focus on monst first
-
-  showInitiativeOrder(game_id) {
-		let initiative = [];
+	componentDidMount() {
+		console.log("called the componentdidmount function")
+		const game_id = this.props.game;
 		let initiativeData = [];
 		const initUrl = '/order_initiative?gameId=' + game_id;
 		let initOrder = fetch(initUrl);
 		initOrder.then((res) => res.json()).then((data) => {
 			console.log("initiative data is: ", data);
 			initiativeData = data;
-			for (const character of initiativeData) {
-	          initiative.push(
-	          	<InitiativeCard
-	          		key={currentPlayer.initiative_order}
-	              who={currentPlayer.identifier}
-	              initiative={currentPlayer.initiative_roll}
-	          	/>
-	          );
-	        }
-		    this.setState({ initiative: initiative });
+			this.setState({init_data: initiativeData});
 		});
 	}
 
+  showInitiativeOrder() {
+			let initiative = [];
+			console.log(this.state.init_data)
+			this.state.init_data.forEach((item, index) => {
+	          initiative.push(
+	          	<InitiativeCard
+	          		key={index}
+	              who={item.id}
+	              initiative={item.init}
+								type={item.type}
+	          	/>
+	          );
+	        })
+		    this.setState({ initiative: initiative });
+				console.log(this.state.initiative)
+		}
+
     render() {
+				console.log("called the render initiative function")
 				const game_id = this.props.game;
-				console.log("received from main container game id: ", this.props.game);
-				console.log("passing into function: ", game_id);
+				console.log("received game id from main container game id: ", this.props.game);
         return (
-          this.showInitiativeOrder(game_id)
+          this.showInitiativeOrder()
         );
 			}
   }
