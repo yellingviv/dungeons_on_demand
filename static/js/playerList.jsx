@@ -39,36 +39,13 @@ class PlayerCardContainer extends React.Component {
             activated: false
 		}
 		this.makePlayerCards = this.makePlayerCards.bind(this);
-    this.activated = this.activated.bind(this);
-    this.rollInit = this.rollInit.bind(this);
 	}
-
-  activated() {
-    this.setState({activated: true});
-  }
-
-  rollInit(playerData) {
-    // const player_id = evt.target.id;
-    let initiative = [];
-    for (const player of playerData) {
-      const player_id = player['player_id'];
-      console.log("in the for loop, my player_id is: ", player_id)
-      let response = fetch('/roll_initiative?playerId=' + player_id);
-      response.then((res) => res.json()).then((data) => {
-           console.log('we rolled some player initiative, yo: ', data);
-           initiative.push({[player_id]: data});
-           console.log("pushed to initiative list: ", initiative);
-      });
-      this.setState({initiative: initiative});
-    }
-  }
 
 	makePlayerCards() {
 		let playerCards = [];
     console.log("THERE ARE %i players", playerData.length);
       for (const currentPlayer of playerData) {
           console.log("this is what I am passing in: ", currentPlayer.player_id);
-          this.state.initiative[currentPlayer.player_id].then((res) =>
           playerCards.push(
               <PlayerCard
               		key={currentPlayer.player_id}
@@ -78,19 +55,19 @@ class PlayerCardContainer extends React.Component {
                   name={currentPlayer.name}
                   activated={this.activated}
               	/>
-          ))}
+          )}
       this.setState({playerCards: playerCards});
 	}
 
     render() {
       const playerData = this.props.playerList;
       console.log("passed into playerCard render: ", playerData);
-      if (!this.state.initiative) {
-        console.log("no initiative found, calling init func");
-        this.rollInit(playerData);
+      if (!this.state.playerCards) {
+        console.log("calling the card-making function");
+        this.makePlayerCards(playerData);
         return (<div>Loading...</div>);
       } else {
-        console.log("initiative found, making cards");
+        console.log("cards already in state so just loading");
         return (
           this.makePlayerCards(playerData)
         );

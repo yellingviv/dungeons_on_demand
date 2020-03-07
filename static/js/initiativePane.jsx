@@ -60,12 +60,20 @@ class InitiativeCardContainer extends React.Component {
 		}
 
     render() {
-			console.log("current situation with initiative: ", this.state.initiative, " and init_data ", this.state.init_data);
-			if (!this.state.init_data) {
-				console.log("summoning the stuff");
+			console.log("current situation with init from main: ", this.props.init, " and init_data ", this.state.init_data);
+			if (!this.props.init) {
+				return(
+					<div>
+						You haven't rolled initiative yet, so there's nothing to show. Please roll initiative and come back!
+					</div>
+				)
+			} else if (!this.state.init_data) {
+				console.log("summoning the initiative stuff");
 				this.getInit();
 				return (
-					<div>Loading...</div>
+					<div>
+					<p>Loading...</p>
+					</div>
 				)
 			} else if (this.state.init_data) {
 				console.log("called the show init function");

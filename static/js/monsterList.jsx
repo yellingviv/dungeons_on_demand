@@ -11,22 +11,11 @@ class MonsterCard extends React.Component {
             attack: {},
             crit: {}
     }
-    this.rollInit = this.rollInit.bind(this);
     this.dealDamage = this.dealDamage.bind(this);
     this.rollToHit = this.rollToHit.bind(this);
     this.rollToDamage = this.rollToDamage.bind(this);
     this.damageHandling = this.damageHandling.bind(this);
   }
-
-    rollInit(monster_id) {
-        // const monster_id = evt.target.id;
-        const init_url = '/roll_initiative?monsterId=' + monster_id;
-        let response = fetch(init_url);
-        response.then((res) => res.json()).then((data) => {
-			       console.log('we rolled some monster initiative, yo: ', data);
-             this.setState({initiative: {[monster_id]: data}});
-        });
-    }
 
     rollToHit(evt) {
       const monster_id = evt.target.id;
@@ -79,7 +68,6 @@ class MonsterCard extends React.Component {
     }
 
 	render() {
-    this.rollInit(this.props.monster_id);
 		return (
 			<div className="monster">
 				<h2>Type: {this.props.type}</h2>

@@ -18,7 +18,8 @@ class GameContainer extends React.Component {
 						game_name: '',
 						game_id: 0,
 						first_move: false,
-						req: ''
+						req: '',
+						init: false
 		};
     this.login = this.login.bind(this);
     this.formHandling = this.formHandling.bind(this);
@@ -28,6 +29,8 @@ class GameContainer extends React.Component {
 		this.startCombat = this.startCombat.bind(this);
 		this.firstMove = this.firstMove.bind(this);
 		this.handleReq = this.handleReq.bind(this);
+		this.rollMonstInit = this.rollMonstInit.bind(this);
+		this.rollPlayerInit = this.rollPlayerInit.bind(this);
 	}
 
     login() {
@@ -65,7 +68,7 @@ class GameContainer extends React.Component {
 				this.state.player_init = 0;
 		}
 
-		startCombat (evt) {
+		startCombat(evt) {
 				console.log("called startCombat");
 				const gameName = this.state.game_name;
 				const gameUrl = '/new_game?gameName=' + gameName;
@@ -91,6 +94,47 @@ class GameContainer extends React.Component {
 						console.log("did we successfully update the monsters? ", data);
 					});
 				});
+		}
+
+		rollMonstInit(game_id) {
+		    const monstUrl = '/view_monster?gameId=' + game_id;
+		    let monster_info = fetch(monstUrl);
+		    monster_info.then((res) => res.json()).then((data) => {
+		      for (const monster of data) {
+		        const monster_id = monster['monster_id'];
+		      }
+		      const init_url = '/roll_initiative?monsterId=' + monster_id;
+		      let response = fetch(init_url);
+		      response.then((res) => res.json()).then((data) => {
+		           console.log('we rolled some monster initiative, yo: ', data);
+		           this.setState({initiative: {[monster_id]: data}});
+		      });
+		    })
+		}
+
+		rollPlayerInit(game_id) {
+		  const playUrl = '/view_player?gameId=' + game_id;
+		  let player_info = fetch(playUrl);
+		  player_info.then((res) => res.json()).then((data) => {
+		    for (const player of data) {
+		      const player_id = player['player_id'];
+		    }
+		    const initUrl = '/roll_initiative?playerId=' + player_id;
+		    let response = fetch(init_url);
+		    response.then((res) => res.json()).then((data) => {
+		         console.log('we rolled some monster initiative, yo: ', data);
+		         this.setState({initiative: {[player_id]: data}});
+		       })
+		    });
+		  }
+
+		rollInit(evt) {
+			console.log("clicked roll initiative");
+			const game_id = evt.target.name;
+			this.rollMonstInit(game_id).then(() => this.rollPlayerInit(game_id)).then(() =>{
+				console.log("initiative has been rolled: ", this.state.initiative);
+				this.setState({init: true});
+			})
 		}
 
     monsterSummoning() {
@@ -169,13 +213,14 @@ class GameContainer extends React.Component {
                   <Router>
                     <div>
 											<Link to="/combatView">Combat View</Link> - <Link to="/gameStats">Game Stats</Link><br />
-											<Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link>
+											<Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link><br />
+											<button id="roll_init" name={this.state.game_id} onClick={this.rollInit}>Roll Initiative</button>
                       <Switch>
                           <Route path="/viewMonsters">
                               <MonsterCardContainer monsterList={this.state.monsterList} />
                           </Route>
                           <Route path="/viewInitiative">
-                              <InitiativeCardContainer game={this.state.game_id} />
+                              <InitiativeCardContainer game={this.state.game_id} init={this.state.init} />
                           </Route>
                           <Route path="/gameStats">
                               <GameStats />
@@ -186,7 +231,7 @@ class GameContainer extends React.Component {
 													<Route path="/combatView">
 															<MonsterCardContainer monsterList={this.state.monsterList} />
 															<PlayerCardContainer playerList={this.state.characterList} />
-															<InitiativeCardContainer game={this.state.game_id} />
+															<InitiativeCardContainer game={this.state.game_id} init={this.state.init}/>
 													</Route>
                       </Switch>
                     </div>
