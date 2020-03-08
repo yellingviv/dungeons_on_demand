@@ -7,6 +7,7 @@ class PlayerCard extends React.Component {
             hit_roll: {},
             attack: {},
             crit: {},
+            initiative: 0
     }
     this.rollToHit = this.rollToHit.bind(this);
   }
@@ -36,17 +37,17 @@ class PlayerCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            activated: false
+            activated: false,
+            initiative: 0
 		}
 		this.makePlayerCards = this.makePlayerCards.bind(this);
 	}
 
-	makePlayerCards() {
+	makePlayerCards(playerData) {
 		let playerCards = [];
-    console.log("THERE ARE %i players", playerData.length);
-      for (const currentPlayer of playerData) {
-          console.log("this is what I am passing in: ", currentPlayer.player_id);
-          playerCards.push(
+        console.log("THERE ARE %i players", playerData.length);
+        return (
+    		playerData.map((currentPlayer) =>
               <PlayerCard
               		key={currentPlayer.player_id}
               		player_id={currentPlayer.player_id}
@@ -55,22 +56,15 @@ class PlayerCardContainer extends React.Component {
                   name={currentPlayer.name}
                   activated={this.activated}
               	/>
-          )}
-      this.setState({playerCards: playerCards});
+          ))
 	}
 
     render() {
       const playerData = this.props.playerList;
       console.log("passed into playerCard render: ", playerData);
-      if (!this.state.playerCards) {
-        console.log("calling the card-making function");
-        this.makePlayerCards(playerData);
-        return (<div>Loading...</div>);
-      } else {
-        console.log("cards already in state so just loading");
+      console.log("calling the card making function")
         return (
           this.makePlayerCards(playerData)
         );
       }
-    }
 }

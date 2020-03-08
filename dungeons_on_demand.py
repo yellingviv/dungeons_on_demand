@@ -220,8 +220,8 @@ def view_monster():
     """just access a monster record, like you do"""
 
     game_id = request.args.get('gameId')
-    monsters = db.session.query(Monsters).filter(game_id=game_id).all()
-    print("here are the monsters in this session: ")
+    monsters = db.session.query(Monsters).filter_by(game_id=game_id).all()
+    print("here are the monsters in this session: ", monsters)
     monst_list = []
     for monster in monsters:
         monst_list.append(monster.monster_id)
@@ -235,8 +235,8 @@ def view_player():
     """just access a player record, like you do"""
 
     game_id = request.args.get('gameId')
-    players = db.session.query(Players).filter(game_id=game_id).all()
-    print("here are the players in this session: ")
+    players = db.session.query(Players).filter_by(game_id=game_id).all()
+    print("here are the players in this session: ", players)
     player_list = []
     for player in players:
         player_list.append(player.player_id)

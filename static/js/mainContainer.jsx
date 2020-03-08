@@ -29,8 +29,9 @@ class GameContainer extends React.Component {
 		this.startCombat = this.startCombat.bind(this);
 		this.firstMove = this.firstMove.bind(this);
 		this.handleReq = this.handleReq.bind(this);
-		this.rollMonstInit = this.rollMonstInit.bind(this);
+		this.rollMonsterInit = this.rollMonsterInit.bind(this);
 		this.rollPlayerInit = this.rollPlayerInit.bind(this);
+        this.rollInit = this.rollInit.bind(this);
 	}
 
     login() {
@@ -96,42 +97,51 @@ class GameContainer extends React.Component {
 				});
 		}
 
-		rollMonstInit(game_id) {
+		rollMonsterInit(game_id) {
 		    const monstUrl = '/view_monster?gameId=' + game_id;
 		    let monster_info = fetch(monstUrl);
 		    monster_info.then((res) => res.json()).then((data) => {
-		      for (const monster of data) {
-		        const monster_id = monster['monster_id'];
+                console.log("received this from monster api: ", data)
+		      for (monster of data) {
+		        const monster_id = monster;
+                console.log("and now: ", monster_id)
+                const init_url = '/roll_initiative?monsterId=' + monster_id;
+      		      let response = fetch(init_url);
+      		      response.then((res) => res.json()).then((data) => {
+      		           console.log('we rolled some monster initiative, yo: ', data);
+      		           this.setState({initiative: {[monster_id]: data}});
+      		      });
 		      }
-		      const init_url = '/roll_initiative?monsterId=' + monster_id;
-		      let response = fetch(init_url);
-		      response.then((res) => res.json()).then((data) => {
-		           console.log('we rolled some monster initiative, yo: ', data);
-		           this.setState({initiative: {[monster_id]: data}});
-		      });
-		    })
+          })
+          resolve("monster init rolled");
 		}
 
 		rollPlayerInit(game_id) {
 		  const playUrl = '/view_player?gameId=' + game_id;
 		  let player_info = fetch(playUrl);
 		  player_info.then((res) => res.json()).then((data) => {
-		    for (const player of data) {
-		      const player_id = player['player_id'];
-		    }
-		    const initUrl = '/roll_initiative?playerId=' + player_id;
-		    let response = fetch(init_url);
-		    response.then((res) => res.json()).then((data) => {
-		         console.log('we rolled some monster initiative, yo: ', data);
-		         this.setState({initiative: {[player_id]: data}});
-		       })
+            console.log("received from player api: ", data)
+		    for (player of data) {
+		      const player_id = player;
+              const initUrl = '/roll_initiative?playerId=' + player_id;
+              let response = fetch(init_url);
+              response.then((res) => res.json()).then((data) => {
+                   console.log('we rolled some player initiative, yo: ', data);
+                   this.setState({initiative: {[player_id]: data}});
+                 })
+		      }
 		    });
-		  }
+            resolve("player init rolled");
+		}
 
 		rollInit(evt) {
 			console.log("clicked roll initiative");
 			const game_id = evt.target.name;
-			this.rollMonstInit(game_id).then(() => this.rollPlayerInit(game_id)).then(() =>{
+            let monsterInit = new Promise((resolve, reject) => {this.rollMonsterInit(game_id)})
+            let playerInit = new Promise((resolve, reject) => {this.rollPlayerInit(game_id)})
+			monsterInit.then(() => playerInit).then(() =>{
+                console.log("monsters: ", monsterInit);
+                console.log("players: ", playerInit);
 				console.log("initiative has been rolled: ", this.state.initiative);
 				this.setState({init: true});
 			})
