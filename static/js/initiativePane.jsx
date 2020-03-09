@@ -2,16 +2,20 @@ class InitiativeCard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-						initiative: [],
-						game_id: 0,
+			initiative: [],
+			game_id: 0,
 		}
 	}
 
 	render() {
+        console.log("successfully called the InitiativeCard class");
 		return (
-			<div className="initiative" id={this.props.initiative_order}>
-					this is a placeholder while I make sure I at last have this right sheesh
-      </div>
+			<div className="initiative">
+				Who: {this.props.who}<br />
+                Initiative: {this.props.initiative}<br />
+                Type: {this.props.type}<br />
+                Order: {this.props.key}
+            </div>
 		);
 	}
 }
@@ -20,8 +24,8 @@ class InitiativeCardContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-						game_id: 0,
-						initiative: []
+			game_id: 0,
+			init_data: ''
 		}
 		this.showInitiativeOrder = this.showInitiativeOrder.bind(this);
 		this.getInit = this.getInit.bind(this);
@@ -41,22 +45,21 @@ class InitiativeCardContainer extends React.Component {
 		});
 	}
 
-  showInitiativeOrder() {
-			let initiative = [];
+    showInitiativeOrder() {
 			console.log(this.state.init_data)
 			const init_list = this.state.init_data;
-			init_list.forEach((item, index) => {
-						console.log(item, index);
-	          initiative.push(
-	          	<InitiativeCard
-	          		key={index}
-	              who={item.id}
-	              initiative={item.init}
-								type={item.type}
-	          	/>
-	          );
-	        })
-				console.log(this.state.initiative)
+            return (
+    			init_list.forEach((item, index) => {
+					console.log(item, index);
+                    <InitiativeCard
+                        key={index}
+                        who={item.id}
+                        initiative={item.init}
+                        type={item.type}
+                    />
+                    console.log("card is: ", index, item.id, item.init, item.type)
+    	        })
+            )
 		}
 
     render() {
@@ -77,9 +80,9 @@ class InitiativeCardContainer extends React.Component {
 				)
 			} else if (this.state.init_data) {
 				console.log("called the show init function");
-        return (
-          this.showInitiativeOrder()
-        );
+                return (
+                    this.showInitiativeOrder()
+                );
 			}
   }
 }
