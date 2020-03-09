@@ -286,9 +286,9 @@ def initiative_order():
     init_order = []
     for character in characters:
         if character.type == 'mon':
-            init_order.append([character.initiative_roll, character.monster_id, "monst"])
+            init_order.append([character.initiative_roll, character.species, "monst"])
         elif character.type == 'pla':
-            init_order.append([character.initiative_roll, character.player_id, "player"])
+            init_order.append([character.initiative_roll, character.name, "player"])
     print("passing this to get sorted: ", init_order)
     ordered_init = initiative_sort(init_order)
     final_init = []
