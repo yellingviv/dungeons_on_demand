@@ -12,26 +12,27 @@ class GameContainer extends React.Component {
             diff: 0,
             num: 0,
             monsterList: [],
-						player_name: '',
-						player_init: 0,
-						characterList: [],
-						game_name: '',
-						game_id: 0,
-						first_move: false,
-						req: '',
-						init: false
+			player_name: '',
+			player_init: 0,
+			characterList: [],
+			game_name: '',
+			game_id: 0,
+			first_move: false,
+			req: '',
+			init: false,
+            initiative: []
 		};
     this.login = this.login.bind(this);
     this.formHandling = this.formHandling.bind(this);
     this.initiateMonsters = this.initiateMonsters.bind(this);
     this.monsterSummoning = this.monsterSummoning.bind(this);
-		this.addCharacter = this.addCharacter.bind(this);
-		this.startCombat = this.startCombat.bind(this);
-		this.firstMove = this.firstMove.bind(this);
-		this.handleReq = this.handleReq.bind(this);
-		this.rollMonsterInit = this.rollMonsterInit.bind(this);
-		this.rollPlayerInit = this.rollPlayerInit.bind(this);
-        this.rollInit = this.rollInit.bind(this);
+	this.addCharacter = this.addCharacter.bind(this);
+	this.startCombat = this.startCombat.bind(this);
+	this.firstMove = this.firstMove.bind(this);
+	this.handleReq = this.handleReq.bind(this);
+	this.rollMonsterInit = this.rollMonsterInit.bind(this);
+	this.rollPlayerInit = this.rollPlayerInit.bind(this);
+    this.rollInit = this.rollInit.bind(this);
 	}
 
     login() {
@@ -39,10 +40,10 @@ class GameContainer extends React.Component {
         console.log("set state: ", this.state.logged_in);
     }
 
-		handleReq(evt) {
-			this.setState({req: evt.target.name});
-			console.log("set req to: ", this.state.req);
-		}
+	handleReq(evt) {
+		this.setState({req: evt.target.name});
+		console.log("set req to: ", this.state.req);
+	}
 
     formHandling(evt) {
       this.setState({[evt.target.name]: evt.target.value});
@@ -53,99 +54,109 @@ class GameContainer extends React.Component {
         this.monsterSummoning();
     }
 
-		firstMove() {
-			this.setState({first_move: true});
-			console.log("activated first move protocol: ", this.state.first_move);
-		}
+	firstMove() {
+		this.setState({first_move: true});
+		console.log("activated first move protocol: ", this.state.first_move);
+	}
 
-		addCharacter(evt) {
-				evt.preventDefault();
-				const playerName = this.state.player_name;
-				const playerInit = this.state.player_init;
-				this.setState({characterList: [...this.state.characterList, {name: playerName, init: playerInit}] });
-				console.log("added new player: ", playerName, playerInit);
-				console.log("the status of character state: ", this.state.characterList);
-				this.state.player_name = '';
-				this.state.player_init = 0;
-		}
+	addCharacter(evt) {
+			evt.preventDefault();
+			const playerName = this.state.player_name;
+			const playerInit = this.state.player_init;
+			this.setState({characterList: [...this.state.characterList, {name: playerName, init: playerInit}] });
+			console.log("added new player: ", playerName, playerInit);
+			console.log("the status of character state: ", this.state.characterList);
+			this.state.player_name = '';
+			this.state.player_init = 0;
+	}
 
-		startCombat(evt) {
-				console.log("called startCombat");
-				const gameName = this.state.game_name;
-				const gameUrl = '/new_game?gameName=' + gameName;
-				let gameResponse = fetch(gameUrl);
-				gameResponse.then((res) => res.json()).then((data) => {
-					this.setState({game_id: data});
-					console.log("set game_id: ", data);
-					const playerInfo = [this.state.game_id, this.state.characterList];
-					const bodyPass = JSON.stringify(playerInfo);
-					let charResponse = fetch('/new_character', {
-						method: 'POST',
-						headers: {'Content-Type': 'application/json'},
-	          body: bodyPass
-	        });
-					console.log("called the new character endpoint with: ", bodyPass);
-					charResponse.then((res) => res.json()).then((data) => {
-						this.setState({characterList: data});
-						console.log("assigned to characterList: ", this.state.characterList);
-					});
-					const monstUrl = '/monster_update?gameId=' + this.state.game_id;
-					let monstResponse = fetch(monstUrl);
-					monstResponse.then((res) => res.json()).then((data) => {
-						console.log("did we successfully update the monsters? ", data);
-					});
+	startCombat(evt) {
+			console.log("called startCombat");
+			const gameName = this.state.game_name;
+			const gameUrl = '/new_game?gameName=' + gameName;
+			let gameResponse = fetch(gameUrl);
+			gameResponse.then((res) => res.json()).then((data) => {
+				this.setState({game_id: data});
+				console.log("set game_id: ", data);
+				const playerInfo = [this.state.game_id, this.state.characterList];
+				const bodyPass = JSON.stringify(playerInfo);
+				let charResponse = fetch('/new_character', {
+					method: 'POST',
+					headers: {'Content-Type': 'application/json'},
+          body: bodyPass
+        });
+				console.log("called the new character endpoint with: ", bodyPass);
+				charResponse.then((res) => res.json()).then((data) => {
+					this.setState({characterList: data});
+					console.log("assigned to characterList: ", this.state.characterList);
 				});
-		}
+				const monstUrl = '/monster_update?gameId=' + this.state.game_id;
+				let monstResponse = fetch(monstUrl);
+				monstResponse.then((res) => res.json()).then((data) => {
+					console.log("did we successfully update the monsters? ", data);
+				});
+			});
+	}
 
-		rollMonsterInit(game_id) {
-		    const monstUrl = '/view_monster?gameId=' + game_id;
-		    let monster_info = fetch(monstUrl);
-		    monster_info.then((res) => res.json()).then((data) => {
-                console.log("received this from monster api: ", data)
-		      for (monster of data) {
-		        const monster_id = monster;
-                console.log("and now: ", monster_id)
-                const init_url = '/roll_initiative?monsterId=' + monster_id;
-      		      let response = fetch(init_url);
-      		      response.then((res) => res.json()).then((data) => {
-      		           console.log('we rolled some monster initiative, yo: ', data);
-      		           this.setState({initiative: {[monster_id]: data}});
-      		      });
-		      }
-          })
-          resolve("monster init rolled");
-		}
+	rollMonsterInit(game_id, resolve) {
+	    const monstUrl = '/view_monster?gameId=' + game_id;
+	    let monster_info = fetch(monstUrl);
+	    monster_info.then((res) => res.json()).then((data) => {
+            console.log("received this from monster api: ", data)
+            let initLoop = new Promise((resolve, reject) => {
+                console.log("inside monster promise");
+                for (let monster of data) {
+                  const monster_id = monster;
+                  const init_url = '/roll_initiative?monsterId=' + monster_id;
+                    let response = fetch(init_url);
+                    response.then((res) => res.json()).then((data) => {
+                         console.log('we rolled some monster initiative, yo: ', data);
+                         this.setState({initiative: {[monster_id]: data}});
+                    });
+                }
+                console.log("resolving inner promise");
+                resolve("move on");
+            })
+            initLoop.then(() => {
+                console.log("resolving monster promise");
+                resolve("monster init rolled");
+            })
+      })
+	}
 
-		rollPlayerInit(game_id) {
-		  const playUrl = '/view_player?gameId=' + game_id;
-		  let player_info = fetch(playUrl);
-		  player_info.then((res) => res.json()).then((data) => {
-            console.log("received from player api: ", data)
-		    for (player of data) {
-		      const player_id = player;
-              const initUrl = '/roll_initiative?playerId=' + player_id;
-              let response = fetch(init_url);
-              response.then((res) => res.json()).then((data) => {
-                   console.log('we rolled some player initiative, yo: ', data);
-                   this.setState({initiative: {[player_id]: data}});
-                 })
-		      }
-		    });
-            resolve("player init rolled");
-		}
+	rollPlayerInit(game_id, resolve) {
+	  const playUrl = '/view_player?gameId=' + game_id;
+	  let player_info = fetch(playUrl);
+	  player_info.then((res) => res.json()).then((data) => {
+        console.log("received from player api: ", data)
+	    for (let player of data) {
+	      const player_id = player;
+          const init_url = '/roll_initiative?playerId=' + player_id;
+          let response = fetch(init_url);
+          response.then((res) => res.json()).then((data) => {
+               console.log('we rolled some player initiative, yo: ', data);
+               this.setState({initiative: {[player_id]: data}});
+             })
+	      }
+	    });
+	}
 
-		rollInit(evt) {
-			console.log("clicked roll initiative");
-			const game_id = evt.target.name;
-            let monsterInit = new Promise((resolve, reject) => {this.rollMonsterInit(game_id)})
-            let playerInit = new Promise((resolve, reject) => {this.rollPlayerInit(game_id)})
-			monsterInit.then(() => playerInit).then(() =>{
+	rollInit(evt) {
+		console.log("clicked roll initiative");
+		const game_id = evt.target.name;
+        let monsterInit = new Promise((resolve, reject) => {this.rollMonsterInit(game_id, resolve)})
+        console.log("monsterInit: ", monsterInit);
+        let playerInit = new Promise((resolve, reject) => {this.rollPlayerInit(game_id, resolve)})
+        console.log("playerInit: ", playerInit);
+		monsterInit.then(() => {
+            console.log("finished monsterInit");
+            playerInit}).then(() => {
                 console.log("monsters: ", monsterInit);
                 console.log("players: ", playerInit);
 				console.log("initiative has been rolled: ", this.state.initiative);
 				this.setState({init: true});
-			})
-		}
+		})
+	}
 
     monsterSummoning() {
       const monstRequest = {diff: this.state.diff, num: this.state.num};
