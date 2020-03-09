@@ -10,7 +10,7 @@ class InitiativeCard extends React.Component {
 	render() {
         console.log("successfully called the InitiativeCard class");
 		return (
-			<div className="initiative">
+			<div className="initiative" id=>
 				Who: {this.props.who}<br />
                 Initiative: {this.props.initiative}<br />
                 Type: {this.props.type}<br />
@@ -46,21 +46,23 @@ class InitiativeCardContainer extends React.Component {
 	}
 
     showInitiativeOrder() {
-			console.log(this.state.init_data)
-			const init_list = this.state.init_data;
-            return (
-    			init_list.forEach((item, index) => {
-					console.log(item, index);
-                    <InitiativeCard
-                        key={index}
-                        who={item.id}
-                        initiative={item.init}
-                        type={item.type}
-                    />
-                    console.log("card is: ", index, item.id, item.init, item.type)
-    	        })
-            )
-		}
+        let init_list = [];
+		console.log(this.state.init_data)
+		this.state.init_data.forEach((item, index) => {
+			init_list.push(
+                <InitiativeCard
+                    key={index}
+                    order={index}
+                    who={item.id}
+                    initiative={item.init}
+                    type={item.type}
+                />)
+            console.log("card is: ", index, item.id, item.init, item.type)
+        })
+        return (
+            init_list
+        )
+	}
 
     render() {
 			console.log("current situation with init from main: ", this.props.init, " and init_data ", this.state.init_data);
