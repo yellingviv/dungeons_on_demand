@@ -10,11 +10,19 @@ class InitiativeCard extends React.Component {
 	render() {
         console.log("successfully called the InitiativeCard class");
 		return (
-			<div className="initiative" id=>
-				Who: {this.props.who}<br />
-                Initiative: {this.props.initiative}<br />
-                Type: {this.props.type}<br />
-                Order: {this.props.key}
+			<div className="initiative" id={this.props.order}>
+                <table name="init_info" id={this.props.order}>
+                    <tbody>
+                        <tr>
+                            <td>Order: {this.props.order}</td>
+                            <td>
+                				Who: {this.props.type}<br />
+                                Initiative: {this.props.initiative}<br />
+                                Order: {this.props.order}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 		);
 	}
@@ -52,7 +60,7 @@ class InitiativeCardContainer extends React.Component {
 			init_list.push(
                 <InitiativeCard
                     key={index}
-                    order={index}
+                    order={index + 1}
                     who={item.id}
                     initiative={item.init}
                     type={item.type}
@@ -65,26 +73,26 @@ class InitiativeCardContainer extends React.Component {
 	}
 
     render() {
-			console.log("current situation with init from main: ", this.props.init, " and init_data ", this.state.init_data);
-			if (!this.props.init) {
-				return(
-					<div>
-						You haven't rolled initiative yet, so there's nothing to show. Please roll initiative and come back!
-					</div>
-				)
-			} else if (!this.state.init_data) {
-				console.log("summoning the initiative stuff");
-				this.getInit();
-				return (
-					<div>
-					<p>Loading...</p>
-					</div>
-				)
-			} else if (this.state.init_data) {
-				console.log("called the show init function");
-                return (
-                    this.showInitiativeOrder()
-                );
-			}
-  }
+		console.log("current situation with init from main: ", this.props.init, " and init_data ", this.state.init_data);
+		if (!this.props.init) {
+			return(
+				<div>
+					You haven't rolled initiative yet, so there's nothing to show. Please roll initiative and come back!
+				</div>
+			)
+		} else if (!this.state.init_data) {
+			console.log("summoning the initiative stuff");
+			this.getInit();
+			return (
+				<div>
+				<p>Loading...</p>
+				</div>
+			)
+		} else if (this.state.init_data) {
+			console.log("called the show init function");
+            return (
+                this.showInitiativeOrder()
+            );
+		}
+    }
 }
