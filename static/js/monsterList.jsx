@@ -72,9 +72,7 @@ class MonsterCard extends React.Component {
 			<div className="monster">
 				<h2>Type: {this.props.type}</h2>
 				<p>Total HP: {this.props.hp} <br />
-                Current HP: {this.state.hp[this.props.monster_id]} <br /></p>
-                <p>Initiative Mod: {this.props.initiative_mod}<br />
-                    Current Initiative: {this.state.initiative[this.props.monster_id]} <br />
+                Current HP: {this.state.hp[this.props.monster_id]} <br />
                 </p>
                 <p>AC: {this.props.ac}<br />
                 Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus} <br />
@@ -155,8 +153,9 @@ class MonsterCardContainer extends React.Component {
 
     render() {
         const monsterData = this.props.monsterList;
+        const playerData = this.props.playerList;
         return (
-            this.makeMonsterCards(monsterData)
+            this.makeMonsterCards(monsterData, playerData)
         )
     }
 }

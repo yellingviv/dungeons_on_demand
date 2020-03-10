@@ -25,8 +25,7 @@ class PlayerCard extends React.Component {
             <div className="player">
                 <h2>Name: {this.props.name}</h2>
                 <p>
-                    Initiative Mod: {this.props.initiative_mod}<br />
-                    Current Initiative: {this.props.initiative} <br />
+                    Initiative Mod: {this.props.initiative_mod}
                 </p>
                 <button id={this.props.player_id} onClick={this.rollToHit}>Roll To Hit</button> {this.state.hit_roll[this.props.player_id]} <br />
             </div>
