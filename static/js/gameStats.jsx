@@ -11,7 +11,7 @@ class GameStats extends React.Component {
 
     gameStats() {
       return (
-        <div>
+        <div id="stats_placeholder">
             This is a placeholder.
         </div>
       )
@@ -19,7 +19,7 @@ class GameStats extends React.Component {
 
     render() {
         return (
-            <div className="access_flow">
+            <div className="stats">
                 {this.gameStats()}
             </div>
         );

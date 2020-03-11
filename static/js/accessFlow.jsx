@@ -59,7 +59,7 @@ class LoginOrReg extends React.Component {
             );
         } else if (this.state.flow === "pass_thru") {
             return (
-              <div className="access_flow" id="access_flow">
+              <div className="access_flow" id="access_flow_passthru">
                   You have successfully registered! Please login.
               </div>
             );

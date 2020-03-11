@@ -14,7 +14,7 @@ class InitiativeCard extends React.Component {
                 <table name="init_info" id={this.props.order}>
                     <tbody>
                         <tr>
-                            <td>Order: {this.props.order}</td>
+                            <td id="order">Order: {this.props.order}</td>
                             <td>
                 				Who: {this.props.type}<br />
                                 Initiative: {this.props.initiative}<br />

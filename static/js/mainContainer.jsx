@@ -179,6 +179,12 @@ class GameContainer extends React.Component {
         while (this.state.logged_in === false) {
             return (
                 <Router>
+                    <div className="img">
+                        <img src="/static/img/dungeon_img.jpg" />
+                        <p id="img_license">
+                            creative commons license https://www.flickr.com/photos/meckert75/4940361043/ Martin Eckert
+                        </p>
+                    </div>
                     <div className="homepage">
                         <Link to="/login"><button name="Login" type="button" onClick={this.handleReq}>Login</button></Link>
                         <Link to="/register"><button name="Register" type="button" onClick={this.handleReq}>Register</button></Link>
@@ -198,7 +204,7 @@ class GameContainer extends React.Component {
         while (this.state.logged_in === true) {
             if (this.state.game_id === 0) {
                 return (
-                    <div>
+                    <div id="add_monsters_chars">
                         <table>
                             <tbody>
                                 <tr>
