@@ -68,6 +68,7 @@ class GameContainer extends React.Component {
 		console.log("the status of character state: ", this.state.characterList);
 		this.state.player_name = '';
 		this.state.player_init = 0;
+        this.setState({added: "New character " + {this.state.player_name} + " added to the game!"});
 	}
 
 	startCombat(evt) {
@@ -170,6 +171,7 @@ class GameContainer extends React.Component {
         response.then((res) => res.json()).then((data) => {
             this.setState({monsterList: data});
             console.log("assigned to monsterList: ", this.state.monsterList);
+            this.setState({added: "Your " + {this.state.num} + " monsters have been added to the game!"});
         });
     }
 
@@ -225,6 +227,9 @@ class GameContainer extends React.Component {
                                 </tr>
                             </tbody>
                         </table>
+                        <p id="request_status">
+                            {this.state.added}
+                        </p>
                         Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
                         <button id="start_combat" onClick={this.startCombat}>Start Combat</button>
                     </div>
@@ -232,7 +237,7 @@ class GameContainer extends React.Component {
             } else {
                 return (
                     <Router>
-                        <div>
+                        <div id="nav_side">
                             <Link to="/combatView">Combat View</Link> - <Link to="/gameStats">Game Stats</Link><br />
                             <Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link><br />
                             <button id="roll_init" name={this.state.game_id} onClick={this.rollInit}>Roll Initiative</button>
