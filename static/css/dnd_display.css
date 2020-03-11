@@ -1,0 +1,54 @@
+body {
+    background: "/static/img/repeated-square.png";
+}
+
+
+
+
+
+font-family: 'Della Respira', serif; -- body font
+font-family: 'Macondo Swash Caps', cursive; -- header font
+
+
+div id game -- margin, translucent background
+
+div class homepage
+
+form id monster_request
+
+form id add_character
+
+p id request_status
+
+div class img
+p id img_license
+
+div id add_monsters_chars
+
+div id nav_side
+
+div class access_flow
+-- id access_flow_passthru
+
+div class account_flow
+
+div class stats
+div id stats_placeholder
+
+div class initiative
+
+table name init_info
+
+td id order
+
+div class monster
+
+h2
+
+button
+
+div class player
+
+footer
+
+body (background)
