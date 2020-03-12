@@ -48,30 +48,56 @@ class LoginOrReg extends React.Component {
       // {this.regStatus()}
       if (this.props.req === "Login") {
       		return (
-                <div className="access_flow" id="access_flow">
-                    <h2>{this.props.req}</h2>
-                    <form onSubmit={this.handleClick} name={this.props.req}>
-                        Username: <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
-                        Password: <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
-                        <input type="submit" value={this.props.req} name="call_access" />
-                    </form>
+                <div id="holder_div">
+                    <div className="row">
+                        <div className="col creds">
+                            <h2>{this.props.req}</h2>
+                        </div>
+                    </div>
+                    <div className="row access_flow" id="access_flow">
+                        <div class="col-6 creds">
+                            Username:<br />
+                            Password:<br />
+                        </div>
+                        <div class="col-6">
+                            <form onSubmit={this.handleClick} name={this.props.req}>
+                                <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
+                                <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
+                                <br />
+                                <input type="submit" class="btn btn-primary btn-custom" value={this.props.req} name="call_access" />
+                            </form>
+                        </div>
+                    </div>
                 </div>
             );
         } else if (this.state.flow === "pass_thru") {
             return (
-              <div className="access_flow" id="access_flow_passthru">
-                  You have successfully registered! Please login.
+              <div className="access_flow_passthru" id="access_flow_passthru">
+                  <h2>You have successfully registered! Please login.</h2>
               </div>
             );
         } else if (this.props.req === "Register") {
             return (
-                <div className="access_flow" id="access_flow">
-                    <h2>{this.props.req}</h2>
-                    <form onSubmit={this.handleClick} name={this.props.req}>
-                        Username: <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
-                        Password: <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
-                        <input type="submit" value={this.props.req} name="call_access" />
-                    </form>
+                <div id="holder_div">
+                    <div className="row">
+                        <div className="col creds">
+                            <h2>{this.props.req}</h2>
+                        </div>
+                    </div>
+                    <div className="row access_flow" id="access_flow">
+                        <div class="col-6 creds">
+                            Username:<br />
+                            Password:<br />
+                        </div>
+                        <div class="col-6">
+                            <form onSubmit={this.handleClick} name={this.props.req}>
+                                <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
+                                <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
+                                <br />
+                                <input type="submit" class="btn btn-primary btn-custom" value={this.props.req} name="call_access" />
+                            </form>
+                        </div>
+                    </div>
                 </div>
             );}
     }

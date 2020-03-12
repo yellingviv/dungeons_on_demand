@@ -9,11 +9,11 @@ class GameContainer extends React.Component {
 		super(props);
 		this.state = {
             logged_in: false,
-            diff: 0,
-            num: 0,
+            diff: '',
+            num: '',
             monsterList: [],
 			player_name: '',
-			player_init: 0,
+			player_init: '',
 			characterList: [],
 			game_name: '',
 			game_id: 0,
@@ -66,9 +66,9 @@ class GameContainer extends React.Component {
 		this.setState({characterList: [...this.state.characterList, {name: playerName, init: playerInit}] });
 		console.log("added new player: ", playerName, playerInit);
 		console.log("the status of character state: ", this.state.characterList);
-		this.state.player_name = '';
-		this.state.player_init = 0;
-        this.setState({added: "New character " + {this.state.player_name} + " added to the game!"});
+        this.setState({added: "New character " + this.state.player_name + " added to the game!"});
+        this.state.player_name = '';
+        this.state.player_init = '';
 	}
 
 	startCombat(evt) {
@@ -171,7 +171,9 @@ class GameContainer extends React.Component {
         response.then((res) => res.json()).then((data) => {
             this.setState({monsterList: data});
             console.log("assigned to monsterList: ", this.state.monsterList);
-            this.setState({added: "Your " + {this.state.num} + " monsters have been added to the game!"});
+            this.setState({added: "Your " + this.state.num + " monsters have been added to the game!"});
+            this.state.diff = '';
+            this.state.num = '';
         });
     }
 
@@ -179,15 +181,21 @@ class GameContainer extends React.Component {
         while (this.state.logged_in === false) {
             return (
                 <Router>
-                    <div className="img">
-                        <img src="/static/img/dungeon_img.jpg" />
+                <div className="row">
+                    <div className="img col-md-6">
+                        <center>
+                        <img src="/static/img/dungeon_img.jpg" class="img-fluid align-middle" id="dungeon_img"/>
                         <p id="img_license">
-                            creative commons license https://www.flickr.com/photos/meckert75/4940361043/ Martin Eckert
+                            Photo by <a href="https://www.flickr.com/photos/meckert75/4940361043/" target="_blank">Martin Eckert on Flickr</a>, used under a Creative Commons License
                         </p>
+                        </center>
                     </div>
-                    <div className="homepage">
-                        <Link to="/login"><button name="Login" type="button" onClick={this.handleReq}>Login</button></Link>
-                        <Link to="/register"><button name="Register" type="button" onClick={this.handleReq}>Register</button></Link>
+                    <div className="homepage col-md-6 align-self-center">
+                            <center>
+                            <Link to="/login">
+                            <button class="btn btn-primary btn-custom" name="Login" type="button" onClick={this.handleReq}>Login</button></Link> <Link to="/register">
+                            <button class="btn btn-primary btn-custom" data-toggle="button" aria-pressed="false" name="Register" type="button" onClick={this.handleReq}>Register</button></Link>
+                            </center>
 
                         <Switch>
                             <Route path="/login">
@@ -198,6 +206,7 @@ class GameContainer extends React.Component {
                             </Route>
                         </Switch>
                     </div>
+                </div>
                 </Router>
             );
         }
@@ -209,47 +218,58 @@ class GameContainer extends React.Component {
                             <tbody>
                                 <tr>
                                     <td>
-                                        <b>Request Monsters!</b>
+                                        <h2>Request Monsters!</h2>
                                     </td>
                                     <td>
-                                        <b>Add Players!</b>
+                                        <h2>Add Players!</h2>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td className="col-md-3">
                                         <form id="monster_request" onSubmit={this.initiateMonsters}>
-                                        Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" /><br />
-                                        Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="0" max="30" /><br />
-                                        <input type="submit" name="init_monsters" value="Call Monsters" /><br />
+                                        Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" value={this.state.num} /><br />
+                                        Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="0" max="30" value={this.state.diff} /><br />
+                                        <input type="submit" class="btn btn-primary btn-custom" name="init_monsters" value="Call Monsters" /><br />
                                         </form>
                                     </td>
-                                    <td>
+                                    <td className="col-md-3">
                                         <form id="add_character" onSubmit={this.addCharacter}>
                                         Character Name: <input onChange={this.formHandling} type="text" id="player_name" name="player_name" value={this.state.player_name} /><br />
                                         Initiative Modifier: <input onChange={this.formHandling} type="number" id="player_init" name="player_init" min="0" max="30" value={this.state.player_init} /><br />
-                                        <input type="submit" name="init_monsters" value="Add A Character" /><br />
+                                        <input type="submit" class="btn btn-primary btn-custom" name="init_characters" value="Add A Character" /><br />
                                         </form>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                         <p id="request_status">
-                            {this.state.added}
+                            <center>
+                                {this.state.added}
+                            </center>
                         </p>
-                        Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
-                        <button id="start_combat" onClick={this.startCombat}>Start Combat</button>
+                        <div className="row justify-content-center">
+                            <form id="start_combat" onClick={this.startCombat}>
+                            Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
+                            <input type="submit" class="btn btn-primary btn-custom" value="Start Combat" />
+                            </form>
+                        </div>
                     </div>
                 );
             } else {
                 return (
                     <Router>
-                        <div id="nav_side">
-                            <Link to="/combatView">Combat View</Link> - <Link to="/gameStats">Game Stats</Link><br />
-                            <Link to="/viewMonsters">View Monsters</Link> - <Link to="/viewPlayers">View Players</Link> - <Link to="/viewInitiative">View Initiative</Link><br />
-                            <button id="roll_init" name={this.state.game_id} onClick={this.rollInit}>Roll Initiative</button>
+                        <div className="nav_side col-md-3">
+                            <Link to="/combatView">Combat View</Link><br />
+                            <Link to="/viewMonsters">View Monsters</Link><br />
+                            <Link to="/viewPlayers">View Players</Link><br />
+                            <Link to="/viewInitiative">View Initiative</Link><br />
+                            <button class="btn btn-primary btn-custom" id="roll_init" name={this.state.game_id} onClick={this.rollInit}>Roll Initiative</button><br />
+                            <br />
+                            <br />
+                            <Link to="/gameStats">Game Stats</Link>
                             <Switch>
                                 <Route path="/viewMonsters">
-                                    <MonsterCardContainer monsterList={this.state.monsterList playerList={this.state.characterList} />
+                                    <MonsterCardContainer monsterList={this.state.monsterList} />
                                 </Route>
                                 <Route path="/viewInitiative">
                                     <InitiativeCardContainer game={this.state.game_id} init={this.state.init} />
@@ -261,7 +281,7 @@ class GameContainer extends React.Component {
                                     <PlayerCardContainer playerList={this.state.characterList} />
                                 </Route>
                                 <Route path="/combatView">
-                                    <MonsterCardContainer monsterList={this.state.monsterList} playerList={this.state.characterList} />
+                                    <MonsterCardContainer monsterList={this.state.monsterList} />
                                     <PlayerCardContainer playerList={this.state.characterList} />
                                     <InitiativeCardContainer game={this.state.game_id} init={this.state.init}/>
                                 </Route>

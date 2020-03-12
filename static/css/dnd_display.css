@@ -1,54 +1,48 @@
 body {
-    background: "/static/img/repeated-square.png";
+    background-image: url("/static/img/repeated-square.png");
+    color: rgba(10, 9, 8, 1);
+    font-family: 'Della Respira', serif;
 }
 
+h2 {
+    color: rgba(34, 51, 59, 1);
+    font-family: 'Macondo Swash Caps', cursive;
+    font-weight: bold;
+}
 
+#game {
+    background-color: rgba(136, 187, 214, 0.5);
+    margin: 60px;
+    padding: 30px;
+}
 
+footer {
+    font-family: 'Macondo Swash Caps', cursive;
+    font-size: 12;
+}
 
+#dungeon_img {
+    max-height: 650px;
+    vertical-align: middle;
+}
 
-font-family: 'Della Respira', serif; -- body font
-font-family: 'Macondo Swash Caps', cursive; -- header font
+#img_license {
+    color: rgba(34, 51, 59, 1);
+    font-size: 12;
+    font-style: italic;
+}
 
+.btn-custom {
+    background-color: #88bbd6;
+    border-color: #88bbd6;
+    text-transform: uppercase;
+    margin: 5px;
+}
 
-div id game -- margin, translucent background
+#access_flow_passthru {
+    align: center;
+}
 
-div class homepage
-
-form id monster_request
-
-form id add_character
-
-p id request_status
-
-div class img
-p id img_license
-
-div id add_monsters_chars
-
-div id nav_side
-
-div class access_flow
--- id access_flow_passthru
-
-div class account_flow
-
-div class stats
-div id stats_placeholder
-
-div class initiative
-
-table name init_info
-
-td id order
-
-div class monster
-
-h2
-
-button
-
-div class player
-
-footer
-
-body (background)
+.creds {
+    padding-left: 10%;
+}
