@@ -73,6 +73,7 @@ class GameContainer extends React.Component {
 	}
 
 	startCombat(evt) {
+        evt.preventDefault();
 		console.log("called startCombat");
 		const gameName = this.state.game_name;
 		const gameUrl = '/new_game?gameName=' + gameName;
@@ -261,7 +262,7 @@ class GameContainer extends React.Component {
             } else {
                 return (
                     <Router>
-                        <div id="navContainer">
+                        <div id="navContainer row">
                             <nav className="navbar navbar-expand-lg navbar_style">
                                 <span className="navbar-brand">Dungeons on Demand</span>
                             <div className="navbar-nav">
@@ -271,6 +272,10 @@ class GameContainer extends React.Component {
                                 <NavLink to="/viewInitiative" className="nav-item nav-link" activeClassName="viewing">View Initiative</NavLink><br />
                                 <NavLink to="/gameStats" className="nav-item nav-link disabled" aria-disabled="true">Game Stats</NavLink>
                                 <button className="btn btn-primary btn-custom" id="roll_init" name={this.state.game_id} onClick={this.rollInit}>Roll Initiative</button>
+                            </div>
+                            </nav>
+                        </div>
+                        <div className="row">
                             <Switch>
                                 <Route path="/viewMonsters">
                                     <MonsterCardContainer monsterList={this.state.monsterList} />
@@ -290,8 +295,6 @@ class GameContainer extends React.Component {
                                     <InitiativeCardContainer game={this.state.game_id} init={this.state.init}/>
                                 </Route>
                             </Switch>
-                            </div>
-                            </nav>
                         </div>
                     </Router>
                 );
