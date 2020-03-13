@@ -64,7 +64,12 @@ footer {
     border-color: rgba(94, 80, 63, 1);
 }
 
-.btn-custom:active {
+.btn-custom:not(:disabled):not(.disabled):active {
+    background-color: rgba(169, 146, 125, 1);
+    border-color: rgba(94, 80, 63, 1);
+}
+
+.btn-custom:focus {
     background-color: rgba(169, 146, 125, 1);
     border-color: rgba(94, 80, 63, 1);
 }
@@ -117,10 +122,17 @@ td {
 }
 
 .logo {
+    color: rgba(15, 54, 117, 1);
     font-family: 'Cinzel Decorative', cursive;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+#nav_logo {
+  line-height: .8;
 }
 
 #smol {
-  font-size: 12;
+  font-size: 1rem;
+  font-weight: 600;
 }

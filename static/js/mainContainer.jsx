@@ -185,8 +185,10 @@ class GameContainer extends React.Component {
         while (this.state.logged_in === false) {
             return (
                 <Router>
-								<div className="row">
-									<span className="logo align-self-center">Dungeons on Demand</span>
+								<div>
+								<center>
+									<span className="logo">D u n g e o n s <span className="logo align-middle" id="smol">on</span> D e m a n d</span>
+								</center>
 								</div>
                 <div className="row">
                     <div className="img col-md-6">
@@ -221,8 +223,10 @@ class GameContainer extends React.Component {
             if (this.state.game_id === 0) {
                 return (
                     <div id="add_monsters_chars">
-										<div className="row">
-											<span className="logo align-self-center">Dungeons on Demand</span>
+										<div>
+										<center>
+											<span className="logo">D u n g e o n s <span className="logo align-middle" id="smol">on</span> D e m a n d</span>
+										</center>
 										</div>
                         <table>
                             <tbody>
@@ -270,8 +274,10 @@ class GameContainer extends React.Component {
                     <Router>
                         <div id="navContainer row">
                             <nav className="navbar navbar-expand-lg navbar_style">
-                                <span className="navbar-brand logo">Dungeons</span><br />
-																<span className="navbar-brand logo align-top" id="smol">on</span> <span className="navbar-brand logo">Demand</span>
+														<div id="logo">
+                                <span className="navbar-brand logo" id="nav_logo">Dungeons<br />
+																<span className="navbar-brand logo align-top" id="smol">on</span> Demand</span>
+															</div>
                             <div className="navbar-nav">
                                 <NavLink to="/combatView" className="nav-item nav-link" activeClassName="viewing">Combat View</NavLink><br />
                                 <NavLink to="/viewMonsters" className="nav-item nav-link" activeClassName="viewing">View Monsters</NavLink><br />
