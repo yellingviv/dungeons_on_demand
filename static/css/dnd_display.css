@@ -22,6 +22,13 @@ h2 {
     font-weight: bold;
 }
 
+h3 {
+    color: rgba(34, 51, 59, 1);
+    font-family: 'Macondo Swash Caps', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 #game {
     background-color: rgba(136, 187, 214, 0.5);
     margin: 60px;
@@ -48,7 +55,8 @@ footer {
     background-color: #88bbd6;
     border-color: #88bbd6;
     text-transform: uppercase;
-    margin: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .btn-custom:hover {
@@ -62,9 +70,48 @@ footer {
 }
 
 #access_flow_passthru {
-    align: center;
+    background-color: rgba(169, 146, 125, .6);
+    font-family: 'Macondo Swash Caps', cursive;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
 }
 
 .creds {
     padding-left: 10%;
+}
+
+#order {
+    padding: 20px;
+}
+
+#monst_stats {
+    padding: 10px;
+}
+
+.player {
+    padding-bottom: 10px;
+}
+
+.monster {
+    padding-bottom: 10px;
+}
+
+.stat_focus {
+    background-color: rgba(169, 146, 125, .6);
+    font-family: 'Macondo Swash Caps', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#damage_fields {
+    background-color: rgba(169, 146, 125, .6);
+    font-family: 'Macondo Swash Caps', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+td {
+    padding-left: 5px;
+    padding-right: 5px;
 }
