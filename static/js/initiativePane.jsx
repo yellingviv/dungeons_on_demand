@@ -14,11 +14,10 @@ class InitiativeCard extends React.Component {
                 <table name="init_info" id={this.props.order}>
                     <tbody>
                         <tr>
-                            <td id="order">Order: {this.props.order}</td>
+                            <td id="order"><h2>{this.props.order}</h2></td>
                             <td>
-                				Who: {this.props.type}<br />
+                				Character: <b>{this.props.who}</b><br />
                                 Initiative: {this.props.initiative}<br />
-                                Order: {this.props.order}
                             </td>
                         </tr>
                     </tbody>
@@ -91,7 +90,10 @@ class InitiativeCardContainer extends React.Component {
 		} else if (this.state.init_data) {
 			console.log("called the show init function");
             return (
-                this.showInitiativeOrder()
+                <div className="col">
+                    <h2>Initiative</h2><br />
+                    {this.showInitiativeOrder()}
+                </div>
             );
 		}
     }
