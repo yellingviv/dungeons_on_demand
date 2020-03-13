@@ -70,16 +70,15 @@ class MonsterCard extends React.Component {
 	render() {
 		return (
 			<div className="monster">
-				<h2>Type: {this.props.type}</h2>
-				<p>Total HP: {this.props.hp} <br />
-                Current HP: {this.state.hp[this.props.monster_id]} <br />
-                </p>
-                <p>AC: {this.props.ac}<br />
+				<h3>Type: {this.props.type}</h3><br />
+				Total HP: {this.props.hp} <br />
+                Current HP: <span className="stat_focus">{this.state.hp[this.props.monster_id]}</span> <br />
+                AC: {this.props.ac}<br />
                 Hit dice: {this.props.dice_num}d{this.props.dice_type} + {this.props.bonus} <br />
-                <button id={this.props.monster_id} onClick={this.rollToHit}>Roll To Hit</button> {this.state.hit_roll[this.props.monster_id]} <br />
-                <button id={this.props.monster_id} onClick={this.rollToDamage}>Roll for Damage</button> {this.state.attack[this.props.monster_id]}</p>
+                <button id={this.props.monster_id} className="btn btn-primary btn-sm btn-custom" onClick={this.rollToHit}>Roll To Hit</button> <span className="stat_focus">{this.state.hit_roll[this.props.monster_id]} </span><br />
+                <button id={this.props.monster_id} className="btn btn-primary btn-sm btn-custom" onClick={this.rollToDamage}>Roll for Damage</button> <span className="stat_focus">{this.state.attack[this.props.monster_id]}</span>
                 <table>
-                    <tbody>
+                    <tbody id="monst_stats">
                         <tr>
                             <td>STR: {this.props.str}</td><td>DEX: {this.props.dex}</td><td>CON: {this.props.con}</td>
                         </tr>
@@ -93,12 +92,12 @@ class MonsterCard extends React.Component {
                     Size: {this.props.size}
                 </p>
                     <form onSubmit={this.dealDamage} id={this.props.monster_id}>
-                    Combat damage: <br />
-                    Damage dealt: <input type='number' onChange={this.damageHandling} id={this.props.monster_id} name='damage' value={this.state.damage[this.props.monster_id]}/><br />
+                    <b>Combat damage:</b> <br />
+                    Damage received: <input type='number' onChange={this.damageHandling} id={this.props.monster_id} name='damage' value={this.state.damage[this.props.monster_id]}/><br />
                     Attacking player: <input type='text' name='player_attacking' onChange={this.damageHandling} id={this.props.monster_id} value={this.state.player_attacking[this.props.monster_id]}/><br />
-                    <input type='submit' value='Deal Damage' /></form>
-                <p id="damage_fields">
-                </p>
+                    <input type='submit' className="btn btn-primary btn-sm btn-custom" value='Deal Damage' /></form><br />
+                <span id="damage_fields">
+                </span>
         	</div>
 		);
 	}
@@ -153,9 +152,11 @@ class MonsterCardContainer extends React.Component {
 
     render() {
         const monsterData = this.props.monsterList;
-        const playerData = this.props.playerList;
         return (
-            this.makeMonsterCards(monsterData, playerData)
+            <div className="col">
+                <h2>Monsters</h2><br />
+                {this.makeMonsterCards(monsterData)}
+            </div>
         )
     }
 }
