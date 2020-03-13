@@ -23,11 +23,9 @@ class PlayerCard extends React.Component {
 	render() {
 		return (
             <div className="player">
-                <h2>Name: {this.props.name}</h2>
-                <p>
-                    Initiative Mod: {this.props.initiative_mod}
-                </p>
-                <button id={this.props.player_id} onClick={this.rollToHit}>Roll To Hit</button> {this.state.hit_roll[this.props.player_id]} <br />
+                <h3>Name: <b>{this.props.name}</b></h3><br />
+                    Initiative Mod: {this.props.initiative_mod}<br />
+                <button id={this.props.player_id} className="btn btn-primary btn-custom btn-sm" onClick={this.rollToHit}>Roll To Hit</button> <span className="stat_focus">{this.state.hit_roll[this.props.player_id]}</span> <br />
             </div>
 		);
 	}
@@ -45,7 +43,6 @@ class PlayerCardContainer extends React.Component {
 
 	makePlayerCards(playerData) {
 		let playerCards = [];
-        console.log("THERE ARE %i players", playerData.length);
         return (
     		playerData.map((currentPlayer) =>
                 <PlayerCard
@@ -64,7 +61,10 @@ class PlayerCardContainer extends React.Component {
         console.log("passed into playerCard render: ", playerData);
         console.log("calling the card making function")
         return (
-            this.makePlayerCards(playerData)
+            <div className="col">
+                <h2>Players</h2><br />
+                {this.makePlayerCards(playerData)}
+            </div>
         );
     }
 }
