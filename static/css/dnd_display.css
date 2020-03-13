@@ -4,6 +4,18 @@ body {
     font-family: 'Della Respira', serif;
 }
 
+a {
+    color: rgba(169, 146, 125, 1);
+}
+
+a:hover {
+    color: rgba(94, 80, 63, 1);
+}
+
+a:active {
+    color: rgba(94, 80, 63, 1);
+}
+
 h2 {
     color: rgba(34, 51, 59, 1);
     font-family: 'Macondo Swash Caps', cursive;
@@ -37,6 +49,16 @@ footer {
     border-color: #88bbd6;
     text-transform: uppercase;
     margin: 5px;
+}
+
+.btn-custom:hover {
+    background-color: rgba(169, 146, 125, 1);
+    border-color: rgba(94, 80, 63, 1);
+}
+
+.btn-custom:active {
+    background-color: rgba(169, 146, 125, 1);
+    border-color: rgba(94, 80, 63, 1);
 }
 
 #access_flow_passthru {

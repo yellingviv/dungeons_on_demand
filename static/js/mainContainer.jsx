@@ -2,6 +2,7 @@ const Router = ReactRouterDOM.BrowserRouter;
 const Route = ReactRouterDOM.Route;
 const Switch = ReactRouterDOM.Switch;
 const Link = ReactRouterDOM.Link;
+const NavLink = ReactRouterDOM.NavLink;
 const Redirect = ReactRouterDOM.Redirect;
 
 class GameContainer extends React.Component {
@@ -20,7 +21,7 @@ class GameContainer extends React.Component {
 			first_move: false,
 			req: '',
 			init: false,
-            initiative: []
+            initiative: [],
 		};
     this.login = this.login.bind(this);
     this.formHandling = this.formHandling.bind(this);
@@ -172,8 +173,10 @@ class GameContainer extends React.Component {
             this.setState({monsterList: data});
             console.log("assigned to monsterList: ", this.state.monsterList);
             this.setState({added: "Your " + this.state.num + " monsters have been added to the game!"});
+            console.log("about to change state: ", this.state.diff, this.state.num)
             this.state.diff = '';
             this.state.num = '';
+            console.log("state changed: ", this.state.diff, this.state.num)
         });
     }
 
@@ -184,7 +187,7 @@ class GameContainer extends React.Component {
                 <div className="row">
                     <div className="img col-md-6">
                         <center>
-                        <img src="/static/img/dungeon_img.jpg" class="img-fluid align-middle" id="dungeon_img"/>
+                        <img src="/static/img/dungeon_img.jpg" className="img-fluid align-middle" id="dungeon_img"/>
                         <p id="img_license">
                             Photo by <a href="https://www.flickr.com/photos/meckert75/4940361043/" target="_blank">Martin Eckert on Flickr</a>, used under a Creative Commons License
                         </p>
@@ -193,8 +196,8 @@ class GameContainer extends React.Component {
                     <div className="homepage col-md-6 align-self-center">
                             <center>
                             <Link to="/login">
-                            <button class="btn btn-primary btn-custom" name="Login" type="button" onClick={this.handleReq}>Login</button></Link> <Link to="/register">
-                            <button class="btn btn-primary btn-custom" data-toggle="button" aria-pressed="false" name="Register" type="button" onClick={this.handleReq}>Register</button></Link>
+                            <button className="btn btn-primary btn-custom" name="Login" type="button" onClick={this.handleReq}>Login</button></Link> <Link to="/register">
+                            <button className="btn btn-primary btn-custom" data-toggle="button" aria-pressed="false" name="Register" type="button" onClick={this.handleReq}>Register</button></Link>
                             </center>
 
                         <Switch>
@@ -229,28 +232,28 @@ class GameContainer extends React.Component {
                                         <form id="monster_request" onSubmit={this.initiateMonsters}>
                                         Number of Monsters: <input onChange={this.formHandling} type="number" id="monst_num" name="num" min="1" max="100" value={this.state.num} /><br />
                                         Difficulty Rating: <input onChange={this.formHandling} type="number" id="monst_diff" name="diff" min="0" max="30" value={this.state.diff} /><br />
-                                        <input type="submit" class="btn btn-primary btn-custom" name="init_monsters" value="Call Monsters" /><br />
+                                        <input type="submit" className="btn btn-primary btn-custom" name="init_monsters" value="Call Monsters" /><br />
                                         </form>
                                     </td>
                                     <td className="col-md-3">
                                         <form id="add_character" onSubmit={this.addCharacter}>
                                         Character Name: <input onChange={this.formHandling} type="text" id="player_name" name="player_name" value={this.state.player_name} /><br />
                                         Initiative Modifier: <input onChange={this.formHandling} type="number" id="player_init" name="player_init" min="0" max="30" value={this.state.player_init} /><br />
-                                        <input type="submit" class="btn btn-primary btn-custom" name="init_characters" value="Add A Character" /><br />
+                                        <input type="submit" className="btn btn-primary btn-custom" name="init_characters" value="Add A Character" /><br />
                                         </form>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <p id="request_status">
-                            <center>
-                                {this.state.added}
-                            </center>
-                        </p>
+                        <center>
+                            <p id="request_status">
+                                    {this.state.added}
+                            </p>
+                        </center>
                         <div className="row justify-content-center">
-                            <form id="start_combat" onClick={this.startCombat}>
-                            Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
-                            <input type="submit" class="btn btn-primary btn-custom" value="Start Combat" />
+                            <form id="start_combat" onSubmit={this.startCombat}>
+                                Game Name: <input type="text" name="game_name" value={this.state.game_name} onChange={this.formHandling} /><br />
+                                <input type="submit" className="btn btn-primary btn-custom" value="Start Combat" />
                             </form>
                         </div>
                     </div>
@@ -258,15 +261,16 @@ class GameContainer extends React.Component {
             } else {
                 return (
                     <Router>
-                        <div className="nav_side col-md-3">
-                            <Link to="/combatView">Combat View</Link><br />
-                            <Link to="/viewMonsters">View Monsters</Link><br />
-                            <Link to="/viewPlayers">View Players</Link><br />
-                            <Link to="/viewInitiative">View Initiative</Link><br />
-                            <button class="btn btn-primary btn-custom" id="roll_init" name={this.state.game_id} onClick={this.rollInit}>Roll Initiative</button><br />
-                            <br />
-                            <br />
-                            <Link to="/gameStats">Game Stats</Link>
+                        <div id="navContainer">
+                            <nav className="navbar navbar-expand-lg navbar_style">
+                                <span className="navbar-brand">Dungeons on Demand</span>
+                            <div className="navbar-nav">
+                                <NavLink to="/combatView" className="nav-item nav-link" activeClassName="viewing">Combat View</NavLink><br />
+                                <NavLink to="/viewMonsters" className="nav-item nav-link" activeClassName="viewing">View Monsters</NavLink><br />
+                                <NavLink to="/viewPlayers" className="nav-item nav-link" activeClassName="viewing">View Players</NavLink><br />
+                                <NavLink to="/viewInitiative" className="nav-item nav-link" activeClassName="viewing">View Initiative</NavLink><br />
+                                <NavLink to="/gameStats" className="nav-item nav-link disabled" aria-disabled="true">Game Stats</NavLink>
+                                <button className="btn btn-primary btn-custom" id="roll_init" name={this.state.game_id} onClick={this.rollInit}>Roll Initiative</button>
                             <Switch>
                                 <Route path="/viewMonsters">
                                     <MonsterCardContainer monsterList={this.state.monsterList} />
@@ -286,6 +290,8 @@ class GameContainer extends React.Component {
                                     <InitiativeCardContainer game={this.state.game_id} init={this.state.init}/>
                                 </Route>
                             </Switch>
+                            </div>
+                            </nav>
                         </div>
                     </Router>
                 );

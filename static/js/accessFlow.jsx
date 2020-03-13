@@ -55,16 +55,16 @@ class LoginOrReg extends React.Component {
                         </div>
                     </div>
                     <div className="row access_flow" id="access_flow">
-                        <div class="col-6 creds">
+                        <div className="col-6 creds">
                             Username:<br />
                             Password:<br />
                         </div>
-                        <div class="col-6">
+                        <div className="col-6">
                             <form onSubmit={this.handleClick} name={this.props.req}>
                                 <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
                                 <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
                                 <br />
-                                <input type="submit" class="btn btn-primary btn-custom" value={this.props.req} name="call_access" />
+                                <input type="submit" className="btn btn-primary btn-custom" value={this.props.req} name="call_access" />
                             </form>
                         </div>
                     </div>
@@ -85,16 +85,16 @@ class LoginOrReg extends React.Component {
                         </div>
                     </div>
                     <div className="row access_flow" id="access_flow">
-                        <div class="col-6 creds">
+                        <div className="col-6 creds">
                             Username:<br />
                             Password:<br />
                         </div>
-                        <div class="col-6">
+                        <div className="col-6">
                             <form onSubmit={this.handleClick} name={this.props.req}>
                                 <input onChange={this.formTracking} type="text" name="username" value={this.state.username}/><br />
                                 <input onChange={this.formTracking} type="password" name="password" value={this.state.password}/><br />
                                 <br />
-                                <input type="submit" class="btn btn-primary btn-custom" value={this.props.req} name="call_access" />
+                                <input type="submit" className="btn btn-primary btn-custom" value={this.props.req} name="call_access" />
                             </form>
                         </div>
                     </div>
