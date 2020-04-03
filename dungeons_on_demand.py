@@ -420,4 +420,4 @@ def view_player_stats():
 if __name__ == '__main__':
 
     connect_to_db(app)
-    app.run(debug=True, port=5000, host='0.0.0.0')
+    app.run(port=5000, host='0.0.0.0')
